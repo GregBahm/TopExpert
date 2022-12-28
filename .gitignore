@@ -1,0 +1,9 @@
+﻿TopExpertUnity/Library
+TopExpertUnity/Temp
+TopExpertUnity/UserSettings
+TopExpertUnity/Logs
+TopExpertUnity/obj
+*.csproj
+.vsconfig
+*.sln
+.vs
