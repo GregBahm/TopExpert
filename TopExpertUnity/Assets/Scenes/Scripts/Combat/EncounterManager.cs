@@ -8,7 +8,7 @@ using static UnityEditor.Progress;
 
 namespace TopExpert.Combat
 {
-    public class MainScript : MonoBehaviour
+    public class EncounterManager : MonoBehaviour
     {
         public Encounter Encounter;
 
