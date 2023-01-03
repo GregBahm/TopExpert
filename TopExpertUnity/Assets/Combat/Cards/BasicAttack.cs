@@ -1,19 +1,16 @@
-﻿using System.Linq;
+﻿using Combat.Model;
+using System.Linq;
 
-namespace TopExpert.Combat
+namespace Combat.Cards
 {
-    public class BasicAttack : ICard
+    public class BasicAttack : CardTemplate
     {
-        public string Name => "Basic Attack";
+        public override string Name => "Basic Attack";
 
         public int ActionPointCost => 1;
         public int AttackPower => 5;
 
-        public bool Consumeable => false;
-
-        public bool Hold => false;
-
-        public CardPlayability GetPlayability(BattleState state)
+        public override CardPlayability GetPlayability(BattleState state)
         {
             CardPlayability ret = new CardPlayability();
             bool hasActionPoints = state.RemainingActionPoints >= ActionPointCost;
@@ -30,11 +27,12 @@ namespace TopExpert.Combat
             return ret;
         }
 
-        public BattleState Apply(BattleState state, EntityId target)
+        public override BattleState Apply(BattleState state, EntityId target)
         {
             BattleStateBuilder builder = new BattleStateBuilder(state);
             EntityStateBuilder enemy = builder.GetEnemy(target);
             enemy.ApplyAttackDamage(AttackPower);
+            builder.RemainingActionpoints -= ActionPointCost;
             return builder.ToState();
         }
     }

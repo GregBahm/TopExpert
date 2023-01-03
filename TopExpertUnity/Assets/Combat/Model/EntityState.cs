@@ -1,4 +1,4 @@
-﻿namespace TopExpert.Combat
+﻿namespace Combat.Model
 {
     public class EntityState
     {

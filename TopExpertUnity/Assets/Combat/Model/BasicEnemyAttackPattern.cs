@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace TopExpert.Combat
+namespace Combat.Model
 {
     public class BasicEnemyAttackPattern : IEnemyAction
     {

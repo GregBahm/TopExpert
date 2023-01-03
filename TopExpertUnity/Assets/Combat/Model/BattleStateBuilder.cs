@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace TopExpert.Combat
+namespace Combat.Model
 {
     public class BattleStateBuilder
     {

@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace TopExpert.Combat
+﻿namespace Combat.Model
 {
     public class EntityStateBuilder
     {
@@ -35,8 +33,8 @@ namespace TopExpert.Combat
 
         public void ApplyAttackDamage(int damage)
         {
-            int shieldedDamage = Mathf.Max(0, damage - Shield);
-            CurrentHP -= damage;
+            int shieldedDamage = UnityEngine.Mathf.Max(0, damage - Shield);
+            CurrentHP -= shieldedDamage;
         }
     }
 }

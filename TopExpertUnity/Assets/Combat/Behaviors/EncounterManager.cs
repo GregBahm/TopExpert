@@ -1,3 +1,5 @@
+using Combat.Cards;
+using Combat.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,11 +8,18 @@ using UnityEngine;
 using static UnityEditor.ObjectChangeEventStream;
 using static UnityEditor.Progress;
 
-namespace TopExpert.Combat
+namespace Combat.Behaviors
 {
     public class EncounterManager : MonoBehaviour
     {
-        public Encounter Encounter;
+        public static EncounterManager Instance { get; private set; }
+
+        public Encounter Encounter { get; private set; }
+
+        private void Awake()
+        {
+            Instance = this;
+        }
 
         private void Start()
         {

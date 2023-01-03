@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace TopExpert.Combat
+namespace Combat.Model
 {
     public class BattleState
     {
@@ -119,7 +119,7 @@ namespace TopExpert.Combat
             List<ICard> remainingHand = new List<ICard>();
             foreach (ICard card in builder.Hand)
             {
-                if (card.Hold)
+                if (card.Holds)
                     remainingHand.Add(card);
                 else
                     builder.DiscardDeck.Add(card);

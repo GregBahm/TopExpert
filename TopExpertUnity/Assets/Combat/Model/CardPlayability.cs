@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TopExpert.Combat
+namespace Combat.Model
 {
     public class CardPlayability
     {

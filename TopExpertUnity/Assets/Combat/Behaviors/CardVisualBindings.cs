@@ -1,9 +1,11 @@
+using Combat.Cards;
+using Combat.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace TopExpert.Combat
+namespace Combat.Behaviors
 {
     public class CardVisualBindings : MonoBehaviour
     {

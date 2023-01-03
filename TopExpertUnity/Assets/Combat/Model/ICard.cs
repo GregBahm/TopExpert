@@ -1,10 +1,11 @@
-﻿namespace TopExpert.Combat
+﻿namespace Combat.Model
 {
     public interface ICard
     {
         string Name { get; }
         bool Consumeable { get; }
-        bool Hold { get; }
+        bool Holds { get; }
+        bool Exhausts { get; }
         CardPlayability GetPlayability(BattleState state);
         BattleState Apply(BattleState state, EntityId potentialTarget);
     }

@@ -1,27 +1,26 @@
-﻿namespace TopExpert.Combat
+﻿using Combat.Model;
+
+namespace Combat.Cards
 {
-    public class BasicDefense : ICard
+    public class BasicDefense : CardTemplate
     {
-        public string Name => "Basic Defense";
+        public override string Name => "Basic Defense";
 
         public int ActionPointCost => 1;
         public int DefensePower => 5;
 
-        public bool Consumeable => false;
-
-        public bool Hold => false;
-
-        public CardPlayability GetPlayability(BattleState state)
+        public override CardPlayability GetPlayability(BattleState state)
         {
             CardPlayability ret = new CardPlayability();
             ret.IsPlayable = state.RemainingActionPoints >= ActionPointCost;
             return ret;
         }
 
-        public BattleState Apply(BattleState state, EntityId target)
+        public override BattleState Apply(BattleState state, EntityId target)
         {
             BattleStateBuilder builder = new BattleStateBuilder(state);
             builder.Investigators.Shield += DefensePower;
+            builder.RemainingActionpoints -= ActionPointCost;
             return builder.ToState();
         }
     }
