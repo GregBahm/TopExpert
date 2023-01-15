@@ -26,17 +26,38 @@ namespace Combat.Behaviors
         private PointerEventData pointerData;
         List<RaycastResult> hoveredElements;
 
-        private Vector3 mouseDragStartPos;
-        private Vector3 cardDragStartPos;
+        [SerializeField]
+        private Transform effectApplyingPosition;
+
+        [SerializeField]
+        private GameObject cardDropZone;
+
+        [SerializeField]
+        private Transform drawPile;
+        public Vector3 DrawPosition { get { return drawPile.position; } }
+
+        [SerializeField]
+        private Transform discardPile;
+        public Vector3 DiscardPosition { get { return discardPile.position; } }
+
+        public Vector3 EffectApplyingPosition { get { return effectApplyingPosition.position; } }
+
+        public static InterfaceManager Instance { get; private set; }
+
+        private void Awake()
+        {
+            Instance = this;
+        }
 
         private void Start()
         {
             pointerData = new PointerEventData(EventSystem.current);
             hoveredElements = new List<RaycastResult>();
             core = GetComponent<EncounterManager>();
-            foreach (ICard item in core.Encounter.CurrentState.Hand)
+            for (int i = 0; i < core.Encounter.CurrentState.Hand.Count; i++)
             {
-                CreateCardUi(item);
+                ICard card = core.Encounter.CurrentState.Hand[i];
+                CreateCardUi(card, i * .05f);
             }
         }
 
@@ -63,13 +84,7 @@ namespace Combat.Behaviors
                 if (hand.HoveredCard != null && hand.SelectedCard == null)
                 {
                     hand.SelectedCard = hand.HoveredCard;
-                    mouseDragStartPos = Input.mousePosition;
-                    cardDragStartPos = hand.HoveredCard.transform.position;
-                }
-                else if (hand.SelectedCard != null)
-                {
-                    Vector3 delta = Input.mousePosition - mouseDragStartPos;
-                    hand.SelectedCard.transform.position = cardDragStartPos + delta;
+                    CardBehavior.StartDrag(hand.HoveredCard);
                 }
             }
             else
@@ -82,44 +97,39 @@ namespace Combat.Behaviors
 
         private void HandlePotentialCardPlay()
         {
-            bool potentialCardPlay = GetIfDroppedCard();
-            if (potentialCardPlay)
+            if(hand.SelectedCard != null && Input.GetMouseButtonUp(0))
             {
-                ICard card = hand.SelectedCard.Model;
-                CardPlayability playability = GetCardPlayability(card);
-                if(playability.IsPlayable)
+                bool potentialCardPlay = GetIfCardIsOverDropZone();
+                if (potentialCardPlay)
                 {
-                    if(playability.NeedsTarget)
+                    ICard card = hand.SelectedCard.Model;
+                    CardPlayability playability = GetCardPlayability(card);
+                    if (playability.IsPlayable)
                     {
-                        // Did they drop the card on a valid target?
-                        Debug.Log("Need target for " + hand.SelectedCard.Model.Name);
-                    }
-                    else
-                    {
-                        // Play the card
-                        hand.SelectedCard.PlayCard();
+                        if (playability.NeedsTarget)
+                        {
+                            // Did they drop the card on a valid target?
+                            Debug.Log("Need target for " + hand.SelectedCard.Model.Name);
+                        }
+                        else
+                        {
+                            // Play the card
+                            hand.SelectedCard.PlayCard();
+                        }
                     }
                 }
             }
         }
 
-        private CardPlayability GetCardPlayability(ICard card)
+        public CardPlayability GetCardPlayability(ICard card)
         {
             BattleState state = core.Encounter.CurrentState;
             return card.GetPlayability(state);
         }
 
-        private bool GetIfDroppedCard()
+        public bool GetIfCardIsOverDropZone()
         {
-            if (Input.GetMouseButtonUp(0) && hand.SelectedCard != null)
-            {
-                float yDelta = Input.mousePosition.y - mouseDragStartPos.y;
-                if(yDelta > 200)
-                {
-                    return true;
-                }
-            }
-            return false;
+            return hoveredElements.Any(item => item.gameObject == cardDropZone);
         }
 
         private void UpdateHoveredCard()
@@ -127,16 +137,16 @@ namespace Combat.Behaviors
             if (hoveredElements.Any())
             {
                 CardBehavior card = hoveredElements[0].gameObject.GetComponent<CardBehavior>();
-                if (card != null && card.State == CardVisualState.Available)
+                if (card != null && card.State == CardVisualState.InHand)
                     hand.HoveredCard = card;
             }
         }
 
-        private void CreateCardUi(ICard card)
+        private void CreateCardUi(ICard card, float drawDelay = 0)
         {
             GameObject cardObj = Instantiate(cardPrefab);
             CardBehavior behavior = cardObj.GetComponent<CardBehavior>();
-            behavior.Initialize(hand, card);
+            behavior.Initialize(hand, card, drawDelay);
             hand.AddCard(behavior);
         }
     }

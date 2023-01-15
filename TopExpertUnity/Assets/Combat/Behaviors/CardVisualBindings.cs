@@ -23,11 +23,6 @@ namespace Combat.Behaviors
         private void Awake()
         {
             Instance = this;
-        }
-
-        // Start is called before the first frame update
-        void Start()
-        {
             bindings = new Dictionary<Type, Sprite>
             {
                 { typeof(BasicResearch), BasicResearchArt },
