@@ -7,6 +7,6 @@
         bool Holds { get; }
         bool Exhausts { get; }
         CardPlayability GetPlayability(BattleState state);
-        BattleState Apply(BattleState state, EntityId potentialTarget);
+        BattleState Apply(BattleState state);
     }
 }

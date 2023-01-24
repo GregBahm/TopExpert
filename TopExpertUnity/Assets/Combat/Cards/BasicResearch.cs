@@ -16,7 +16,7 @@ namespace Combat.Cards
             return ret;
         }
 
-        public override BattleState Apply(BattleState state, EntityId potentialTarget)
+        public override BattleState Apply(BattleState state)
         {
             BattleStateBuilder builder = new BattleStateBuilder(state);
             builder.RemainingResearchPoints -= ResearchPower;

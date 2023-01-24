@@ -12,7 +12,7 @@ namespace Combat.Cards
 
         public virtual bool Exhausts => false;
 
-        public abstract BattleState Apply(BattleState state, EntityId potentialTarget);
+        public abstract BattleState Apply(BattleState state);
 
         public abstract CardPlayability GetPlayability(BattleState state);
     }

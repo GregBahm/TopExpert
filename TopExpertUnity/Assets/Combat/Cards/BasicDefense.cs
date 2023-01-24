@@ -16,7 +16,7 @@ namespace Combat.Cards
             return ret;
         }
 
-        public override BattleState Apply(BattleState state, EntityId target)
+        public override BattleState Apply(BattleState state)
         {
             BattleStateBuilder builder = new BattleStateBuilder(state);
             builder.Investigators.Shield += DefensePower;

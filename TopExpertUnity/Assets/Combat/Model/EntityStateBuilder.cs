@@ -2,19 +2,16 @@
 {
     public class EntityStateBuilder
     {
-        public EntityId Id { get; set; }
         public IEnemyAction EnemyAction { get; set; }
         public int MaxHP { get; set; }
         public int CurrentHP { get; set; }
         public int Shield { get; set; }
 
-        public EntityStateBuilder(EntityId id)
+        public EntityStateBuilder()
         {
-            Id = id;
         }
         public EntityStateBuilder(EntityState state)
         {
-            Id = state.Id;
             EnemyAction = state.EnemyAction;
             MaxHP = state.MaxHP;
             CurrentHP = state.CurrentHP;
@@ -24,7 +21,6 @@
         public EntityState ToState()
         {
             return new EntityState(
-                Id,
                 EnemyAction,
                 MaxHP,
                 CurrentHP,

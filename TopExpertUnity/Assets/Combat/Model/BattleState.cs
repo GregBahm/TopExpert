@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 namespace Combat.Model
 {
@@ -8,7 +9,7 @@ namespace Combat.Model
         public BattleStatus Status { get; }
 
         public EntityState Investigators { get; }
-        public IReadOnlyList<EntityState> Enemies { get; }
+        public EntityState Enemy { get; }
 
         public IReadOnlyList<ICard> Hand { get; }
         public IReadOnlyList<ICard> DrawDeck { get; }
@@ -26,7 +27,7 @@ namespace Combat.Model
 
         public BattleState(BattleStatus status,
             EntityState investigators,
-            List<EntityState> enemies,
+            EntityState enemy,
             List<ICard> hand,
             List<ICard> drawDeck,
             List<ICard> discardDeck,
@@ -40,7 +41,7 @@ namespace Combat.Model
         {
             Status = status;
             Investigators = investigators;
-            Enemies = enemies;
+            Enemy = enemy;
             Hand = hand ?? new List<ICard>();
             DrawDeck = drawDeck ?? new List<ICard>();
             DiscardDeck = discardDeck ?? new List<ICard>();
@@ -53,12 +54,12 @@ namespace Combat.Model
             MaxHandSize = maxHandSize;
         }
 
-        public BattleState PlayCard(ICard cardToPlay, EntityId potentialTarget)
+        public BattleState PlayCard(ICard cardToPlay)
         {
             BattleStateBuilder builder = new BattleStateBuilder(this);
             builder.Hand.Remove(cardToPlay);
             BattleState asState = builder.ToState();
-            BattleState afterCard = cardToPlay.Apply(asState, potentialTarget);
+            BattleState afterCard = cardToPlay.Apply(asState);
             BattleStateBuilder afterCardBuilder = new BattleStateBuilder(afterCard);
             if (cardToPlay.Consumeable)
             {
@@ -80,13 +81,7 @@ namespace Combat.Model
         {
             // The enemies do their effects
             BattleState currentState = state;
-            foreach (var item in state.Enemies)
-            {
-                if (item.EnemyAction != null)
-                {
-                    currentState = item.EnemyAction.TakeAction(currentState);
-                }
-            }
+            currentState = currentState.Enemy.EnemyAction.TakeAction(currentState);
             // The battle potentially ends
             if (currentState.Status != BattleStatus.Ongoing)
                 return currentState;

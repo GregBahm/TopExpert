@@ -13,9 +13,9 @@ namespace Combat.Model
             battleProgression = new List<BattleState>() { initialState };
         }
 
-        public void PlayCard(ICard card, EntityId potentialTarget)
+        public void PlayCard(ICard card)
         {
-            BattleState nextState = CurrentState.PlayCard(card, potentialTarget);
+            BattleState nextState = CurrentState.PlayCard(card);
             battleProgression.Add(nextState);
         }
 

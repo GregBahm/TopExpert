@@ -142,12 +142,12 @@ namespace Combat.Behaviors
             if (GetIsHeldOverDropZone())
             {
                 CardPlayability playability = InterfaceManager.Instance.GetCardPlayability(Model);
-                if (playability.IsPlayable && !playability.NeedsTarget)
+                if (playability.IsPlayable)
                 {
                     marginTarget = playabilityIndicatorMarginMax;
                     colorTarget = canPlayCardColor;
                 }
-                else if (!playability.IsPlayable)
+                else
                 {
                     marginTarget = playabilityIndicatorMarginMax;
                 }
@@ -248,7 +248,7 @@ namespace Combat.Behaviors
 
         public void PlayCard()
         {
-            EncounterManager.Instance.Encounter.PlayCard(Model, null);
+            EncounterManager.Instance.Encounter.PlayCard(Model);
             hand.RemoveCard(hand.SelectedCard);
             State = CardVisualState.ApplyingEffect;
         }

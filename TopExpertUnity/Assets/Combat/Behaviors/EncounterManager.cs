@@ -32,27 +32,17 @@ namespace Combat.Behaviors
             builder.MaxActionPoints = 4;
             builder.MaxHandSize = 7;
 
-            EntityStateBuilder investigators = new EntityStateBuilder(new EntityId());
+            EntityStateBuilder investigators = new EntityStateBuilder();
             investigators.MaxHP = 100;
             investigators.CurrentHP = 100;
 
-            EntityId enemyIdA = new EntityId();
-            EntityId enemyIdB = new EntityId();
-
-            BasicEnemyAttackPattern enemyAAttack = new BasicEnemyAttackPattern(enemyIdA);
-            BasicEnemyAttackPattern enemyBAttack = new BasicEnemyAttackPattern(enemyIdB);
-
-            EntityStateBuilder firstEnemy = new EntityStateBuilder(enemyIdA);
-            firstEnemy.MaxHP = 50;
-            firstEnemy.CurrentHP = 50;
-            firstEnemy.EnemyAction = enemyAAttack;
-            EntityStateBuilder secondEnemy = new EntityStateBuilder(enemyIdB);
-            secondEnemy.MaxHP = 50;
-            secondEnemy.CurrentHP = 50;
-            secondEnemy.EnemyAction = enemyBAttack;
+            EntityStateBuilder enemy = new EntityStateBuilder();
+            enemy.MaxHP = 50;
+            enemy.CurrentHP = 50;
+            enemy.EnemyAction = new BasicEnemyAttackPattern();
 
             builder.Investigators = investigators;
-            builder.Enemies = new List<EntityStateBuilder> { firstEnemy, secondEnemy };
+            builder.Enemy = enemy;
 
             builder.DrawDeck = GetTestDeck().OrderBy(item => UnityEngine.Random.value).ToList();
             BattleState initialState = builder.ToState().StartNewRound();

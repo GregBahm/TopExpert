@@ -106,16 +106,7 @@ namespace Combat.Behaviors
                     CardPlayability playability = GetCardPlayability(card);
                     if (playability.IsPlayable)
                     {
-                        if (playability.NeedsTarget)
-                        {
-                            // Did they drop the card on a valid target?
-                            Debug.Log("Need target for " + hand.SelectedCard.Model.Name);
-                        }
-                        else
-                        {
-                            // Play the card
-                            hand.SelectedCard.PlayCard();
-                        }
+                        hand.SelectedCard.PlayCard();
                     }
                 }
             }

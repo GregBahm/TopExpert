@@ -8,7 +8,7 @@ namespace Combat.Model
         public BattleStatus Status { get; set; }
 
         public EntityStateBuilder Investigators { get; set; }
-        public List<EntityStateBuilder> Enemies { get; set; }
+        public EntityStateBuilder Enemy { get; set; }
 
         public List<ICard> Hand { get; set; }
         public List<ICard> DrawDeck { get; set; }
@@ -32,7 +32,7 @@ namespace Combat.Model
         {
             Status = state.Status;
             Investigators = new EntityStateBuilder(state.Investigators);
-            Enemies = state.Enemies.Select(item => new EntityStateBuilder(item)).ToList();
+            Enemy = new EntityStateBuilder(state.Enemy);
 
             Hand = state.Hand.ToList();
             DrawDeck = state.DrawDeck.ToList();
@@ -47,17 +47,11 @@ namespace Combat.Model
             MaxHandSize = state.MaxHandSize;
         }
 
-        public EntityStateBuilder GetEnemy(EntityId id)
-        {
-            return Enemies.First(item => item.Id == id);
-        }
-
         public BattleState ToState()
         {
-            List<EntityState> enemies = Enemies.Select(item => item.ToState()).ToList();
             return new BattleState(Status,
                 Investigators.ToState(),
-                enemies,
+                Enemy.ToState(),
                 Hand,
                 DrawDeck,
                 DiscardDeck,

@@ -13,25 +13,14 @@ namespace Combat.Cards
         public override CardPlayability GetPlayability(BattleState state)
         {
             CardPlayability ret = new CardPlayability();
-            bool hasActionPoints = state.RemainingActionPoints >= ActionPointCost;
-            if (hasActionPoints)
-            {
-                var aliveEnemies = state.Enemies.Where(item => item.CurrentHP > 0).Select(item => item.Id);
-                if (aliveEnemies.Any())
-                {
-                    ret.IsPlayable = true;
-                    ret.NeedsTarget = true;
-                    ret.PotentialTargets = aliveEnemies.ToList();
-                }
-            }
+            ret.IsPlayable = state.RemainingActionPoints >= ActionPointCost;
             return ret;
         }
 
-        public override BattleState Apply(BattleState state, EntityId target)
+        public override BattleState Apply(BattleState state)
         {
             BattleStateBuilder builder = new BattleStateBuilder(state);
-            EntityStateBuilder enemy = builder.GetEnemy(target);
-            enemy.ApplyAttackDamage(AttackPower);
+            builder.Enemy.ApplyAttackDamage(AttackPower);
             builder.RemainingActionpoints -= ActionPointCost;
             return builder.ToState();
         }
