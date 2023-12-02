@@ -14,6 +14,8 @@ namespace Combat.Behaviors
         private float angle;
         [SerializeField]
         private Transform handCircleCenter;
+        [SerializeField]
+        private float maxCardSpan;
 
         private List<CardBehavior> cards;
 
@@ -56,11 +58,11 @@ namespace Combat.Behaviors
                 {
                     if (i > hoveredIndex)
                     {
-                        SetHandPositionForCard(cards[i], i + 1, cards.Count + 1);
+                        SetHandPositionForCard(cards[i], i + 1, cards.Count);
                     }
                     else if (i < hoveredIndex)
                     {
-                        SetHandPositionForCard(cards[i], i, cards.Count + 1);
+                        SetHandPositionForCard(cards[i], i - 1, cards.Count);
                     }
                     else
                     {
@@ -70,11 +72,12 @@ namespace Combat.Behaviors
                 HoveredCard.transform.SetSiblingIndex(cards.Count - 1);
             }
         }
-
-        private Vector3 GetBasePosition(int i, int count)
+        private Vector3 GetBasePosition(float i, float count)
         {
-            float param = (float)i / (count - 1);
-            float offset = Screen.width * (param - .5f) * span;
+            float param = i - (count - 1) / 2;
+            float offset = Screen.width * span / count;
+            offset = Mathf.Min(offset, maxCardSpan);
+            offset *= param;
             return new Vector3(offset, 0, 0);
         }
 
