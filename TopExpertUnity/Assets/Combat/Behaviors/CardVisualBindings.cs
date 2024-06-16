@@ -10,11 +10,7 @@ namespace Combat.Behaviors
     public class CardVisualBindings : MonoBehaviour
     {
         [SerializeField]
-        private Sprite BasicResearchArt;
-        [SerializeField]
-        private Sprite BasicAttackArt;
-        [SerializeField]
-        private Sprite BasicDefenseArt;
+        private Sprite CarefulResearch;
 
         private Dictionary<Type, Sprite> bindings;
 
@@ -25,9 +21,7 @@ namespace Combat.Behaviors
             Instance = this;
             bindings = new Dictionary<Type, Sprite>
             {
-                { typeof(BasicResearch), BasicResearchArt },
-                { typeof(BasicAttack), BasicAttackArt },
-                { typeof(BasicDefense), BasicDefenseArt },
+                { typeof(CarefulResearch), CarefulResearch },
             };
         }
 

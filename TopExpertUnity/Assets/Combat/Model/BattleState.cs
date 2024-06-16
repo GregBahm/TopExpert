@@ -19,9 +19,6 @@ namespace Combat.Model
         public int MaxResearchPoints { get; }
         public int RemainingResearchPoints { get; }
 
-        public int MaxActionPoints { get; }
-        public int RemainingActionPoints { get; }
-
         public int Draws { get; }
         public int MaxHandSize { get; }
 
@@ -34,8 +31,6 @@ namespace Combat.Model
             List<ICard> burnedCardsDeck,
             int maxResearchPoints,
             int remainingResearchPoints,
-            int maxActionPoints,
-            int remainingActionPoints,
             int draws,
             int maxHandSize)
         {
@@ -48,8 +43,6 @@ namespace Combat.Model
             BurnedCardsDeck = burnedCardsDeck ?? new List<ICard>();
             MaxResearchPoints = maxResearchPoints;
             RemainingResearchPoints = remainingResearchPoints;
-            MaxActionPoints = maxActionPoints;
-            RemainingActionPoints = remainingActionPoints;
             Draws = draws;
             MaxHandSize = maxHandSize;
         }
@@ -93,7 +86,6 @@ namespace Combat.Model
         private static BattleState GetWithNewRoundStarted(BattleState currentState)
         {
             BattleStateBuilder builder = new BattleStateBuilder(currentState);
-            builder.RemainingActionpoints = builder.MaxActionPoints;
             int effectiveDraws = Mathf.Max(builder.MaxHandSize, builder.Hand.Count + builder.Draws);
             for (int i = 0; i < effectiveDraws; i++)
             {

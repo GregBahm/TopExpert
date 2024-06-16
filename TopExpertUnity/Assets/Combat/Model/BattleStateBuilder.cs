@@ -18,9 +18,6 @@ namespace Combat.Model
         public int MaxResearchPoints { get; set; }
         public int RemainingResearchPoints { get; set; }
 
-        public int MaxActionPoints { get; set; }
-        public int RemainingActionpoints { get; set; }
-
         public int Draws { get; set; }
         public int MaxHandSize { get; set; }
 
@@ -41,8 +38,6 @@ namespace Combat.Model
 
             MaxResearchPoints = state.MaxResearchPoints;
             RemainingResearchPoints = state.RemainingResearchPoints;
-            MaxActionPoints = state.MaxActionPoints;
-            RemainingActionpoints = state.RemainingActionPoints;
             Draws = state.Draws;
             MaxHandSize = state.MaxHandSize;
         }
@@ -58,8 +53,6 @@ namespace Combat.Model
                 BurnedCardsDeck,
                 MaxResearchPoints,
                 RemainingResearchPoints,
-                MaxActionPoints,
-                RemainingActionpoints,
                 Draws,
                 MaxHandSize);
         }

@@ -29,7 +29,6 @@ namespace Combat.Behaviors
         private Encounter GetTestEncounter()
         {
             BattleStateBuilder builder = new BattleStateBuilder();
-            builder.MaxActionPoints = 4;
             builder.MaxHandSize = 7;
 
             EntityStateBuilder investigators = new EntityStateBuilder();
@@ -54,15 +53,7 @@ namespace Combat.Behaviors
         {
             for (int i = 0; i < 10; i++)
             {
-                yield return new BasicDefense();
-            }
-            for (int i = 0; i < 10; i++)
-            {
-                yield return new BasicAttack();
-            }
-            for (int i = 0; i < 10; i++)
-            {
-                yield return new BasicResearch();
+                yield return new CarefulResearch();
             }
         }
     }

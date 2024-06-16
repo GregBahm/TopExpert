@@ -94,7 +94,6 @@ namespace Combat.Behaviors
             currentTransitionTime += Time.deltaTime;
             UpdateState();
             UpdatePosition();
-            UpdatePlayabilityIndicator();
         }
 
         private void UpdateState()
@@ -122,46 +121,6 @@ namespace Combat.Behaviors
             }
         }
 
-        private void UpdatePlayabilityIndicator()
-        {
-            UpdatePlayabilityIndicatorTargets();
-            ApplyPlayabilityIndicatorTargets();
-        }
-
-        private void ApplyPlayabilityIndicatorTargets()
-        {
-            playabilityIndicator.offsetMin = new Vector2(-playabilityIndicatorMargin, -playabilityIndicatorMargin);
-            playabilityIndicator.offsetMax = new Vector2(playabilityIndicatorMargin, playabilityIndicatorMargin);
-            playabilityIndicatorImage.color = playabilityIndicatorColor;
-        }
-
-        private void UpdatePlayabilityIndicatorTargets()
-        {
-            float marginTarget = 0;
-            Color colorTarget = cannotPlayCardColor;
-            if (GetIsHeldOverDropZone())
-            {
-                CardPlayability playability = InterfaceManager.Instance.GetCardPlayability(Model);
-                if (playability.IsPlayable)
-                {
-                    marginTarget = playabilityIndicatorMarginMax;
-                    colorTarget = canPlayCardColor;
-                }
-                else
-                {
-                    marginTarget = playabilityIndicatorMarginMax;
-                }
-            }
-            playabilityIndicatorMargin = Mathf.Lerp(playabilityIndicatorMargin, marginTarget, Time.deltaTime * 25);
-            playabilityIndicatorColor = Color.Lerp(playabilityIndicatorColor, colorTarget, Time.deltaTime * 25);
-        }
-
-        private bool GetIsHeldOverDropZone()
-        {
-            if (!IsSelected) return false;
-            return InterfaceManager.Instance.GetIfCardIsOverDropZone();
-        }
-
         private Vector3 outroStartPosition;
         private float outroStartScale; 
 
@@ -182,12 +141,10 @@ namespace Combat.Behaviors
             if (State == CardVisualState.InHand
                 || State == CardVisualState.ApplyingEffect)
             {
-                Vector3 targetPosition = GetTargetPosition();
                 float positionSmoothing = IsSelected ? 1.0f : Time.deltaTime * 25;
-                transform.position = Vector3.Lerp(transform.position, targetPosition, positionSmoothing);
+                transform.position = Vector3.Lerp(transform.position, HandRestPosition, positionSmoothing);
 
-                Quaternion targetRotation = GetTargetRotation();
-                transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, Time.deltaTime * 25);
+                transform.localRotation = Quaternion.Lerp(transform.localRotation, HandRestRotation, Time.deltaTime * 25);
 
                 float scaleTarget = GetInHandScaleTarget();
                 float scale = Mathf.Lerp(transform.localScale.x, scaleTarget, Time.deltaTime * 25);
@@ -204,25 +161,6 @@ namespace Combat.Behaviors
 
             float scale = Mathf.Lerp(introScale, outroScale, rampedParam);
             transform.localScale = new Vector3(scale, scale, scale);
-        }
-
-        private Vector3 GetTargetPosition()
-        {
-            if (IsSelected)
-            {
-                Vector3 delta = Input.mousePosition - mouseDragStartPos;
-                return cardDragStartPos + delta;
-            }
-            if (State == CardVisualState.InHand)
-                return IsHovered ? HandHoverdPosition : HandRestPosition;
-            return InterfaceManager.Instance.EffectApplyingPosition;
-        }
-
-        private Quaternion GetTargetRotation()
-        {
-            if (State == CardVisualState.InHand && !IsHovered)
-                return HandRestRotation;
-            return Quaternion.identity;
         }
 
         private float GetInHandScaleTarget()
