@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UIElements;
 using static UnityEditor.ObjectChangeEventStream;
 using static UnityEditor.Progress;
 
@@ -51,9 +52,10 @@ namespace Combat.Behaviors
 
         private IEnumerable<ICard> GetTestDeck()
         {
-            for (int i = 0; i < 10; i++)
+            IEnumerable<Type> cardTypes = CardVisualBindings.Instance.GetAllCardTypes();
+            foreach (Type cardType in cardTypes)
             {
-                yield return new CarefulResearch();
+                yield return (ICard)Activator.CreateInstance(cardType);
             }
         }
     }

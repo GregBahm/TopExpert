@@ -52,6 +52,7 @@ namespace Combat.Behaviors
 
         private void Update()
         {
+            UpdateHoveredCard();
         }
 
 
