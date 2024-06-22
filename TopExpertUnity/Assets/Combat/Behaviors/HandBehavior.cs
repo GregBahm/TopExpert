@@ -20,7 +20,6 @@ namespace Combat.Behaviors
         private List<CardBehavior> cards;
 
         public CardBehavior HoveredCard { get; set; }
-        public CardBehavior SelectedCard { get; set; }
 
         private void Start()
         {
@@ -58,11 +57,11 @@ namespace Combat.Behaviors
                 {
                     if (i > hoveredIndex)
                     {
-                        SetHandPositionForCard(cards[i], i + 1, cards.Count);
+                        SetHandPositionForCard(cards[i], i + .5f, cards.Count);
                     }
                     else if (i < hoveredIndex)
                     {
-                        SetHandPositionForCard(cards[i], i - 1, cards.Count);
+                        SetHandPositionForCard(cards[i], i - .5f, cards.Count);
                     }
                     else
                     {
@@ -81,10 +80,10 @@ namespace Combat.Behaviors
             return new Vector3(offset, 0, 0);
         }
 
-        private void SetHandPositionForCard(CardBehavior cardBehavior, int i, int count)
+        private void SetHandPositionForCard(CardBehavior cardBehavior, float i, int count)
         {
             Vector3 basePos = GetBasePosition(i, count);
-            cardBehavior.HandHoverdPosition = basePos + transform.position + new Vector3(0, 200, 0);
+            cardBehavior.HandHoverdPosition = basePos + transform.position + new Vector3(0, 100, 0);
             Vector3 toHandCenter = (handCircleCenter.position - (basePos + transform.position)).normalized;
             Quaternion angle = Quaternion.FromToRotation(Vector3.up, -toHandCenter);
             toHandCenter *= -handCircleCenter.localPosition.y;

@@ -2,6 +2,7 @@ using Combat.Model;
 using System;
 using System.Data;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -61,26 +62,20 @@ namespace Combat.Behaviors
             }
         }
 
-        private static Vector3 mouseDragStartPos;
-        private static Vector3 cardDragStartPos;
-
         private float playabilityIndicatorMargin;
         private Color playabilityIndicatorColor;
-
-        public static void StartDrag(CardBehavior hoveredCard)
-        {
-            mouseDragStartPos = Input.mousePosition;
-            cardDragStartPos = hoveredCard.transform.position;
-        }
 
         public bool IsHovered
         {
             get { return hand.HoveredCard == this; }
         }
 
-        public bool IsSelected
+        public bool IsPressed
         {
-            get { return hand.SelectedCard == this; }
+            get
+            {
+                return IsHovered && Input.GetMouseButton(0);
+            }
         }
 
         private void Start()
@@ -94,6 +89,7 @@ namespace Combat.Behaviors
             currentTransitionTime += Time.deltaTime;
             UpdateState();
             UpdatePosition();
+            playabilityIndicatorImage.color = IsPressed ? Color.green : Color.gray;
         }
 
         private void UpdateState()
@@ -141,10 +137,11 @@ namespace Combat.Behaviors
             if (State == CardVisualState.InHand
                 || State == CardVisualState.ApplyingEffect)
             {
-                float positionSmoothing = IsSelected ? 1.0f : Time.deltaTime * 25;
-                transform.position = Vector3.Lerp(transform.position, HandRestPosition, positionSmoothing);
+                Vector3 targetPosition = GetTargetPosition();
+                transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * 25);
 
-                transform.localRotation = Quaternion.Lerp(transform.localRotation, HandRestRotation, Time.deltaTime * 25);
+                Quaternion targetRotation = GetTargetRotation();
+                transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, Time.deltaTime * 25);
 
                 float scaleTarget = GetInHandScaleTarget();
                 float scale = Mathf.Lerp(transform.localScale.x, scaleTarget, Time.deltaTime * 25);
@@ -163,15 +160,25 @@ namespace Combat.Behaviors
             transform.localScale = new Vector3(scale, scale, scale);
         }
 
+        private Vector3 GetTargetPosition()
+        {
+            return IsHovered ? HandHoverdPosition : HandRestPosition;
+        }
+
+        private Quaternion GetTargetRotation()
+        {
+            return IsHovered ? Quaternion.identity : HandRestRotation;
+        }
+
         private float GetInHandScaleTarget()
         {
             if (State == CardVisualState.ApplyingEffect)
-                return 1f;
-            if (IsSelected)
-                return 1.45f;
+                return .5f;
+            if (IsPressed)
+                return .9f;
             if (IsHovered)
-                return 1.5f;
-            return 1;
+                return 1f;
+            return .5f;
         }
 
         public void Initialize(HandBehavior hand, ICard model, float drawDelay = 0)
@@ -187,7 +194,7 @@ namespace Combat.Behaviors
         public void PlayCard()
         {
             EncounterManager.Instance.Encounter.PlayCard(Model);
-            hand.RemoveCard(hand.SelectedCard);
+            hand.RemoveCard(this);
             State = CardVisualState.ApplyingEffect;
         }
 

@@ -52,6 +52,8 @@ namespace Combat.Behaviors
 
         private void Update()
         {
+            pointerData.position = Input.mousePosition;
+            EventSystem.current.RaycastAll(pointerData, hoveredElements);
             UpdateHoveredCard();
         }
 
@@ -69,6 +71,10 @@ namespace Combat.Behaviors
                 CardBehavior card = hoveredElements[0].gameObject.GetComponent<CardBehavior>();
                 if (card != null && card.State == CardVisualState.InHand)
                     hand.HoveredCard = card;
+            }
+            else
+            {
+                hand.HoveredCard = null;
             }
         }
 
