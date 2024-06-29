@@ -1,8 +1,5 @@
 using Combat.Model;
-using System;
-using System.Data;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -49,12 +46,12 @@ namespace Combat.Behaviors
         public Quaternion HandRestRotation { get; set; }
 
         private CardVisualState state;
-        public CardVisualState State 
-        { 
-            get => state; 
+        public CardVisualState State
+        {
+            get => state;
             set
             {
-                if(value != state)
+                if (value != state)
                 {
                     state = value;
                     currentTransitionTime = 0;
@@ -70,6 +67,7 @@ namespace Combat.Behaviors
             get { return hand.HoveredCard == this; }
         }
 
+        private bool wasPressed;
         public bool IsPressed
         {
             get
@@ -89,7 +87,38 @@ namespace Combat.Behaviors
             currentTransitionTime += Time.deltaTime;
             UpdateState();
             UpdatePosition();
-            playabilityIndicatorImage.color = IsPressed ? Color.green : Color.gray;
+            UpdatePlayabilityIndicator();
+            UpdateIsPlayed();
+            wasPressed = IsPressed;
+        }
+
+        private void UpdatePlayabilityIndicator()
+        {
+            playabilityIndicatorImage.color = GetPlayabilityIndicatorColor();
+        }
+
+        private Color GetPlayabilityIndicatorColor()
+        {
+            if (IsHovered)
+            {
+                CardPlayability playability = Model.GetPlayability(EncounterManager.Instance.Encounter.CurrentState);
+                if (!playability.IsPlayable)
+                    return Color.gray;
+                if (IsPressed)
+                {
+                    return Color.yellow;
+                }
+                return Color.green;
+            }
+            return Color.gray;
+        }
+
+        private void UpdateIsPlayed()
+        {
+            if (wasPressed && IsHovered && Input.GetMouseButtonUp(0))
+            {
+                PlayCard();
+            }
         }
 
         private void UpdateState()
@@ -118,7 +147,7 @@ namespace Combat.Behaviors
         }
 
         private Vector3 outroStartPosition;
-        private float outroStartScale; 
+        private float outroStartScale;
 
         private void UpdatePosition()
         {
@@ -128,7 +157,7 @@ namespace Combat.Behaviors
                 Vector3 drawPosition = InterfaceManager.Instance.DrawPosition;
                 EnterOrExitCard(drawPosition, HandRestPosition, .5f, 1, 2, boost);
             }
-            if(State == CardVisualState.Discarding)
+            if (State == CardVisualState.Discarding)
             {
                 float boost = Screen.height * .25f;
                 Vector3 discardPosition = InterfaceManager.Instance.DiscardPosition;
@@ -162,18 +191,22 @@ namespace Combat.Behaviors
 
         private Vector3 GetTargetPosition()
         {
+            if (State == CardVisualState.ApplyingEffect)
+            {
+                return HandHoverdPosition + new Vector3(0, 50, 0);
+            }
             return IsHovered ? HandHoverdPosition : HandRestPosition;
         }
 
         private Quaternion GetTargetRotation()
         {
-            return IsHovered ? Quaternion.identity : HandRestRotation;
+            return (IsHovered || State == CardVisualState.ApplyingEffect) ? Quaternion.identity : HandRestRotation;
         }
 
         private float GetInHandScaleTarget()
         {
             if (State == CardVisualState.ApplyingEffect)
-                return .5f;
+                return 1.1f;
             if (IsPressed)
                 return .9f;
             if (IsHovered)
