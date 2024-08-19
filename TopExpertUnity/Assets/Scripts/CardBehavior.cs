@@ -1,15 +1,17 @@
-using Combat.Model;
+using Encounter.Model;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Combat.Behaviors
+namespace Encounter.Behaviors
 {
     public class CardBehavior : MonoBehaviour
     {
         private HandBehavior hand;
+        private CardVisuals cardVisuals;
 
-        public ICard Model { get; private set; }
+        public PlayerCard Model { get; private set; }
 
         [SerializeField]
         private TextMeshProUGUI label;
@@ -83,7 +85,7 @@ namespace Combat.Behaviors
 
         private void Update()
         {
-            gameObject.name = Model.Name + " [" + State.ToString() + "]";
+            gameObject.name = cardVisuals.Name + " [" + State.ToString() + "]";
             currentTransitionTime += Time.deltaTime;
             UpdateState();
             UpdatePosition();
@@ -101,8 +103,8 @@ namespace Combat.Behaviors
         {
             if (IsHovered)
             {
-                CardPlayability playability = Model.GetPlayability(EncounterManager.Instance.Encounter.CurrentState);
-                if (!playability.IsPlayable)
+                bool playability = Model.CanPlay(EncounterManager.Instance.Encounter.CurrentState);
+                if (!playability)
                     return Color.gray;
                 if (IsPressed)
                 {
@@ -137,8 +139,7 @@ namespace Combat.Behaviors
                     return;
                 }
                 if (State == CardVisualState.Discarding
-                    || State == CardVisualState.Exhausts
-                    || State == CardVisualState.Consuming)
+                    || State == CardVisualState.Dissolve)
                 {
                     Destroy(this.gameObject);
                     return;
@@ -214,14 +215,15 @@ namespace Combat.Behaviors
             return .5f;
         }
 
-        public void Initialize(HandBehavior hand, ICard model, float drawDelay = 0)
+        public void Initialize(HandBehavior hand, PlayerCard model, float drawDelay = 0)
         {
             this.hand = hand;
             Model = model;
             State = CardVisualState.Drawing;
             currentTransitionTime = -drawDelay;
-            label.text = model.Name;
-            cardArt.sprite = CardVisualBindings.Instance.GetVisualFor(model);
+            cardVisuals = CardVisualBindings.Instance.GetVisualsFor(model);
+            label.text = cardVisuals.Name;
+            cardArt.sprite = cardVisuals.Image;
         }
 
         public void PlayCard()
@@ -240,10 +242,8 @@ namespace Combat.Behaviors
 
         private CardVisualState GetStateAfterEffect()
         {
-            if (Model.Exhausts)
-                return CardVisualState.Exhausts;
-            if (Model.Consumeable)
-                return CardVisualState.Consuming;
+            if (Model.DissolvesOnPlay)
+                return CardVisualState.Dissolve;
             return CardVisualState.Discarding;
         }
     }

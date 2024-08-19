@@ -1,4 +1,4 @@
-﻿namespace Combat.Behaviors
+﻿namespace Encounter.Behaviors
 {
     public enum CardVisualState
     {
@@ -6,7 +6,6 @@
         Drawing,            // The card is being drawn from the deck
         ApplyingEffect,     // The card has been applied, and is playing its effect
         Discarding,         // The card is going to the discard pile
-        Consuming,          // The card is going to the consume pile
-        Exhausts,           // The card (probably a token) is being removed from the game
+        Dissolve,          // The card is going to the dissolve pile
     }
 }

@@ -1,15 +1,9 @@
-using Combat.Model;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor.Search;
-using UnityEngine;
-using UnityEngine.XR;
 
-namespace NewModel
+namespace Encounter.Model
 {
-    public class EncounterState
+    public record EncounterState
     {
         public EncounterStatus Status { get; }
 
@@ -38,51 +32,6 @@ namespace NewModel
         public IReadOnlyList<DraftOption> DraftDeck { get; }
         public IReadOnlyList<DraftOption> DraftOptions { get; }
         public int AvailableDrafts { get; }
-
-        public EncounterState(
-            EncounterStatus status,
-            int insights, 
-            int actions,
-            int actionsPerTurn,
-            int advantage, 
-            int advantageToWin, 
-            int advantageToLose,
-            EncounterPhase phase,
-            int dangerPhaseInsightsCost,
-            IReadOnlyList<PersistantEffector> unappliedEffectors,
-            IReadOnlyList<PersistantEffector> appliedEffectors,
-            IReadOnlyList<PlayerCard> hand, 
-            IReadOnlyList<PlayerCard> drawDeck, 
-            IReadOnlyList<PlayerCard> discardDeck, 
-            IReadOnlyList<PlayerCard> dissolvedCardsDeck,
-            int draws, 
-            int maxHandSize,
-            IReadOnlyList<DraftOption> draftDeck,
-            IReadOnlyList<DraftOption> draftOptions,
-            int availableDrafts
-            )
-        {
-            Status = status;
-            Insights = insights;
-            Actions = actions;
-            ActionsPerTurn = actionsPerTurn;
-            Advantage = advantage;
-            AdvantageToWin = advantageToWin;
-            AdvantageToLose = advantageToLose;
-            Phase = phase;
-            DangerPhaseInsightsCost = dangerPhaseInsightsCost;
-            UnappliedEffectors = unappliedEffectors;
-            AppliedEffectors = appliedEffectors;
-            Hand = hand;
-            DrawDeck = drawDeck;
-            DiscardDeck = discardDeck;
-            DissolvedCardsDeck = dissolvedCardsDeck;
-            Draws = draws;
-            MaxHandSize = maxHandSize;
-            DraftDeck = draftDeck;
-            DraftOptions = draftOptions;
-            AvailableDrafts = availableDrafts;
-        }
     }
 
     public class EncounterStateBuilder
@@ -380,11 +329,13 @@ namespace NewModel
     }
     public class NewPlanCard : StandardPlayerCard
     {
-        public override int ActionCost => throw new NotImplementedException();
+        public override int ActionCost => 2;
 
         protected override void ModifyState(EncounterStateBuilder builder)
         {
-            throw new NotImplementedException();
+            int handSize = builder.Hand.Count;
+            // Discard the hand and redraw as many cards
+            // Move the discarding logic to the encounter state builder 
         }
     }
 }

@@ -1,8 +1,7 @@
-﻿using NewModel;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Combat.Model
+namespace Encounter.Model
 {
     public class Encounter
     {

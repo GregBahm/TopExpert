@@ -1,4 +1,4 @@
-using Combat.Model;
+using Encounter.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Combat.Behaviors
+namespace Encounter.Behaviors
 {
     [RequireComponent(typeof(EncounterManager))]
     public class InterfaceManager : MonoBehaviour
@@ -45,7 +45,7 @@ namespace Combat.Behaviors
             core = GetComponent<EncounterManager>();
             for (int i = 0; i < core.Encounter.CurrentState.Hand.Count; i++)
             {
-                ICard card = core.Encounter.CurrentState.Hand[i];
+                PlayerCard card = core.Encounter.CurrentState.Hand[i];
                 CreateCardUi(card, i * .05f);
             }
         }
@@ -58,10 +58,10 @@ namespace Combat.Behaviors
         }
 
 
-        public CardPlayability GetCardPlayability(ICard card)
+        public bool GetCardPlayability(PlayerCard card)
         {
-            BattleState state = core.Encounter.CurrentState;
-            return card.GetPlayability(state);
+            EncounterState state = core.Encounter.CurrentState;
+            return card.CanPlay(state);
         }
 
         private void UpdateHoveredCard()
@@ -78,7 +78,7 @@ namespace Combat.Behaviors
             }
         }
 
-        private void CreateCardUi(ICard card, float drawDelay = 0)
+        private void CreateCardUi(PlayerCard card, float drawDelay = 0)
         {
             GameObject cardObj = Instantiate(cardPrefab);
             CardBehavior behavior = cardObj.GetComponent<CardBehavior>();

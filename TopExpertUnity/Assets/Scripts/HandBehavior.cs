@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Combat.Behaviors
+namespace Encounter.Behaviors
 {
     public class HandBehavior : MonoBehaviour
     {
