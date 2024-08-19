@@ -18,12 +18,22 @@ namespace Encounter.Behaviors
         private void Start()
         {
             Encounter = GetTestEncounter();
+            Encounter.EndRound();
         }
 
         private Model.Encounter GetTestEncounter()
         {
             List<PlayerCard> drawDeck = new List<PlayerCard>()
             {
+                new CarefulResearchCard(),
+                new CarefulResearchCard(),
+                new CarefulResearchCard(),
+                new OverthinkerCard(),
+                new OverthinkerCard(),
+                new OverthinkerCard(),
+                new HyperfocusCard(),
+                new InvestigateCard(),
+                new NewPlanCard()
             };
             List<PersistantEffector> baseEffectors = new List<PersistantEffector>()
             {

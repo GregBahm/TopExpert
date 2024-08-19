@@ -250,6 +250,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612f1555f9945bc488779957050fd5e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CarefulResearchCard:
+    Name: Careful Research
+    Image: {fileID: 0}
+  OverthinkerCard:
+    Name: Overthinker
+    Image: {fileID: 0}
+  HyperfocusCard:
+    Name: Hyperfocus
+    Image: {fileID: 0}
+  InvestigateCard:
+    Name: Investigate
+    Image: {fileID: 0}
+  NewPlanCard:
+    Name: New Plan
+    Image: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

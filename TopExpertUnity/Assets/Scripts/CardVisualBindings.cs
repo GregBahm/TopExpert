@@ -8,34 +8,16 @@ namespace Encounter.Behaviors
 {
     public class CardVisualBindings : MonoBehaviour
     {
-        //[SerializeField]
-        //private Sprite CarefulResearch;
-        //[SerializeField]
-        //private Sprite CloserLook;
-        //[SerializeField]
-        //private Sprite Compartmentalize;
-        //[SerializeField]
-        //private Sprite Concentrate;
-        //[SerializeField]
-        //private Sprite Consideration;
-        //[SerializeField]
-        //private Sprite FigureItOut;
-        //[SerializeField]
-        //private Sprite HumanTestSubject;
-        //[SerializeField]
-        //private Sprite KeepInMind;
-        //[SerializeField]
-        //private Sprite Lookout;
-        //[SerializeField]
-        //private Sprite Overthink;
-        //[SerializeField]
-        //private Sprite Precaution;
-        //[SerializeField]
-        //private Sprite SimplePlan;
-        //[SerializeField]
-        //private Sprite ThinkFast;
-        //[SerializeField]
-        //private Sprite Violence;
+        [SerializeField]
+        private CardVisuals CarefulResearchCard;
+        [SerializeField]
+        private CardVisuals OverthinkerCard;
+        [SerializeField]
+        private CardVisuals HyperfocusCard;
+        [SerializeField]
+        private CardVisuals InvestigateCard;
+        [SerializeField]
+        private CardVisuals NewPlanCard;
 
         private Dictionary<Type, CardVisuals> bindings;
 
@@ -46,20 +28,11 @@ namespace Encounter.Behaviors
             Instance = this;
             bindings = new Dictionary<Type, CardVisuals>
             {
-                //{ typeof(CarefulResearch), CarefulResearch },
-                //{ typeof(CloserLook), CloserLook },
-                //{ typeof(Compartmentalize), Compartmentalize },
-                //{ typeof(Concentrate), Concentrate },
-                //{ typeof(Consideration), Consideration },
-                //{ typeof(FigureItOut), FigureItOut },
-                //{ typeof(HumanTestSubject), HumanTestSubject },
-                //{ typeof(KeepInMind), KeepInMind },
-                //{ typeof(Lookout), Lookout },
-                //{ typeof(Overthink), Overthink },
-                //{ typeof(Precaution), Precaution },
-                //{ typeof(SimplePlan), SimplePlan },
-                //{ typeof(ThinkFast), ThinkFast },
-                //{ typeof(Violence), Violence },
+                { typeof(CarefulResearchCard), CarefulResearchCard },
+                { typeof(OverthinkerCard), OverthinkerCard },
+                { typeof(HyperfocusCard), HyperfocusCard },
+                { typeof(InvestigateCard), InvestigateCard },
+                { typeof(NewPlanCard), NewPlanCard },
             };
         }
 
