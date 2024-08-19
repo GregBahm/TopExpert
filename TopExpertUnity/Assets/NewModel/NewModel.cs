@@ -1,118 +1,95 @@
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 
 namespace Encounter.Model
 {
     public record EncounterState
     {
-        public EncounterStatus Status { get; }
+        public EncounterStatus Status { get; init; }
 
-        public int Insights { get; }
-        public int Actions { get; }
-        public int ActionsPerTurn { get; }
-        public int Advantage { get; }
-        public int AdvantageToWin { get; }
-        public int AdvantageToLose { get; }
+        public int Insights { get; init; }
+        public int Actions { get; init; }
+        public int ActionsPerTurn { get; init; }
+        public int Advantage { get; init; }
+        public int AdvantageToWin { get; init; }
+        public int AdvantageToLose { get; init; }
 
-        public EncounterPhase Phase { get; }
+        public EncounterPhase Phase { get; init; }
 
-        public int DangerPhaseInsightsCost { get; }
+        public int DangerPhaseInsightsCost { get; init; }
 
-        public IReadOnlyList<PersistantEffector> UnappliedEffectors { get; }
-        public IReadOnlyList<PersistantEffector> AppliedEffectors { get; }
+        public IReadOnlyList<PersistantEffector> UnappliedEffectors { get; init; }
+        public IReadOnlyList<PersistantEffector> AppliedEffectors { get; init; }
 
-        public IReadOnlyList<PlayerCard> Hand { get; }
-        public IReadOnlyList<PlayerCard> DrawDeck { get; }
-        public IReadOnlyList<PlayerCard> DiscardDeck { get; }
-        public IReadOnlyList<PlayerCard> DissolvedCardsDeck { get; }
+        public IReadOnlyList<PlayerCard> Hand { get; init; }
+        public IReadOnlyList<PlayerCard> DrawDeck { get; init; }
+        public IReadOnlyList<PlayerCard> DiscardDeck { get; init; }
+        public IReadOnlyList<PlayerCard> DissolvedCardsDeck { get; init; }
 
-        public int Draws { get; }
-        public int MaxHandSize { get; }
+        public int Draws { get; init; }
+        public int MaxHandSize { get; init; }
 
-        public IReadOnlyList<DraftOption> DraftDeck { get; }
-        public IReadOnlyList<DraftOption> DraftOptions { get; }
-        public int AvailableDrafts { get; }
-    }
+        public IReadOnlyList<DraftOption> DraftDeck { get; init; }
+        public IReadOnlyList<DraftOption> DraftOptions { get; init; }
+        public int AvailableDrafts { get; init; }
 
-    public class EncounterStateBuilder
-    {
-        public EncounterStatus Status { get; set; }
-
-        public int Insights { get; set; }
-        public int Actions { get; set; }
-        public int ActionsPerTurn { get; set; }
-        public int Advantage { get; set; }
-        public int AdvantageToWin { get; set; }
-        public int AdvantageToLose { get; set; }
-
-        public EncounterPhase Phase { get; set; }
-
-        public int DangerPhaseInsightsCost { get; set; }
-
-        public List<PersistantEffector> UnappliedEffectors { get; set; }
-        public List<PersistantEffector> AppliedEffectors { get; set; }
-
-        public List<PlayerCard> Hand { get; set; }
-        public List<PlayerCard> DrawDeck { get; set; }
-        public List<PlayerCard> DiscardDeck { get; set; }
-        public List<PlayerCard> DissolvedCardsDeck { get; set; }
-
-        public int Draws { get; set; }
-        public int MaxHandSize { get; set; }
-
-        public List<DraftOption> DraftDeck { get; set; }
-        public List<DraftOption> DraftOptions { get; set; }
-        public int AvailableDrafts { get; set; }
-
-        public EncounterStateBuilder(EncounterState state)
+        public EncounterState GetWithDraw()
         {
-            Status = state.Status;
-            Insights = state.Insights;
-            Actions = state.Actions;
-            ActionsPerTurn = state.ActionsPerTurn;
-            Advantage = state.Advantage;
-            AdvantageToWin = state.AdvantageToWin;
-            AdvantageToLose = state.AdvantageToLose;
-            Phase = state.Phase;
-            DangerPhaseInsightsCost = state.DangerPhaseInsightsCost;
-            UnappliedEffectors = state.UnappliedEffectors.ToList();
-            AppliedEffectors = state.AppliedEffectors.ToList();
-            DrawDeck = state.DrawDeck.ToList();
-            DiscardDeck = state.DiscardDeck.ToList();
-            DissolvedCardsDeck = state.DissolvedCardsDeck.ToList();
-            Draws = state.Draws;
-            MaxHandSize = state.MaxHandSize;
-            DraftDeck = state.DraftDeck.ToList();
-            DraftOptions = state.DraftOptions.ToList();
-            AvailableDrafts = state.AvailableDrafts;
+            EncounterState state = this;
+            if (DrawDeck.Any())
+            {
+                List<PlayerCard> newDrawDeck = DrawDeck.ToList();
+                PlayerCard card = newDrawDeck.Last();
+                newDrawDeck.RemoveAt(DrawDeck.Count - 1);
+
+                List<PlayerCard> newHand = Hand.ToList();
+                newHand.Add(card);
+
+                state = state with { Hand = newHand, DrawDeck = newDrawDeck };
+            }
+            else
+            {
+                if (DiscardDeck.Any())
+                {
+                    state = ShuffleDiscardsIntoDraw();
+                    state = GetWithDraw();
+                }
+            }
+            return state;
         }
-        public EncounterState ToState()
+
+        private EncounterState ShuffleDiscardsIntoDraw()
         {
-            return new EncounterState(
-                Status,
-                Insights,
-                Actions,
-                ActionsPerTurn,
-                Advantage,
-                AdvantageToWin,
-                AdvantageToLose,
-                Phase,
-                DangerPhaseInsightsCost,
-                UnappliedEffectors.ToList(),
-                AppliedEffectors.ToList(),
-                Hand.ToList(),
-                DrawDeck.ToList(),
-                DiscardDeck.ToList(),
-                DissolvedCardsDeck.ToList(),
-                Draws,
-                MaxHandSize,
-                DraftDeck.ToList(),
-                DraftOptions.ToList(),
-                AvailableDrafts
-                );
+            List<PlayerCard> oldDiscardDeck = DiscardDeck.ToList();
+            List<PlayerCard> newDrawDeck = new List<PlayerCard>();
+
+            for (int i = 0; i < oldDiscardDeck.Count; i++)
+            {
+                int nextCard = UnityEngine.Random.Range(0, oldDiscardDeck.Count - 1);
+                PlayerCard card = oldDiscardDeck[nextCard];
+                oldDiscardDeck.RemoveAt(nextCard);
+                newDrawDeck.Add(card);
+            }
+
+            return this with { DiscardDeck = new List<PlayerCard>(), DrawDeck = newDrawDeck };
+        }
+
+        public EncounterState GetWithCardDiscarded(PlayerCard card)
+        {
+            List<PlayerCard> hand = Hand.ToList();
+            List<PlayerCard> dissolveDeck = DissolvedCardsDeck.ToList();
+            List<PlayerCard> discardDeck = DiscardDeck.ToList();
+
+            hand.Remove(card);
+            if (card.DissolvesIfNotPlayed)
+                dissolveDeck.Add(card);
+            else
+                discardDeck.Add(card);
+
+            return this with { Hand = hand, DissolvedCardsDeck = dissolveDeck, DiscardDeck = discardDeck };
         }
     }
-
     public interface IStateModifier { }
 
     public abstract class PlayerCard : IStateModifier
@@ -129,13 +106,17 @@ namespace Encounter.Model
     {
         public EncounterState GetModifiedState(EncounterState state)
         {
-            EncounterStateBuilder builder = new EncounterStateBuilder(state);
-            builder.UnappliedEffectors.Remove(this);
-            ModifyState(builder);
-            return builder.ToState();
+            List<PersistantEffector> unappliedEffectors = state.UnappliedEffectors.ToList();
+            unappliedEffectors.Remove(this);
+            state = state with { UnappliedEffectors = unappliedEffectors };
+
+            List<PersistantEffector> appliedEffectors = state.AppliedEffectors.ToList();
+            appliedEffectors.Add(this);
+            state = state with { AppliedEffectors= appliedEffectors };
+            return ModifyState(state);
         }
 
-        protected abstract void ModifyState(EncounterStateBuilder builder);
+        protected abstract EncounterState ModifyState(EncounterState builder);
     }
 
     public enum EncounterStatus
@@ -153,65 +134,44 @@ namespace Encounter.Model
 
     public class RestoreEnergy : PersistantEffector
     {
-        protected override void ModifyState(EncounterStateBuilder builder)
+        protected override EncounterState ModifyState(EncounterState state)
         {
-            builder.Actions = builder.ActionsPerTurn;
-            builder.AppliedEffectors.Add(this);
+            return state with { Actions = state.ActionsPerTurn };
         }
     }
 
     public class DrawHand : PersistantEffector
     {
-        protected override void ModifyState(EncounterStateBuilder builder)
+        protected override EncounterState ModifyState(EncounterState state)
         {
-            List<PlayerCard> hand = builder.Hand.ToList();
-            builder.Hand = hand.Where(item => item.Persists).ToList();
-            foreach (PlayerCard card in hand)
+
+            List<PlayerCard> oldHand = state.Hand.ToList();
+            List<PlayerCard> dissolvedCards = state.DissolvedCardsDeck.ToList();
+            List<PlayerCard> discardedCards = state.DiscardDeck.ToList();
+
+            List<PlayerCard> newHand = new List<PlayerCard>();
+
+            foreach (PlayerCard card in oldHand)
             {
-                if(card.DissolvesIfNotPlayed)
+                if (card.Persists)
                 {
-                    builder.DissolvedCardsDeck.Add(card);
+                    newHand.Add(card);
+                }
+                else if (card.DissolvesIfNotPlayed)
+                {
+                    dissolvedCards.Add(card);
                 }
                 else
                 {
-                    builder.DiscardDeck.Add(card);
+                    discardedCards.Add(card);
                 }
             }
-            for (int i = 0; i < builder.Draws; i++)
+            state = state with { Hand = newHand, DissolvedCardsDeck = dissolvedCards, DiscardDeck = discardedCards };
+            for (int i = 0; i < state.Draws; i++)
             {
-                DrawCard(builder);
+                state = state.GetWithDraw();
             }
-        }
-
-        private void DrawCard(EncounterStateBuilder builder)
-        {
-            if(builder.DrawDeck.Any())
-            {
-                PlayerCard card = builder.DrawDeck.Last();
-                builder.DrawDeck.RemoveAt(builder.DrawDeck.Count - 1);
-                builder.Hand.Add(card);
-            }
-            else
-            {
-                if(builder.DiscardDeck.Any())
-                {
-                    ShuffleDiscardIntoDraw(builder);
-                    DrawCard(builder);
-                }
-            }
-        }
-
-        private void ShuffleDiscardIntoDraw(EncounterStateBuilder builder)
-        {
-            List<PlayerCard> discardDeck = builder.DiscardDeck.ToList();
-            builder.DiscardDeck.Clear();
-            for (int i = 0; i < discardDeck.Count; i++)
-            {
-                int nextCard = UnityEngine.Random.Range(0, discardDeck.Count - 1);
-                PlayerCard card = discardDeck[nextCard];
-                discardDeck.RemoveAt(nextCard);
-                builder.DrawDeck.Add(card);
-            }
+            return state;
         }
     }
 
@@ -219,10 +179,9 @@ namespace Encounter.Model
     {
         public EncounterState GetModifiedState(EncounterState state)
         {
-            EncounterStateBuilder builder = new EncounterStateBuilder(state);
-            builder.Insights -= builder.DangerPhaseInsightsCost;
-            builder.Phase = EncounterPhase.Danger;
-            return builder.ToState();
+            int newInsights = state.Insights - state.DangerPhaseInsightsCost;
+            state = state with { Insights = newInsights, Phase = EncounterPhase.Danger };
+            return state;
         }
     }
     public abstract class DraftOption : IStateModifier
@@ -230,8 +189,6 @@ namespace Encounter.Model
         public abstract bool CanDraft(EncounterState state);
         public abstract EncounterState DraftCard(EncounterState state);
     }
-
-    ////////////////////////////////////////////
 
     public abstract class StandardPlayerCard : PlayerCard
     {
@@ -244,35 +201,36 @@ namespace Encounter.Model
 
         public override EncounterState Play(EncounterState state)
         {
-            EncounterStateBuilder builder = new EncounterStateBuilder(state);
-            MoveCardFromHand(builder);
-            ModifyState(builder);
-            return builder.ToState();
+            state = MoveCardFromHand(state);
+            state = state with { Actions = state.Actions - ActionCost };
+            state = ModifyState(state);
+            return state;
         }
 
-        private void MoveCardFromHand(EncounterStateBuilder builder)
+        private EncounterState MoveCardFromHand(EncounterState state)
         {
-            builder.Hand.Remove(this);
+            List<PlayerCard> hand = state.Hand.ToList();
+            List<PlayerCard> dissolveDeck = state.DissolvedCardsDeck.ToList();
+            List<PlayerCard> discardDeck = state.DiscardDeck.ToList();
+            hand.Remove(this);
             if (DissolvesOnPlay)
-            {
-                builder.DissolvedCardsDeck.Add(this);
-            }
+                dissolveDeck.Add(this);
             else
-            {
-                builder.DiscardDeck.Add(this);
-            }
+                discardDeck.Add(this);
+
+            return state with { Hand = hand, DissolvedCardsDeck = dissolveDeck, DiscardDeck = discardDeck };
         }
 
-        protected abstract void ModifyState(EncounterStateBuilder builder);
+        protected abstract EncounterState ModifyState(EncounterState builder);
     }
 
     public class CarefulResearchCard : StandardPlayerCard
     {
         public override int ActionCost => 1;
 
-        protected override void ModifyState(EncounterStateBuilder builder)
+        protected override EncounterState ModifyState(EncounterState state)
         {
-            builder.Insights += 2;
+            return state with { Insights = state.Insights + 2 };
         }
     }
 
@@ -280,19 +238,19 @@ namespace Encounter.Model
     {
         public override int ActionCost => 0;
 
-        protected override void ModifyState(EncounterStateBuilder builder)
+        protected override EncounterState ModifyState(EncounterState state)
         {
             int count = 0;
-            foreach (var card in builder.Hand
-                .Concat(builder.DrawDeck)
-                .Concat(builder.DiscardDeck))
+            foreach (var card in state.Hand
+                .Concat(state.DrawDeck)
+                .Concat(state.DiscardDeck))
             {
                 if (card.GetType() == typeof(OverthinkerCard))
                 {
                     count++;
                 }
             }
-            builder.Insights += count;
+            return state with { Insights = state.Insights + count };
         }
     }
 
@@ -301,20 +259,20 @@ namespace Encounter.Model
         public override int ActionCost => 2;
         public override bool DissolvesOnPlay => true;
 
-        protected override void ModifyState(EncounterStateBuilder builder)
+        protected override EncounterState ModifyState(EncounterState state)
         {
-            builder.Draws -= 1;
+            List<PersistantEffector> unappliedEffectors = state.UnappliedEffectors.ToList();
             HyperfocusEffector hyperfocus = new HyperfocusEffector();
-            builder.UnappliedEffectors.Add(hyperfocus);
+            unappliedEffectors.Add(hyperfocus);
+            return state with { UnappliedEffectors = unappliedEffectors, Draws = state.Draws - 1 };
         }
     }
 
     public class HyperfocusEffector : PersistantEffector
     {
-        protected override void ModifyState(EncounterStateBuilder builder)
+        protected override EncounterState ModifyState(EncounterState state)
         {
-            builder.Insights += 1;
-            builder.AppliedEffectors.Add(this);
+            return state with { Insights = state.Insights + 1 };
         }
     }
 
@@ -322,20 +280,34 @@ namespace Encounter.Model
     {
         public override int ActionCost => 1;
 
-        protected override void ModifyState(EncounterStateBuilder builder)
+        protected override EncounterState ModifyState(EncounterState state)
         {
-            builder.Insights += 1;
+            return state with { Insights = state.Insights + 1 };
         }
     }
     public class NewPlanCard : StandardPlayerCard
     {
         public override int ActionCost => 2;
 
-        protected override void ModifyState(EncounterStateBuilder builder)
+        protected override EncounterState ModifyState(EncounterState state)
         {
-            int handSize = builder.Hand.Count;
-            // Discard the hand and redraw as many cards
-            // Move the discarding logic to the encounter state builder 
+            int handSize = state.Hand.Count;
+            List<PlayerCard> hand = state.Hand.ToList();
+            foreach (var card in hand)
+            {
+                state = state.GetWithCardDiscarded(card);
+            }
+            for (int i = 0; i < handSize; i++)
+            {
+                state = state.GetWithDraw();
+            }
+            return state;
         }
     }
+}
+
+namespace System.Runtime.CompilerServices
+{
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    internal class IsExternalInit { }
 }
