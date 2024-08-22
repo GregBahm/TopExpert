@@ -17,7 +17,7 @@ namespace Encounter.Model
             appliedEffectors.Add(GetSelfAfterEffect(state));
             state = state with { AppliedEffectors= appliedEffectors };
 
-            return GetModifiedState(state);
+            return GetEffectedState(state);
         }
 
         protected virtual PersistantEffector GetSelfAfterEffect(EncounterState state)
