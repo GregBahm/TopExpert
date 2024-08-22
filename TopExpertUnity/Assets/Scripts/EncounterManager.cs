@@ -60,7 +60,7 @@ namespace Encounter.Behaviors
                 Hand = new List<PlayerCard>(),
                 DrawDeck = drawDeck,
                 DiscardDeck = new List<PlayerCard>(),
-                DissolvedCardsDeck = new List<PlayerCard>(),
+                DissolveDeck = new List<PlayerCard>(),
                 Draws = 7,
                 MaxHandSize = 10,
                 DraftDeck = DraftDeck,

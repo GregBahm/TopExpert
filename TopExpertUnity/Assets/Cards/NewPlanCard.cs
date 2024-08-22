@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Encounter.Model
 {
-    public class NewPlanCard : StandardPlayerCard
+    public record NewPlanCard : StandardPlayerCard
     {
         public override int ActionCost => 2;
 

@@ -1,8 +1,8 @@
 ﻿namespace Encounter.Model
 {
-    public class HyperfocusEffector : PersistantEffector
+    public record HyperfocusEffector : PersistantEffector
     {
-        protected override EncounterState ModifyState(EncounterState state)
+        protected override EncounterState GetEffectedState(EncounterState state)
         {
             return state with { Insights = state.Insights + 1 };
         }

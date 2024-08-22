@@ -1,12 +1,12 @@
 ﻿namespace Encounter.Model
 {
-    public record CarefulResearchCard : StandardPlayerCard
+    public record CommuneWithSpiritsCard : StandardPlayerCard
     {
         public override int ActionCost => 1;
 
         protected override EncounterState GetModifiedState(EncounterState state)
         {
-            return state with { Insights = state.Insights + 2 };
+            return state with { SpiritsPower = state.SpiritsPower + 1 };
         }
     }
 }

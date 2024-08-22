@@ -3,13 +3,13 @@ using System.Linq;
 
 namespace Encounter.Model
 {
-    public class DrawHand : PersistantEffector
+    public record DrawHand : PersistantEffector
     {
-        protected override EncounterState ModifyState(EncounterState state)
+        protected override EncounterState GetEffectedState(EncounterState state)
         {
 
             List<PlayerCard> oldHand = state.Hand.ToList();
-            List<PlayerCard> dissolvedCards = state.DissolvedCardsDeck.ToList();
+            List<PlayerCard> dissolvedCards = state.DissolveDeck.ToList();
             List<PlayerCard> discardedCards = state.DiscardDeck.ToList();
 
             List<PlayerCard> newHand = new List<PlayerCard>();
@@ -29,7 +29,7 @@ namespace Encounter.Model
                     discardedCards.Add(card);
                 }
             }
-            state = state with { Hand = newHand, DissolvedCardsDeck = dissolvedCards, DiscardDeck = discardedCards };
+            state = state with { Hand = newHand, DissolveDeck = dissolvedCards, DiscardDeck = discardedCards };
             for (int i = 0; i < state.Draws; i++)
             {
                 state = state.GetWithDraw();

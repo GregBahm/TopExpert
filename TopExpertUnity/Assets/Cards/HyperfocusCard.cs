@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Encounter.Model
 {
-    public class HyperfocusCard : StandardPlayerCard
+    public record HyperfocusCard : StandardPlayerCard
     {
         public override int ActionCost => 2;
         public override bool DissolvesOnPlay => true;

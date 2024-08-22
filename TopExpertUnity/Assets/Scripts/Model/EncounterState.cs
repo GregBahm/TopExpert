@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
+using UnityEditor.Timeline;
+using UnityEngine.UIElements.Experimental;
 
 namespace Encounter.Model
 {
@@ -24,7 +27,7 @@ namespace Encounter.Model
         public IReadOnlyList<PlayerCard> Hand { get; init; }
         public IReadOnlyList<PlayerCard> DrawDeck { get; init; }
         public IReadOnlyList<PlayerCard> DiscardDeck { get; init; }
-        public IReadOnlyList<PlayerCard> DissolvedCardsDeck { get; init; }
+        public IReadOnlyList<PlayerCard> DissolveDeck { get; init; }
 
         public int Draws { get; init; }
         public int MaxHandSize { get; init; }
@@ -32,6 +35,8 @@ namespace Encounter.Model
         public IReadOnlyList<DraftOption> DraftDeck { get; init; }
         public IReadOnlyList<DraftOption> DraftOptions { get; init; }
         public int AvailableDrafts { get; init; }
+
+        public int SpiritsPower { get; init; }
 
         public EncounterState GetWithDraw()
         {
@@ -77,7 +82,7 @@ namespace Encounter.Model
         public EncounterState GetWithCardDiscarded(PlayerCard card)
         {
             List<PlayerCard> hand = Hand.ToList();
-            List<PlayerCard> dissolveDeck = DissolvedCardsDeck.ToList();
+            List<PlayerCard> dissolveDeck = DissolveDeck.ToList();
             List<PlayerCard> discardDeck = DiscardDeck.ToList();
 
             hand.Remove(card);
@@ -86,7 +91,7 @@ namespace Encounter.Model
             else
                 discardDeck.Add(card);
 
-            return this with { Hand = hand, DissolvedCardsDeck = dissolveDeck, DiscardDeck = discardDeck };
+            return this with { Hand = hand, DissolveDeck = dissolveDeck, DiscardDeck = discardDeck };
         }
     }
 }

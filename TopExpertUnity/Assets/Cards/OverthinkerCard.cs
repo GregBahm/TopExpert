@@ -2,7 +2,7 @@
 
 namespace Encounter.Model
 {
-    public class OverthinkerCard : StandardPlayerCard
+    public record OverthinkerCard : StandardPlayerCard
     {
         public override int ActionCost => 0;
 

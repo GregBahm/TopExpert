@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Encounter.Model
 {
-    public abstract class PlayerCard : IStateModifier
+    public abstract record PlayerCard : IStateModifier
     {
         public virtual bool DissolvesOnPlay { get; }
         public virtual bool DissolvesIfNotPlayed { get; }
@@ -15,7 +15,7 @@ namespace Encounter.Model
         protected EncounterState GetWithCardMovedFromHand(EncounterState state)
         {
             List<PlayerCard> hand = state.Hand.ToList();
-            List<PlayerCard> dissolveDeck = state.DissolvedCardsDeck.ToList();
+            List<PlayerCard> dissolveDeck = state.DissolveDeck.ToList();
             List<PlayerCard> discardDeck = state.DiscardDeck.ToList();
             hand.Remove(this);
             if (DissolvesOnPlay)
@@ -23,7 +23,7 @@ namespace Encounter.Model
             else
                 discardDeck.Add(this);
 
-            return state with { Hand = hand, DissolvedCardsDeck = dissolveDeck, DiscardDeck = discardDeck };
+            return state with { Hand = hand, DissolveDeck = dissolveDeck, DiscardDeck = discardDeck };
         }
     }
 }

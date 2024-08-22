@@ -3,8 +3,10 @@ using System.Linq;
 
 namespace Encounter.Model
 {
-    public abstract class PersistantEffector : IStateModifier
+    public abstract record PersistantEffector : IStateModifier
     {
+        public virtual bool IsEnemyEffect => false;
+
         public EncounterState GetModifiedState(EncounterState state)
         {
             List<PersistantEffector> unappliedEffectors = state.UnappliedEffectors.ToList();
@@ -12,11 +14,17 @@ namespace Encounter.Model
             state = state with { UnappliedEffectors = unappliedEffectors };
 
             List<PersistantEffector> appliedEffectors = state.AppliedEffectors.ToList();
-            appliedEffectors.Add(this);
+            appliedEffectors.Add(GetSelfAfterEffect(state));
             state = state with { AppliedEffectors= appliedEffectors };
-            return ModifyState(state);
+
+            return GetModifiedState(state);
         }
 
-        protected abstract EncounterState ModifyState(EncounterState builder);
+        protected virtual PersistantEffector GetSelfAfterEffect(EncounterState state)
+        {
+            return this;
+        }
+
+        protected abstract EncounterState GetEffectedState(EncounterState state);
     }
 }
