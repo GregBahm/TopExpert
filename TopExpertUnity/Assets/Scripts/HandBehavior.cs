@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Encounter.Behaviors
+namespace Investigation.Behaviors
 {
+    /*
     public class HandBehavior : MonoBehaviour
     {
         [Range(0f, 1f)]
@@ -91,4 +92,5 @@ namespace Encounter.Behaviors
             cardBehavior.HandRestRotation = angle;
         }
     }
+    */
 }

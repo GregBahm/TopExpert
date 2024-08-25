@@ -1,8 +1,9 @@
 ﻿using System.Linq;
 
-namespace Encounter.Model
+namespace Investigation.Model
 {
-    public record OverthinkerCard : StandardPlayerCard
+    public record OverthinkerCard(CardIdentifier Identifier) 
+        : StandardPlayerCard(Identifier)
     {
         public override int ActionCost => 0;
 

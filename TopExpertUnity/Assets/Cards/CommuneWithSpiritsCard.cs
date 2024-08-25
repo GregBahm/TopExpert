@@ -1,6 +1,7 @@
-﻿namespace Encounter.Model
+﻿namespace Investigation.Model
 {
-    public record CommuneWithSpiritsCard : StandardPlayerCard
+    public record CommuneWithSpiritsCard(CardIdentifier Identifier) 
+        : StandardPlayerCard(Identifier)
     {
         public override int ActionCost => 1;
 

@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Encounter.Model
+namespace Investigation.Model
 {
-    public record NoWay : PlayerCard
+    public record NoWay(CardIdentifier Identifier) 
+        : PlayerCard(Identifier)
     {
         public int ActionCost => 3;
         public int InsightCost => 5;

@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Encounter.Model
+namespace Investigation.Model
 {
-    public record NewPlanCard : StandardPlayerCard
+    public record NewPlanCard(CardIdentifier Identifier) 
+        : StandardPlayerCard(Identifier)
     {
         public override int ActionCost => 2;
 

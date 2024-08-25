@@ -1,11 +1,12 @@
-using Encounter.Model;
+using Investigation.Model;
 using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Encounter.Behaviors
+namespace Investigation.Behaviors
 {
+    /*
     public class CardBehavior : MonoBehaviour
     {
         private HandBehavior hand;
@@ -31,35 +32,9 @@ namespace Encounter.Behaviors
         [SerializeField]
         private Color cannotPlayCardColor;
 
-        [SerializeField]
-        private float stateTransitionTime;
-        private float currentTransitionTime;
-        private float TransitionParam
-        {
-            get
-            {
-                float ret = currentTransitionTime / stateTransitionTime;
-                return Mathf.Clamp01(ret);
-            }
-        }
-
         public Vector3 HandHoverdPosition { get; set; }
         public Vector3 HandRestPosition { get; set; }
         public Quaternion HandRestRotation { get; set; }
-
-        private CardVisualState state;
-        public CardVisualState State
-        {
-            get => state;
-            set
-            {
-                if (value != state)
-                {
-                    state = value;
-                    currentTransitionTime = 0;
-                }
-            }
-        }
 
         private float playabilityIndicatorMargin;
         private Color playabilityIndicatorColor;
@@ -86,7 +61,6 @@ namespace Encounter.Behaviors
         private void Update()
         {
             gameObject.name = cardVisuals.Name + " [" + State.ToString() + "]";
-            currentTransitionTime += Time.deltaTime;
             UpdateState();
             UpdatePosition();
             UpdatePlayabilityIndicator();
@@ -122,33 +96,6 @@ namespace Encounter.Behaviors
                 PlayCard();
             }
         }
-
-        private void UpdateState()
-        {
-            bool transitionComplete = currentTransitionTime > stateTransitionTime;
-            if (transitionComplete)
-            {
-                if (State == CardVisualState.Drawing)
-                {
-                    State = CardVisualState.InHand;
-                    return;
-                }
-                if (State == CardVisualState.ApplyingEffect)
-                {
-                    StartOutro();
-                    return;
-                }
-                if (State == CardVisualState.Discarding
-                    || State == CardVisualState.Dissolve)
-                {
-                    Destroy(this.gameObject);
-                    return;
-                }
-            }
-        }
-
-        private Vector3 outroStartPosition;
-        private float outroStartScale;
 
         private void UpdatePosition()
         {
@@ -247,4 +194,5 @@ namespace Encounter.Behaviors
             return CardVisualState.Discarding;
         }
     }
+    */
 }

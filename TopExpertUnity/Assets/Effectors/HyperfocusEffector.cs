@@ -1,6 +1,7 @@
-﻿namespace Encounter.Model
+﻿namespace Investigation.Model
 {
-    public record HyperfocusEffector : PersistantEffector
+    public record HyperfocusEffector(EffectorIdentifier Identifier) 
+        : PersistantEffector(Identifier)
     {
         protected override EncounterState GetEffectedState(EncounterState state)
         {

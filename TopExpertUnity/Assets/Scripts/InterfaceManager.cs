@@ -1,4 +1,4 @@
-using Encounter.Model;
+using Investigation.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,8 +7,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Encounter.Behaviors
+namespace Investigation.Behaviors
 {
+    /*
     [RequireComponent(typeof(EncounterManager))]
     public class InterfaceManager : MonoBehaviour
     {
@@ -86,4 +87,5 @@ namespace Encounter.Behaviors
             hand.AddCard(behavior);
         }
     }
+    */
 }

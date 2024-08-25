@@ -1,10 +1,10 @@
-using Encounter.Model;
+using Investigation.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Encounter.Behaviors
+namespace Investigation.Behaviors
 {
     public class CardVisualBindings : MonoBehaviour
     {

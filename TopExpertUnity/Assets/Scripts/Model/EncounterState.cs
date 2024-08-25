@@ -4,7 +4,7 @@ using System.Net.Sockets;
 using UnityEditor.Timeline;
 using UnityEngine.UIElements.Experimental;
 
-namespace Encounter.Model
+namespace Investigation.Model
 {
     public record EncounterState
     {

@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Encounter.Model
+namespace Investigation.Model
 {
-    public record DrawHand : PersistantEffector
+    public record DrawHand(EffectorIdentifier Identifier) 
+        : PersistantEffector(Identifier)
     {
         protected override EncounterState GetEffectedState(EncounterState state)
         {

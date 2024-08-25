@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Encounter.Model
+namespace Investigation.Model
 {
-    public abstract record PlayerCard : IStateModifier
+    public abstract record PlayerCard(CardIdentifier Identifier) : IStateModifier
     {
         public virtual bool DissolvesOnPlay { get; }
         public virtual bool DissolvesIfNotPlayed { get; }
@@ -26,4 +26,6 @@ namespace Encounter.Model
             return state with { Hand = hand, DissolveDeck = dissolveDeck, DiscardDeck = discardDeck };
         }
     }
+
+    public class CardIdentifier { }
 }

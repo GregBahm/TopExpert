@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Encounter.Model
+namespace Investigation.Model
 {
-    public abstract record PersistantEffector : IStateModifier
+    public abstract record PersistantEffector(EffectorIdentifier Identifier) : IStateModifier
     {
         public virtual bool IsEnemyEffect => false;
 
@@ -27,4 +27,6 @@ namespace Encounter.Model
 
         protected abstract EncounterState GetEffectedState(EncounterState state);
     }
+
+    public class EffectorIdentifier { }
 }

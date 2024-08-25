@@ -1,8 +1,8 @@
-using Encounter.Model;
+using Investigation.Model;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Encounter.Behaviors
+namespace Investigation.Behaviors
 {
     public class EncounterManager : MonoBehaviour
     {
@@ -25,25 +25,28 @@ namespace Encounter.Behaviors
         {
             List<PlayerCard> drawDeck = new List<PlayerCard>()
             {
-                new CarefulResearchCard(),
-                new CarefulResearchCard(),
-                new CarefulResearchCard(),
-                new OverthinkerCard(),
-                new OverthinkerCard(),
-                new OverthinkerCard(),
-                new HyperfocusCard(),
-                new InvestigateCard(),
-                new NewPlanCard()
+                new CarefulResearchCard(new CardIdentifier()),
+                new CarefulResearchCard(new CardIdentifier()),
+                new CarefulResearchCard(new CardIdentifier()),
+                new OverthinkerCard(new CardIdentifier()),
+                new OverthinkerCard(new CardIdentifier()),
+                new OverthinkerCard(new CardIdentifier()),
+                new HyperfocusCard(new CardIdentifier()),
+                new InvestigateCard(new CardIdentifier()),
+                new NewPlanCard(new CardIdentifier())
             };
             List<PersistantEffector> baseEffectors = new List<PersistantEffector>()
             {
                 // TODO: Some enemies go here
-                new DrawHand(),
-                new RestoreEnergy()
+                new HauntedCoffeeMachine(new EffectorIdentifier()),
+                new DrawHand(new EffectorIdentifier()),
+                new RestoreEnergy(new EffectorIdentifier())
             };
             List<DraftOption> DraftDeck = new List<DraftOption>()
             { 
                 // TODO: Draft Options go here
+                new ChannelTheOtherSideDraftOption(),
+                new DaringGambitDraftOption(),
             };
 
             EncounterState initialState = new EncounterState()

@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Encounter.Model
+namespace Investigation.Model
 {
-    public abstract record StandardDraftOption<T> : DraftOption
-        where T : PlayerCard, new()
+    public abstract record StandardDraftOption : DraftOption
     {
         public abstract int DraftCost { get; }
+        public abstract PlayerCard Card { get; }
 
         public override bool CanDraft(EncounterState state)
         {
@@ -16,7 +16,7 @@ namespace Encounter.Model
         public override EncounterState DraftCard(EncounterState state)
         {
             List<PlayerCard> hand = state.Hand.ToList();
-            hand.Add(new T());
+            hand.Add(Card);
             return state with { Hand = hand };
         }
     }

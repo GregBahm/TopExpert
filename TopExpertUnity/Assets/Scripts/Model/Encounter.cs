@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Encounter.Model
+namespace Investigation.Model
 {
     public class Encounter
     {
@@ -21,6 +21,11 @@ namespace Encounter.Model
             EncounterState nextState = card.Play(CurrentState);
             EncounterStep step = new EncounterStep(card, nextState);
             encounterProgression.Add(step);
+        }
+
+        public EncounterStep GetStep(int step)
+        {
+            return encounterProgression[step];
         }
 
         public void EndRound()

@@ -1,4 +1,4 @@
-﻿namespace Encounter.Model
+﻿namespace Investigation.Model
 {
     public abstract record DraftOption : IStateModifier
     {

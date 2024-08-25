@@ -1,8 +1,10 @@
+using Investigation.Behaviors;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Investigation.Model;
+/*
 public class VisualsManager
 {
     private readonly List<EncounterKeyframe> encounterKeyframes = new List<EncounterKeyframe>();
@@ -86,4 +88,43 @@ public class CardVisual : TrackedVisual<CardVisualState>
     {
 
     }
+}
+*/
+
+public class VisualsManager
+{
+    private Dictionary<object, UIElement> uiTable;
+
+    public void DrawEncounter(int turn, float progression)
+    {
+        EncounterStep previousStep = EncounterManager.Instance.Encounter.GetStep(turn);
+        EncounterStep nextStep = EncounterManager.Instance.Encounter.GetStep(turn + 1);
+
+        DrawEncounter(previousStep.State, nextStep.State, progression);
+    }
+
+    public void DrawEncounter(EncounterState previousState, EncounterState nextState, float progression)
+    {
+        HashSet<object> validItems = GetValidItems(previousState, nextState);
+    }
+
+    private HashSet<object> GetValidItems(EncounterState previousState, EncounterState nextState)
+    {
+        HashSet<object> validItems = new HashSet<object>();
+
+        foreach (var item in previousState.Hand)
+        {
+            validItems.Add(item.Identifier);
+        }
+        foreach (var item in nextState.UnappliedEffectors)
+        {
+
+        }
+        return validItems;
+    }
+}
+
+public class UIElement
+{
+
 }
