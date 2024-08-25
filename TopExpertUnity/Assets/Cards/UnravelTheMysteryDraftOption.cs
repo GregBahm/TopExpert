@@ -1,6 +1,7 @@
 ﻿namespace Investigation.Model
 {
-    public record UnravelTheMysteryDraftOption : StandardDraftOption
+    public record UnravelTheMysteryDraftOption (DraftOptionIdentifier Identifier) 
+        : StandardDraftOption(Identifier)
     {
         public override int DraftCost => 4;
 

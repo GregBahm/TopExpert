@@ -37,16 +37,14 @@ namespace Investigation.Behaviors
             };
             List<PersistantEffector> baseEffectors = new List<PersistantEffector>()
             {
-                // TODO: Some enemies go here
                 new HauntedCoffeeMachine(new EffectorIdentifier()),
                 new DrawHand(new EffectorIdentifier()),
                 new RestoreEnergy(new EffectorIdentifier())
             };
             List<DraftOption> DraftDeck = new List<DraftOption>()
             { 
-                // TODO: Draft Options go here
-                new ChannelTheOtherSideDraftOption(),
-                new DaringGambitDraftOption(),
+                new ChannelTheOtherSideDraftOption(new DraftOptionIdentifier()),
+                new DaringGambitDraftOption(new DraftOptionIdentifier()),
             };
 
             EncounterState initialState = new EncounterState()

@@ -3,7 +3,8 @@ using System.Linq;
 
 namespace Investigation.Model
 {
-    public abstract record StandardDraftOption : DraftOption
+    public abstract record StandardDraftOption(DraftOptionIdentifier Identifier) 
+        : DraftOption(Identifier)
     {
         public abstract int DraftCost { get; }
         public abstract PlayerCard Card { get; }

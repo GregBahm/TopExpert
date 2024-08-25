@@ -3,7 +3,8 @@ using System.Linq;
 
 namespace Investigation.Model
 {
-    public record ChannelTheOtherSideDraftOption : DraftOption
+    public record ChannelTheOtherSideDraftOption(DraftOptionIdentifier Identifier) 
+        : DraftOption(Identifier)
     {
         public int DraftCost => 5;
 

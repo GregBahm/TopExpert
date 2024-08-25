@@ -1,6 +1,7 @@
 ﻿namespace Investigation.Model
 {
-    public record OfCourseDraftOption : StandardDraftOption
+    public record OfCourseDraftOption(DraftOptionIdentifier Identifier) 
+        : StandardDraftOption(Identifier)
     {
         public override int DraftCost => 5;
 
