@@ -9,24 +9,24 @@ namespace Investigation.Behaviors
     public class CardVisualBindings : MonoBehaviour
     {
         [SerializeField]
-        private CardVisuals CarefulResearchCard;
+        private GameObject CarefulResearchCard;
         [SerializeField]
-        private CardVisuals OverthinkerCard;
+        private GameObject OverthinkerCard;
         [SerializeField]
-        private CardVisuals HyperfocusCard;
+        private GameObject HyperfocusCard;
         [SerializeField]
-        private CardVisuals InvestigateCard;
+        private GameObject InvestigateCard;
         [SerializeField]
-        private CardVisuals NewPlanCard;
+        private GameObject NewPlanCard;
 
-        private Dictionary<Type, CardVisuals> bindings;
+        private Dictionary<Type, GameObject> bindings;
 
         public static CardVisualBindings Instance { get; private set; }
 
         private void Awake()
         {
             Instance = this;
-            bindings = new Dictionary<Type, CardVisuals>
+            bindings = new Dictionary<Type, GameObject>
             {
                 { typeof(CarefulResearchCard), CarefulResearchCard },
                 { typeof(OverthinkerCard), OverthinkerCard },
@@ -36,7 +36,7 @@ namespace Investigation.Behaviors
             };
         }
 
-        public CardVisuals GetVisualsFor(PlayerCard card)
+        public GameObject GetPrefabFor(PlayerCard card)
         {
             Type cardType = card.GetType();
             return bindings[cardType];
@@ -47,12 +47,4 @@ namespace Investigation.Behaviors
             return bindings.Keys;
         }
     }
-
-    [Serializable]
-    public class CardVisuals
-    {
-        public string Name;
-        public Sprite Image;
-    }
-
 }

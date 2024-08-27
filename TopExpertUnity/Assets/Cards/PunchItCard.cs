@@ -1,6 +1,6 @@
 ﻿namespace Investigation.Model
 {
-    public record PunchItCard(CardIdentifier Identifier) 
+    public record PunchItCard(ElementIdentifier Identifier) 
         : StandardPlayerCard(Identifier)
     {
         public override int ActionCost => 0;

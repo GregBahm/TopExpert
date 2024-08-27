@@ -2,7 +2,7 @@
 
 namespace Investigation.Model
 {
-    public record OverthinkerCard(CardIdentifier Identifier) 
+    public record OverthinkerCard(ElementIdentifier Identifier) 
         : StandardPlayerCard(Identifier)
     {
         public override int ActionCost => 0;

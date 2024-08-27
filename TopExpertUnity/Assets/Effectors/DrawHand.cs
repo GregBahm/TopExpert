@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Investigation.Model
 {
-    public record DrawHand(EffectorIdentifier Identifier) 
+    public record DrawHand(ElementIdentifier Identifier) 
         : PersistantEffector(Identifier)
     {
         protected override EncounterState GetEffectedState(EncounterState state)

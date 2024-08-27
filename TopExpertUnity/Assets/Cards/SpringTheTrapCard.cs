@@ -1,6 +1,6 @@
 ﻿namespace Investigation.Model
 {
-    public record SpringTheTrapCard(CardIdentifier Identifier) 
+    public record SpringTheTrapCard(ElementIdentifier Identifier) 
         : StandardPlayerCard(Identifier)
     {
         public override int ActionCost => 1;

@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Investigation.Model
 {
-    public record NoWay(CardIdentifier Identifier) 
+    public record NoWay(ElementIdentifier Identifier) 
         : PlayerCard(Identifier)
     {
         public int ActionCost => 3;

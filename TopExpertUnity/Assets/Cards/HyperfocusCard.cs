@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Investigation.Model
 {
-    public record HyperfocusCard(CardIdentifier Identifier) 
+    public record HyperfocusCard(ElementIdentifier Identifier) 
         : StandardPlayerCard(Identifier)
     {
         public override int ActionCost => 2;
@@ -12,7 +12,7 @@ namespace Investigation.Model
         protected override EncounterState GetModifiedState(EncounterState state)
         {
             List<PersistantEffector> unappliedEffectors = state.UnappliedEffectors.ToList();
-            HyperfocusEffector hyperfocus = new HyperfocusEffector(new EffectorIdentifier());
+            HyperfocusEffector hyperfocus = new HyperfocusEffector(new ElementIdentifier());
             unappliedEffectors.Add(hyperfocus);
             return state with { UnappliedEffectors = unappliedEffectors, Draws = state.Draws - 1 };
         }

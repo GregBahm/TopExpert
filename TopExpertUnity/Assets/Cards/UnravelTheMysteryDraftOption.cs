@@ -1,10 +1,10 @@
 ﻿namespace Investigation.Model
 {
-    public record UnravelTheMysteryDraftOption (DraftOptionIdentifier Identifier) 
+    public record UnravelTheMysteryDraftOption (ElementIdentifier Identifier) 
         : StandardDraftOption(Identifier)
     {
         public override int DraftCost => 4;
 
-        public override PlayerCard Card => new UnravelTheMysteryCard(new CardIdentifier());
+        public override PlayerCard Card => new UnravelTheMysteryCard(new ElementIdentifier());
     }
 }

@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Investigation.Model
 {
-    public abstract record PersistantEffector(EffectorIdentifier Identifier) : IStateModifier
+    public abstract record PersistantEffector(ElementIdentifier Identifier) : IStateModifier, ITrackedElement
     {
         public virtual bool IsEnemyEffect => false;
 
@@ -27,6 +27,4 @@ namespace Investigation.Model
 
         protected abstract EncounterState GetEffectedState(EncounterState state);
     }
-
-    public class EffectorIdentifier { }
 }

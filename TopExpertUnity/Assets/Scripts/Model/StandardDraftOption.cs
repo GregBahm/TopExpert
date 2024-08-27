@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Investigation.Model
 {
-    public abstract record StandardDraftOption(DraftOptionIdentifier Identifier) 
+    public abstract record StandardDraftOption(ElementIdentifier Identifier) 
         : DraftOption(Identifier)
     {
         public abstract int DraftCost { get; }

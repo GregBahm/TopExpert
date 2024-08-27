@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Investigation.Model
 {
-    public abstract record PlayerCard(CardIdentifier Identifier) : IStateModifier
+    public abstract record PlayerCard(ElementIdentifier Identifier) : IStateModifier, ITrackedElement
     {
         public virtual bool DissolvesOnPlay { get; }
         public virtual bool DissolvesIfNotPlayed { get; }
@@ -26,6 +26,4 @@ namespace Investigation.Model
             return state with { Hand = hand, DissolveDeck = dissolveDeck, DiscardDeck = discardDeck };
         }
     }
-
-    public class CardIdentifier { }
 }

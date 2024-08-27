@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Investigation.Model
 {
-    public record ChannelTheOtherSideDraftOption(DraftOptionIdentifier Identifier) 
+    public record ChannelTheOtherSideDraftOption(ElementIdentifier Identifier) 
         : DraftOption(Identifier)
     {
         public int DraftCost => 5;
@@ -16,10 +16,10 @@ namespace Investigation.Model
         public override EncounterState DraftCard(EncounterState state)
         {
             List<PlayerCard> hand = state.Hand.ToList();
-            hand.Add(new CommuneWithSpiritsCard(new CardIdentifier()));
-            hand.Add(new CommuneWithSpiritsCard(new CardIdentifier()));
-            hand.Add(new CommuneWithSpiritsCard(new CardIdentifier()));
-            hand.Add(new InvokeTheSpiritsCard(new CardIdentifier()));
+            hand.Add(new CommuneWithSpiritsCard(new ElementIdentifier()));
+            hand.Add(new CommuneWithSpiritsCard(new ElementIdentifier()));
+            hand.Add(new CommuneWithSpiritsCard(new ElementIdentifier()));
+            hand.Add(new InvokeTheSpiritsCard(new ElementIdentifier()));
             return state with { Hand = hand };
         }
     }

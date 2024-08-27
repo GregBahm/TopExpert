@@ -1,6 +1,6 @@
 ﻿namespace Investigation.Model
 {
-    public abstract record StandardPlayerCard(CardIdentifier Identifier) 
+    public abstract record StandardPlayerCard(ElementIdentifier Identifier) 
         : PlayerCard(Identifier)
     {
         public abstract int ActionCost { get; }

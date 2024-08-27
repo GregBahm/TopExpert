@@ -25,26 +25,26 @@ namespace Investigation.Behaviors
         {
             List<PlayerCard> drawDeck = new List<PlayerCard>()
             {
-                new CarefulResearchCard(new CardIdentifier()),
-                new CarefulResearchCard(new CardIdentifier()),
-                new CarefulResearchCard(new CardIdentifier()),
-                new OverthinkerCard(new CardIdentifier()),
-                new OverthinkerCard(new CardIdentifier()),
-                new OverthinkerCard(new CardIdentifier()),
-                new HyperfocusCard(new CardIdentifier()),
-                new InvestigateCard(new CardIdentifier()),
-                new NewPlanCard(new CardIdentifier())
+                new CarefulResearchCard(new ElementIdentifier()),
+                new CarefulResearchCard(new ElementIdentifier()),
+                new CarefulResearchCard(new ElementIdentifier()),
+                new OverthinkerCard(new ElementIdentifier()),
+                new OverthinkerCard(new ElementIdentifier()),
+                new OverthinkerCard(new ElementIdentifier()),
+                new HyperfocusCard(new ElementIdentifier()),
+                new InvestigateCard(new ElementIdentifier()),
+                new NewPlanCard(new ElementIdentifier())
             };
             List<PersistantEffector> baseEffectors = new List<PersistantEffector>()
             {
-                new HauntedCoffeeMachine(new EffectorIdentifier()),
-                new DrawHand(new EffectorIdentifier()),
-                new RestoreEnergy(new EffectorIdentifier())
+                new HauntedCoffeeMachine(new ElementIdentifier()),
+                new DrawHand(new ElementIdentifier()),
+                new RestoreEnergy(new ElementIdentifier())
             };
             List<DraftOption> DraftDeck = new List<DraftOption>()
             { 
-                new ChannelTheOtherSideDraftOption(new DraftOptionIdentifier()),
-                new DaringGambitDraftOption(new DraftOptionIdentifier()),
+                new ChannelTheOtherSideDraftOption(new ElementIdentifier()),
+                new DaringGambitDraftOption(new ElementIdentifier()),
             };
 
             EncounterState initialState = new EncounterState()
