@@ -10,6 +10,8 @@ namespace Investigation.Model
         private readonly List<EncounterStep> encounterProgression;
         public EncounterState CurrentState { get { return encounterProgression.Last().State; } }
 
+        public int Turns { get { return encounterProgression.Count; } }
+
         public Encounter(EncounterState initialState)
         {
             EncounterStep firstStep = new EncounterStep(null, initialState);
@@ -23,9 +25,9 @@ namespace Investigation.Model
             encounterProgression.Add(step);
         }
 
-        public EncounterStep GetStep(int step)
+        public EncounterStep GetTurn(int turn)
         {
-            return encounterProgression[step];
+            return encounterProgression[turn];
         }
 
         public void EndRound()

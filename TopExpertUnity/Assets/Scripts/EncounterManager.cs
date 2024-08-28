@@ -10,6 +10,8 @@ namespace Investigation.Behaviors
 
         public Model.Encounter Encounter { get; private set; }
 
+        private EncounterVisualsManager visuals;
+
         private void Awake()
         {
             Instance = this;
@@ -17,6 +19,7 @@ namespace Investigation.Behaviors
 
         private void Start()
         {
+            visuals = GetComponent<EncounterVisualsManager>();
             Encounter = GetTestEncounter();
             Encounter.EndRound();
         }

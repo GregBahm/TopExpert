@@ -294,8 +294,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7384740016203622190}
   - component: {fileID: 2934567692160518798}
-  - component: {fileID: 3278909069619367159}
   - component: {fileID: 5687857594992894494}
+  - component: {fileID: 2289303837872345573}
   m_Layer: 5
   m_Name: CardPrefab
   m_TagString: Untagged
@@ -334,25 +334,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7282241878020386722}
   m_CullTransparentMesh: 1
---- !u!114 &3278909069619367159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7282241878020386722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba52cd174239e74418da257a86f5367d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  label: {fileID: 2172312256381960579}
-  cardArt: {fileID: 8155235697329250453}
-  playabilityIndicator: {fileID: 3510828423432323776}
-  playabilityIndicatorMarginMax: 10
-  canPlayCardColor: {r: 0, g: 1, b: 0.18582249, a: 0.23137255}
-  cannotPlayCardColor: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 0.30588236}
-  stateTransitionTime: 0.5
 --- !u!114 &5687857594992894494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,6 +364,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2289303837872345573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7282241878020386722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3103742e7828a1945b5bf3d24c8f64db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8275630913938484246
 GameObject:
   m_ObjectHideFlags: 0
