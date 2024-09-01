@@ -11,13 +11,35 @@ namespace Investigation.Behaviors
         [SerializeField]
         private GameObject CarefulResearchCard;
         [SerializeField]
-        private GameObject OverthinkerCard;
+        private GameObject ChannelTheOtherSideDraftOption;
+        [SerializeField]
+        private GameObject CommuneWithSpiritsCard;
+        [SerializeField]
+        private GameObject DaringGambitCard;
+        [SerializeField]
+        private GameObject DaringGambitDraftOption;
+        [SerializeField]
+        private GameObject GetAfterItCard;
         [SerializeField]
         private GameObject HyperfocusCard;
         [SerializeField]
         private GameObject InvestigateCard;
         [SerializeField]
+        private GameObject InvokeTheSpiritsCard;
+        [SerializeField]
         private GameObject NewPlanCard;
+        [SerializeField]
+        private GameObject NoWayCard;
+        [SerializeField]
+        private GameObject OfCourseCard;
+        [SerializeField]
+        private GameObject OverthinkerCard;
+        [SerializeField]
+        private GameObject PunchItCard;
+        [SerializeField]
+        private GameObject SpringTheTrapCard;
+        [SerializeField]
+        private GameObject UnravelTheMysteryCard;
 
         private Dictionary<Type, GameObject> bindings;
 
@@ -29,10 +51,19 @@ namespace Investigation.Behaviors
             bindings = new Dictionary<Type, GameObject>
             {
                 { typeof(CarefulResearchCard), CarefulResearchCard },
-                { typeof(OverthinkerCard), OverthinkerCard },
+                { typeof(CommuneWithSpiritsCard), CommuneWithSpiritsCard },
+                { typeof(DaringGambitCard), DaringGambitCard },
+                { typeof(GetAfterItCard), GetAfterItCard },
                 { typeof(HyperfocusCard), HyperfocusCard },
                 { typeof(InvestigateCard), InvestigateCard },
+                { typeof(InvokeTheSpiritsCard), InvokeTheSpiritsCard },
                 { typeof(NewPlanCard), NewPlanCard },
+                { typeof(NoWayCard), NoWayCard },
+                { typeof(OfCourseCard), OfCourseCard },
+                { typeof(OverthinkerCard), OverthinkerCard },
+                { typeof(PunchItCard), PunchItCard },
+                { typeof(SpringTheTrapCard), SpringTheTrapCard },
+                { typeof(UnravelTheMysteryCard), UnravelTheMysteryCard },
             };
         }
 

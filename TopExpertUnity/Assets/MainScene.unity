@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2, y: 0}
   m_AnchorMax: {x: 0.8, y: 0}
-  m_AnchoredPosition: {x: 0, y: 200}
+  m_AnchoredPosition: {x: 0, y: 210}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &542098058
@@ -218,11 +218,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612f1555f9945bc488779957050fd5e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CarefulResearchCard: {fileID: 7282241878020386722, guid: dff128239c7dac54692ea74af3b4c94c, type: 3}
-  OverthinkerCard: {fileID: 7282241878020386722, guid: dff128239c7dac54692ea74af3b4c94c, type: 3}
-  HyperfocusCard: {fileID: 7282241878020386722, guid: dff128239c7dac54692ea74af3b4c94c, type: 3}
-  InvestigateCard: {fileID: 7282241878020386722, guid: dff128239c7dac54692ea74af3b4c94c, type: 3}
-  NewPlanCard: {fileID: 7282241878020386722, guid: dff128239c7dac54692ea74af3b4c94c, type: 3}
+  CarefulResearchCard: {fileID: 6231419582042853198, guid: fae2d507da130d040bfcfcf9fe1c7be3, type: 3}
+  ChannelTheOtherSideDraftOption: {fileID: 0}
+  CommuneWithSpiritsCard: {fileID: 2186669251230591016, guid: 7d9fb0728d7087f48a8cdb6830c44a3f, type: 3}
+  DaringGambitCard: {fileID: 6816370585545121043, guid: a886b87877915934bb882ecc96af52ea, type: 3}
+  DaringGambitDraftOption: {fileID: 0}
+  GetAfterItCard: {fileID: 175631475490821326, guid: 940d75d989b3639498d70fe66d0c7937, type: 3}
+  HyperfocusCard: {fileID: 8560180218358650483, guid: f507d71487b02df43bfc25379f649513, type: 3}
+  InvestigateCard: {fileID: 6231419582042853198, guid: 7ca8cf512a8f6e449af9d493a31c003c, type: 3}
+  InvokeTheSpiritsCard: {fileID: 0}
+  NewPlanCard: {fileID: 0}
+  NoWayCard: {fileID: 0}
+  OfCourseCard: {fileID: 0}
+  OverthinkerCard: {fileID: 0}
+  PunchItCard: {fileID: 0}
+  SpringTheTrapCard: {fileID: 0}
+  UnravelTheMysteryCard: {fileID: 0}
 --- !u!114 &542098063
 MonoBehaviour:
   m_ObjectHideFlags: 0

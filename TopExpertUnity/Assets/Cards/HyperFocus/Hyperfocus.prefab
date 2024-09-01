@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1468730130789602242
+--- !u!1001 &3805638251396762367
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1287037210593176654, guid: ceb4d9175d96fb34bafd52deffea17dd, type: 3}
       propertyPath: m_text
-      value: +2 Insights
+      value: +1 Insight each turn
       objectReference: {fileID: 0}
     - target: {fileID: 4121263455242842797, guid: ceb4d9175d96fb34bafd52deffea17dd, type: 3}
       propertyPath: m_text
-      value: Careful Research
+      value: Hyperfocus
       objectReference: {fileID: 0}
     - target: {fileID: 4715247717763142656, guid: ceb4d9175d96fb34bafd52deffea17dd, type: 3}
       propertyPath: m_Pivot.x
@@ -98,12 +98,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4763552066061950092, guid: ceb4d9175d96fb34bafd52deffea17dd, type: 3}
       propertyPath: m_Name
-      value: CarefulResearchPrefab
+      value: Hyperfocus
       objectReference: {fileID: 0}
     - target: {fileID: 6213004387815953339, guid: ceb4d9175d96fb34bafd52deffea17dd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7d3c68f6db585e340bc94d590dc3f1d6, type: 3}
+      objectReference: {fileID: 21300000, guid: 899a2cdda0f359a40a57502e46f9c10a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

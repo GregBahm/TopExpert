@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Investigation.Model;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace Investigation.Behaviors
 {
@@ -62,7 +63,7 @@ namespace Investigation.Behaviors
         {
             EncounterVisualsManager encounterVisuals = EncounterVisualsManager.Instance;
             int cardsInHand = state.Hand.Count;
-            float param = (float)order / cardsInHand;
+            float param = cardsInHand == 1 ? .5f : (float)order / (cardsInHand - 1);
             Vector3 pos = Vector3.Lerp(encounterVisuals.HandLeftPoint.position, encounterVisuals.HandsRightPoint.position, param);
             return pos;
         }
