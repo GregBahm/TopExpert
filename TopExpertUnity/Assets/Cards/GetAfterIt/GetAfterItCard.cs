@@ -1,6 +1,6 @@
 ﻿namespace Investigation.Model
 {
-    public record GetAfterIt(ElementIdentifier Identifier) 
+    public record GetAfterItCard(ElementIdentifier Identifier) 
         : StandardPlayerCard(Identifier)
     {
         public override int ActionCost => 0;

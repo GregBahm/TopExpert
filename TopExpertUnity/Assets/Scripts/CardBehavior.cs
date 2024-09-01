@@ -3,12 +3,16 @@ using Investigation.Model;
 
 namespace Investigation.Behaviors
 {
-    public class CardViewModel : MonoBehaviour
+    public class CardBehavior : MonoBehaviour
     {
+        [SerializeField]
+        private CardVisualController visualController;
+
         public void DrawState(CardUiState state, float progression)
         {
             Vector3 cardLocation = GetLocation(state, progression);
             gameObject.transform.position = cardLocation;
+            visualController.DrawState(state, progression);
         }
 
         private Vector3 GetLocation(CardUiState state, float progression)
@@ -81,5 +85,4 @@ namespace Investigation.Behaviors
             return EncounterVisualsManager.Instance.DiscardPoint.position;
         }
     }
-
 }

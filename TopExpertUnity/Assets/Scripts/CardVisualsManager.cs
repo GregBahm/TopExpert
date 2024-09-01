@@ -11,7 +11,7 @@ using System.Resources;
 
 public class CardVisualsManager
 {
-    private Dictionary<ElementIdentifier, CardViewModel> cardUi = new Dictionary<ElementIdentifier, CardViewModel>();
+    private Dictionary<ElementIdentifier, CardBehavior> cardUi = new Dictionary<ElementIdentifier, CardBehavior>();
 
     public void DrawEncounter(int turn, float progression)
     {
@@ -34,7 +34,7 @@ public class CardVisualsManager
             if (!cardUi.ContainsKey(item.Key))
             {
                 PlayerCard card = item.Value.StartCardState ?? item.Value.EndCardState;
-                CardViewModel viewModel = EncounterVisualsManager.Instance.InstantiateCardUi(card);
+                CardBehavior viewModel = EncounterVisualsManager.Instance.InstantiateCardUi(card);
                 cardUi.Add(item.Key, viewModel);
             }
         }
@@ -43,7 +43,7 @@ public class CardVisualsManager
         {
             if (cardStates.ContainsKey(item.Key))
             {
-                CardViewModel viewModel = cardUi[item.Key];
+                CardBehavior viewModel = cardUi[item.Key];
                 CardUiState state = cardStates[item.Key];
                 viewModel.DrawState(state, progression);
             }
@@ -59,7 +59,7 @@ public class CardVisualsManager
     {
         foreach (var item in toDelete)
         {
-            CardViewModel behavior = cardUi[item];
+            CardBehavior behavior = cardUi[item];
             GameObject.Destroy(behavior.gameObject);
             cardUi.Remove(item);
         }
