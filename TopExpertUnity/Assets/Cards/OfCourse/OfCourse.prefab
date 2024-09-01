@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1468730130789602242
+--- !u!1001 &3197410178041298474
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,13 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1287037210593176654, guid: ceb4d9175d96fb34bafd52deffea17dd, type: 3}
       propertyPath: m_text
-      value: +1 Insight
+      value: +4 Insights
       objectReference: {fileID: 0}
     - target: {fileID: 4121263455242842797, guid: ceb4d9175d96fb34bafd52deffea17dd, type: 3}
       propertyPath: m_text
-      value: 'Investigate
-
-'
+      value: Of Course
       objectReference: {fileID: 0}
     - target: {fileID: 4715247717763142656, guid: ceb4d9175d96fb34bafd52deffea17dd, type: 3}
       propertyPath: m_Pivot.x
@@ -100,12 +98,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4763552066061950092, guid: ceb4d9175d96fb34bafd52deffea17dd, type: 3}
       propertyPath: m_Name
-      value: InvestigatePrefab
+      value: OfCourse
       objectReference: {fileID: 0}
     - target: {fileID: 6213004387815953339, guid: ceb4d9175d96fb34bafd52deffea17dd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ea96e7caab00ba84caf896af963d1d27, type: 3}
+      objectReference: {fileID: 21300000, guid: 4ff5c2598d010df4f9a3b4378cf6a0a0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

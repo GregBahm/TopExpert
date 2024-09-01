@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 
 namespace Investigation.Model
 {
@@ -9,7 +11,19 @@ namespace Investigation.Model
 
         protected override EncounterState GetModifiedState(EncounterState state)
         {
+            List<PlayerCard> discard = state.DiscardDeck.ToList();
+            OverthinkerCard newOverthinker = new OverthinkerCard(new ElementIdentifier());
+            discard.Add(newOverthinker);
+
+            int count = GetNumberOfOverthinkerCards(state) + 1;
+
+            return state with { Insights = state.Insights + count, DiscardDeck = discard };
+        }
+
+        private int GetNumberOfOverthinkerCards(EncounterState state)
+        {
             int count = 0;
+
             foreach (var card in state.Hand
                 .Concat(state.DrawDeck)
                 .Concat(state.DiscardDeck))
@@ -19,7 +33,7 @@ namespace Investigation.Model
                     count++;
                 }
             }
-            return state with { Insights = state.Insights + count };
+            return count;
         }
     }
 }

@@ -226,14 +226,14 @@ MonoBehaviour:
   GetAfterItCard: {fileID: 175631475490821326, guid: 940d75d989b3639498d70fe66d0c7937, type: 3}
   HyperfocusCard: {fileID: 8560180218358650483, guid: f507d71487b02df43bfc25379f649513, type: 3}
   InvestigateCard: {fileID: 6231419582042853198, guid: 7ca8cf512a8f6e449af9d493a31c003c, type: 3}
-  InvokeTheSpiritsCard: {fileID: 0}
-  NewPlanCard: {fileID: 0}
-  NoWayCard: {fileID: 0}
-  OfCourseCard: {fileID: 0}
-  OverthinkerCard: {fileID: 0}
-  PunchItCard: {fileID: 0}
-  SpringTheTrapCard: {fileID: 0}
-  UnravelTheMysteryCard: {fileID: 0}
+  InvokeTheSpiritsCard: {fileID: 8781417894371128172, guid: de3d26cbef079334a8df570016bbdeb8, type: 3}
+  NewPlanCard: {fileID: 3891229262196425285, guid: c511402afcda4b74f88ff8e74c7fe525, type: 3}
+  NoWayCard: {fileID: 6518489184737228827, guid: 5eae763761feebe479fd175e8c4deb18, type: 3}
+  OfCourseCard: {fileID: 7945742550544802470, guid: 54874549ca821854e8bd4ab9c9cf7849, type: 3}
+  OverthinkerCard: {fileID: 1876967825427496761, guid: 7738af26cac395e4d8c9e4a274ef1013, type: 3}
+  PunchItCard: {fileID: 2683117790630420534, guid: a45461a95565ba44d86324d419b29ed8, type: 3}
+  SpringTheTrapCard: {fileID: 597376442422805032, guid: 10de8968f86d474479bc90cd80e93f10, type: 3}
+  UnravelTheMysteryCard: {fileID: 2023856913102181670, guid: d5ad4871d8e4f944ea10914df0f893c2, type: 3}
 --- !u!114 &542098063
 MonoBehaviour:
   m_ObjectHideFlags: 0
