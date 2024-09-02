@@ -10,15 +10,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1287037210593176654, guid: ceb4d9175d96fb34bafd52deffea17dd, type: 3}
       propertyPath: m_text
-      value: 'Add an "Overthinker" card to your discard pile
-
-
-        + 1 insight
-        for each copy of "Overthinker" in your deck'
-      objectReference: {fileID: 0}
-    - target: {fileID: 1287037210593176654, guid: ceb4d9175d96fb34bafd52deffea17dd, type: 3}
-      propertyPath: m_fontSize
-      value: 11.5
+      value: Add an "Overthinker" card to your discard pile. +1 insight for each
+        copy of "Overthinker" in your deck
       objectReference: {fileID: 0}
     - target: {fileID: 1287037210593176654, guid: ceb4d9175d96fb34bafd52deffea17dd, type: 3}
       propertyPath: m_fontSizeBase

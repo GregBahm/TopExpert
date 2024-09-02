@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4121263455242842797, guid: ceb4d9175d96fb34bafd52deffea17dd, type: 3}
       propertyPath: m_text
-      value: Of Course
+      value: Bright Idea
       objectReference: {fileID: 0}
     - target: {fileID: 4715247717763142656, guid: ceb4d9175d96fb34bafd52deffea17dd, type: 3}
       propertyPath: m_Pivot.x

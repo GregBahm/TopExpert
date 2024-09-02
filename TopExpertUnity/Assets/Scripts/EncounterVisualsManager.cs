@@ -31,8 +31,9 @@ namespace Investigation.Behaviors
         [Range(0, 1)]
         [SerializeField]
         float progression;
-
-        public string debug;
+        [SerializeField]
+        private float deckStackingOfset;
+        public float DeckStackingOffset => deckStackingOfset;
 
         private void Awake()
         {
@@ -55,7 +56,6 @@ namespace Investigation.Behaviors
                 mainTime = encounter.Turns - 2;
                 subTime = 1;
             }
-            debug = "Turn " + (mainTime + 1) + " of " + encounter.Turns + " turns, " + subTime * 100;
             cardVisualsManager.DrawEncounter(mainTime, subTime);
         }
 

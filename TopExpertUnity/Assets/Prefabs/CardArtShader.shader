@@ -107,7 +107,7 @@ Shader "Unlit/CardArtShader"
                 float glintB = abs(length(IN.texcoord.x + .3 - IN.texcoord.y) - 1);
                 glintB =  saturate(glintB * 30 - 28.5) * .5;
                 float glint = glintA + glintB;
-                color += color * glint * 2 + glint * .02;
+                color += color * glint * 1.1 + glint * .01;
 
                 #ifdef UNITY_UI_CLIP_RECT
                 color.a *= UnityGet2DClipping(IN.worldPosition.xy, _ClipRect);

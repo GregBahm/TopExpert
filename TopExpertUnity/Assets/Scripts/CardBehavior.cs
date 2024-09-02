@@ -11,6 +11,10 @@ namespace Investigation.Behaviors
 
         public void DrawState(CardUiState state, float progression)
         {
+            if(state.StartLocation == CardUiLocation.Inexistant && state.EndLocation == CardUiLocation.Inexistant)
+            {
+                throw new System.Exception("Trying to draw a card that beings and ends inexistant");
+            }
             Vector3 cardLocation = GetLocation(state, progression);
             gameObject.transform.position = cardLocation;
             visualController.DrawState(state, progression);
@@ -23,40 +27,38 @@ namespace Investigation.Behaviors
             return Vector3.Lerp(startLocation, endLocation, progression);
         }
 
-        private Vector3 GetStartLocation(CardUiState state)
+        private Vector3 GetLocation(CardUiLocation location, EncounterState state, int order)
         {
-            switch (state.StartLocation)
+            switch (location)
             {
                 case CardUiLocation.Hand:
-                    return GetHandPosition(state.StartState, state.StartOrder);
+                    return GetHandPosition(state, order);
                 case CardUiLocation.DrawDeck:
-                    return GetDrawDeckPosition();
+                    return GetDrawDeckPosition(state, order);
                 case CardUiLocation.Discard:
-                    return GetDiscardPosition();
+                    return GetDiscardPosition(state, order);
                 case CardUiLocation.Dissolve:
-                    return GetDissovleDeckPosition();
-                case CardUiLocation.Inexistant:
                 default:
-                    return GetEndLocation(state);
+                    return GetDissovleDeckPosition(state, order);
             }
+        }
+
+        private Vector3 GetStartLocation(CardUiState state)
+        {
+            if(state.StartLocation == CardUiLocation.Inexistant)
+            {
+                return GetEndLocation(state);
+            }
+            return GetLocation(state.StartLocation, state.StartState, state.StartOrder);
         }
 
         private Vector3 GetEndLocation(CardUiState state)
         {
-            switch (state.EndLocation)
+            if (state.EndLocation == CardUiLocation.Inexistant)
             {
-                case CardUiLocation.Hand:
-                    return GetHandPosition(state.EndState, state.EndOrder);
-                case CardUiLocation.DrawDeck:
-                    return GetDrawDeckPosition();
-                case CardUiLocation.Discard:
-                    return GetDiscardPosition();
-                case CardUiLocation.Dissolve:
-                    return GetDissovleDeckPosition();
-                case CardUiLocation.Inexistant:
-                default:
-                    return GetStartLocation(state);
+                return GetStartLocation(state);
             }
+            return GetLocation(state.EndLocation, state.EndState, state.EndOrder);
         }
 
         private Vector3 GetHandPosition(EncounterState state, int order)
@@ -68,19 +70,21 @@ namespace Investigation.Behaviors
             return pos;
         }
 
-        public Vector3 GetDrawDeckPosition()
+        public Vector3 GetDrawDeckPosition(EncounterState state, int order)
         {
-            // Later this method will need to be expanded
-            return EncounterVisualsManager.Instance.DrawDeckPoint.position;
+            float deckOffset = EncounterVisualsManager.Instance.DeckStackingOffset;
+            Vector3 offset = new Vector3(-deckOffset * order, deckOffset * order, 0);
+            return EncounterVisualsManager.Instance.DrawDeckPoint.position + offset;
         }
 
-        public Vector3 GetDissovleDeckPosition()
+        public Vector3 GetDissovleDeckPosition(EncounterState state, int order)
         {
-            // Later this method will need to be expanded
-            return EncounterVisualsManager.Instance.DissolvePoint.position;
+            float deckOffset = EncounterVisualsManager.Instance.DeckStackingOffset;
+            Vector3 offset = new Vector3(deckOffset * order, deckOffset * order, 0);
+            return EncounterVisualsManager.Instance.DissolvePoint.position + offset;
         }
 
-        public Vector3 GetDiscardPosition()
+        public Vector3 GetDiscardPosition(EncounterState state, int order)
         {
             // Later this method will need to be expanded
             return EncounterVisualsManager.Instance.DiscardPoint.position;

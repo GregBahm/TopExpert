@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1287037210593176654, guid: ceb4d9175d96fb34bafd52deffea17dd, type: 3}
       propertyPath: m_text
-      value: Gain +1 Advantage Per Spirit Power
+      value: +1 Advantage Per Spirit Power
       objectReference: {fileID: 0}
     - target: {fileID: 4121263455242842797, guid: ceb4d9175d96fb34bafd52deffea17dd, type: 3}
       propertyPath: m_text
