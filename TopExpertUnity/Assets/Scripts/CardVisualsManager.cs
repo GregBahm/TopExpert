@@ -13,15 +13,15 @@ public class CardVisualsManager
 {
     private Dictionary<ElementIdentifier, CardBehavior> cardUi = new Dictionary<ElementIdentifier, CardBehavior>();
 
-    public void DrawEncounter(int turn, float progression)
+    public void VisualizeEncounter(int step, float progression)
     {
-        EncounterStep previousStep = EncounterManager.Instance.Encounter.GetTurn(turn);
-        EncounterStep nextStep = EncounterManager.Instance.Encounter.GetTurn(turn + 1);
+        EncounterStep previousStep = EncounterManager.Instance.Encounter.GetStep(step);
+        EncounterStep nextStep = EncounterManager.Instance.Encounter.GetStep(step + 1);
 
-        DrawEncounter(previousStep.State, nextStep.State, progression);
+        VisualizeEncounter(previousStep.State, nextStep.State, progression);
     }
 
-    public void DrawEncounter(EncounterState previousState, EncounterState nextState, float progression)
+    public void VisualizeEncounter(EncounterState previousState, EncounterState nextState, float progression)
     {
         HandleCards(previousState, nextState, progression);
     }

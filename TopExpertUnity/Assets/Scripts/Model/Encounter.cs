@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
+using UnityEngine;
 
 namespace Investigation.Model
 {
@@ -7,40 +9,50 @@ namespace Investigation.Model
     {
         private static readonly ActivateDangerPhase dangerPhaseActivator = new ActivateDangerPhase();
 
-        private readonly List<EncounterStep> encounterProgression;
-        public EncounterState CurrentState { get { return encounterProgression.Last().State; } }
+        private EncounterProgression progression;
+        public EncounterState CurrentState
+        { 
+            get 
+            { 
+                return progression.LastState; 
+            }
+        }
 
-        public int Turns { get { return encounterProgression.Count; } }
+        public int Turns { get { return progression.Turns.Count; } }
+        public int Steps { get { return progression.Steps.Count; } }
 
         public Encounter(EncounterState initialState)
         {
-            EncounterStep firstStep = new EncounterStep(null, initialState);
-            encounterProgression = new List<EncounterStep>() { firstStep };
+            progression = new EncounterProgression(initialState);
         }
 
         public void PlayCard(PlayerCard card)
         {
             EncounterState nextState = card.Play(CurrentState);
-            EncounterStep step = new EncounterStep(card, nextState);
-            encounterProgression.Add(step);
+            progression = progression.GetWithAddedStep(card, nextState);
         }
 
-        public EncounterStep GetTurn(int turn)
+        public EncounterTurn GetTurn(int turn)
         {
-            return encounterProgression[turn];
+            return progression.Turns[turn];
+        }
+        public EncounterStep GetStep(int step)
+        {
+            return progression.Steps[step];
         }
 
         public void EndRound()
         {
             EncounterState state = CurrentState;
-            if (state.UnappliedEffectors.Any())
+            while(state.UnappliedEffectors.Any())
             {
                 PersistantEffector effector = state.UnappliedEffectors.Last();
                 state = effector.GetModifiedState(state);
-                EncounterStep step = new EncounterStep(effector, state);
-                encounterProgression.Add(step);
-                EndRound();
+                progression = progression.GetWithAddedStep(effector, state);
             }
+            List<PersistantEffector> appliedEffectors = state.AppliedEffectors.ToList();
+            EncounterState nextTurnState = state with { UnappliedEffectors = appliedEffectors };
+            progression = progression.GetWithAddedTurn(null, nextTurnState);
         }
 
         public bool CanActiateDangerPhase()
@@ -53,15 +65,93 @@ namespace Investigation.Model
         {
             EncounterState state = CurrentState;
             EncounterState modifiedState = dangerPhaseActivator.GetModifiedState(state);
-            EncounterStep step = new EncounterStep(dangerPhaseActivator, modifiedState);
-            encounterProgression.Add(step);
+            progression = progression.GetWithAddedStep(dangerPhaseActivator, modifiedState);
         }
 
         public void DraftCard(DraftOption option)
         {
             EncounterState nextState = option.DraftCard(CurrentState);
-            EncounterStep step = new EncounterStep(option, nextState);
-            encounterProgression.Add(step);
+            progression = progression.GetWithAddedStep(option, nextState);
+        }
+    }
+
+    public record EncounterProgression(EncounterState initialState)
+    {
+        public IReadOnlyList<EncounterStep> Steps { get; init; } = new List<EncounterStep>()
+        {
+            new EncounterStep(null, initialState)
+        };
+        public IReadOnlyList<EncounterTurn> Turns { get; init; } = new List<EncounterTurn>()
+        {
+            new EncounterTurn(new EncounterStep(null, initialState))
+        };
+        public EncounterTurn LastTurn
+        {
+            get
+            {
+                return Turns[Turns.Count - 1];
+            }
+        }
+
+        public EncounterState LastState
+        {
+            get
+            {
+                return Steps[Steps.Count - 1].State;
+            }
+        }
+
+        public EncounterProgression GetWithAddedStep(IStateModifier modifier, EncounterState state)
+        {
+            EncounterStep newStep = new EncounterStep(modifier, state);
+            List<EncounterStep> steps = Steps.ToList();
+            steps.Add(newStep);
+
+            List<EncounterTurn> turns = Turns.ToList();
+            EncounterTurn newTurn = turns[turns.Count - 1].GetWithAddedStep(newStep);
+            turns[turns.Count - 1] = newTurn;
+
+            return this with { Steps = steps, Turns = turns };
+        }
+
+        public EncounterProgression GetWithAddedTurn(IStateModifier modifier, EncounterState state)
+        {
+            EncounterStep newStep = new EncounterStep(modifier, state);
+            List<EncounterStep> steps = Steps.ToList();
+            steps.Add(newStep);
+
+            List<EncounterTurn> turns = Turns.ToList();
+            EncounterTurn newTurn = new EncounterTurn(newStep);
+            turns.Add(newTurn);
+            return this with { Steps = steps, Turns = turns };
+        }
+    }
+
+    public record EncounterTurn(EncounterStep initialStep)
+    {
+        public IReadOnlyList<EncounterStep> Steps { get; init; } = new List<EncounterStep>() { initialStep };
+
+        public EncounterState StartingState
+        {
+            get
+            {
+                return Steps[0].State;
+            }
+        }
+        public EncounterState EndingState
+        {
+            get
+            {
+                return Steps[Steps.Count - 1].State;
+            }
+        }
+
+        public EncounterTurn GetWithAddedStep(EncounterStep step)
+        {
+            List<EncounterStep> steps = Steps.ToList();
+            steps.Add(step);
+
+            return this with { Steps = steps };
         }
     }
 
@@ -75,5 +165,4 @@ namespace Investigation.Model
             State = state;
         }
     }
-
 }

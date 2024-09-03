@@ -79,15 +79,14 @@ namespace Investigation.Behaviors
 
         public Vector3 GetDissovleDeckPosition(EncounterState state, int order)
         {
-            float deckOffset = EncounterVisualsManager.Instance.DeckStackingOffset;
-            Vector3 offset = new Vector3(deckOffset * order, deckOffset * order, 0);
-            return EncounterVisualsManager.Instance.DissolvePoint.position + offset;
+            return EncounterVisualsManager.Instance.DissolvePoint.position;
         }
 
         public Vector3 GetDiscardPosition(EncounterState state, int order)
         {
-            // Later this method will need to be expanded
-            return EncounterVisualsManager.Instance.DiscardPoint.position;
+            float deckOffset = EncounterVisualsManager.Instance.DeckStackingOffset;
+            Vector3 offset = new Vector3(deckOffset * order, deckOffset * order, 0);
+            return EncounterVisualsManager.Instance.DiscardPoint.position + offset;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Investigation.Model;
+using TMPro;
 using UnityEngine;
 
 namespace Investigation.Behaviors
@@ -8,9 +9,6 @@ namespace Investigation.Behaviors
         private CardVisualsManager cardVisualsManager;
 
         public static EncounterVisualsManager Instance { get; private set; }
-
-        [SerializeField]
-        private Canvas canvas;
 
         [SerializeField]
         private RectTransform handLeftPoint;
@@ -27,6 +25,16 @@ namespace Investigation.Behaviors
         [SerializeField]
         private RectTransform discardPoint;
         public RectTransform DiscardPoint => discardPoint;
+
+        [SerializeField]
+        private TextMeshProUGUI currentActions;
+        [SerializeField]
+        private TextMeshProUGUI totalActions;
+        [SerializeField]
+        private TextMeshProUGUI currentInsights;
+
+        [SerializeField]
+        private RectTransform cardsParent;
 
         [Range(0, 1)]
         [SerializeField]
@@ -48,15 +56,15 @@ namespace Investigation.Behaviors
         private void Update()
         {
             Model.Encounter encounter = EncounterManager.Instance.Encounter;
-            float fullTime = (encounter.Turns - 1) * progression;
+            float fullTime = (encounter.Steps - 1) * progression;
             int mainTime = Mathf.FloorToInt(fullTime);
             float subTime = fullTime % 1;
-            if(mainTime == encounter.Turns - 1)
+            if(mainTime == encounter.Steps - 1)
             {
-                mainTime = encounter.Turns - 2;
+                mainTime = encounter.Steps - 2;
                 subTime = 1;
             }
-            cardVisualsManager.DrawEncounter(mainTime, subTime);
+            cardVisualsManager.VisualizeEncounter(mainTime, subTime);
         }
 
 
@@ -64,7 +72,7 @@ namespace Investigation.Behaviors
         {
             GameObject cardPrefab = CardVisualBindings.Instance.GetPrefabFor(card);
             GameObject obj = GameObject.Instantiate(cardPrefab);
-            obj.transform.SetParent(canvas.transform, false);
+            obj.transform.SetParent(cardsParent.transform, false);
             CardBehavior cardViewModel = obj.GetComponent<CardBehavior>();
             return cardViewModel;
         }

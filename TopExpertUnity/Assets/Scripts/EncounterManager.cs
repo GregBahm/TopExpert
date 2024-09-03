@@ -43,6 +43,22 @@ namespace Investigation.Behaviors
                 new PunchItCard(new ElementIdentifier()),
                 new SpringTheTrapCard(new ElementIdentifier()),
                 new UnravelTheMysteryCard(new ElementIdentifier()),
+
+                new CarefulResearchCard(new ElementIdentifier()),
+                new CommuneWithSpiritsCard(new ElementIdentifier()),
+                new DaringGambitCard(new ElementIdentifier()),
+                new GetAfterItCard(new ElementIdentifier()),
+                new HyperfocusCard(new ElementIdentifier()),
+                new InvestigateCard(new ElementIdentifier()),
+                new InvestigateCard(new ElementIdentifier()),
+                new InvokeTheSpiritsCard(new ElementIdentifier()),
+                new NewPlanCard(new ElementIdentifier()),
+                new NoWayCard(new ElementIdentifier()),
+                new OfCourseCard(new ElementIdentifier()),
+                new OverthinkerCard(new ElementIdentifier()),
+                new PunchItCard(new ElementIdentifier()),
+                new SpringTheTrapCard(new ElementIdentifier()),
+                new UnravelTheMysteryCard(new ElementIdentifier()),
             };
             List<PersistantEffector> baseEffectors = new List<PersistantEffector>()
             {
