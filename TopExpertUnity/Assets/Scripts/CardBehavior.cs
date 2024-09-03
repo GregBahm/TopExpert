@@ -9,6 +9,13 @@ namespace Investigation.Behaviors
         [SerializeField]
         private CardVisualController visualController;
 
+        private ElementIdentifier identifier;
+
+        public void OnClick()
+        {
+            EncounterInteractionManager.Instance.PlayCard(identifier);
+        }
+
         public void DrawState(CardUiState state, float progression)
         {
             if(state.StartLocation == CardUiLocation.Inexistant && state.EndLocation == CardUiLocation.Inexistant)
@@ -25,6 +32,10 @@ namespace Investigation.Behaviors
             Vector3 startLocation = GetStartLocation(state);
             Vector3 endLocation = GetEndLocation(state);
             return Vector3.Lerp(startLocation, endLocation, progression);
+        }
+        public void Initialize(ElementIdentifier identifier)
+        {
+            this.identifier = identifier;
         }
 
         private Vector3 GetLocation(CardUiLocation location, EncounterState state, int order)

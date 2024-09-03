@@ -15,8 +15,8 @@ namespace Investigation.Behaviors
         public void DrawState(CardUiState state, float progression)
         {
             bool cardIsUp = GetCardIsUp(state, progression);
-            cardBack.SetActive(cardIsUp);
-            cardFront.SetActive(!cardIsUp);
+            cardBack.SetActive(!cardIsUp);
+            cardFront.SetActive(cardIsUp);
         }
 
         private bool GetCardIsUp(CardUiState state, float progression)

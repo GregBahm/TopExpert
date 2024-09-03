@@ -73,6 +73,7 @@ namespace Investigation.Behaviors
             GameObject obj = GameObject.Instantiate(cardPrefab);
             obj.transform.SetParent(cardsParent.transform, false);
             CardBehavior cardViewModel = obj.GetComponent<CardBehavior>();
+            cardViewModel.Initialize(card.Identifier);
             return cardViewModel;
         }
     }

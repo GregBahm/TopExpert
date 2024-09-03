@@ -38,45 +38,72 @@ namespace Investigation.Model
 
         public int SpiritsPower { get; init; }
 
+        public IEnumerable<PlayerCard> AllCards
+        {
+            get
+            {
+                foreach (var card in Hand)
+                {
+                    yield return card;
+                }
+                foreach (var card in DrawDeck)
+                {
+                    yield return card;
+                }
+                foreach (var card in DiscardDeck)
+                {
+                    yield return card;
+                }
+                foreach (var card in DissolveDeck)
+                {
+                    yield return card;
+                }
+            }
+        }
+
         public EncounterState GetWithDraw()
         {
-            EncounterState state = this;
-            if (DrawDeck.Any())
-            {
-                List<PlayerCard> newDrawDeck = DrawDeck.ToList();
-                PlayerCard card = newDrawDeck.Last();
-                newDrawDeck.RemoveAt(DrawDeck.Count - 1);
+            return GetWithDraw(this);
+        }
 
-                List<PlayerCard> newHand = Hand.ToList();
+        private static EncounterState GetWithDraw(EncounterState state)
+        {
+            if (state.DrawDeck.Any())
+            {
+                List<PlayerCard> newDrawDeck = state.DrawDeck.ToList();
+                PlayerCard card = newDrawDeck.Last();
+                newDrawDeck.RemoveAt(state.DrawDeck.Count - 1);
+
+                List<PlayerCard> newHand = state.Hand.ToList();
                 newHand.Add(card);
 
                 state = state with { Hand = newHand, DrawDeck = newDrawDeck };
             }
             else
             {
-                if (DiscardDeck.Any())
+                if (state.DiscardDeck.Any())
                 {
-                    state = ShuffleDiscardsIntoDraw();
-                    state = GetWithDraw();
+                    state = ShuffleDiscardsIntoDraw(state);
+                    state = GetWithDraw(state);
                 }
             }
             return state;
         }
 
-        private EncounterState ShuffleDiscardsIntoDraw()
+        private static EncounterState ShuffleDiscardsIntoDraw(EncounterState state)
         {
-            List<PlayerCard> oldDiscardDeck = DiscardDeck.ToList();
+            List<PlayerCard> oldDiscardDeck = state.DiscardDeck.ToList();
             List<PlayerCard> newDrawDeck = new List<PlayerCard>();
-
-            for (int i = 0; i < oldDiscardDeck.Count; i++)
+            int originalCount = oldDiscardDeck.Count;
+            for (int i = 0; i < originalCount; i++)
             {
-                int nextCard = UnityEngine.Random.Range(0, oldDiscardDeck.Count - 1);
+                int nextCard = UnityEngine.Random.Range(0, oldDiscardDeck.Count);
                 PlayerCard card = oldDiscardDeck[nextCard];
                 oldDiscardDeck.RemoveAt(nextCard);
                 newDrawDeck.Add(card);
             }
 
-            return this with { DiscardDeck = new List<PlayerCard>(), DrawDeck = newDrawDeck };
+            return state with { DiscardDeck = new List<PlayerCard>(), DrawDeck = newDrawDeck };
         }
 
         public EncounterState GetWithCardDiscarded(PlayerCard card)
