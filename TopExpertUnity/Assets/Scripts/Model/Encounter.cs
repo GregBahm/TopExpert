@@ -51,7 +51,7 @@ namespace Investigation.Model
                 progression = progression.GetWithAddedStep(effector, state);
             }
             List<PersistantEffector> appliedEffectors = state.AppliedEffectors.ToList();
-            EncounterState nextTurnState = state with { UnappliedEffectors = appliedEffectors };
+            EncounterState nextTurnState = state with { UnappliedEffectors = appliedEffectors, AppliedEffectors = new List<PersistantEffector>() };
             progression = progression.GetWithAddedTurn(null, nextTurnState);
         }
 

@@ -23,7 +23,11 @@ namespace Investigation.Behaviors
                 throw new System.Exception("Trying to draw a card that beings and ends inexistant");
             }
             Vector3 cardLocation = GetLocation(state, progression);
+            int index = GetSiblingIndex(state, progression);
+            
             gameObject.transform.position = cardLocation;
+            gameObject.transform.SetSiblingIndex(index);
+
             visualController.DrawState(state, progression);
         }
 
@@ -33,6 +37,37 @@ namespace Investigation.Behaviors
             Vector3 endLocation = GetEndLocation(state);
             return Vector3.Lerp(startLocation, endLocation, progression);
         }
+
+        private int GetSiblingIndex(CardUiState state, float progression)
+        {
+            if(progression < .5f)
+            {
+                return GetSiblingIndex(state.StartLocation, state.StartState, state.StartOrder);
+            }
+            return GetSiblingIndex(state.EndLocation, state.EndState, state.EndOrder);
+        }
+
+        private int GetSiblingIndex(CardUiLocation location, EncounterState state, int order)
+        {
+            int drawCount = state.DrawDeck.Count;
+            int discardCount = state.DiscardDeck.Count;
+            int dissolveCount = state.DissolveDeck.Count;
+            switch (location)
+            {
+                case CardUiLocation.DrawDeck:
+                    return order;
+                case CardUiLocation.Discard:
+                    return drawCount + order;
+                case CardUiLocation.Dissolve:
+                    return drawCount + discardCount + order;
+                case CardUiLocation.Hand:
+                    return drawCount + discardCount + dissolveCount + order;
+                case CardUiLocation.Inexistant:
+                default:
+                    return 0;
+            }
+        }
+
         public void Initialize(ElementIdentifier identifier)
         {
             this.identifier = identifier;
