@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 542098062}
   - component: {fileID: 542098063}
   - component: {fileID: 542098064}
+  - component: {fileID: 542098065}
   m_Layer: 0
   m_Name: MainScript
   m_TagString: Untagged
@@ -324,9 +325,6 @@ MonoBehaviour:
   drawDeckPoint: {fileID: 3646393478335036001}
   dissolvePoint: {fileID: 762659739}
   discardPoint: {fileID: 762659739}
-  currentActions: {fileID: 739044621}
-  totalActions: {fileID: 1073122705}
-  currentInsights: {fileID: 1176153718}
   cardsParent: {fileID: 63962695}
   progression: 1
   deckStackingOfset: -5
@@ -342,6 +340,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b313b19a7e474cc469b348c35812da58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &542098065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542098058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99820cbab11737e47a16a032b258717e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentActions: {fileID: 739044621}
+  totalActions: {fileID: 1073122705}
+  currentInsights: {fileID: 1176153718}
 --- !u!1 &576065445
 GameObject:
   m_ObjectHideFlags: 0

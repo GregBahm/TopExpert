@@ -1,12 +1,14 @@
 ﻿using Investigation.Model;
-using TMPro;
 using UnityEngine;
 
 namespace Investigation.Behaviors
 {
+
+    [RequireComponent(typeof(HudVisualManager))]
     public class EncounterVisualsManager : MonoBehaviour
     {
         private CardVisualsManager cardVisualsManager;
+        private HudVisualManager hudVisualsManager;
 
         public static EncounterVisualsManager Instance { get; private set; }
 
@@ -27,13 +29,6 @@ namespace Investigation.Behaviors
         public RectTransform DiscardPoint => discardPoint;
 
         [SerializeField]
-        private TextMeshProUGUI currentActions;
-        [SerializeField]
-        private TextMeshProUGUI totalActions;
-        [SerializeField]
-        private TextMeshProUGUI currentInsights;
-
-        [SerializeField]
         private RectTransform cardsParent;
 
         [Range(0, 1)]
@@ -50,6 +45,7 @@ namespace Investigation.Behaviors
 
         private void Start()
         {
+            hudVisualsManager = GetComponent<HudVisualManager>();
             cardVisualsManager = new CardVisualsManager();
         }
 
@@ -64,7 +60,10 @@ namespace Investigation.Behaviors
                 mainTime = encounter.Steps - 2;
                 subTime = 1;
             }
-            cardVisualsManager.VisualizeEncounter(mainTime, subTime);
+            EncounterStep previousStep = EncounterManager.Instance.Encounter.GetStep(mainTime);
+            EncounterStep nextStep = EncounterManager.Instance.Encounter.GetStep(mainTime + 1);
+            cardVisualsManager.VisualizeEncounter(previousStep.State, nextStep.State, subTime);
+            hudVisualsManager.VisualizeEncounter(previousStep.State, nextStep.State, subTime);
         }
 
 

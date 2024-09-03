@@ -8,18 +8,9 @@ using System.Linq;
 using TMPro;
 using System.Resources;
 
-
 public class CardVisualsManager
 {
     private Dictionary<ElementIdentifier, CardBehavior> cardUi = new Dictionary<ElementIdentifier, CardBehavior>();
-
-    public void VisualizeEncounter(int step, float progression)
-    {
-        EncounterStep previousStep = EncounterManager.Instance.Encounter.GetStep(step);
-        EncounterStep nextStep = EncounterManager.Instance.Encounter.GetStep(step + 1);
-
-        VisualizeEncounter(previousStep.State, nextStep.State, progression);
-    }
 
     public void VisualizeEncounter(EncounterState previousState, EncounterState nextState, float progression)
     {
@@ -132,7 +123,6 @@ public class CardVisualsManager
             EndState = state
         };
     }
-
     private CardUiState CompleteCardUiState(PlayerCard card, int cardOrder, CardUiLocation location, CardUiState previousState, EncounterState state)
     {
         return previousState with
