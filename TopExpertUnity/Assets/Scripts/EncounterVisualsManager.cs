@@ -17,7 +17,7 @@ namespace Investigation.Behaviors
         public RectTransform HandLeftPoint => handLeftPoint;
         [SerializeField]
         private RectTransform handRightPoint;
-        public RectTransform HandsRightPoint => handRightPoint;
+        public RectTransform HandRightPoint => handRightPoint;
         [SerializeField]
         private RectTransform drawDeckPoint;
         public RectTransform DrawDeckPoint => drawDeckPoint;
@@ -37,6 +37,10 @@ namespace Investigation.Behaviors
         [SerializeField]
         private float deckStackingOfset;
         public float DeckStackingOffset => deckStackingOfset;
+
+        [SerializeField]
+        private float maxCardSpread;
+        public float MaxCardSpread => maxCardSpread;
 
         private void Awake()
         {

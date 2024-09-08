@@ -65,10 +65,10 @@ public class CardVisualsManager
         ProcessPreviousCardSet(ret, previousState.DiscardDeck, CardUiLocation.Discard, previousState);
         ProcessPreviousCardSet(ret, previousState.DissolveDeck, CardUiLocation.Dissolve, previousState);
 
-        ProcessNextCardSet(ret, nextState.Hand, CardUiLocation.Hand, nextState);
-        ProcessNextCardSet(ret, nextState.DrawDeck, CardUiLocation.DrawDeck, nextState);
-        ProcessNextCardSet(ret, nextState.DiscardDeck, CardUiLocation.Discard, nextState);
-        ProcessNextCardSet(ret, nextState.DissolveDeck, CardUiLocation.Dissolve, nextState);
+        ProcessNextCardSet(ret, nextState.Hand, CardUiLocation.Hand, nextState, previousState);
+        ProcessNextCardSet(ret, nextState.DrawDeck, CardUiLocation.DrawDeck, nextState, previousState);
+        ProcessNextCardSet(ret, nextState.DiscardDeck, CardUiLocation.Discard, nextState, previousState);
+        ProcessNextCardSet(ret, nextState.DissolveDeck, CardUiLocation.Dissolve, nextState, previousState);
 
         return ret;
     }
@@ -88,16 +88,17 @@ public class CardVisualsManager
 
     private void ProcessNextCardSet(Dictionary<ElementIdentifier, CardUiState> dictionary,
         IReadOnlyList<PlayerCard> cardSet,
-        CardUiLocation location, 
-        EncounterState state)
+        CardUiLocation endLocation, 
+        EncounterState endState,
+        EncounterState startState)
     {
         for (int i = 0; i < cardSet.Count; i++)
         {
             PlayerCard card = cardSet[i];
             if (dictionary.ContainsKey(card.Identifier))
-                dictionary[card.Identifier] = CompleteCardUiState(card, i, location, dictionary[card.Identifier], state);
+                dictionary[card.Identifier] = CompleteCardUiState(card, i, endLocation, dictionary[card.Identifier], endState);
             else
-                dictionary.Add(card.Identifier, CompleteCardUiState(card, i, location, state));
+                dictionary.Add(card.Identifier, CompleteCardUiState(card, i, endLocation, endState, startState));
         }
     }
 
@@ -112,25 +113,27 @@ public class CardVisualsManager
             StartState = state
         };
     }
-    private CardUiState CompleteCardUiState(PlayerCard card, int cardOrder, CardUiLocation location, EncounterState state)
+    private CardUiState CompleteCardUiState(PlayerCard endCard, int endCardOrder, CardUiLocation endLocation, EncounterState endState, EncounterState startState)
     {
         return new CardUiState()
         {
             StartLocation = CardUiLocation.Inexistant,
-            EndCardState = card,
-            EndOrder = cardOrder,
-            EndLocation = location,
-            EndState = state
+            StartState = startState,
+            StartOrder = 0,
+            EndCardState = endCard,
+            EndOrder = endCardOrder,
+            EndLocation = endLocation,
+            EndState = endState
         };
     }
-    private CardUiState CompleteCardUiState(PlayerCard card, int cardOrder, CardUiLocation location, CardUiState previousState, EncounterState state)
+    private CardUiState CompleteCardUiState(PlayerCard endCard, int endCardOrder, CardUiLocation endLocation, CardUiState previousState, EncounterState endState)
     {
         return previousState with
         {
-            EndCardState = card,
-            EndOrder = cardOrder,
-            EndLocation = location,
-            EndState = state
+            EndCardState = endCard,
+            EndOrder = endCardOrder,
+            EndLocation = endLocation,
+            EndState = endState
         };
     }
 }

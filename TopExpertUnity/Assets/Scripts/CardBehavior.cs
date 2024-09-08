@@ -1,19 +1,53 @@
 ﻿using UnityEngine;
 using Investigation.Model;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System;
+using UnityEngine.UI;
+using System.Reflection;
 
 namespace Investigation.Behaviors
 {
     public class CardBehavior : MonoBehaviour
     {
         [SerializeField]
-        private CardVisualController visualController;
+        private VisualController[] visualControllers;
+
+        private float hoveredness;
 
         private ElementIdentifier identifier;
 
+        [SerializeField]
+        private Button button;
+        private Vector3 cardLocation;
+
+        public bool IsHovered
+        {
+            get
+            {
+                return EncounterInteractionManager.Instance.HoveredCard == this;
+            }
+        }
+
         public void OnClick()
         {
-            EncounterInteractionManager.Instance.PlayCard(identifier);
+            EncounterInteractionManager interaction = EncounterInteractionManager.Instance;
+            bool isPlayable = interaction.GetIsPlayable(identifier);
+            if(isPlayable)
+                interaction.PlayCard(identifier);
+        }
+
+        private void Update()
+        {
+            float hoverTarget = IsHovered ? 1 : 0;
+            hoveredness = Mathf.Lerp(hoveredness, hoverTarget, Time.deltaTime * 25);
+            float scale = 1 + hoveredness * .25f;
+            transform.localScale = new Vector3(scale, scale, scale);
+            transform.position = cardLocation + new Vector3(0, 50 * hoveredness, 0);
+            if(IsHovered)
+            {
+                int cards = transform.parent.childCount;
+                gameObject.transform.SetSiblingIndex(cards);
+            }
         }
 
         public void DrawState(CardUiState state, float progression)
@@ -22,13 +56,17 @@ namespace Investigation.Behaviors
             {
                 throw new System.Exception("Trying to draw a card that beings and ends inexistant");
             }
-            Vector3 cardLocation = GetLocation(state, progression);
+            cardLocation = GetLocation(state, progression);
             int index = GetSiblingIndex(state, progression);
             
             gameObject.transform.position = cardLocation;
             gameObject.transform.SetSiblingIndex(index);
 
-            visualController.DrawState(state, progression);
+            foreach (var visualController in visualControllers)
+            {
+                visualController.DrawState(state, progression);
+            }
+            button.enabled = state.StartLocation == CardUiLocation.Hand;
         }
 
         private Vector3 GetLocation(CardUiState state, float progression)
@@ -52,6 +90,7 @@ namespace Investigation.Behaviors
             int drawCount = state.DrawDeck.Count;
             int discardCount = state.DiscardDeck.Count;
             int dissolveCount = state.DissolveDeck.Count;
+            int handCount = state.Hand.Count;
             switch (location)
             {
                 case CardUiLocation.DrawDeck:
@@ -61,7 +100,7 @@ namespace Investigation.Behaviors
                 case CardUiLocation.Dissolve:
                     return drawCount + discardCount + order;
                 case CardUiLocation.Hand:
-                    return drawCount + discardCount + dissolveCount + order;
+                    return drawCount + discardCount + dissolveCount + (handCount - order);
                 case CardUiLocation.Inexistant:
                 default:
                     return 0;
@@ -112,7 +151,20 @@ namespace Investigation.Behaviors
             EncounterVisualsManager encounterVisuals = EncounterVisualsManager.Instance;
             int cardsInHand = state.Hand.Count;
             float param = cardsInHand == 1 ? .5f : (float)order / (cardsInHand - 1);
-            Vector3 pos = Vector3.Lerp(encounterVisuals.HandLeftPoint.position, encounterVisuals.HandsRightPoint.position, param);
+            Vector3 leftPos = encounterVisuals.HandLeftPoint.position;
+            Vector3 rightPos = encounterVisuals.HandRightPoint.position;
+            float span = rightPos.x - leftPos.x;
+            float maxSpan = cardsInHand * EncounterVisualsManager.Instance.MaxCardSpread;
+            if(span > maxSpan)
+            {
+                float midPoint = (leftPos.x + rightPos.x) / 2;
+                float offset = maxSpan * .5f;
+                float newLeft = midPoint - offset;
+                float newRight = midPoint + offset;
+                leftPos = new Vector3(newLeft, leftPos.y, leftPos.z);
+                rightPos = new Vector3(newRight, rightPos.y, rightPos.z);
+            }
+            Vector3 pos = Vector3.Lerp(rightPos, leftPos, param);
             return pos;
         }
 

@@ -13,7 +13,7 @@ namespace Investigation.Model
         {
             List<PlayerCard> discard = state.DiscardDeck.ToList();
             OverthinkerCard newOverthinker = new OverthinkerCard(new ElementIdentifier());
-            discard.Add(newOverthinker);
+            discard.Insert(discard.Count - 1, newOverthinker);
 
             int count = GetNumberOfOverthinkerCards(state) + 1;
 

@@ -19,6 +19,8 @@ namespace Investigation.Behaviors
         [SerializeField]
         private GameObject DaringGambitDraftOption;
         [SerializeField]
+        private GameObject DistractionCard;
+        [SerializeField]
         private GameObject GetAfterItCard;
         [SerializeField]
         private GameObject HyperfocusCard;
@@ -28,8 +30,6 @@ namespace Investigation.Behaviors
         private GameObject InvokeTheSpiritsCard;
         [SerializeField]
         private GameObject NewPlanCard;
-        [SerializeField]
-        private GameObject NoWayCard;
         [SerializeField]
         private GameObject OfCourseCard;
         [SerializeField]
@@ -58,7 +58,7 @@ namespace Investigation.Behaviors
                 { typeof(InvestigateCard), InvestigateCard },
                 { typeof(InvokeTheSpiritsCard), InvokeTheSpiritsCard },
                 { typeof(NewPlanCard), NewPlanCard },
-                { typeof(NoWayCard), NoWayCard },
+                { typeof(DistractionCard), DistractionCard },
                 { typeof(OfCourseCard), OfCourseCard },
                 { typeof(OverthinkerCard), OverthinkerCard },
                 { typeof(PunchItCard), PunchItCard },
