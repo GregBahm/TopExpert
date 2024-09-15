@@ -13,7 +13,7 @@ public class EncounterInteractionManager : MonoBehaviour
 {
     private EncounterManager manager;
 
-    public CardBehavior HoveredCard { get; private set; }
+    public CardVisualController HoveredCard { get; private set; }
 
     public static EncounterInteractionManager Instance { get; private set; }
 
@@ -41,7 +41,7 @@ public class EncounterInteractionManager : MonoBehaviour
     {
         if (hoveredElements.Any())
         {
-            CardBehavior card = hoveredElements[0].gameObject.GetComponent<CardBehavior>();
+            CardVisualController card = hoveredElements[0].gameObject.GetComponent<CardVisualController>();
             if (card != null)
                 HoveredCard = card;
             else

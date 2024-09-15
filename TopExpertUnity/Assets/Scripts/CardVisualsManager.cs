@@ -10,7 +10,7 @@ using System.Resources;
 
 public class CardVisualsManager
 {
-    private Dictionary<ElementIdentifier, CardBehavior> cardUi = new Dictionary<ElementIdentifier, CardBehavior>();
+    private Dictionary<ElementIdentifier, CardVisualController> cardUi = new Dictionary<ElementIdentifier, CardVisualController>();
 
     public void VisualizeEncounter(EncounterState previousState, EncounterState nextState)
     {
@@ -20,7 +20,7 @@ public class CardVisualsManager
             if (!cardUi.ContainsKey(item.Key))
             {
                 PlayerCard card = item.Value.StartCardState ?? item.Value.EndCardState;
-                CardBehavior viewModel = EncounterVisualsManager.Instance.InstantiateCardUi(card);
+                CardVisualController viewModel = EncounterVisualsManager.Instance.InstantiateCardUi(card);
                 cardUi.Add(item.Key, viewModel);
             }
         }
@@ -29,7 +29,7 @@ public class CardVisualsManager
         {
             if (cardStates.ContainsKey(item.Key))
             {
-                CardBehavior viewModel = cardUi[item.Key];
+                CardVisualController viewModel = cardUi[item.Key];
                 CardUiState state = cardStates[item.Key];
                 viewModel.SetDrawState(state);
             }
@@ -45,7 +45,7 @@ public class CardVisualsManager
     {
         foreach (var item in toDelete)
         {
-            CardBehavior behavior = cardUi[item];
+            CardVisualController behavior = cardUi[item];
             GameObject.Destroy(behavior.gameObject);
             cardUi.Remove(item);
         }

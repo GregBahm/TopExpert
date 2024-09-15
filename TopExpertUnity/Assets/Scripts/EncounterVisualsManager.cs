@@ -81,12 +81,12 @@ namespace Investigation.Behaviors
         }
 
 
-        public CardBehavior InstantiateCardUi(PlayerCard card)
+        public CardVisualController InstantiateCardUi(PlayerCard card)
         {
             GameObject cardPrefab = CardVisualBindings.Instance.GetPrefabFor(card);
             GameObject obj = GameObject.Instantiate(cardPrefab);
             obj.transform.SetParent(cardsParent.transform, false);
-            CardBehavior cardViewModel = obj.GetComponent<CardBehavior>();
+            CardVisualController cardViewModel = obj.GetComponent<CardVisualController>();
             cardViewModel.Initialize(card.Identifier);
             return cardViewModel;
         }
