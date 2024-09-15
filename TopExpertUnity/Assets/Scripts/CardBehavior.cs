@@ -40,7 +40,7 @@ namespace Investigation.Behaviors
         {
             float hoverTarget = IsHovered ? 1 : 0;
             hoveredness = Mathf.Lerp(hoveredness, hoverTarget, Time.deltaTime * 25);
-            float scale = 1 + hoveredness * .25f;
+            float scale = .5f + hoveredness * .25f;
             transform.localScale = new Vector3(scale, scale, scale);
             transform.position = cardLocation + new Vector3(0, 50 * hoveredness, 0);
             if(IsHovered)

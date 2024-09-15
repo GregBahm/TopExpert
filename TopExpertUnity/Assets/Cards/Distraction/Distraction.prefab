@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Distraction
       objectReference: {fileID: 0}
+    - target: {fileID: 3947485045870960480, guid: dff128239c7dac54692ea74af3b4c94c, type: 3}
+      propertyPath: m_text
+      value: Stun all danger cards for 1 turn
+      objectReference: {fileID: 0}
     - target: {fileID: 7282241878020386722, guid: dff128239c7dac54692ea74af3b4c94c, type: 3}
       propertyPath: m_Name
       value: Distraction
@@ -47,14 +51,6 @@ PrefabInstance:
     - target: {fileID: 7384740016203622190, guid: dff128239c7dac54692ea74af3b4c94c, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7384740016203622190, guid: dff128239c7dac54692ea74af3b4c94c, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 280
-      objectReference: {fileID: 0}
-    - target: {fileID: 7384740016203622190, guid: dff128239c7dac54692ea74af3b4c94c, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 7384740016203622190, guid: dff128239c7dac54692ea74af3b4c94c, type: 3}
       propertyPath: m_LocalPosition.x
