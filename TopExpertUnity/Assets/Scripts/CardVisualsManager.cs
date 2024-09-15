@@ -12,12 +12,7 @@ public class CardVisualsManager
 {
     private Dictionary<ElementIdentifier, CardBehavior> cardUi = new Dictionary<ElementIdentifier, CardBehavior>();
 
-    public void VisualizeEncounter(EncounterState previousState, EncounterState nextState, float progression)
-    {
-        HandleCards(previousState, nextState, progression);
-    }
-
-    private void HandleCards(EncounterState previousState, EncounterState nextState, float progression)
+    public void VisualizeEncounter(EncounterState previousState, EncounterState nextState)
     {
         Dictionary<ElementIdentifier, CardUiState> cardStates = GetCardStates(previousState, nextState);
         foreach (var item in cardStates)
@@ -36,7 +31,7 @@ public class CardVisualsManager
             {
                 CardBehavior viewModel = cardUi[item.Key];
                 CardUiState state = cardStates[item.Key];
-                viewModel.DrawState(state, progression);
+                viewModel.SetDrawState(state);
             }
             else
             {

@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1154779754105335899, guid: dff128239c7dac54692ea74af3b4c94c, type: 3}
+      propertyPath: m_text
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724014783338286113, guid: dff128239c7dac54692ea74af3b4c94c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2076570435974249158, guid: dff128239c7dac54692ea74af3b4c94c, type: 3}
       propertyPath: visualControllers.Array.size
       value: 2
@@ -23,6 +31,14 @@ PrefabInstance:
     - target: {fileID: 3947485045870960480, guid: dff128239c7dac54692ea74af3b4c94c, type: 3}
       propertyPath: m_text
       value: Stun all danger cards for 1 turn
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374803569302833061, guid: dff128239c7dac54692ea74af3b4c94c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5392646060951582868, guid: dff128239c7dac54692ea74af3b4c94c, type: 3}
+      propertyPath: m_text
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7282241878020386722, guid: dff128239c7dac54692ea74af3b4c94c, type: 3}
       propertyPath: m_Name

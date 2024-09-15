@@ -42,6 +42,16 @@ namespace Investigation.Behaviors
         private float maxCardSpread;
         public float MaxCardSpread => maxCardSpread;
 
+        [SerializeField]
+        private float maxCardHandRotation;
+        public float MaxCardHandRotation => maxCardHandRotation;
+
+        private int turnToDisplay;
+        public int TurnToDisplay => turnToDisplay;
+
+        private float subTurnDisplay;
+        public float SubTurnDisplay => subTurnDisplay;
+
         private void Awake()
         {
             Instance = this;
@@ -57,17 +67,17 @@ namespace Investigation.Behaviors
         {
             Model.Encounter encounter = EncounterManager.Instance.Encounter;
             float fullTime = (encounter.Steps - 1) * progression;
-            int mainTime = Mathf.FloorToInt(fullTime);
-            float subTime = fullTime % 1;
-            if(mainTime == encounter.Steps - 1)
+            turnToDisplay = Mathf.FloorToInt(fullTime);
+            subTurnDisplay = fullTime % 1;
+            if(turnToDisplay == encounter.Steps - 1)
             {
-                mainTime = encounter.Steps - 2;
-                subTime = 1;
+                turnToDisplay = encounter.Steps - 2;
+                subTurnDisplay = 1;
             }
-            EncounterStep previousStep = EncounterManager.Instance.Encounter.GetStep(mainTime);
-            EncounterStep nextStep = EncounterManager.Instance.Encounter.GetStep(mainTime + 1);
-            cardVisualsManager.VisualizeEncounter(previousStep.State, nextStep.State, subTime);
-            hudVisualsManager.VisualizeEncounter(previousStep.State, nextStep.State, subTime);
+            EncounterStep previousStep = encounter.GetStep(turnToDisplay);
+            EncounterStep nextStep = encounter.GetStep(turnToDisplay + 1);
+            cardVisualsManager.VisualizeEncounter(previousStep.State, nextStep.State);
+            hudVisualsManager.VisualizeEncounter(previousStep.State, nextStep.State);
         }
 
 

@@ -14,8 +14,9 @@ namespace Investigation.Behaviors
         [SerializeField]
         private TextMeshProUGUI currentInsights;
 
-        public void VisualizeEncounter(EncounterState previousState, EncounterState nextState, float progression)
+        public void VisualizeEncounter(EncounterState previousState, EncounterState nextState)
         {
+            // TODO: Better stuff here
             currentActions.text = nextState.Actions.ToString();
             totalActions.text = nextState.ActionsPerTurn.ToString();
             currentInsights.text = nextState.Insights.ToString();

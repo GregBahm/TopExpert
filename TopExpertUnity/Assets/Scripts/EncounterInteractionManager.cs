@@ -31,7 +31,7 @@ public class EncounterInteractionManager : MonoBehaviour
         pointerData = new PointerEventData(EventSystem.current);
         hoveredElements = new List<RaycastResult>();
     }
-    private void Update()
+    private void LateUpdate()
     {
         pointerData.position = Input.mousePosition;
         EventSystem.current.RaycastAll(pointerData, hoveredElements);

@@ -4,6 +4,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System;
 using UnityEngine.UI;
 using System.Reflection;
+using Unity.VisualScripting;
 
 namespace Investigation.Behaviors
 {
@@ -15,6 +16,8 @@ namespace Investigation.Behaviors
         private float hoveredness;
 
         private ElementIdentifier identifier;
+
+        private CardUiState state;
 
         [SerializeField]
         private Button button;
@@ -28,6 +31,14 @@ namespace Investigation.Behaviors
             }
         }
 
+        private EncounterVisualsManager Mothership
+        {
+            get
+            {
+                return EncounterVisualsManager.Instance;
+            }
+        }
+
         public void OnClick()
         {
             EncounterInteractionManager interaction = EncounterInteractionManager.Instance;
@@ -38,11 +49,25 @@ namespace Investigation.Behaviors
 
         private void Update()
         {
+
+            cardLocation = GetLocation(state);
+            int index = GetSiblingIndex(state);
+
+            gameObject.transform.position = cardLocation;
+            gameObject.transform.SetSiblingIndex(index);
+
+            foreach (var visualController in visualControllers)
+            {
+                visualController.DrawState(state, Mothership.SubTurnDisplay);
+            }
+            button.enabled = state.StartLocation == CardUiLocation.Hand;
+
             float hoverTarget = IsHovered ? 1 : 0;
             hoveredness = Mathf.Lerp(hoveredness, hoverTarget, Time.deltaTime * 25);
-            float scale = .5f + hoveredness * .25f;
-            transform.localScale = new Vector3(scale, scale, scale);
+            transform.localScale = GetCardScale();
             transform.position = cardLocation + new Vector3(0, 50 * hoveredness, 0);
+            transform.localScale = GetCardScale();
+            transform.localRotation = GetCardRotation();
             if(IsHovered)
             {
                 int cards = transform.parent.childCount;
@@ -50,35 +75,44 @@ namespace Investigation.Behaviors
             }
         }
 
-        public void DrawState(CardUiState state, float progression)
+        private Quaternion GetCardRotation()
         {
-            if(state.StartLocation == CardUiLocation.Inexistant && state.EndLocation == CardUiLocation.Inexistant)
+            float leftPos = Mothership.HandLeftPoint.position.x;
+            float rightPos = Mothership.HandRightPoint.position.x;
+            float currentPos = transform.position.x;
+            float param = (currentPos - leftPos) / (rightPos - leftPos);
+
+            param = param * 2 - 1f;
+            param *= 1 - hoveredness;
+            float rotation = Mothership.MaxCardHandRotation * param;
+            return Quaternion.Euler(0, 0, rotation);
+        }
+
+        private Vector3 GetCardScale()
+        {
+            float scale = .5f + hoveredness * .25f; 
+            return new Vector3(scale, scale, scale);
+        }
+
+        public void SetDrawState(CardUiState state)
+        {
+            if (state.StartLocation == CardUiLocation.Inexistant && state.EndLocation == CardUiLocation.Inexistant)
             {
                 throw new System.Exception("Trying to draw a card that beings and ends inexistant");
             }
-            cardLocation = GetLocation(state, progression);
-            int index = GetSiblingIndex(state, progression);
-            
-            gameObject.transform.position = cardLocation;
-            gameObject.transform.SetSiblingIndex(index);
-
-            foreach (var visualController in visualControllers)
-            {
-                visualController.DrawState(state, progression);
-            }
-            button.enabled = state.StartLocation == CardUiLocation.Hand;
+            this.state = state;
         }
 
-        private Vector3 GetLocation(CardUiState state, float progression)
+        private Vector3 GetLocation(CardUiState staten)
         {
             Vector3 startLocation = GetStartLocation(state);
             Vector3 endLocation = GetEndLocation(state);
-            return Vector3.Lerp(startLocation, endLocation, progression);
+            return Vector3.Lerp(startLocation, endLocation, Mothership.SubTurnDisplay);
         }
 
-        private int GetSiblingIndex(CardUiState state, float progression)
+        private int GetSiblingIndex(CardUiState state)
         {
-            if(progression < .5f)
+            if(Mothership.SubTurnDisplay < .5f)
             {
                 return GetSiblingIndex(state.StartLocation, state.StartState, state.StartOrder);
             }
