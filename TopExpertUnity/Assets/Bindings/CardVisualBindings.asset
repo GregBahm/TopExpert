@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 612f1555f9945bc488779957050fd5e5, type: 3}
+  m_Name: CardVisualBindings
+  m_EditorClassIdentifier: 
+  CarefulResearchCard: {fileID: 6231419582042853198, guid: fae2d507da130d040bfcfcf9fe1c7be3, type: 3}
+  CommuneWithSpiritsCard: {fileID: 2186669251230591016, guid: 7d9fb0728d7087f48a8cdb6830c44a3f, type: 3}
+  DaringGambitCard: {fileID: 6816370585545121043, guid: a886b87877915934bb882ecc96af52ea, type: 3}
+  DistractionCard: {fileID: 2560018547807420295, guid: ee94dadf181841449878cac58cfaa0f7, type: 3}
+  GetAfterItCard: {fileID: 175631475490821326, guid: 940d75d989b3639498d70fe66d0c7937, type: 3}
+  HyperfocusCard: {fileID: 8560180218358650483, guid: f507d71487b02df43bfc25379f649513, type: 3}
+  InvestigateCard: {fileID: 6231419582042853198, guid: 7ca8cf512a8f6e449af9d493a31c003c, type: 3}
+  InvokeTheSpiritsCard: {fileID: 8781417894371128172, guid: de3d26cbef079334a8df570016bbdeb8, type: 3}
+  NewPlanCard: {fileID: 3891229262196425285, guid: c511402afcda4b74f88ff8e74c7fe525, type: 3}
+  OfCourseCard: {fileID: 7945742550544802470, guid: 54874549ca821854e8bd4ab9c9cf7849, type: 3}
+  OverthinkerCard: {fileID: 1876967825427496761, guid: 7738af26cac395e4d8c9e4a274ef1013, type: 3}
+  PunchItCard: {fileID: 2683117790630420534, guid: a45461a95565ba44d86324d419b29ed8, type: 3}
+  SpringTheTrapCard: {fileID: 597376442422805032, guid: 10de8968f86d474479bc90cd80e93f10, type: 3}
+  UnravelTheMysteryCard: {fileID: 2023856913102181670, guid: d5ad4871d8e4f944ea10914df0f893c2, type: 3}

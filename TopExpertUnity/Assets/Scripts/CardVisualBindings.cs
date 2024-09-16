@@ -2,22 +2,20 @@ using Investigation.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace Investigation.Behaviors
 {
-    public class CardVisualBindings : MonoBehaviour
+    [CreateAssetMenu(fileName = "New CardVisualBindings", menuName = "Bindings/CardVisualBindings")]
+    public class CardVisualBindings : ScriptableObject
     {
         [SerializeField]
         private GameObject CarefulResearchCard;
         [SerializeField]
-        private GameObject ChannelTheOtherSideDraftOption;
-        [SerializeField]
         private GameObject CommuneWithSpiritsCard;
         [SerializeField]
         private GameObject DaringGambitCard;
-        [SerializeField]
-        private GameObject DaringGambitDraftOption;
         [SerializeField]
         private GameObject DistractionCard;
         [SerializeField]
@@ -43,11 +41,8 @@ namespace Investigation.Behaviors
 
         private Dictionary<Type, GameObject> bindings;
 
-        public static CardVisualBindings Instance { get; private set; }
-
-        private void Awake()
+        public void Initialize()
         {
-            Instance = this;
             bindings = new Dictionary<Type, GameObject>
             {
                 { typeof(CarefulResearchCard), CarefulResearchCard },

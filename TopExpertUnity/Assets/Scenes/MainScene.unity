@@ -242,10 +242,10 @@ GameObject:
   m_Component:
   - component: {fileID: 542098060}
   - component: {fileID: 542098059}
-  - component: {fileID: 542098062}
   - component: {fileID: 542098063}
   - component: {fileID: 542098064}
   - component: {fileID: 542098065}
+  - component: {fileID: 542098066}
   m_Layer: 0
   m_Name: MainScript
   m_TagString: Untagged
@@ -280,34 +280,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &542098062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542098058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 612f1555f9945bc488779957050fd5e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CarefulResearchCard: {fileID: 6231419582042853198, guid: fae2d507da130d040bfcfcf9fe1c7be3, type: 3}
-  ChannelTheOtherSideDraftOption: {fileID: 0}
-  CommuneWithSpiritsCard: {fileID: 2186669251230591016, guid: 7d9fb0728d7087f48a8cdb6830c44a3f, type: 3}
-  DaringGambitCard: {fileID: 6816370585545121043, guid: a886b87877915934bb882ecc96af52ea, type: 3}
-  DaringGambitDraftOption: {fileID: 0}
-  DistractionCard: {fileID: 2560018547807420295, guid: ee94dadf181841449878cac58cfaa0f7, type: 3}
-  GetAfterItCard: {fileID: 175631475490821326, guid: 940d75d989b3639498d70fe66d0c7937, type: 3}
-  HyperfocusCard: {fileID: 8560180218358650483, guid: f507d71487b02df43bfc25379f649513, type: 3}
-  InvestigateCard: {fileID: 6231419582042853198, guid: 7ca8cf512a8f6e449af9d493a31c003c, type: 3}
-  InvokeTheSpiritsCard: {fileID: 8781417894371128172, guid: de3d26cbef079334a8df570016bbdeb8, type: 3}
-  NewPlanCard: {fileID: 3891229262196425285, guid: c511402afcda4b74f88ff8e74c7fe525, type: 3}
-  OfCourseCard: {fileID: 7945742550544802470, guid: 54874549ca821854e8bd4ab9c9cf7849, type: 3}
-  OverthinkerCard: {fileID: 1876967825427496761, guid: 7738af26cac395e4d8c9e4a274ef1013, type: 3}
-  PunchItCard: {fileID: 2683117790630420534, guid: a45461a95565ba44d86324d419b29ed8, type: 3}
-  SpringTheTrapCard: {fileID: 597376442422805032, guid: 10de8968f86d474479bc90cd80e93f10, type: 3}
-  UnravelTheMysteryCard: {fileID: 2023856913102181670, guid: d5ad4871d8e4f944ea10914df0f893c2, type: 3}
 --- !u!114 &542098063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,6 +329,21 @@ MonoBehaviour:
   currentActions: {fileID: 739044621}
   totalActions: {fileID: 1073122705}
   currentInsights: {fileID: 1176153718}
+--- !u!114 &542098066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542098058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e059573dad708a64681e6a5c8c35d4eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardBindings: {fileID: 11400000, guid: af0d69ed37616f347bafb47321242c0a, type: 2}
+  draftBindings: {fileID: 11400000, guid: fcabfda6fcb0e734bbf5ae973c373e9f, type: 2}
+  effectorBindings: {fileID: 11400000, guid: ba9929603fa909649b816b82a3d7bed2, type: 2}
 --- !u!1 &576065445
 GameObject:
   m_ObjectHideFlags: 0

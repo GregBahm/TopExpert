@@ -7,7 +7,8 @@ namespace Investigation.Behaviors
     [RequireComponent(typeof(HudVisualManager))]
     public class EncounterVisualsManager : MonoBehaviour
     {
-        private CardVisualsManager cardVisualsManager;
+        private CardVisualsManager cardManager;
+        private EffectorVisualManager effectorManager;
         private HudVisualManager hudVisualsManager;
 
         public static EncounterVisualsManager Instance { get; private set; }
@@ -60,7 +61,8 @@ namespace Investigation.Behaviors
         private void Start()
         {
             hudVisualsManager = GetComponent<HudVisualManager>();
-            cardVisualsManager = new CardVisualsManager();
+            cardManager = new CardVisualsManager();
+            effectorManager = new EffectorVisualManager();
         }
 
         private void Update()
@@ -76,14 +78,15 @@ namespace Investigation.Behaviors
             }
             EncounterStep previousStep = encounter.GetStep(turnToDisplay);
             EncounterStep nextStep = encounter.GetStep(turnToDisplay + 1);
-            cardVisualsManager.VisualizeEncounter(previousStep.State, nextStep.State);
+            cardManager.VisualizeEncounter(previousStep.State, nextStep.State);
+            effectorManager.VisualizeEncounter(previousStep.State, nextStep.State);
             hudVisualsManager.VisualizeEncounter(previousStep.State, nextStep.State);
         }
 
 
         public CardVisualController InstantiateCardUi(PlayerCard card)
         {
-            GameObject cardPrefab = CardVisualBindings.Instance.GetPrefabFor(card);
+            GameObject cardPrefab = VisualBinding.Instance.GetPrefabFor(card);
             GameObject obj = GameObject.Instantiate(cardPrefab);
             obj.transform.SetParent(cardsParent.transform, false);
             CardVisualController cardViewModel = obj.GetComponent<CardVisualController>();
