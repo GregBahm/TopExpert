@@ -35,5 +35,9 @@ namespace Investigation.Behaviors
         {
             return effectorBindings.GetPrefabFor(effector);
         }
+        public bool HasVisuals(PersistantEffector effector)
+        {
+            return effectorBindings.HasVisuals(effector);
+        }
     }
 }

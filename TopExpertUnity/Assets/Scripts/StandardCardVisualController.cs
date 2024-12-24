@@ -11,7 +11,7 @@ public class StandardCardVisualController : VisualController
 
     public override void DrawState(CardUiState state, float progression)
     {
-        StandardPlayerCard card = (StandardPlayerCard)(state.StartCardState?? state.EndCardState);
+        StandardPlayerCard card = (StandardPlayerCard)(state.StartElementState ?? state.EndElementState);
         actionCost.text = card.ActionCost.ToString();
     }
 }

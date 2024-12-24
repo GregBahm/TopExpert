@@ -30,7 +30,22 @@ namespace Investigation.Behaviors
         public RectTransform DiscardPoint => discardPoint;
 
         [SerializeField]
+        private RectTransform positiveEffectorStart;
+        public RectTransform PositiveEffectorStart => positiveEffectorStart;
+        [SerializeField]
+        private RectTransform positiveEffectorEnd;
+        public RectTransform PositiveEffectorEnd => positiveEffectorEnd;
+        [SerializeField]
+        private RectTransform negativeEffectorStart;
+        public RectTransform NegativeEffectorStart => negativeEffectorStart;
+        [SerializeField]
+        private RectTransform negativeEffectorEnd;
+        public RectTransform NegativeEffectorEnd => negativeEffectorEnd;
+
+        [SerializeField]
         private RectTransform cardsParent;
+        [SerializeField]
+        private RectTransform effectorParent;
 
         [Range(0, 1)]
         [SerializeField]
@@ -52,6 +67,26 @@ namespace Investigation.Behaviors
 
         private float subTurnDisplay;
         public float SubTurnDisplay => subTurnDisplay;
+
+        [SerializeField]
+        private float cardHoveredScale;
+        public float CardHoveredScale => cardHoveredScale;
+
+        [SerializeField]
+        private float cardHoveredOffset;
+        public float CardHoveredOffset => cardHoveredOffset;
+
+        [SerializeField]
+        private float cardDeckScale;
+        public float CardDeckScale => cardDeckScale;
+
+        [SerializeField]
+        private Color cardHandTint;
+        public Color CardHandTint => cardHandTint;
+
+        [SerializeField]
+        private Color cardDiscardTint;
+        public Color CardDiscardTint => cardDiscardTint;
 
         private void Awake()
         {
@@ -92,6 +127,16 @@ namespace Investigation.Behaviors
             CardVisualController cardViewModel = obj.GetComponent<CardVisualController>();
             cardViewModel.Initialize(card.Identifier);
             return cardViewModel;
+        }
+
+        public EffectorVisualController InstantiateEffectorUi(PersistantEffector effector)
+        {
+            GameObject effectorPrefab = VisualBinding.Instance.GetPrefabFor(effector);
+            GameObject obj = GameObject.Instantiate(effectorPrefab);
+            obj.transform.SetParent(effectorParent.transform, false);
+            EffectorVisualController viewModel = obj.GetComponent<EffectorVisualController>();
+            viewModel.Initialize(effector.Identifier);
+            return viewModel;
         }
     }
 }

@@ -1,14 +1,8 @@
-﻿using Investigation.Model;
+﻿using Investigation.Behaviors;
+using Investigation.Model;
 
-public record CardUiState
+public record CardUiState : ElementUIState<PlayerCard>
 {
-    public ElementIdentifier Identifier { get; init; }
-
-    public EncounterState StartState { get; init; }
-    public PlayerCard StartCardState { get; init; }
-    public EncounterState EndState { get; init; }
-    public PlayerCard EndCardState { get; init; }
-
     public bool WasPlayed { get; init; }
 
     public CardUiLocation StartLocation { get; init; }

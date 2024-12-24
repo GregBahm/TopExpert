@@ -1,23 +1,27 @@
 using Investigation.Behaviors;
 using Investigation.Model;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 
 namespace Investigation.Behaviors
 {
-    public class EffectorVisualManager
-    {
-        private Dictionary<ElementIdentifier, EffectorVisualController> effectors = new Dictionary<ElementIdentifier, EffectorVisualController>();
 
-        public void VisualizeEncounter(EncounterState previousState, EncounterState nextState)
+    public class EffectorVisualManager : ElementVisualManager<PersistantEffector, EffectorVisualController, EffectorUiState>
+    {
+        protected override Dictionary<ElementIdentifier, EffectorUiState> GetEffectorStates(EncounterState previousState, EncounterState nextState)
         {
+            Dictionary<ElementIdentifier, EffectorUiState> ret = new Dictionary<ElementIdentifier, EffectorUiState>();
+
+            //TODO: this when you sober
+
+            return ret;
         }
-    }
 
-    public class EffectorVisualController : MonoBehaviour
-    {
-
+        protected override EffectorVisualController InstantiateController(PersistantEffector effector)
+        {
+            return EncounterVisualsManager.Instance.InstantiateEffectorUi(effector);
+        }
     }
 }

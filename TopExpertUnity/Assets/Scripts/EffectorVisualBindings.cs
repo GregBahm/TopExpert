@@ -29,5 +29,10 @@ namespace Investigation.Behaviors
             Type cardType = effector.GetType();
             return bindings[cardType];
         }
+
+        public bool HasVisuals(PersistantEffector effector)
+        {
+            return bindings.ContainsKey(effector.GetType());
+        }
     }
 }

@@ -10,50 +10,9 @@ using System.Resources;
 
 namespace Investigation.Behaviors
 {
-    public class CardVisualsManager
+    public class CardVisualsManager : ElementVisualManager<PlayerCard, CardVisualController, CardUiState>
     {
-        private Dictionary<ElementIdentifier, CardVisualController> cardVisuals = new Dictionary<ElementIdentifier, CardVisualController>();
-
-        public void VisualizeEncounter(EncounterState previousState, EncounterState nextState)
-        {
-            Dictionary<ElementIdentifier, CardUiState> cardStates = GetCardStates(previousState, nextState);
-            foreach (var item in cardStates)
-            {
-                if (!cardVisuals.ContainsKey(item.Key))
-                {
-                    PlayerCard card = item.Value.StartCardState ?? item.Value.EndCardState;
-                    CardVisualController viewModel = EncounterVisualsManager.Instance.InstantiateCardUi(card);
-                    cardVisuals.Add(item.Key, viewModel);
-                }
-            }
-            List<ElementIdentifier> toDelete = new List<ElementIdentifier>();
-            foreach (var item in cardVisuals)
-            {
-                if (cardStates.ContainsKey(item.Key))
-                {
-                    CardVisualController viewModel = cardVisuals[item.Key];
-                    CardUiState state = cardStates[item.Key];
-                    viewModel.SetDrawState(state);
-                }
-                else
-                {
-                    toDelete.Add(item.Key);
-                }
-            }
-            DeleteObseleteUi(toDelete);
-        }
-
-        private void DeleteObseleteUi(List<ElementIdentifier> toDelete)
-        {
-            foreach (var item in toDelete)
-            {
-                CardVisualController behavior = cardVisuals[item];
-                GameObject.Destroy(behavior.gameObject);
-                cardVisuals.Remove(item);
-            }
-        }
-
-        private Dictionary<ElementIdentifier, CardUiState> GetCardStates(EncounterState previousState, EncounterState nextState)
+        protected override Dictionary<ElementIdentifier, CardUiState> GetEffectorStates(EncounterState previousState, EncounterState nextState)
         {
             Dictionary<ElementIdentifier, CardUiState> ret = new Dictionary<ElementIdentifier, CardUiState>();
 
@@ -68,6 +27,11 @@ namespace Investigation.Behaviors
             ProcessNextCardSet(ret, nextState.DissolveDeck, CardUiLocation.Dissolve, nextState, previousState);
 
             return ret;
+        }
+
+        protected override CardVisualController InstantiateController(PlayerCard card)
+        {
+            return EncounterVisualsManager.Instance.InstantiateCardUi(card);
         }
 
         private void ProcessPreviousCardSet(Dictionary<ElementIdentifier, CardUiState> dictionary,
@@ -104,7 +68,7 @@ namespace Investigation.Behaviors
             return new CardUiState()
             {
                 Identifier = card.Identifier,
-                StartCardState = card,
+                StartElementState = card,
                 StartOrder = cardOrder,
                 StartLocation = location,
                 StartState = state
@@ -117,7 +81,7 @@ namespace Investigation.Behaviors
                 StartLocation = CardUiLocation.Inexistant,
                 StartState = startState,
                 StartOrder = 0,
-                EndCardState = endCard,
+                StartElementState = endCard,
                 EndOrder = endCardOrder,
                 EndLocation = endLocation,
                 EndState = endState
@@ -127,7 +91,7 @@ namespace Investigation.Behaviors
         {
             return previousState with
             {
-                EndCardState = endCard,
+                StartElementState = endCard,
                 EndOrder = endCardOrder,
                 EndLocation = endLocation,
                 EndState = endState

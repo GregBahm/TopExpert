@@ -11,7 +11,7 @@ public class DistractionCardVisualController : VisualController
 
     public override void DrawState(CardUiState state, float progression)
     {
-        DistractionCard card = (DistractionCard)state.StartCardState;
+        DistractionCard card = (DistractionCard)state.StartElementState;
         actionCost.text = card.ActionCost.ToString();
     }
 }

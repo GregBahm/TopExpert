@@ -8,7 +8,7 @@ using Unity.VisualScripting;
 
 namespace Investigation.Behaviors
 {
-    public class CardVisualController : MonoBehaviour
+    public class CardVisualController : ElementVisualController<CardUiState>
     {
         [SerializeField]
         private GameObject cardBack;
@@ -21,10 +21,6 @@ namespace Investigation.Behaviors
 
         private float hoveredness;
 
-        private ElementIdentifier identifier;
-
-        private CardUiState state;
-
         [SerializeField]
         private Button button;
         private Vector3 cardLocation;
@@ -36,6 +32,9 @@ namespace Investigation.Behaviors
                 return EncounterInteractionManager.Instance.HoveredCard == this;
             }
         }
+
+        [SerializeField]
+        private RawImage fader;
 
         private EncounterVisualsManager Mothership
         {
@@ -53,8 +52,8 @@ namespace Investigation.Behaviors
         private void Update()
         {
 
-            cardLocation = GetLocation(state);
-            int index = GetSiblingIndex(state);
+            cardLocation = GetLocation();
+            int index = GetSiblingIndex();
 
             gameObject.transform.position = cardLocation;
             gameObject.transform.SetSiblingIndex(index);
@@ -64,22 +63,45 @@ namespace Investigation.Behaviors
             float hoverTarget = IsHovered ? 1 : 0;
             hoveredness = Mathf.Lerp(hoveredness, hoverTarget, Time.deltaTime * 25);
             transform.localScale = GetCardScale();
-            transform.position = cardLocation + new Vector3(0, 50 * hoveredness, 0);
-            transform.localScale = GetCardScale();
+            transform.position = cardLocation + new Vector3(0, Mothership.CardHoveredOffset * hoveredness, 0);
             transform.localRotation = GetCardRotation();
-            if(IsHovered)
+            if (IsHovered)
             {
                 int cards = transform.parent.childCount;
                 gameObject.transform.SetSiblingIndex(cards);
             }
 
-            bool cardIsUp = GetCardIsUp(state);
-            fullCard.alpha = GetCardVisiblity(state);
+            bool cardIsUp = GetCardIsUp();
+            fullCard.alpha = GetCardVisiblity();
             cardBack.SetActive(!cardIsUp);
             cardFront.SetActive(cardIsUp);
+            fader.color = GetFaderColor();
         }
 
-        private float GetCardVisiblity(CardUiState state)
+        private Color GetFaderColor()
+        {
+            Color startColor = GetFaderColor(state.StartLocation);
+            Color endColor = GetFaderColor(state.EndLocation);
+            Color color = Color.Lerp(startColor, endColor, Mothership.SubTurnDisplay);
+            return Color.Lerp(color, Color.clear, hoveredness);
+        }
+
+        private Color GetFaderColor(CardUiLocation startLocation)
+        {
+            switch (startLocation)
+            {
+                case CardUiLocation.Hand:
+                    return Mothership.CardHandTint;
+                case CardUiLocation.Discard:
+                    return Mothership.CardDiscardTint;
+                case CardUiLocation.DrawDeck:
+                case CardUiLocation.Dissolve:
+                default:
+                    return Color.clear;
+            }
+        }
+
+        private float GetCardVisiblity()
         {
             float startAlpha = GetVisibility(state.StartLocation);
             float endAlpha = GetVisibility(state.EndLocation);
@@ -91,7 +113,7 @@ namespace Investigation.Behaviors
             return (location == CardUiLocation.Inexistant || location == CardUiLocation.Dissolve) ? 0 : 1;
         }
 
-        private bool GetCardIsUp(CardUiState state)
+        private bool GetCardIsUp()
         {
             if (Mothership.SubTurnDisplay > 0)
             {
@@ -108,23 +130,20 @@ namespace Investigation.Behaviors
                 interaction.PlayCard(identifier);
         }
 
-        public void Initialize(ElementIdentifier identifier)
-        {
-            this.identifier = identifier;
-        }
-
-
-        public void SetDrawState(CardUiState state)
-        {
-            if (state.StartLocation == CardUiLocation.Inexistant && state.EndLocation == CardUiLocation.Inexistant)
-            {
-                throw new System.Exception("Trying to draw a card that beings and ends inexistant");
-            }
-            this.state = state;
-        }
-
         private Quaternion GetCardRotation()
         {
+            Quaternion startRotation= GetCardRotation(state.StartLocation);
+            Quaternion endRotation = GetCardRotation(state.EndLocation);
+            return Quaternion.Lerp(startRotation, endRotation, Mothership.SubTurnDisplay);
+        }
+
+        private Quaternion GetCardRotation(CardUiLocation location)
+        {
+            if(location != CardUiLocation.Hand)
+            {
+                return Quaternion.identity;
+            }
+
             float leftPos = Mothership.HandLeftPoint.position.x;
             float rightPos = Mothership.HandRightPoint.position.x;
             float currentPos = transform.position.x;
@@ -138,18 +157,31 @@ namespace Investigation.Behaviors
 
         private Vector3 GetCardScale()
         {
-            float scale = .5f + hoveredness * .25f; 
+            float startScale = GetCardScale(state.StartLocation);
+            float endScale = GetCardScale(state.EndLocation);
+            float scale = Mathf.Lerp(startScale, endScale, Mothership.SubTurnDisplay);
+            scale *= 1 + hoveredness * Mothership.CardHoveredScale; 
             return new Vector3(scale, scale, scale);
         }
 
-        private Vector3 GetLocation(CardUiState staten)
+        private float GetCardScale(CardUiLocation location)
+        {
+            if(location == CardUiLocation.DrawDeck ||
+                location == CardUiLocation.Discard)
+            {
+                return Mothership.CardDeckScale;
+            }
+            return 1;
+        }
+
+        private Vector3 GetLocation()
         {
             Vector3 startLocation = GetStartLocation(state);
             Vector3 endLocation = GetEndLocation(state);
             return Vector3.Lerp(startLocation, endLocation, Mothership.SubTurnDisplay);
         }
 
-        private int GetSiblingIndex(CardUiState state)
+        private int GetSiblingIndex()
         {
             if(Mothership.SubTurnDisplay < .5f)
             {
@@ -180,7 +212,7 @@ namespace Investigation.Behaviors
             }
         }
 
-        private Vector3 GetLocation(CardUiLocation location, EncounterState state, int order)
+        private static Vector3 GetLocation(CardUiLocation location, EncounterState state, int order)
         {
             switch (location)
             {
@@ -196,7 +228,7 @@ namespace Investigation.Behaviors
             }
         }
 
-        private Vector3 GetStartLocation(CardUiState state)
+        private static Vector3 GetStartLocation(CardUiState state)
         {
             if(state.StartLocation == CardUiLocation.Inexistant)
             {
@@ -205,7 +237,7 @@ namespace Investigation.Behaviors
             return GetLocation(state.StartLocation, state.StartState, state.StartOrder);
         }
 
-        private Vector3 GetEndLocation(CardUiState state)
+        private static Vector3 GetEndLocation(CardUiState state)
         {
             if (state.EndLocation == CardUiLocation.Inexistant)
             {
@@ -214,7 +246,7 @@ namespace Investigation.Behaviors
             return GetLocation(state.EndLocation, state.EndState, state.EndOrder);
         }
 
-        private Vector3 GetHandPosition(EncounterState state, int order)
+        private static Vector3 GetHandPosition(EncounterState state, int order)
         {
             EncounterVisualsManager encounterVisuals = EncounterVisualsManager.Instance;
             int cardsInHand = state.Hand.Count;
@@ -236,19 +268,19 @@ namespace Investigation.Behaviors
             return pos;
         }
 
-        public Vector3 GetDrawDeckPosition(EncounterState state, int order)
+        public static Vector3 GetDrawDeckPosition(EncounterState state, int order)
         {
             float deckOffset = EncounterVisualsManager.Instance.DeckStackingOffset;
             Vector3 offset = new Vector3(-deckOffset * order, deckOffset * order, 0);
             return EncounterVisualsManager.Instance.DrawDeckPoint.position + offset;
         }
 
-        public Vector3 GetDissovleDeckPosition(EncounterState state, int order)
+        public static Vector3 GetDissovleDeckPosition(EncounterState state, int order)
         {
             return EncounterVisualsManager.Instance.DissolvePoint.position;
         }
 
-        public Vector3 GetDiscardPosition(EncounterState state, int order)
+        public static Vector3 GetDiscardPosition(EncounterState state, int order)
         {
             float deckOffset = EncounterVisualsManager.Instance.DeckStackingOffset;
             Vector3 offset = new Vector3(deckOffset * order, deckOffset * order, 0);
