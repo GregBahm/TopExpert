@@ -78,20 +78,22 @@ namespace Investigation.Behaviors
         {
             return new CardUiState()
             {
+                Identifier = endCard.Identifier,
+                StartElementState = null,
                 StartLocation = CardExistenceLocation.Inexistant,
                 StartState = startState,
                 StartOrder = 0,
-                StartElementState = endCard,
-                EndOrder = endCardOrder,
+                EndElementState = endCard,
                 EndLocation = endLocation,
-                EndState = endState
+                EndState = endState,
+                EndOrder = endCardOrder,
             };
         }
         private CardUiState CompleteCardUiState(PlayerCard endCard, int endCardOrder, CardExistenceLocation endLocation, CardUiState previousState, EncounterState endState)
         {
             return previousState with
             {
-                StartElementState = endCard,
+                EndElementState = endCard,
                 EndOrder = endCardOrder,
                 EndLocation = endLocation,
                 EndState = endState

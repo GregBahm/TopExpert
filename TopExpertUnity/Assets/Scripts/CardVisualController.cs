@@ -36,14 +36,6 @@ namespace Investigation.Behaviors
         [SerializeField]
         private RawImage fader;
 
-        private EncounterVisualsManager Mothership
-        {
-            get
-            {
-                return EncounterVisualsManager.Instance;
-            }
-        }
-
         private void Start()
         {
             fullCard.alpha = 0;
