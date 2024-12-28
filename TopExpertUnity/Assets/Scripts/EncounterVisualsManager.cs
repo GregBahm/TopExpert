@@ -30,17 +30,11 @@ namespace Investigation.Behaviors
         public RectTransform DiscardPoint => discardPoint;
 
         [SerializeField]
-        private RectTransform positiveEffectorStart;
-        public RectTransform PositiveEffectorStart => positiveEffectorStart;
+        private RectTransform effectorLeftPoint;
+        public RectTransform EffectorLeftPoint => effectorLeftPoint;
         [SerializeField]
-        private RectTransform positiveEffectorEnd;
-        public RectTransform PositiveEffectorEnd => positiveEffectorEnd;
-        [SerializeField]
-        private RectTransform negativeEffectorStart;
-        public RectTransform NegativeEffectorStart => negativeEffectorStart;
-        [SerializeField]
-        private RectTransform negativeEffectorEnd;
-        public RectTransform NegativeEffectorEnd => negativeEffectorEnd;
+        private RectTransform effectorRightPoint;
+        public RectTransform EffectorRightPoint => effectorRightPoint;
 
         [SerializeField]
         private RectTransform cardsParent;

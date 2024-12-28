@@ -1,4 +1,4 @@
-﻿public enum CardUiLocation
+﻿public enum CardExistenceLocation
 {
     Hand,
     DrawDeck,

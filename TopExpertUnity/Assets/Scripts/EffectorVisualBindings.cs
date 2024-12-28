@@ -9,6 +9,10 @@ namespace Investigation.Behaviors
     public class EffectorVisualBindings : ScriptableObject
     {
         [SerializeField]
+        private GameObject DrawHand;
+        [SerializeField]
+        private GameObject RestoreEnergy;
+        [SerializeField]
         private GameObject HauntedCoffeeMachine;
         [SerializeField]
         private GameObject HyperfocusEffector;
@@ -20,7 +24,9 @@ namespace Investigation.Behaviors
             bindings = new Dictionary<Type, GameObject>
             {
                 { typeof(HauntedCoffeeMachine), HauntedCoffeeMachine },
-                { typeof(HyperfocusEffector), HyperfocusEffector }
+                { typeof(HyperfocusEffector), HyperfocusEffector },
+                { typeof(DrawHand), DrawHand },
+                { typeof(RestoreEnergy), RestoreEnergy }
             };
         }
 

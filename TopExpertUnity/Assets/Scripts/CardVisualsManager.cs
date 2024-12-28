@@ -16,15 +16,15 @@ namespace Investigation.Behaviors
         {
             Dictionary<ElementIdentifier, CardUiState> ret = new Dictionary<ElementIdentifier, CardUiState>();
 
-            ProcessPreviousCardSet(ret, previousState.Hand, CardUiLocation.Hand, previousState);
-            ProcessPreviousCardSet(ret, previousState.DrawDeck, CardUiLocation.DrawDeck, previousState);
-            ProcessPreviousCardSet(ret, previousState.DiscardDeck, CardUiLocation.Discard, previousState);
-            ProcessPreviousCardSet(ret, previousState.DissolveDeck, CardUiLocation.Dissolve, previousState);
+            ProcessPreviousCardSet(ret, previousState.Hand, CardExistenceLocation.Hand, previousState);
+            ProcessPreviousCardSet(ret, previousState.DrawDeck, CardExistenceLocation.DrawDeck, previousState);
+            ProcessPreviousCardSet(ret, previousState.DiscardDeck, CardExistenceLocation.Discard, previousState);
+            ProcessPreviousCardSet(ret, previousState.DissolveDeck, CardExistenceLocation.Dissolve, previousState);
 
-            ProcessNextCardSet(ret, nextState.Hand, CardUiLocation.Hand, nextState, previousState);
-            ProcessNextCardSet(ret, nextState.DrawDeck, CardUiLocation.DrawDeck, nextState, previousState);
-            ProcessNextCardSet(ret, nextState.DiscardDeck, CardUiLocation.Discard, nextState, previousState);
-            ProcessNextCardSet(ret, nextState.DissolveDeck, CardUiLocation.Dissolve, nextState, previousState);
+            ProcessNextCardSet(ret, nextState.Hand, CardExistenceLocation.Hand, nextState, previousState);
+            ProcessNextCardSet(ret, nextState.DrawDeck, CardExistenceLocation.DrawDeck, nextState, previousState);
+            ProcessNextCardSet(ret, nextState.DiscardDeck, CardExistenceLocation.Discard, nextState, previousState);
+            ProcessNextCardSet(ret, nextState.DissolveDeck, CardExistenceLocation.Dissolve, nextState, previousState);
 
             return ret;
         }
@@ -36,7 +36,7 @@ namespace Investigation.Behaviors
 
         private void ProcessPreviousCardSet(Dictionary<ElementIdentifier, CardUiState> dictionary,
             IReadOnlyList<PlayerCard> cardSet,
-            CardUiLocation location,
+            CardExistenceLocation location,
             EncounterState state)
         {
             for (int i = 0; i < cardSet.Count; i++)
@@ -49,7 +49,7 @@ namespace Investigation.Behaviors
 
         private void ProcessNextCardSet(Dictionary<ElementIdentifier, CardUiState> dictionary,
             IReadOnlyList<PlayerCard> cardSet,
-            CardUiLocation endLocation,
+            CardExistenceLocation endLocation,
             EncounterState endState,
             EncounterState startState)
         {
@@ -63,7 +63,7 @@ namespace Investigation.Behaviors
             }
         }
 
-        private CardUiState CreateCardUiState(PlayerCard card, int cardOrder, CardUiLocation location, EncounterState state)
+        private CardUiState CreateCardUiState(PlayerCard card, int cardOrder, CardExistenceLocation location, EncounterState state)
         {
             return new CardUiState()
             {
@@ -74,11 +74,11 @@ namespace Investigation.Behaviors
                 StartState = state
             };
         }
-        private CardUiState CompleteCardUiState(PlayerCard endCard, int endCardOrder, CardUiLocation endLocation, EncounterState endState, EncounterState startState)
+        private CardUiState CompleteCardUiState(PlayerCard endCard, int endCardOrder, CardExistenceLocation endLocation, EncounterState endState, EncounterState startState)
         {
             return new CardUiState()
             {
-                StartLocation = CardUiLocation.Inexistant,
+                StartLocation = CardExistenceLocation.Inexistant,
                 StartState = startState,
                 StartOrder = 0,
                 StartElementState = endCard,
@@ -87,7 +87,7 @@ namespace Investigation.Behaviors
                 EndState = endState
             };
         }
-        private CardUiState CompleteCardUiState(PlayerCard endCard, int endCardOrder, CardUiLocation endLocation, CardUiState previousState, EncounterState endState)
+        private CardUiState CompleteCardUiState(PlayerCard endCard, int endCardOrder, CardExistenceLocation endLocation, CardUiState previousState, EncounterState endState)
         {
             return previousState with
             {

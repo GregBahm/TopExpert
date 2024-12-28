@@ -58,7 +58,7 @@ namespace Investigation.Behaviors
             gameObject.transform.position = cardLocation;
             gameObject.transform.SetSiblingIndex(index);
 
-            button.enabled = state.StartLocation == CardUiLocation.Hand;
+            button.enabled = state.StartLocation == CardExistenceLocation.Hand;
 
             float hoverTarget = IsHovered ? 1 : 0;
             hoveredness = Mathf.Lerp(hoveredness, hoverTarget, Time.deltaTime * 25);
@@ -86,16 +86,16 @@ namespace Investigation.Behaviors
             return Color.Lerp(color, Color.clear, hoveredness);
         }
 
-        private Color GetFaderColor(CardUiLocation startLocation)
+        private Color GetFaderColor(CardExistenceLocation startLocation)
         {
             switch (startLocation)
             {
-                case CardUiLocation.Hand:
+                case CardExistenceLocation.Hand:
                     return Mothership.CardHandTint;
-                case CardUiLocation.Discard:
+                case CardExistenceLocation.Discard:
                     return Mothership.CardDiscardTint;
-                case CardUiLocation.DrawDeck:
-                case CardUiLocation.Dissolve:
+                case CardExistenceLocation.DrawDeck:
+                case CardExistenceLocation.Dissolve:
                 default:
                     return Color.clear;
             }
@@ -108,18 +108,18 @@ namespace Investigation.Behaviors
             return Mathf.Lerp(startAlpha, endAlpha, Mothership.SubTurnDisplay);
         }
 
-        private float GetVisibility(CardUiLocation location)
+        private float GetVisibility(CardExistenceLocation location)
         {
-            return (location == CardUiLocation.Inexistant || location == CardUiLocation.Dissolve) ? 0 : 1;
+            return (location == CardExistenceLocation.Inexistant || location == CardExistenceLocation.Dissolve) ? 0 : 1;
         }
 
         private bool GetCardIsUp()
         {
             if (Mothership.SubTurnDisplay > 0)
             {
-                return state.EndLocation != CardUiLocation.DrawDeck;
+                return state.EndLocation != CardExistenceLocation.DrawDeck;
             }
-            return state.StartLocation != CardUiLocation.DrawDeck;
+            return state.StartLocation != CardExistenceLocation.DrawDeck;
         }
 
         public void OnClick()
@@ -137,9 +137,9 @@ namespace Investigation.Behaviors
             return Quaternion.Lerp(startRotation, endRotation, Mothership.SubTurnDisplay);
         }
 
-        private Quaternion GetCardRotation(CardUiLocation location)
+        private Quaternion GetCardRotation(CardExistenceLocation location)
         {
-            if(location != CardUiLocation.Hand)
+            if(location != CardExistenceLocation.Hand)
             {
                 return Quaternion.identity;
             }
@@ -164,10 +164,10 @@ namespace Investigation.Behaviors
             return new Vector3(scale, scale, scale);
         }
 
-        private float GetCardScale(CardUiLocation location)
+        private float GetCardScale(CardExistenceLocation location)
         {
-            if(location == CardUiLocation.DrawDeck ||
-                location == CardUiLocation.Discard)
+            if(location == CardExistenceLocation.DrawDeck ||
+                location == CardExistenceLocation.Discard)
             {
                 return Mothership.CardDeckScale;
             }
@@ -190,7 +190,7 @@ namespace Investigation.Behaviors
             return GetSiblingIndex(state.EndLocation, state.EndState, state.EndOrder);
         }
 
-        private int GetSiblingIndex(CardUiLocation location, EncounterState state, int order)
+        private int GetSiblingIndex(CardExistenceLocation location, EncounterState state, int order)
         {
             int drawCount = state.DrawDeck.Count;
             int discardCount = state.DiscardDeck.Count;
@@ -198,31 +198,31 @@ namespace Investigation.Behaviors
             int handCount = state.Hand.Count;
             switch (location)
             {
-                case CardUiLocation.DrawDeck:
+                case CardExistenceLocation.DrawDeck:
                     return order;
-                case CardUiLocation.Discard:
+                case CardExistenceLocation.Discard:
                     return drawCount + order;
-                case CardUiLocation.Dissolve:
+                case CardExistenceLocation.Dissolve:
                     return drawCount + discardCount + order;
-                case CardUiLocation.Hand:
+                case CardExistenceLocation.Hand:
                     return drawCount + discardCount + dissolveCount + (handCount - order);
-                case CardUiLocation.Inexistant:
+                case CardExistenceLocation.Inexistant:
                 default:
                     return 0;
             }
         }
 
-        private static Vector3 GetLocation(CardUiLocation location, EncounterState state, int order)
+        private static Vector3 GetLocation(CardExistenceLocation location, EncounterState state, int order)
         {
             switch (location)
             {
-                case CardUiLocation.Hand:
+                case CardExistenceLocation.Hand:
                     return GetHandPosition(state, order);
-                case CardUiLocation.DrawDeck:
+                case CardExistenceLocation.DrawDeck:
                     return GetDrawDeckPosition(state, order);
-                case CardUiLocation.Discard:
+                case CardExistenceLocation.Discard:
                     return GetDiscardPosition(state, order);
-                case CardUiLocation.Dissolve:
+                case CardExistenceLocation.Dissolve:
                 default:
                     return GetDissovleDeckPosition(state, order);
             }
@@ -230,7 +230,7 @@ namespace Investigation.Behaviors
 
         private static Vector3 GetStartLocation(CardUiState state)
         {
-            if(state.StartLocation == CardUiLocation.Inexistant)
+            if(state.StartLocation == CardExistenceLocation.Inexistant)
             {
                 return GetEndLocation(state);
             }
@@ -239,7 +239,7 @@ namespace Investigation.Behaviors
 
         private static Vector3 GetEndLocation(CardUiState state)
         {
-            if (state.EndLocation == CardUiLocation.Inexistant)
+            if (state.EndLocation == CardExistenceLocation.Inexistant)
             {
                 return GetStartLocation(state);
             }
