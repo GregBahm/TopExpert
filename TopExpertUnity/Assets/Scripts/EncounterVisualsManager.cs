@@ -1,5 +1,6 @@
 ﻿using Investigation.Model;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Investigation.Behaviors
 {
@@ -95,6 +96,14 @@ namespace Investigation.Behaviors
         private Color cardDiscardTint;
         public Color CardDiscardTint => cardDiscardTint;
 
+        [SerializeField]
+        private Slider timeSlider;
+
+        [SerializeField]
+        private bool autoAdvance = true;
+
+        private int encounterStepsLastFrame;
+
         private void Awake()
         {
             Instance = this;
@@ -110,6 +119,10 @@ namespace Investigation.Behaviors
         private void Update()
         {
             Model.Encounter encounter = EncounterManager.Instance.Encounter;
+            if(encounter.Steps != encounterStepsLastFrame)
+            {
+                UpdateSliderValues(encounterStepsLastFrame, encounter.Steps);
+            }
             float fullTime = (encounter.Steps - 1) * progression;
             turnToDisplay = Mathf.FloorToInt(fullTime);
             subTurnDisplay = fullTime % 1;
@@ -123,8 +136,13 @@ namespace Investigation.Behaviors
             cardManager.VisualizeEncounter(previousStep.State, nextStep.State);
             effectorManager.VisualizeEncounter(previousStep.State, nextStep.State);
             hudVisualsManager.VisualizeEncounter(previousStep.State, nextStep.State);
-        }
+            encounterStepsLastFrame = encounter.Steps;
 
+            if(autoAdvance)
+            {
+                timeSlider.value += .001f;
+            }
+        }
 
         public CardVisualController InstantiateCardUi(PlayerCard card)
         {
@@ -144,6 +162,18 @@ namespace Investigation.Behaviors
             EffectorVisualController viewModel = obj.GetComponent<EffectorVisualController>();
             viewModel.Initialize(effector.Identifier);
             return viewModel;
+        }
+
+        private void UpdateSliderValues(int oldSteps, int newSteps)
+        {
+            float currentStep = oldSteps * progression;
+            progression = currentStep / newSteps;
+            timeSlider.value = progression;
+        }
+
+        public void OnSliderMoved()
+        {
+            progression = timeSlider.value;
         }
     }
 }
