@@ -332,10 +332,14 @@ MonoBehaviour:
   drawDeckPoint: {fileID: 3646393478335036001}
   dissolvePoint: {fileID: 762659739}
   discardPoint: {fileID: 762659739}
+  cardEntranceOffset: 100
   effectorLeftPoint: {fileID: 1762600250}
   effectorRightPoint: {fileID: 86656840}
+  effectorEntranceOffset: 100
   cardsParent: {fileID: 63962695}
   effectorParent: {fileID: 1260747446}
+  unappliedEffectorColor: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 1}
+  appliedEffectorColor: {r: 0.254717, g: 0.559, b: 0.254717, a: 1}
   progression: 1
   deckStackingOfset: 2
   maxCardSpread: 155

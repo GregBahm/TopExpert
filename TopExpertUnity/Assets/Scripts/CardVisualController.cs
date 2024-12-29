@@ -168,8 +168,16 @@ namespace Investigation.Behaviors
 
         private Vector3 GetLocation()
         {
-            Vector3 startLocation = GetStartLocation(state);
-            Vector3 endLocation = GetEndLocation(state);
+            Vector3 startLocation = GetLocation(state.StartLocation, state.StartState, state.StartOrder);
+            Vector3 endLocation = GetLocation(state.EndLocation, state.EndState, state.EndOrder);
+            if(state.StartLocation == CardExistenceLocation.Inexistant)
+            {
+                startLocation = endLocation;
+            }
+            if (state.EndLocation == CardExistenceLocation.Inexistant)
+            {
+                endLocation = startLocation;
+            }
             return Vector3.Lerp(startLocation, endLocation, Mothership.SubTurnDisplay);
         }
 
@@ -208,6 +216,8 @@ namespace Investigation.Behaviors
         {
             switch (location)
             {
+                case CardExistenceLocation.Inexistant:
+                    return Vector3.zero;
                 case CardExistenceLocation.Hand:
                     return GetHandPosition(state, order);
                 case CardExistenceLocation.DrawDeck:
@@ -218,24 +228,6 @@ namespace Investigation.Behaviors
                 default:
                     return GetDissovleDeckPosition(state, order);
             }
-        }
-
-        private static Vector3 GetStartLocation(CardUiState state)
-        {
-            if(state.StartLocation == CardExistenceLocation.Inexistant)
-            {
-                return GetEndLocation(state);
-            }
-            return GetLocation(state.StartLocation, state.StartState, state.StartOrder);
-        }
-
-        private static Vector3 GetEndLocation(CardUiState state)
-        {
-            if (state.EndLocation == CardExistenceLocation.Inexistant)
-            {
-                return GetStartLocation(state);
-            }
-            return GetLocation(state.EndLocation, state.EndState, state.EndOrder);
         }
 
         private static Vector3 GetHandPosition(EncounterState state, int order)

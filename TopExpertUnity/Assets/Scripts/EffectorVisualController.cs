@@ -1,53 +1,77 @@
-﻿using System;
+﻿using Investigation.Model;
+using System;
+using System.Reflection;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Investigation.Behaviors
 {
     public class EffectorVisualController : ElementVisualController<EffectorUiState>
     {
+        [SerializeField]
+        private Image background;
+
         private void Update()
         {
             Vector3 location = GetLocation();
             transform.position = location;
+            background.color = GetColor();
+        }
+
+        private Color GetColor()
+        {
+            Color startColor = GetColor(state.StartLocation);
+            Color endColor = GetColor(state.EndLocation);
+            return Color.Lerp(startColor, endColor, Mothership.SubTurnDisplay);
+        }
+
+        private Color GetColor(EffectorExistenceLocation location)
+        {
+            switch (location)
+            {
+                case EffectorExistenceLocation.Unapplied:
+                    return Mothership.UnappliedEffectorColor;
+                case EffectorExistenceLocation.Applied:
+                    return Mothership.AppliedEffectorColor;
+                case EffectorExistenceLocation.Removed:
+                case EffectorExistenceLocation.Inexistant:
+                default:
+                    return Color.clear;
+            }
         }
 
         private Vector3 GetLocation()
         {
+            Vector3 startLocation = GetLocation(state.StartState, state.StartOrder, state.StartLocation);
+            Vector3 endLocation = GetLocation(state.EndState, state.EndOrder, state.EndLocation);
 
-            Vector3 startLocation = GetStartLocation(state);
-            Vector3 endLocation = GetEndLocation(state);
+            if (state.StartLocation == EffectorExistenceLocation.Inexistant)
+            {
+                startLocation = endLocation + new Vector3(0, Mothership.EffectorEntranceOffset, 0);
+            }
+            if (state.EndLocation == EffectorExistenceLocation.Inexistant)
+            {
+                endLocation = startLocation + new Vector3(0, Mothership.EffectorEntranceOffset, 0);
+            }
+
             return Vector3.Lerp(startLocation, endLocation, Mothership.SubTurnDisplay);
         }
 
-        private Vector3 GetStartLocation(EffectorUiState state)
+        private Vector3 GetLocation(EncounterState encounterState, int stateOrder, EffectorExistenceLocation location)
         {
-            if (state.StartLocation == EffectorExistenceLocation.Inexistant)
-                return Mothership.EffectorLeftPoint.position;
+            if(location == EffectorExistenceLocation.Inexistant)
+            {
+                return Vector3.zero;
+            }
 
-            int appliedEffectors = state.StartState.AppliedEffectors.Count;
-            int unAppliedEffectors = state.StartState.UnappliedEffectors.Count;
-
-            int index = state.StartOrder;
-            if (state.StartLocation == EffectorExistenceLocation.Applied)
-                index += unAppliedEffectors;
-
-            float param = (float)index / (appliedEffectors + unAppliedEffectors);
-            return Vector3.Lerp(Mothership.EffectorLeftPoint.position, Mothership.EffectorRightPoint.position, param);
-        }
-
-        private Vector3 GetEndLocation(EffectorUiState state)
-        {
-            if (state.EndLocation == EffectorExistenceLocation.Inexistant)
-                return Mothership.EffectorRightPoint.position;
-
-            int appliedEffectors = state.EndState.AppliedEffectors.Count;
-            int unAppliedEffectors = state.EndState.UnappliedEffectors.Count;
-
-            int index = state.EndOrder;
-            if (state.EndLocation == EffectorExistenceLocation.Applied)
-                index += unAppliedEffectors;
-
-            float param = (float)index / (appliedEffectors + unAppliedEffectors);
+            int appliedEffectors = encounterState.AppliedEffectors.Count;
+            int unAppliedEffectors = encounterState.UnappliedEffectors.Count;
+            int totalEffectors = appliedEffectors + unAppliedEffectors;
+            if(location == EffectorExistenceLocation.Unapplied)
+            {
+                stateOrder += appliedEffectors;
+            }
+            float param = totalEffectors == 1 ? .5f : (float)stateOrder / (totalEffectors - 1);
             return Vector3.Lerp(Mothership.EffectorLeftPoint.position, Mothership.EffectorRightPoint.position, param);
         }
     }

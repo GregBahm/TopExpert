@@ -4,12 +4,12 @@ using UnityEngine;
 namespace Investigation.Behaviors
 {
 
-    [RequireComponent(typeof(HudVisualManager))]
+    [RequireComponent(typeof(HudVisualsManager))]
     public class EncounterVisualsManager : MonoBehaviour
     {
         private CardVisualsManager cardManager;
-        private EffectorVisualManager effectorManager;
-        private HudVisualManager hudVisualsManager;
+        private EffectorVisualsManager effectorManager;
+        private HudVisualsManager hudVisualsManager;
 
         public static EncounterVisualsManager Instance { get; private set; }
 
@@ -28,6 +28,9 @@ namespace Investigation.Behaviors
         [SerializeField]
         private RectTransform discardPoint;
         public RectTransform DiscardPoint => discardPoint;
+        [SerializeField]
+        private float cardEntranceOffset;
+        public float CardEntranceOffset => cardEntranceOffset;
 
         [SerializeField]
         private RectTransform effectorLeftPoint;
@@ -35,11 +38,21 @@ namespace Investigation.Behaviors
         [SerializeField]
         private RectTransform effectorRightPoint;
         public RectTransform EffectorRightPoint => effectorRightPoint;
+        [SerializeField]
+        private float effectorEntranceOffset;
+        public float EffectorEntranceOffset => effectorEntranceOffset;
 
         [SerializeField]
         private RectTransform cardsParent;
         [SerializeField]
         private RectTransform effectorParent;
+
+        [SerializeField]
+        private Color unappliedEffectorColor;
+        public Color UnappliedEffectorColor => unappliedEffectorColor;
+        [SerializeField]
+        private Color appliedEffectorColor;
+        public Color AppliedEffectorColor => appliedEffectorColor;
 
         [Range(0, 1)]
         [SerializeField]
@@ -89,9 +102,9 @@ namespace Investigation.Behaviors
 
         private void Start()
         {
-            hudVisualsManager = GetComponent<HudVisualManager>();
+            hudVisualsManager = GetComponent<HudVisualsManager>();
             cardManager = new CardVisualsManager();
-            effectorManager = new EffectorVisualManager();
+            effectorManager = new EffectorVisualsManager();
         }
 
         private void Update()

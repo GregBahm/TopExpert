@@ -46,7 +46,7 @@ namespace Investigation.Model
             EncounterState state = CurrentState;
             while(state.UnappliedEffectors.Any())
             {
-                PersistantEffector effector = state.UnappliedEffectors.Last();
+                PersistantEffector effector = state.UnappliedEffectors.First();
                 state = effector.GetModifiedState(state);
                 progression = progression.GetWithAddedStep(effector, state);
             }

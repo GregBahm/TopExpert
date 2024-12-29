@@ -42,7 +42,7 @@ namespace Investigation.Behaviors
             for (int i = 0; i < cardSet.Count; i++)
             {
                 PlayerCard card = cardSet[i];
-                CardUiState uiState = CreateCardUiState(card, i, location, state);
+                CardUiState uiState = StartCardUiState(card, i, location, state);
                 dictionary.Add(card.Identifier, uiState);
             }
         }
@@ -57,13 +57,13 @@ namespace Investigation.Behaviors
             {
                 PlayerCard card = cardSet[i];
                 if (dictionary.ContainsKey(card.Identifier))
-                    dictionary[card.Identifier] = CompleteCardUiState(card, i, endLocation, dictionary[card.Identifier], endState);
+                    dictionary[card.Identifier] = FinishCardUiState(card, i, endLocation, dictionary[card.Identifier], endState);
                 else
-                    dictionary.Add(card.Identifier, CompleteCardUiState(card, i, endLocation, endState, startState));
+                    dictionary.Add(card.Identifier, CreateCardUiStateFromInexistence(card, i, endLocation, endState, startState));
             }
         }
 
-        private CardUiState CreateCardUiState(PlayerCard card, int cardOrder, CardExistenceLocation location, EncounterState state)
+        private CardUiState StartCardUiState(PlayerCard card, int cardOrder, CardExistenceLocation location, EncounterState state)
         {
             return new CardUiState()
             {
@@ -74,7 +74,7 @@ namespace Investigation.Behaviors
                 StartState = state
             };
         }
-        private CardUiState CompleteCardUiState(PlayerCard endCard, int endCardOrder, CardExistenceLocation endLocation, EncounterState endState, EncounterState startState)
+        private CardUiState CreateCardUiStateFromInexistence(PlayerCard endCard, int endCardOrder, CardExistenceLocation endLocation, EncounterState endState, EncounterState startState)
         {
             return new CardUiState()
             {
@@ -89,7 +89,7 @@ namespace Investigation.Behaviors
                 EndOrder = endCardOrder,
             };
         }
-        private CardUiState CompleteCardUiState(PlayerCard endCard, int endCardOrder, CardExistenceLocation endLocation, CardUiState previousState, EncounterState endState)
+        private CardUiState FinishCardUiState(PlayerCard endCard, int endCardOrder, CardExistenceLocation endLocation, CardUiState previousState, EncounterState endState)
         {
             return previousState with
             {

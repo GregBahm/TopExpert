@@ -4,9 +4,8 @@ using UnityEngine;
 
 namespace Investigation.Behaviors
 {
-    public class HudVisualManager : MonoBehaviour
+    public class HudVisualsManager : MonoBehaviour
     {
-
         [SerializeField]
         private TextMeshProUGUI currentActions;
         [SerializeField]

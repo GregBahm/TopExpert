@@ -10,7 +10,7 @@ using UnityEngine.UIElements;
 namespace Investigation.Behaviors
 {
 
-    public class EffectorVisualManager : ElementVisualManager<PersistantEffector, EffectorVisualController, EffectorUiState>
+    public class EffectorVisualsManager : ElementVisualManager<PersistantEffector, EffectorVisualController, EffectorUiState>
     {
         protected override Dictionary<ElementIdentifier, EffectorUiState> GetEffectorStates(EncounterState previousState, EncounterState nextState)
         {
@@ -20,7 +20,7 @@ namespace Investigation.Behaviors
             ProcessPreviousEffectors(ret, previousState.AppliedEffectors, previousState, EffectorExistenceLocation.Applied);
 
             ProcessNextEffectors(ret, nextState.UnappliedEffectors, EffectorExistenceLocation.Unapplied, nextState, previousState);
-            ProcessNextEffectors(ret, nextState.UnappliedEffectors, EffectorExistenceLocation.Applied, nextState, previousState);
+            ProcessNextEffectors(ret, nextState.AppliedEffectors, EffectorExistenceLocation.Applied, nextState, previousState);
 
             return ret;
         }
@@ -35,17 +35,31 @@ namespace Investigation.Behaviors
             {
                 PersistantEffector effector = effectors[i];
                 if (dictionary.ContainsKey(effector.Identifier))
-                    dictionary[effector.Identifier] = CompleteEffectorUiState(effector, i, location, dictionary[effector.Identifier], nextState);
+                    dictionary[effector.Identifier] = FinishEffectorUiState(effector, i, location, dictionary[effector.Identifier], nextState);
                 else
                 {
-                    EffectorUiState uiState = CreateEffectorUiState(effector, i, nextState, location);
+                    EffectorUiState uiState = CreateEffectorStateFromInexistence(effector, i, nextState, previousState, location);
                     dictionary.Add(effector.Identifier, uiState);
                 }
             }
         }
 
-        // This is called when the effector didn't exist the previous turn
-        private EffectorUiState CreateEffectorState(PersistantEffector endEffector, 
+        private EffectorUiState StartEffectorUiState(PersistantEffector effector, 
+            int order, 
+            EncounterState startState, 
+            EffectorExistenceLocation location)
+        {
+            return new EffectorUiState()
+            {
+                Identifier = effector.Identifier,
+                StartElementState = effector,
+                StartLocation = location,
+                StartState = startState,
+                StartOrder = order,
+            };
+        }
+
+        private EffectorUiState CreateEffectorStateFromInexistence(PersistantEffector endEffector, 
             int order, 
             EncounterState startState, 
             EncounterState endState, 
@@ -65,7 +79,7 @@ namespace Investigation.Behaviors
             };
         }
 
-        private EffectorUiState CompleteEffectorUiState(PersistantEffector effector, 
+        private EffectorUiState FinishEffectorUiState(PersistantEffector effector, 
             int endOrder, 
             EffectorExistenceLocation endLocation, 
             EffectorUiState uiState, 
@@ -85,21 +99,9 @@ namespace Investigation.Behaviors
             for (int i = 0; i < cardSet.Count; i++)
             {
                 PersistantEffector effector = cardSet[i];
-                EffectorUiState uiState = CreateEffectorUiState(effector, i, state, location);
+                EffectorUiState uiState = StartEffectorUiState(effector, i, state, location);
                 dicationary.Add(effector.Identifier, uiState);
             }
-        }
-
-        private EffectorUiState CreateEffectorUiState(PersistantEffector effector, int order, EncounterState state, EffectorExistenceLocation location)
-        {
-            return new EffectorUiState()
-            {
-                Identifier = effector.Identifier,
-                StartElementState = effector,
-                StartLocation = location,
-                StartState = state,
-                StartOrder = order,
-            };
         }
 
         protected override EffectorVisualController InstantiateController(PersistantEffector effector)
