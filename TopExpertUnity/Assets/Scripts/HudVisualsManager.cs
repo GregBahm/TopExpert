@@ -27,11 +27,7 @@ namespace Investigation.Behaviors
 
         private string GetCurrentInsightsText(EncounterState nextState)
         {
-            if(nextState.Phase == EncounterPhase.Danger)
-            {
-                return nextState.Insights.ToString();
-            }
-            return nextState.Insights.ToString() + " / " + nextState.DangerPhaseInsightsCost.ToString();
+            return nextState.Insights.ToString();
         }
     }
 }

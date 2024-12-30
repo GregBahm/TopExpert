@@ -14,10 +14,6 @@ namespace Investigation.Model
         public int AdvantageToWin { get; init; }
         public int AdvantageToLose { get; init; }
 
-        public EncounterPhase Phase { get; init; }
-
-        public int DangerPhaseInsightsCost { get; init; }
-
         public IReadOnlyList<PersistantEffector> UnappliedEffectors { get; init; }
         public IReadOnlyList<PersistantEffector> AppliedEffectors { get; init; }
 

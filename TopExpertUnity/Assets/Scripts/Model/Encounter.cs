@@ -7,8 +7,6 @@ namespace Investigation.Model
 {
     public class Encounter
     {
-        private static readonly ActivateDangerPhase dangerPhaseActivator = new ActivateDangerPhase();
-
         private EncounterProgression progression;
         public EncounterState CurrentState
         { 
@@ -57,20 +55,6 @@ namespace Investigation.Model
             List<PersistantEffector> appliedEffectors = state.AppliedEffectors.ToList();
             EncounterState nextTurnState = state with { UnappliedEffectors = appliedEffectors, AppliedEffectors = new List<PersistantEffector>() };
             progression = progression.GetWithAddedTurn(null, nextTurnState);
-            OnStepAdded();
-        }
-
-        public bool CanActiateDangerPhase()
-        {
-            EncounterState state = CurrentState;
-            return state.Insights > state.DangerPhaseInsightsCost;
-        }
-
-        public void ActivateDangerPhase()
-        {
-            EncounterState state = CurrentState;
-            EncounterState modifiedState = dangerPhaseActivator.GetModifiedState(state);
-            progression = progression.GetWithAddedStep(dangerPhaseActivator, modifiedState);
             OnStepAdded();
         }
 

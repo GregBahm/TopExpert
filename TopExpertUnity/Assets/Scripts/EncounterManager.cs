@@ -85,8 +85,6 @@ namespace Investigation.Behaviors
                 ActionsPerTurn = 3,
                 AdvantageToWin = 10,
                 AdvantageToLose = -10,
-                Phase = EncounterPhase.Investigation,
-                DangerPhaseInsightsCost = 10,
                 UnappliedEffectors = baseEffectors,
                 AppliedEffectors = new List<PersistantEffector>(),
                 Hand = new List<PlayerCard>(),

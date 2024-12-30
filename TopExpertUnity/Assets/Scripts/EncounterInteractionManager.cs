@@ -58,12 +58,6 @@ public class EncounterInteractionManager : MonoBehaviour
         manager.Encounter.EndRound();
     }
 
-    public void ExposeDanger()
-    {
-        if (manager.Encounter.CanActiateDangerPhase())
-            manager.Encounter.ActivateDangerPhase();
-    }
-
     public void PlayCard(ElementIdentifier cardId)
     {
         PlayerCard card = GetCard(cardId);

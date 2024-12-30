@@ -12,7 +12,7 @@
 
         protected override EncounterState GetEffectedState(EncounterState state)
         {
-            if(state.Phase == EncounterPhase.Danger && TurnsTillEffect == 0)
+            if(TurnsTillEffect == 0)
             {
                 return state with { Advantage = state.Advantage - Danger };
             }
@@ -22,14 +22,13 @@
         protected override PersistantEffector GetSelfAfterEffect(EncounterState state)
         {
             int turnsTillEffect = TurnsBetweenEffect;
-            if (state.Phase == EncounterPhase.Danger)
+
+            turnsTillEffect--;
+            if (turnsTillEffect < 0)
             {
-                turnsTillEffect--;
-                if(turnsTillEffect < 0)
-                {
-                    turnsTillEffect = TurnsBetweenEffect;
-                }
+                turnsTillEffect = TurnsBetweenEffect;
             }
+
             int newDanger = Danger + DangerGrowth;
             return this with { TurnsTillEffect = turnsTillEffect, Danger = newDanger };
         }
