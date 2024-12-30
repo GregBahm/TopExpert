@@ -41,6 +41,7 @@ namespace Investigation.Behaviors
         {
             int stepsCount = EncounterManager.Instance.Encounter.Steps;
             AddStep(e, stepsCount - 1);
+            autoAdvance = true;
         }
 
         private void AddStep(EncounterStep step, int stepIndex)
@@ -51,8 +52,11 @@ namespace Investigation.Behaviors
             controller.SetStep(label, stepIndex);
         }
 
+        private bool movedFromCode;
+
         private void Update()
         {
+            movedFromCode = true;
             Model.Encounter encounter = EncounterManager.Instance.Encounter;
             if (encounter.Steps != encounterStepsLastFrame)
             {
@@ -64,6 +68,7 @@ namespace Investigation.Behaviors
                 timeSlider.value = Progression;
             }
             encounterStepsLastFrame = encounter.Steps;
+            movedFromCode = false;
         }
 
         private void UpdateSliderValues(int oldSteps, int newSteps)
@@ -76,6 +81,10 @@ namespace Investigation.Behaviors
         public void OnSliderMoved()
         {
             Progression = timeSlider.value;
+            if (!movedFromCode)
+            {
+                autoAdvance = false;
+            }
         }
 
         internal void InitializeTimeline(Encounter encounter)
