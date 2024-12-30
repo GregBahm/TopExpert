@@ -9,14 +9,26 @@ namespace Investigation.Behaviors
     public class DraftVisualBindings : VisualBindingsBase<DraftOption>
     {
         [SerializeField]
-        private GameObject ChannelTheOtherSideDraftOption;
+        private GameObject ChannelTheOtherSide;
         [SerializeField]
-        private GameObject DaringGambitDraftOption;
+        private GameObject DaringGambit;
+        [SerializeField]
+        private GameObject OfCourse;
+        [SerializeField]
+        private GameObject PunchIt;
+        [SerializeField]
+        private GameObject SpringTheTrap;
+        [SerializeField]
+        private GameObject UnravelTheMystery;
 
         public override void Initialize()
         {
-            AddBinding(typeof(ChannelTheOtherSideDraftOption), ChannelTheOtherSideDraftOption, "Channel the other side");
-            AddBinding(typeof(DaringGambitDraftOption), DaringGambitDraftOption, "Daring gambit");
+            AddBinding(typeof(ChannelTheOtherSideDraftOption), ChannelTheOtherSide, "Channel the other side");
+            AddBinding(typeof(DaringGambitDraftOption), DaringGambit, "Daring gambit");
+            AddBinding(typeof(OfCourseDraftOption), OfCourse, "Of course");
+            AddBinding(typeof(PunchItDraftOption), PunchIt, "Punch it");
+            AddBinding(typeof(SpringTheTrapDraftOption), SpringTheTrap, "Spring the trap");
+            AddBinding(typeof(UnravelTheMysteryDraftOption), UnravelTheMystery, "Unravel the mystery");
         }
     }
 }

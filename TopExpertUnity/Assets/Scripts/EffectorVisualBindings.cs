@@ -13,12 +13,12 @@ namespace Investigation.Behaviors
         [SerializeField]
         private GameObject HauntedCoffeeMachine;
         [SerializeField]
-        private GameObject HyperfocusEffector;
+        private GameObject Hyperfocus;
 
         public override void Initialize()
         {
             AddBinding(typeof(HauntedCoffeeMachine), HauntedCoffeeMachine, "Haunted coffee machine");
-            AddBinding(typeof(HyperfocusEffector), HyperfocusEffector, "Hyperfocus");
+            AddBinding(typeof(HyperfocusEffector), Hyperfocus, "Hyperfocus");
             AddBinding(typeof(DrawHand), DrawHand, "Draw hand");
             AddBinding(typeof(RestoreEnergy), RestoreEnergy, "Restore energy");
         }

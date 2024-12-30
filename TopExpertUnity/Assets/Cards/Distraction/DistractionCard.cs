@@ -4,25 +4,16 @@ using System.Linq;
 namespace Investigation.Model
 {
     public record DistractionCard(ElementIdentifier Identifier)
-        : PlayerCard(Identifier)
+        : StandardPlayerCard(Identifier)
     {
-        public int ActionCost => 3;
-        public int InsightCost => 5;
+        public override int ActionCost => 3;
+        public override int InsightCost => 5;
 
-        public override bool CanPlay(EncounterState state)
+        protected override EncounterState GetModifiedState(EncounterState state)
         {
-            bool actions = state.Actions >= ActionCost;
-            bool insights = state.Insights >= InsightCost;
-            return actions && insights;
-        }
-
-        public override EncounterState Play(EncounterState state)
-        {
-            state = GetWithCardMovedFromHand(state);
-            state = state with { Actions = state.Actions - ActionCost , Insights = state.Insights - InsightCost};
             List<PersistantEffector> unappliedEffectors = state.UnappliedEffectors.ToList();
             List<PersistantEffector> appliedEffectors = state.AppliedEffectors.ToList();
-            
+
             foreach (var item in state.UnappliedEffectors.Where(item => item.IsEnemyEffect))
             {
                 unappliedEffectors.Remove(item);

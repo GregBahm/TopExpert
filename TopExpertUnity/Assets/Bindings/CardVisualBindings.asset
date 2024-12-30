@@ -15,7 +15,7 @@ MonoBehaviour:
   CarefulResearchCard: {fileID: 6231419582042853198, guid: fae2d507da130d040bfcfcf9fe1c7be3, type: 3}
   CommuneWithSpiritsCard: {fileID: 2186669251230591016, guid: 7d9fb0728d7087f48a8cdb6830c44a3f, type: 3}
   DaringGambitCard: {fileID: 6816370585545121043, guid: a886b87877915934bb882ecc96af52ea, type: 3}
-  DistractionCard: {fileID: 2560018547807420295, guid: ee94dadf181841449878cac58cfaa0f7, type: 3}
+  DistractionCard: {fileID: 4644466534937556974, guid: c534be162fa091744bea8bc5e683cc41, type: 3}
   GetAfterItCard: {fileID: 175631475490821326, guid: 940d75d989b3639498d70fe66d0c7937, type: 3}
   HyperfocusCard: {fileID: 8560180218358650483, guid: f507d71487b02df43bfc25379f649513, type: 3}
   InvestigateCard: {fileID: 6231419582042853198, guid: 7ca8cf512a8f6e449af9d493a31c003c, type: 3}

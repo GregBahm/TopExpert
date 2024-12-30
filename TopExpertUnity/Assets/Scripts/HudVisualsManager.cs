@@ -1,4 +1,5 @@
 ﻿using Investigation.Model;
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -20,8 +21,17 @@ namespace Investigation.Behaviors
             // TODO: Better stuff here
             currentActions.text = nextState.Actions.ToString();
             totalActions.text = nextState.ActionsPerTurn.ToString();
-            currentInsights.text = nextState.Insights.ToString();
+            currentInsights.text = GetCurrentInsightsText(nextState);
             advantage.text = "Advantage: " + nextState.Advantage.ToString();
+        }
+
+        private string GetCurrentInsightsText(EncounterState nextState)
+        {
+            if(nextState.Phase == EncounterPhase.Danger)
+            {
+                return nextState.Insights.ToString();
+            }
+            return nextState.Insights.ToString() + " / " + nextState.DangerPhaseInsightsCost.ToString();
         }
     }
 }

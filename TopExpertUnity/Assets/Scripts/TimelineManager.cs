@@ -33,6 +33,9 @@ namespace Investigation.Behaviors
         [SerializeField]
         private GameObject annotationPrefab;
 
+        [SerializeField]
+        private float timelineSpeed;
+
         private int encounterStepsLastFrame;
 
 
@@ -64,7 +67,8 @@ namespace Investigation.Behaviors
             }
             if (autoAdvance)
             {
-                Progression = Mathf.Clamp01(Progression + .001f);
+                float advance = (Time.deltaTime * timelineSpeed) / encounter.Steps;
+                Progression = Mathf.Clamp01(Progression + advance);
                 timeSlider.value = Progression;
             }
             encounterStepsLastFrame = encounter.Steps;
