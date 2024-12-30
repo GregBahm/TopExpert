@@ -11,9 +11,12 @@ namespace Investigation.Behaviors
         private CardVisualsManager cardManager;
         private EffectorVisualsManager effectorManager;
         private HudVisualsManager hudVisualsManager;
+        private DraftingVisualsManager draftingVisualsManager;
 
         public static EncounterVisualsManager Instance { get; private set; }
 
+        [SerializeField]
+        private RectTransform cardsParent;
         [SerializeField]
         private RectTransform handLeftPoint;
         public RectTransform HandLeftPoint => handLeftPoint;
@@ -34,6 +37,8 @@ namespace Investigation.Behaviors
         public float CardEntranceOffset => cardEntranceOffset;
 
         [SerializeField]
+        private RectTransform effectorParent;
+        [SerializeField]
         private RectTransform effectorLeftPoint;
         public RectTransform EffectorLeftPoint => effectorLeftPoint;
         [SerializeField]
@@ -44,9 +49,16 @@ namespace Investigation.Behaviors
         public float EffectorEntranceOffset => effectorEntranceOffset;
 
         [SerializeField]
-        private RectTransform cardsParent;
+        private RectTransform draftParent;
         [SerializeField]
-        private RectTransform effectorParent;
+        private RectTransform draftLeftPoint;
+        public RectTransform DraftLeftPoint => draftLeftPoint;
+        [SerializeField]
+        private RectTransform draftRightPoint;
+        public RectTransform DraftRightPoint => draftRightPoint;
+        [SerializeField]
+        private float draftEntranceOffset;
+        public float DraftEntranceOffset => draftEntranceOffset;
 
         [SerializeField]
         private Color unappliedEffectorColor;
@@ -61,8 +73,8 @@ namespace Investigation.Behaviors
         public float Progression { get => progression; set => progression = value; }
 
         [SerializeField]
-        private float deckStackingOfset;
-        public float DeckStackingOffset => deckStackingOfset;
+        private float deckStackingOffset;
+        public float DeckStackingOffset => deckStackingOffset;
 
         [SerializeField]
         private float maxCardSpread;
@@ -114,6 +126,7 @@ namespace Investigation.Behaviors
             hudVisualsManager = GetComponent<HudVisualsManager>();
             cardManager = new CardVisualsManager();
             effectorManager = new EffectorVisualsManager();
+            draftingVisualsManager = new DraftingVisualsManager();
         }
 
         private void Update()
@@ -132,14 +145,14 @@ namespace Investigation.Behaviors
             cardManager.VisualizeEncounter(previousStep.State, nextStep.State);
             effectorManager.VisualizeEncounter(previousStep.State, nextStep.State);
             hudVisualsManager.VisualizeEncounter(previousStep.State, nextStep.State);
-
+            draftingVisualsManager.VisualizeEncounter(previousStep.State, nextStep.State);
         }
 
         public CardVisualController InstantiateCardUi(PlayerCard card)
         {
             GameObject cardPrefab = VisualBinding.Instance.GetPrefabFor(card);
             GameObject obj = GameObject.Instantiate(cardPrefab);
-            obj.transform.SetParent(cardsParent.transform, false);
+            obj.transform.SetParent(cardsParent, false);
             CardVisualController cardViewModel = obj.GetComponent<CardVisualController>();
             cardViewModel.Initialize(card.Identifier);
             return cardViewModel;
@@ -149,11 +162,20 @@ namespace Investigation.Behaviors
         {
             GameObject effectorPrefab = VisualBinding.Instance.GetPrefabFor(effector);
             GameObject obj = GameObject.Instantiate(effectorPrefab);
-            obj.transform.SetParent(effectorParent.transform, false);
+            obj.transform.SetParent(effectorParent, false);
             EffectorVisualController viewModel = obj.GetComponent<EffectorVisualController>();
             viewModel.Initialize(effector.Identifier);
             return viewModel;
         }
 
+        public DraftOptionController InstantiateDraftUi(DraftOption draftOption)
+        {
+            GameObject draftPrefab = VisualBinding.Instance.GetPrefabFor(draftOption);
+            GameObject obj = GameObject.Instantiate(draftPrefab);
+            obj.transform.SetParent(draftParent, false);
+            DraftOptionController viewModel = obj.GetComponent<DraftOptionController>();
+            viewModel.Initialize(draftOption.Identifier);
+            return viewModel;
+        }
     }
 }

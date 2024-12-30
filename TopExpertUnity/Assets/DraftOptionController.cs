@@ -1,18 +1,9 @@
+using Investigation.Behaviors;
+using Investigation.Model;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DraftOptionController : MonoBehaviour
+public class DraftOptionController : ElementVisualController<DraftUiState>
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
