@@ -32,6 +32,7 @@ namespace Investigation.Model
         {
             EncounterState nextState = card.Play(CurrentState);
             progression = progression.GetWithAddedStep(card, nextState);
+            OnStepAdded();
         }
 
         public EncounterTurn GetTurn(int turn)

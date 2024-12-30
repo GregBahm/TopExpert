@@ -40,14 +40,15 @@ namespace Investigation.Behaviors
         private void OnStepAdded(object sender, EncounterStep e)
         {
             int stepsCount = EncounterManager.Instance.Encounter.Steps;
-            AddStep(e, stepsCount);
+            AddStep(e, stepsCount - 1);
         }
 
-        private void AddStep(EncounterStep step, int stepsCount)
+        private void AddStep(EncounterStep step, int stepIndex)
         {
             GameObject annotation = Instantiate(annotationPrefab, annotationsRoot);
             TimelineAnnotationController controller = annotation.GetComponent<TimelineAnnotationController>();
-            controller.SetStep(step, stepsCount);
+            string label = VisualBinding.Instance.GetTimelineAnnotationFor(step);
+            controller.SetStep(label, stepIndex);
         }
 
         private void Update()

@@ -2674,9 +2674,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 542098063}
-        m_TargetAssemblyTypeName: Investigation.Behaviors.EncounterVisualsManager,
-          Assembly-CSharp
+      - m_Target: {fileID: 542098067}
+        m_TargetAssemblyTypeName: Investigation.Behaviors.TimelineManager, Assembly-CSharp
         m_MethodName: OnSliderMoved
         m_Mode: 1
         m_Arguments:

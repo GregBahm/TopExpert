@@ -8,7 +8,7 @@ using UnityEngine;
 namespace Investigation.Behaviors
 {
     [CreateAssetMenu(fileName = "New CardVisualBindings", menuName = "Bindings/CardVisualBindings")]
-    public class CardVisualBindings : ScriptableObject
+    public class CardVisualBindings : VisualBindingsBase<PlayerCard>
     {
         [SerializeField]
         private GameObject CarefulResearchCard;
@@ -39,38 +39,22 @@ namespace Investigation.Behaviors
         [SerializeField]
         private GameObject UnravelTheMysteryCard;
 
-        private Dictionary<Type, GameObject> bindings;
-
-        public void Initialize()
+        public override void Initialize()
         {
-            bindings = new Dictionary<Type, GameObject>
-            {
-                { typeof(CarefulResearchCard), CarefulResearchCard },
-                { typeof(CommuneWithSpiritsCard), CommuneWithSpiritsCard },
-                { typeof(DaringGambitCard), DaringGambitCard },
-                { typeof(GetAfterItCard), GetAfterItCard },
-                { typeof(HyperfocusCard), HyperfocusCard },
-                { typeof(InvestigateCard), InvestigateCard },
-                { typeof(InvokeTheSpiritsCard), InvokeTheSpiritsCard },
-                { typeof(NewPlanCard), NewPlanCard },
-                { typeof(DistractionCard), DistractionCard },
-                { typeof(OfCourseCard), OfCourseCard },
-                { typeof(OverthinkerCard), OverthinkerCard },
-                { typeof(PunchItCard), PunchItCard },
-                { typeof(SpringTheTrapCard), SpringTheTrapCard },
-                { typeof(UnravelTheMysteryCard), UnravelTheMysteryCard },
-            };
-        }
-
-        public GameObject GetPrefabFor(PlayerCard card)
-        {
-            Type cardType = card.GetType();
-            return bindings[cardType];
-        }
-
-        public IEnumerable<Type> GetAllCardTypes()
-        {
-            return bindings.Keys;
+            AddBinding(typeof(CarefulResearchCard), CarefulResearchCard, "Careful research");
+            AddBinding(typeof(CommuneWithSpiritsCard), CommuneWithSpiritsCard, "Commune with the sprits");
+            AddBinding(typeof(DaringGambitCard), DaringGambitCard, "Daring gambit");
+            AddBinding(typeof(GetAfterItCard), GetAfterItCard, "Get after it");
+            AddBinding(typeof(HyperfocusCard), HyperfocusCard, "Hyperfocus");
+            AddBinding(typeof(InvestigateCard), InvestigateCard, "Investigate");
+            AddBinding(typeof(InvokeTheSpiritsCard), InvokeTheSpiritsCard, "Invoke the spirits");
+            AddBinding(typeof(NewPlanCard), NewPlanCard, "New plan");
+            AddBinding(typeof(DistractionCard), DistractionCard, "Distraction");
+            AddBinding(typeof(OfCourseCard), OfCourseCard, "Of course");
+            AddBinding(typeof(OverthinkerCard), OverthinkerCard, "Overthinker");
+            AddBinding(typeof(PunchItCard), PunchItCard, "Punch it");
+            AddBinding(typeof(SpringTheTrapCard), SpringTheTrapCard, "Spring the trap");
+            AddBinding(typeof(UnravelTheMysteryCard), UnravelTheMysteryCard, "Unravel the mystery");
         }
     }
 }

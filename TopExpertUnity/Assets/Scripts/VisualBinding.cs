@@ -1,5 +1,6 @@
 ﻿using Investigation.Behaviors;
 using Investigation.Model;
+using System;
 using UnityEngine;
 
 namespace Investigation.Behaviors
@@ -35,9 +36,26 @@ namespace Investigation.Behaviors
         {
             return effectorBindings.GetPrefabFor(effector);
         }
-        public bool HasVisuals(PersistantEffector effector)
+
+        public string GetTimelineAnnotationFor(EncounterStep step)
         {
-            return effectorBindings.HasVisuals(effector);
+            if (step.Modifier == null)
+                return "New Turn";
+
+            Type modifierType = step.Modifier.GetType();
+            if (modifierType.IsSubclassOf(typeof(PlayerCard)))
+            {
+                return cardBindings.GetTimelineAnnotationFor(modifierType);
+            }
+            if (modifierType.IsSubclassOf(typeof(PersistantEffector)))
+            {
+                return effectorBindings.GetTimelineAnnotationFor(modifierType);
+            }
+            if (modifierType.IsSubclassOf(typeof(DraftOption)))
+            {
+                return draftBindings.GetTimelineAnnotationFor(modifierType);
+            }
+            throw new Exception("No timeline annotation found for " + modifierType);
         }
     }
 }

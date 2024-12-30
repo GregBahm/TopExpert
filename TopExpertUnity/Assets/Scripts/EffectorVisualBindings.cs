@@ -1,12 +1,10 @@
 ﻿using Investigation.Model;
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Investigation.Behaviors
 {
     [CreateAssetMenu(fileName = "New EffectorVisualBindings", menuName = "Bindings/EffectorVisualBindings")]
-    public class EffectorVisualBindings : ScriptableObject
+    public class EffectorVisualBindings : VisualBindingsBase<PersistantEffector>
     {
         [SerializeField]
         private GameObject DrawHand;
@@ -17,28 +15,12 @@ namespace Investigation.Behaviors
         [SerializeField]
         private GameObject HyperfocusEffector;
 
-        private Dictionary<Type, GameObject> bindings;
-
-        public void Initialize()
+        public override void Initialize()
         {
-            bindings = new Dictionary<Type, GameObject>
-            {
-                { typeof(HauntedCoffeeMachine), HauntedCoffeeMachine },
-                { typeof(HyperfocusEffector), HyperfocusEffector },
-                { typeof(DrawHand), DrawHand },
-                { typeof(RestoreEnergy), RestoreEnergy }
-            };
-        }
-
-        public GameObject GetPrefabFor(PersistantEffector effector)
-        {
-            Type cardType = effector.GetType();
-            return bindings[cardType];
-        }
-
-        public bool HasVisuals(PersistantEffector effector)
-        {
-            return bindings.ContainsKey(effector.GetType());
+            AddBinding(typeof(HauntedCoffeeMachine), HauntedCoffeeMachine, "Haunted coffee machine");
+            AddBinding(typeof(HyperfocusEffector), HyperfocusEffector, "Hyperfocus");
+            AddBinding(typeof(DrawHand), DrawHand, "Draw hand");
+            AddBinding(typeof(RestoreEnergy), RestoreEnergy, "Restore energy");
         }
     }
 }

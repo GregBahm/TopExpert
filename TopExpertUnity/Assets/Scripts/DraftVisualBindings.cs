@@ -6,28 +6,17 @@ using UnityEngine;
 namespace Investigation.Behaviors
 {
     [CreateAssetMenu(fileName = "New DraftVisualBindings", menuName = "Bindings/DraftVisualBindings")]
-    public class DraftVisualBindings : ScriptableObject
+    public class DraftVisualBindings : VisualBindingsBase<DraftOption>
     {
         [SerializeField]
         private GameObject ChannelTheOtherSideDraftOption;
         [SerializeField]
         private GameObject DaringGambitDraftOption;
 
-        private Dictionary<Type, GameObject> bindings;
-
-        public void Initialize()
+        public override void Initialize()
         {
-            bindings = new Dictionary<Type, GameObject>
-            {
-                { typeof(ChannelTheOtherSideDraftOption), ChannelTheOtherSideDraftOption },
-                { typeof(DaringGambitDraftOption), DaringGambitDraftOption }
-            };
-        }
-
-        public GameObject GetPrefabFor(DraftOption draftOption)
-        {
-            Type cardType = draftOption.GetType();
-            return bindings[cardType];
+            AddBinding(typeof(ChannelTheOtherSideDraftOption), ChannelTheOtherSideDraftOption, "Channel the other side");
+            AddBinding(typeof(DaringGambitDraftOption), DaringGambitDraftOption, "Daring gambit");
         }
     }
 }
