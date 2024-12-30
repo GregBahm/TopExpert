@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Investigation.Model
@@ -20,6 +20,8 @@ namespace Investigation.Model
 
         public int Turns { get { return progression.Turns.Count; } }
         public int Steps { get { return progression.Steps.Count; } }
+
+        public event EventHandler<EncounterStep> StepAdded;
 
         public Encounter(EncounterState initialState)
         {
@@ -49,10 +51,12 @@ namespace Investigation.Model
                 PersistantEffector effector = state.UnappliedEffectors.First();
                 state = effector.GetModifiedState(state);
                 progression = progression.GetWithAddedStep(effector, state);
+                OnStepAdded();
             }
             List<PersistantEffector> appliedEffectors = state.AppliedEffectors.ToList();
             EncounterState nextTurnState = state with { UnappliedEffectors = appliedEffectors, AppliedEffectors = new List<PersistantEffector>() };
             progression = progression.GetWithAddedTurn(null, nextTurnState);
+            OnStepAdded();
         }
 
         public bool CanActiateDangerPhase()
@@ -66,12 +70,19 @@ namespace Investigation.Model
             EncounterState state = CurrentState;
             EncounterState modifiedState = dangerPhaseActivator.GetModifiedState(state);
             progression = progression.GetWithAddedStep(dangerPhaseActivator, modifiedState);
+            OnStepAdded();
         }
 
         public void DraftCard(DraftOption option)
         {
             EncounterState nextState = option.DraftCard(CurrentState);
             progression = progression.GetWithAddedStep(option, nextState);
+            OnStepAdded();
+        }
+
+        private void OnStepAdded()
+        {
+            StepAdded?.Invoke(this, progression.Steps.Last());
         }
     }
 
@@ -159,6 +170,7 @@ namespace Investigation.Model
     {
         public IStateModifier Modifier { get; }
         public EncounterState State { get; }
+
         public EncounterStep(IStateModifier modifier, EncounterState state)
         {
             Modifier = modifier;

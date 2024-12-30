@@ -58,6 +58,8 @@ namespace Investigation.Behaviors
         [Range(0, 1)]
         [SerializeField]
         float progression;
+        public float Progression { get => progression; set => progression = value; }
+
         [SerializeField]
         private float deckStackingOfset;
         public float DeckStackingOffset => deckStackingOfset;
@@ -95,14 +97,12 @@ namespace Investigation.Behaviors
         [SerializeField]
         private Color cardDiscardTint;
         public Color CardDiscardTint => cardDiscardTint;
-
         [SerializeField]
-        private Slider timeSlider;
-
+        private Color playableCardColor;
+        public Color PlayableCardColor => playableCardColor;
         [SerializeField]
-        private bool autoAdvance = true;
-
-        private int encounterStepsLastFrame;
+        private Color unplayableCardColor;
+        public Color UnplayableCardColor => unplayableCardColor;
 
         private void Awake()
         {
@@ -119,10 +119,6 @@ namespace Investigation.Behaviors
         private void Update()
         {
             Model.Encounter encounter = EncounterManager.Instance.Encounter;
-            if(encounter.Steps != encounterStepsLastFrame)
-            {
-                UpdateSliderValues(encounterStepsLastFrame, encounter.Steps);
-            }
             float fullTime = (encounter.Steps - 1) * progression;
             turnToDisplay = Mathf.FloorToInt(fullTime);
             subTurnDisplay = fullTime % 1;
@@ -136,12 +132,7 @@ namespace Investigation.Behaviors
             cardManager.VisualizeEncounter(previousStep.State, nextStep.State);
             effectorManager.VisualizeEncounter(previousStep.State, nextStep.State);
             hudVisualsManager.VisualizeEncounter(previousStep.State, nextStep.State);
-            encounterStepsLastFrame = encounter.Steps;
 
-            if(autoAdvance)
-            {
-                timeSlider.value += .001f;
-            }
         }
 
         public CardVisualController InstantiateCardUi(PlayerCard card)
@@ -164,16 +155,5 @@ namespace Investigation.Behaviors
             return viewModel;
         }
 
-        private void UpdateSliderValues(int oldSteps, int newSteps)
-        {
-            float currentStep = oldSteps * progression;
-            progression = currentStep / newSteps;
-            timeSlider.value = progression;
-        }
-
-        public void OnSliderMoved()
-        {
-            progression = timeSlider.value;
-        }
     }
 }

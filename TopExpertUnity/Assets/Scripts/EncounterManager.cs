@@ -1,4 +1,5 @@
 using Investigation.Model;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,9 @@ namespace Investigation.Behaviors
 
         private EncounterVisualsManager visuals;
 
+        [SerializeField]
+        private TimelineManager timelineManager;
+
         private void Awake()
         {
             Instance = this;
@@ -22,6 +26,8 @@ namespace Investigation.Behaviors
             visuals = GetComponent<EncounterVisualsManager>();
             Encounter = GetTestEncounter();
             Encounter.EndRound();
+
+            timelineManager.InitializeTimeline(Encounter);
         }
 
         private Model.Encounter GetTestEncounter()

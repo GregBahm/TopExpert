@@ -94,7 +94,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7397136629240640266, guid: 0fddff51982c2a745a74b621c7a8d3cd, type: 3}
       propertyPath: m_text
-      value: Haunted Coffee Machine
+      value: 'Haunted Coffee Machine
+
+        [Danger]'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

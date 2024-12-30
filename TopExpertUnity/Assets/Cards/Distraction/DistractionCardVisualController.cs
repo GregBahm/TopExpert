@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class DistractionCardVisualController : VisualController
+public class DistractionCardVisualController : AdditionalVisualController
 {
     [SerializeField]
     private TextMeshProUGUI actionCost;

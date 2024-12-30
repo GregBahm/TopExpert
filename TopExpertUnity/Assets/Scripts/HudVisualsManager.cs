@@ -12,6 +12,8 @@ namespace Investigation.Behaviors
         private TextMeshProUGUI totalActions;
         [SerializeField]
         private TextMeshProUGUI currentInsights;
+        [SerializeField]
+        private TextMeshProUGUI advantage;
 
         public void VisualizeEncounter(EncounterState previousState, EncounterState nextState)
         {
@@ -19,6 +21,7 @@ namespace Investigation.Behaviors
             currentActions.text = nextState.Actions.ToString();
             totalActions.text = nextState.ActionsPerTurn.ToString();
             currentInsights.text = nextState.Insights.ToString();
+            advantage.text = "Advantage: " + nextState.Advantage.ToString();
         }
     }
 }

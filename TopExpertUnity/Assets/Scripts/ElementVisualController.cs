@@ -20,7 +20,7 @@ namespace Investigation.Behaviors
             this.state = state;
         }
 
-        protected EncounterVisualsManager Mothership
+        protected static EncounterVisualsManager Mothership
         {
             get
             {

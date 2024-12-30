@@ -19,6 +19,9 @@ namespace Investigation.Behaviors
         [SerializeField]
         private CanvasGroup fullCard;
 
+        [SerializeField]
+        private Image cardFill;
+
         private float hoveredness;
 
         [SerializeField]
@@ -35,6 +38,9 @@ namespace Investigation.Behaviors
 
         [SerializeField]
         private RawImage fader;
+
+        [SerializeField]
+        private StandardCardVisualController supplementalController;
 
         private void Start()
         {
@@ -68,6 +74,20 @@ namespace Investigation.Behaviors
             cardBack.SetActive(!cardIsUp);
             cardFront.SetActive(cardIsUp);
             fader.color = GetFaderColor();
+            cardFill.color = GetCardFillColor();
+
+            if (supplementalController != null)
+            {
+                supplementalController.DrawState(state, Mothership.SubTurnDisplay);
+            }
+        }
+
+        private Color GetCardFillColor()
+        {
+            // TODO: This needs to apply to the current card state, not the final card state
+            // Also true for the clickable state
+            bool isPlayable = GetIsPlayable();
+            return isPlayable ? Mothership.PlayableCardColor : Mothership.UnplayableCardColor;
         }
 
         private Color GetFaderColor()
@@ -116,10 +136,14 @@ namespace Investigation.Behaviors
 
         public void OnClick()
         {
-            EncounterInteractionManager interaction = EncounterInteractionManager.Instance;
-            bool isPlayable = interaction.GetIsPlayable(identifier);
+            bool isPlayable = GetIsPlayable();
             if (isPlayable)
-                interaction.PlayCard(identifier);
+                EncounterInteractionManager.Instance.PlayCard(identifier);
+        }
+
+        private bool GetIsPlayable()
+        {
+            return EncounterInteractionManager.Instance.GetIsPlayable(identifier);
         }
 
         private Quaternion GetCardRotation()
@@ -261,7 +285,8 @@ namespace Investigation.Behaviors
 
         public static Vector3 GetDissovleDeckPosition(EncounterState state, int order)
         {
-            return EncounterVisualsManager.Instance.DissolvePoint.position;
+            Vector3 handPosition = GetHandPosition(state, order);
+            return handPosition + new Vector3(0, Mothership.CardEntranceOffset, 0);
         }
 
         public static Vector3 GetDiscardPosition(EncounterState state, int order)
