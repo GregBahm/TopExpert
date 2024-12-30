@@ -59,6 +59,9 @@ namespace Investigation.Behaviors
         [SerializeField]
         private float draftEntranceOffset;
         public float DraftEntranceOffset => draftEntranceOffset;
+        [SerializeField]
+        private RectTransform draftDrawPile;
+        public RectTransform DraftDrawPile => draftDrawPile;
 
         [SerializeField]
         private Color unappliedEffectorColor;
