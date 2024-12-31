@@ -58,13 +58,6 @@ namespace Investigation.Model
             OnStepAdded();
         }
 
-        public void DraftCard(DraftOption option)
-        {
-            EncounterState nextState = option.DraftCard(CurrentState);
-            progression = progression.GetWithAddedStep(option, nextState);
-            OnStepAdded();
-        }
-
         private void OnStepAdded()
         {
             StepAdded?.Invoke(this, progression.Steps.Last());

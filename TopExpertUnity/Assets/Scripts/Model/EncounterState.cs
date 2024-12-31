@@ -25,10 +25,6 @@ namespace Investigation.Model
         public int Draws { get; init; }
         public int MaxHandSize { get; init; }
 
-        public IReadOnlyList<DraftOption> DraftDeck { get; init; }
-        public IReadOnlyList<DraftOption> DraftOptions { get; init; }
-        public int AvailableDrafts { get; init; }
-
         public int SpiritsPower { get; init; }
 
         public IEnumerable<PlayerCard> AllCards

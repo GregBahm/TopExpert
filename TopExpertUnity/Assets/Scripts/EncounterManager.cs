@@ -35,17 +35,22 @@ namespace Investigation.Behaviors
             List<PlayerCard> drawDeck = new List<PlayerCard>()
             {
                 new CarefulResearchCard(new ElementIdentifier()),
+                new OverthinkerCard(new ElementIdentifier()),
+                new HyperfocusCard(new ElementIdentifier()),
+                new HyperfocusCard(new ElementIdentifier()),
+                new InvestigateCard(new ElementIdentifier()),
+                new InvestigateCard(new ElementIdentifier()),
+                new InvestigateCard(new ElementIdentifier()),
+
                 new CommuneWithSpiritsCard(new ElementIdentifier()),
                 new DaringGambitCard(new ElementIdentifier()),
                 new GetAfterItCard(new ElementIdentifier()),
-                new HyperfocusCard(new ElementIdentifier()),
                 new InvestigateCard(new ElementIdentifier()),
                 new InvestigateCard(new ElementIdentifier()),
                 new InvokeTheSpiritsCard(new ElementIdentifier()),
                 new NewPlanCard(new ElementIdentifier()),
                 new DistractionCard(new ElementIdentifier()),
                 new OfCourseCard(new ElementIdentifier()),
-                new OverthinkerCard(new ElementIdentifier()),
                 new PunchItCard(new ElementIdentifier()),
                 new SpringTheTrapCard(new ElementIdentifier()),
                 new UnravelTheMysteryCard(new ElementIdentifier()),
@@ -55,7 +60,6 @@ namespace Investigation.Behaviors
                 new DaringGambitCard(new ElementIdentifier()),
                 new GetAfterItCard(new ElementIdentifier()),
                 new HyperfocusCard(new ElementIdentifier()),
-                new InvestigateCard(new ElementIdentifier()),
                 new InvestigateCard(new ElementIdentifier()),
                 new InvokeTheSpiritsCard(new ElementIdentifier()),
                 new NewPlanCard(new ElementIdentifier()),
@@ -71,11 +75,6 @@ namespace Investigation.Behaviors
                 new HauntedCoffeeMachine(new ElementIdentifier()),
                 new DrawHand(new ElementIdentifier()),
                 new RestoreEnergy(new ElementIdentifier())
-            };
-            List<DraftOption> DraftDeck = new List<DraftOption>()
-            { 
-                new ChannelTheOtherSideDraftOption(new ElementIdentifier()),
-                new DaringGambitDraftOption(new ElementIdentifier()),
             };
 
             EncounterState initialState = new EncounterState()
@@ -93,9 +92,6 @@ namespace Investigation.Behaviors
                 DissolveDeck = new List<PlayerCard>(),
                 Draws = 7,
                 MaxHandSize = 10,
-                DraftDeck = DraftDeck,
-                DraftOptions = new List<DraftOption>(),
-                AvailableDrafts = 4
             };
             return new Model.Encounter(initialState);
         }

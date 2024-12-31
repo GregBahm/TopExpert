@@ -11,7 +11,6 @@ namespace Investigation.Behaviors
         private CardVisualsManager cardManager;
         private EffectorVisualsManager effectorManager;
         private HudVisualsManager hudVisualsManager;
-        private DraftingVisualsManager draftingVisualsManager;
 
         public static EncounterVisualsManager Instance { get; private set; }
 
@@ -129,7 +128,6 @@ namespace Investigation.Behaviors
             hudVisualsManager = GetComponent<HudVisualsManager>();
             cardManager = new CardVisualsManager();
             effectorManager = new EffectorVisualsManager();
-            draftingVisualsManager = new DraftingVisualsManager();
         }
 
         private void Update()
@@ -148,7 +146,6 @@ namespace Investigation.Behaviors
             cardManager.VisualizeEncounter(previousStep.State, nextStep.State);
             effectorManager.VisualizeEncounter(previousStep.State, nextStep.State);
             hudVisualsManager.VisualizeEncounter(previousStep.State, nextStep.State);
-            draftingVisualsManager.VisualizeEncounter(previousStep.State, nextStep.State);
         }
 
         public CardVisualController InstantiateCardUi(PlayerCard card)
@@ -168,16 +165,6 @@ namespace Investigation.Behaviors
             obj.transform.SetParent(effectorParent, false);
             EffectorVisualController viewModel = obj.GetComponent<EffectorVisualController>();
             viewModel.Initialize(effector.Identifier);
-            return viewModel;
-        }
-
-        public DraftOptionController InstantiateDraftUi(DraftOption draftOption)
-        {
-            GameObject draftPrefab = VisualBinding.Instance.GetPrefabFor(draftOption);
-            GameObject obj = GameObject.Instantiate(draftPrefab);
-            obj.transform.SetParent(draftParent, false);
-            DraftOptionController viewModel = obj.GetComponent<DraftOptionController>();
-            viewModel.Initialize(draftOption.Identifier);
             return viewModel;
         }
     }

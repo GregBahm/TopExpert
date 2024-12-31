@@ -9,8 +9,7 @@ namespace Investigation.Behaviors
     {
         [SerializeField]
         private CardVisualBindings cardBindings;
-        [SerializeField]
-        private DraftVisualBindings draftBindings;
+
         [SerializeField]
         private EffectorVisualBindings effectorBindings;
 
@@ -20,7 +19,6 @@ namespace Investigation.Behaviors
         {
             Instance = this;
             cardBindings.Initialize();
-            draftBindings.Initialize();
             effectorBindings.Initialize();
         }
 
@@ -28,10 +26,7 @@ namespace Investigation.Behaviors
         {
             return cardBindings.GetPrefabFor(card);
         }
-        public GameObject GetPrefabFor(DraftOption draftOption)
-        {
-            return draftBindings.GetPrefabFor(draftOption);
-        }
+
         public GameObject GetPrefabFor(PersistantEffector effector)
         {
             return effectorBindings.GetPrefabFor(effector);
@@ -50,10 +45,6 @@ namespace Investigation.Behaviors
             if (modifierType.IsSubclassOf(typeof(PersistantEffector)))
             {
                 return effectorBindings.GetTimelineAnnotationFor(modifierType);
-            }
-            if (modifierType.IsSubclassOf(typeof(DraftOption)))
-            {
-                return draftBindings.GetTimelineAnnotationFor(modifierType);
             }
             throw new Exception("No timeline annotation found for " + modifierType);
         }
