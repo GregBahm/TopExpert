@@ -79,11 +79,10 @@ namespace Investigation.Behaviors
 
             EncounterState initialState = new EncounterState()
             {
-                Status = EncounterStatus.Ongoing,
                 Actions = 3,
                 ActionsPerTurn = 3,
-                AdvantageToWin = 10,
-                AdvantageToLose = -10,
+                AdvantageToWin = 20,
+                AdvantageToLose = -20,
                 UnappliedEffectors = baseEffectors,
                 AppliedEffectors = new List<PersistantEffector>(),
                 Hand = new List<PlayerCard>(),

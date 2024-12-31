@@ -5,7 +5,17 @@ namespace Investigation.Model
 {
     public record EncounterState
     {
-        public EncounterStatus Status { get; init; }
+        public EncounterStatus Status
+        {
+            get
+            {
+                if (Advantage >= AdvantageToWin)
+                    return EncounterStatus.PlayersWon;
+                if (Advantage <= AdvantageToLose)
+                    return EncounterStatus.PlayersLost;
+                return EncounterStatus.Ongoing;
+            }
+        }
 
         public int Insights { get; init; }
         public int Actions { get; init; }

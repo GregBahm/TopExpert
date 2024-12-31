@@ -70,7 +70,7 @@ namespace Investigation.Behaviors
             }
 
             bool cardIsUp = GetCardIsUp();
-            fullCard.alpha = GetCardVisiblity();
+            fullCard.alpha = GetCardVisibility();
             cardBack.SetActive(!cardIsUp);
             cardFront.SetActive(cardIsUp);
             fader.color = GetFaderColor();
@@ -84,10 +84,11 @@ namespace Investigation.Behaviors
 
         private Color GetCardFillColor()
         {
-            // TODO: This needs to apply to the current card state, not the final card state
-            // Also true for the clickable state
-            bool isPlayable = GetIsPlayable();
-            return isPlayable ? Mothership.PlayableCardColor : Mothership.UnplayableCardColor;
+            bool canPlayStart = state.StartElementState.CanPlay(state.StartState);
+            bool canPlayEnd = state.EndElementState.CanPlay(state.EndState);
+            Color startColor = canPlayStart ? Mothership.PlayableCardColor : Mothership.UnplayableCardColor;
+            Color endColor = canPlayEnd ? Mothership.PlayableCardColor : Mothership.UnplayableCardColor;
+            return Color.Lerp(startColor, endColor, Mothership.SubTurnDisplay);
         }
 
         private Color GetFaderColor()
@@ -113,7 +114,7 @@ namespace Investigation.Behaviors
             }
         }
 
-        private float GetCardVisiblity()
+        private float GetCardVisibility()
         {
             float startAlpha = GetVisibility(state.StartLocation);
             float endAlpha = GetVisibility(state.EndLocation);
