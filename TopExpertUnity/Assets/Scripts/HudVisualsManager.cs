@@ -16,6 +16,9 @@ namespace Investigation.Behaviors
         [SerializeField]
         private TextMeshProUGUI advantage;
 
+        [SerializeField]
+        private AdvantageMeterController advantageMeterController;
+
         public void VisualizeEncounter(EncounterState previousState, EncounterState nextState)
         {
             // TODO: Better stuff here
@@ -23,6 +26,7 @@ namespace Investigation.Behaviors
             totalActions.text = nextState.ActionsPerTurn.ToString();
             currentInsights.text = GetCurrentInsightsText(nextState);
             advantage.text = "Advantage: " + nextState.Advantage.ToString();
+            advantageMeterController.SetVisual(previousState, nextState);
         }
 
         private string GetCurrentInsightsText(EncounterState nextState)
