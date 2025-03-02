@@ -84,8 +84,8 @@ namespace Investigation.Behaviors
 
         private Color GetCardFillColor()
         {
-            bool canPlayStart = state.StartElementState.CanPlay(state.StartState);
-            bool canPlayEnd = state.EndElementState.CanPlay(state.EndState);
+            bool canPlayStart = state.StartElementState != null && state.StartElementState.CanPlay(state.StartState);
+            bool canPlayEnd = state.EndElementState != null && state.EndElementState.CanPlay(state.EndState);
             Color startColor = canPlayStart ? Mothership.PlayableCardColor : Mothership.UnplayableCardColor;
             Color endColor = canPlayEnd ? Mothership.PlayableCardColor : Mothership.UnplayableCardColor;
             return Color.Lerp(startColor, endColor, Mothership.SubTurnDisplay);
