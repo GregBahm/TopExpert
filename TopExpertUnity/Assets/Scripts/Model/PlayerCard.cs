@@ -25,5 +25,6 @@ namespace Investigation.Model
 
             return state with { Hand = hand, DissolveDeck = dissolveDeck, DiscardDeck = discardDeck };
         }
+
     }
 }

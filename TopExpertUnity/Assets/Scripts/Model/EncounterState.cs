@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Investigation.Model
@@ -56,6 +57,21 @@ namespace Investigation.Model
                 foreach (var card in DissolveDeck)
                 {
                     yield return card;
+                }
+            }
+        }
+
+        public IEnumerable<PersistantEffector> AllEffectors
+        {
+            get
+            {
+                foreach (PersistantEffector effector in UnappliedEffectors)
+                {
+                    yield return effector;
+                }
+                foreach (PersistantEffector effector in AppliedEffectors)
+                {
+                    yield return effector;
                 }
             }
         }
@@ -118,6 +134,42 @@ namespace Investigation.Model
                 discardDeck.Add(card);
 
             return this with { Hand = hand, DissolveDeck = dissolveDeck, DiscardDeck = discardDeck };
+        }
+        public EncounterState GetWithEffectorAdded(PersistantEffector effector)
+        {
+            List<PersistantEffector> unappliedEffectors = UnappliedEffectors.ToList();
+            unappliedEffectors.Add(effector);
+            return this with { UnappliedEffectors = unappliedEffectors };
+        }
+
+        public EncounterState GetWithEffectorReplaced(ElementIdentifier identifier, PersistantEffector newEffector)
+        {
+            List<PersistantEffector> unapplied = UnappliedEffectors.ToList();
+            List<PersistantEffector> applied = AppliedEffectors.ToList();
+            for (int i = 0; i < unapplied.Count; i++)
+            {
+                ElementIdentifier old = unapplied[i].Identifier;
+                if(old == identifier)
+                {
+                    unapplied[i] = newEffector;
+                }
+            }
+            for (int i = 0; i < applied.Count; i++)
+            {
+                ElementIdentifier old = applied[i].Identifier;
+                if (old == identifier)
+                {
+                    applied[i] = newEffector;
+                }
+            }
+            return this with { UnappliedEffectors = unapplied, AppliedEffectors = applied };
+        }
+
+        internal EncounterState GetWithEffectorRemoved(ElementIdentifier identifier)
+        {
+            List<PersistantEffector> unapplied = UnappliedEffectors.Where(item => item.Identifier != identifier).ToList();
+            List<PersistantEffector> applied = AppliedEffectors.Where(item => item.Identifier != identifier).ToList();
+            return this with { UnappliedEffectors = unapplied, AppliedEffectors = applied };
         }
     }
 }

@@ -2,32 +2,55 @@ using Investigation.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
+//add 1 witness to the board with 3 charges, dissolves
 public record WitnessCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
 {
     public override int ActionCost => 0;
+    public override bool DissolvesOnPlay => true;
+
     protected override EncounterState GetModifiedState(EncounterState state)
     {
-        throw new NotImplementedException("Add 1 witness to the board with 3 charges, dissolves");
+        WitnessEffector witness = new WitnessEffector(new ElementIdentifier());
+        return state.GetWithEffectorAdded(witness);
     }
 }
 
+// Starts with 3 charges
 public record WitnessEffector(ElementIdentifier Identifier) : PersistantEffector(Identifier)
 {
+    public int Charges { get; init; } = 3;
+
     protected override EncounterState GetEffectedState(EncounterState state)
     {
-        throw new NotImplementedException("Starts with 3 charges");
+        return state;
     }
 }
 
+//Remove 1 charge from each witness. Gain insight per remaining witness charges
 public record InterviewWitnessesCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
 {
     public override int ActionCost => 0;
 
     protected override EncounterState GetModifiedState(EncounterState state)
     {
-        throw new NotImplementedException("Remove 1 charge from each witness. Gain insight per remaining witness charges");
+        IEnumerable<WitnessEffector> oldWitnesses = state.AllEffectors.OfType<WitnessEffector>();
+        EncounterState newState = state;
+        foreach(WitnessEffector witness in oldWitnesses)
+        {
+            WitnessEffector newWitness = witness with { Charges= witness.Charges - 1 };
+            if(newWitness.Charges > 0)
+            {
+                newState = newState.GetWithEffectorReplaced(witness.Identifier, newWitness);
+            }
+            else
+            {
+                newState = newState.GetWithEffectorRemoved(witness.Identifier);
+            }
+        }
+        return newState;
     }
 }
 
