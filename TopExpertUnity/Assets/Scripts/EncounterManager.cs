@@ -82,14 +82,14 @@ namespace Investigation.Behaviors
                 Actions = 3,
                 ActionsPerTurn = 3,
                 AdvantageToWin = 20,
-                AdvantageToLose = -20,
+                DangerToLose = -20,
                 UnappliedEffectors = baseEffectors,
                 AppliedEffectors = new List<PersistantEffector>(),
                 Hand = new List<PlayerCard>(),
                 DrawDeck = drawDeck,
                 DiscardDeck = new List<PlayerCard>(),
                 DissolveDeck = new List<PlayerCard>(),
-                Draws = 7,
+                BaseDraws = 7,
                 MaxHandSize = 10,
             };
             return new Model.Encounter(initialState);

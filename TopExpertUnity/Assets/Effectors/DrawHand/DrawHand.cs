@@ -31,11 +31,12 @@ namespace Investigation.Model
                 }
             }
             state = state with { Hand = newHand, DissolveDeck = dissolvedCards, DiscardDeck = discardedCards };
-            for (int i = 0; i < state.Draws; i++)
+            int draws = state.BaseDraws + state.TemporaryDraws;
+            for (int i = 0; i < draws; i++)
             {
                 state = state.GetWithDraw();
             }
-            return state;
+            return state with { TemporaryDraws = 0 };
         }
     }
 }

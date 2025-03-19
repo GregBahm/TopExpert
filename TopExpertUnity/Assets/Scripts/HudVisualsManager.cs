@@ -37,7 +37,7 @@ namespace Investigation.Behaviors
             currentInsights.text = GetCurrentInsightsText(nextState);
             advantage.text = "Advantage: " + nextState.Advantage.ToString();
             advantageToWin.text = nextState.AdvantageToWin.ToString();
-            advantageToLose.text = nextState.AdvantageToLose.ToString();
+            advantageToLose.text = nextState.DangerToLose.ToString();
             advantageMeterController.SetVisual(previousState, nextState);
 
             UpdateWinLoseScreens(previousState, nextState);

@@ -29,7 +29,7 @@ namespace Investigation.Behaviors
             {
                 return (float)state.Advantage / state.AdvantageToWin;
             }
-            return (float)-state.Advantage / state.AdvantageToLose;
+            return (float)-state.Advantage / state.DangerToLose;
         }
 
         private void SetVisual(float advantage)

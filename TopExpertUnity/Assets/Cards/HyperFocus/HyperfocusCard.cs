@@ -14,7 +14,7 @@ namespace Investigation.Model
             List<PersistantEffector> unappliedEffectors = state.UnappliedEffectors.ToList();
             HyperfocusEffector hyperfocus = new HyperfocusEffector(new ElementIdentifier());
             unappliedEffectors.Add(hyperfocus);
-            return state with { UnappliedEffectors = unappliedEffectors, Draws = state.Draws - 1 };
+            return state with { UnappliedEffectors = unappliedEffectors, BaseDraws = state.BaseDraws - 1 };
         }
     }
 }

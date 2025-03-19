@@ -12,7 +12,7 @@ namespace Investigation.Model
             {
                 if (Advantage >= AdvantageToWin)
                     return EncounterStatus.PlayersWon;
-                if (Advantage <= AdvantageToLose)
+                if (Advantage <= DangerToLose)
                     return EncounterStatus.PlayersLost;
                 return EncounterStatus.Ongoing;
             }
@@ -23,7 +23,9 @@ namespace Investigation.Model
         public int ActionsPerTurn { get; init; }
         public int Advantage { get; init; }
         public int AdvantageToWin { get; init; }
-        public int AdvantageToLose { get; init; }
+        public int Danger { get; init; }
+        public int DangerToLose { get; init; }
+        public int Defenses { get; init; }
 
         public IReadOnlyList<PersistantEffector> UnappliedEffectors { get; init; }
         public IReadOnlyList<PersistantEffector> AppliedEffectors { get; init; }
@@ -33,7 +35,8 @@ namespace Investigation.Model
         public IReadOnlyList<PlayerCard> DiscardDeck { get; init; }
         public IReadOnlyList<PlayerCard> DissolveDeck { get; init; }
 
-        public int Draws { get; init; }
+        public int BaseDraws { get; init; }
+        public int TemporaryDraws { get; init; }
         public int MaxHandSize { get; init; }
 
         public int SpiritsPower { get; init; }
@@ -170,6 +173,19 @@ namespace Investigation.Model
             List<PersistantEffector> unapplied = UnappliedEffectors.Where(item => item.Identifier != identifier).ToList();
             List<PersistantEffector> applied = AppliedEffectors.Where(item => item.Identifier != identifier).ToList();
             return this with { UnappliedEffectors = unapplied, AppliedEffectors = applied };
+        }
+
+        public EncounterState GetWithDangerApplied(int danger)
+        {
+            int afterDefense = danger - Defenses;
+            if (afterDefense > 0)
+            {
+                return this with { Defenses = afterDefense };
+            }
+            else
+            {
+                return this with { Defenses = 0, Danger = -afterDefense };
+            }
         }
     }
 }
