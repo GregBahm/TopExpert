@@ -3,8 +3,9 @@ using System.Linq;
 
 namespace Investigation.Model
 {
-    public abstract record PlayerCard(ElementIdentifier Identifier) : IStateModifier, ITrackedElement
+    public abstract record PlayerCard() : IStateModifier, ITrackedElement
     {
+        public ElementIdentifier Identifier { get; init; } = new ElementIdentifier();
         public virtual bool DissolvesOnPlay { get; }
         public virtual bool DissolvesIfNotPlayed { get; }
         public virtual bool Persists { get; }

@@ -36,7 +36,7 @@ namespace Investigation.Model
         public IReadOnlyList<PlayerCard> DissolveDeck { get; init; }
 
         public int BaseDraws { get; init; }
-        public int TemporaryDraws { get; init; }
+        public int TemporaryDraws { get; init; } // TemporaryDraws is reset to 0 by DrawHand
         public int MaxHandSize { get; init; }
 
         public int SpiritsPower { get; init; }
@@ -186,6 +186,80 @@ namespace Investigation.Model
             {
                 return this with { Defenses = 0, Danger = -afterDefense };
             }
+        }
+
+        internal EncounterState GetWithCardAdded(PlayerCard card, CardExistenceLocation location, bool addToEnd = false)
+        {
+            switch (location)
+            {
+                case CardExistenceLocation.Inexistant:
+                        throw new Exception("Can't add a card to inexistance");
+                case CardExistenceLocation.Discard:
+                    return GetWithCardAddedToDiscard(card);
+                case CardExistenceLocation.Dissolve:
+                    return GetWithCardAddedToDissolve(card);
+                case CardExistenceLocation.DrawDeck:
+                    return GetWithCardAddedToDrawDeck(card);
+                case CardExistenceLocation.Hand:
+                default:
+                    return GetWithCardAddedToHand(card, addToEnd);
+
+            }
+        }
+        private EncounterState GetWithCardAddedToDrawDeck(PlayerCard card, bool addToEnd = false)
+        {
+            List<PlayerCard> drawDeck = DrawDeck.ToList();
+            if (addToEnd)
+            {
+                drawDeck.Add(card);
+            }
+            else
+            {
+                drawDeck.Insert(0, card);
+            }
+            return this with { DrawDeck = drawDeck };
+        }
+
+        private EncounterState GetWithCardAddedToDissolve(PlayerCard card, bool addToEnd = false)
+        {
+            List<PlayerCard> dissolve = DissolveDeck.ToList();
+            if (addToEnd)
+            {
+                dissolve.Add(card);
+            }
+            else
+            {
+                dissolve.Insert(0, card);
+            }
+            return this with { DissolveDeck = dissolve };
+        }
+
+        private EncounterState GetWithCardAddedToDiscard(PlayerCard card, bool addToEnd = false)
+        {
+            List<PlayerCard> discard = DiscardDeck.ToList();
+            if (addToEnd)
+            {
+                discard.Add(card);
+            }
+            else
+            {
+                discard.Insert(0, card);
+            }
+            return this with { DiscardDeck = discard };
+        }
+
+        private EncounterState GetWithCardAddedToHand(PlayerCard card, bool addToEnd)
+        {
+            List<PlayerCard> hand = Hand.ToList();
+            if(addToEnd)
+            {
+                hand.Add(card);
+            }
+            else
+            {
+                hand.Insert(0, card);
+            }
+            return this with { Hand = hand };
         }
     }
 }

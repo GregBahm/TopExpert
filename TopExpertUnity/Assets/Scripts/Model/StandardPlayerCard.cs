@@ -1,7 +1,7 @@
 ﻿namespace Investigation.Model
 {
-    public abstract record StandardPlayerCard(ElementIdentifier Identifier) 
-        : PlayerCard(Identifier)
+    public abstract record StandardPlayerCard() 
+        : PlayerCard()
     {
         public abstract int ActionCost { get; }
         public virtual int InsightCost => 0;

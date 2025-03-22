@@ -128,7 +128,7 @@ public record ForensicInvestigationCard(ElementIdentifier Identifier) : Standard
 
     protected override EncounterState GetModifiedState(EncounterState state)
     {
-        throw new NotImplementedException("");
+        state = state.GetWithCardAdded(CardExistenceLocation.Hand);
     }
 }
 
@@ -140,10 +140,9 @@ public record OverthinkerCard(ElementIdentifier Identifier) : StandardPlayerCard
     protected override EncounterState GetModifiedState(EncounterState state)
     {
         int overthinkers = state.AllCards.OfType<OverthinkerCard>().Count() + 1; // Adding the card below
-        List<PlayerCard> discard = state.DiscardDeck.ToList();
         OverthinkerCard newOverthinker = new OverthinkerCard(new ElementIdentifier());
-        discard.Insert(discard.Count - 1, newOverthinker);
-        return state with { DiscardDeck = discard, Insights = state.Insights + overthinkers };
+        EncounterState withCard = state.GetWithCardDiscarded(newOverthinker);
+        return withCard with { Insights = state.Insights + overthinkers };
 
     }
 }
