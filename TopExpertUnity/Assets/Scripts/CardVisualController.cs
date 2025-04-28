@@ -1,10 +1,6 @@
-﻿using UnityEngine;
-using Investigation.Model;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System;
+﻿using Investigation.Model;
+using UnityEngine;
 using UnityEngine.UI;
-using System.Reflection;
-using Unity.VisualScripting;
 
 namespace Investigation.Behaviors
 {
