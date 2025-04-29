@@ -1,7 +1,7 @@
 ﻿namespace Investigation.Model
 {
-    public record HauntedCoffeeMachine(ElementIdentifier Identifier)
-        : PersistantEffector(Identifier)
+    public record HauntedCoffeeMachine() 
+        : PersistantEffector()
     {
         public override bool IsEnemyEffect => true;
         public int TurnsBetweenEffect => 1;
@@ -12,7 +12,7 @@
 
         protected override EncounterState GetEffectedState(EncounterState state)
         {
-            if (TurnsTillEffect == 0)
+            if(TurnsTillEffect == 0)
             {
                 return state with { Advantage = state.Advantage - Danger };
             }

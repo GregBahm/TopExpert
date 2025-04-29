@@ -1,7 +1,7 @@
 ﻿namespace Investigation.Model
 {
-    public record HyperfocusEffector(ElementIdentifier Identifier) 
-        : PersistantEffector(Identifier)
+    public record HyperfocusEffector() 
+        : PersistantEffector()
     {
         protected override EncounterState GetEffectedState(EncounterState state)
         {

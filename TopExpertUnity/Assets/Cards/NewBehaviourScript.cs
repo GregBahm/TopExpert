@@ -6,20 +6,20 @@ using System.Linq;
 using UnityEngine;
 
 // Add 1 witness to the board with 3 charges, dissolves
-public record WitnessCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
+public record WitnessCard() : StandardPlayerCard()
 {
     public override int ActionCost => 0;
     public override bool DissolvesOnPlay => true;
 
     protected override EncounterState GetModifiedState(EncounterState state)
     {
-        WitnessEffector witness = new WitnessEffector(new ElementIdentifier());
+        WitnessEffector witness = new WitnessEffector();
         return state.GetWithEffectorAdded(witness);
     }
 }
 
 // Starts with 3 charges
-public record WitnessEffector(ElementIdentifier Identifier) : PersistantEffector(Identifier)
+public record WitnessEffector() : PersistantEffector()
 {
     public int Charges { get; init; } = 3;
 
@@ -30,7 +30,7 @@ public record WitnessEffector(ElementIdentifier Identifier) : PersistantEffector
 }
 
 // Remove 1 charge from each witness. Gain insight per remaining witness charges
-public record InterviewWitnessesCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
+public record InterviewWitnessesCard() : StandardPlayerCard()
 {
     public override int ActionCost => 0;
 
@@ -55,7 +55,7 @@ public record InterviewWitnessesCard(ElementIdentifier Identifier) : StandardPla
 }
 
 // Gain 2 insight for each witness
-public record InterpersonalSkillsCardCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
+public record InterpersonalSkillsCardCard() : StandardPlayerCard()
 {
     public override int ActionCost => 0;
 
@@ -68,7 +68,7 @@ public record InterpersonalSkillsCardCard(ElementIdentifier Identifier) : Standa
 }
 
 // Add 1 archives if none exists, Gain 1 insight per archives searched level
-public record ResearchTheArchivesCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
+public record ResearchTheArchivesCard() : StandardPlayerCard()
 {
     public override int ActionCost => 0;
 
@@ -77,7 +77,7 @@ public record ResearchTheArchivesCard(ElementIdentifier Identifier) : StandardPl
         IEnumerable<TheArchivesEffector> archives = state.AllEffectors.OfType<TheArchivesEffector>().ToList();
         if(!archives.Any())
         {
-            state = state.GetWithEffectorAdded(new TheArchivesEffector(new ElementIdentifier()));
+            state = state.GetWithEffectorAdded(new TheArchivesEffector());
         }
         int insight = 0;
         foreach (TheArchivesEffector item in archives)
@@ -89,7 +89,7 @@ public record ResearchTheArchivesCard(ElementIdentifier Identifier) : StandardPl
 }
 
 // Breakthrough: At “archives searched” 10, gain 10 advantage and remove archives
-public record TheArchivesEffector(ElementIdentifier Identifier) : PersistantEffector(Identifier)
+public record TheArchivesEffector() : PersistantEffector()
 {
     public int SearchedLevel { get; init; }
 
@@ -105,7 +105,7 @@ public record TheArchivesEffector(ElementIdentifier Identifier) : PersistantEffe
 }
 
 // Increase archives searched by 1
-public record StudiousResearchCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
+public record StudiousResearchCard() : StandardPlayerCard()
 {
     public override int ActionCost => 0;
 
@@ -121,34 +121,36 @@ public record StudiousResearchCard(ElementIdentifier Identifier) : StandardPlaye
     }
 }
 
-// Gain 1 Evidence for Study card, Spawn Still Moving
-public record ForensicInvestigationCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
+// Gain 1 KeyEvidence card, Spawn Still Moving
+public record ForensicInvestigationCard() : StandardPlayerCard()
 {
     public override int ActionCost => 0;
 
     protected override EncounterState GetModifiedState(EncounterState state)
     {
-        state = state.GetWithCardAdded(CardExistenceLocation.Hand);
+        state = state.GetWithEffectorAdded(new StillMovingEffector());
+        state = state.GetWithCardAdded(new KeyEvidenceCard(), CardExistenceLocation.Discard);
+        return state;
     }
 }
 
 //Adds 1 Overthinker card to the deck, + 1 insight per “overthinker” in deck, 
-public record OverthinkerCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
+public record OverthinkerCard() : StandardPlayerCard()
 {
     public override int ActionCost => 0;
 
     protected override EncounterState GetModifiedState(EncounterState state)
     {
         int overthinkers = state.AllCards.OfType<OverthinkerCard>().Count() + 1; // Adding the card below
-        OverthinkerCard newOverthinker = new OverthinkerCard(new ElementIdentifier());
+        OverthinkerCard newOverthinker = new OverthinkerCard();
         EncounterState withCard = state.GetWithCardDiscarded(newOverthinker);
         return withCard with { Insights = state.Insights + overthinkers };
 
     }
 }
 
-// + 1 insight each turn, reduce draw size next turn
-public record HyperfocusCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
+// Adds Hyperfocus effector (+ 1 insight each turn) reduce draw size next turn
+public record HyperfocusCard() : StandardPlayerCard()
 {
     public override int ActionCost => 0;
 
@@ -162,13 +164,14 @@ public record HyperfocusCard(ElementIdentifier Identifier) : StandardPlayerCard(
         }
         else
         {
-            HyperfocusEffector newEffector = new HyperfocusEffector(new ElementIdentifier());
+            HyperfocusEffector newEffector = new HyperfocusEffector();
             return state.GetWithEffectorAdded(newEffector);
         }
     }
 }
 
-public record HyperfocusEffector(ElementIdentifier Identifier) : PersistantEffector(Identifier)
+// + 1 insight each turn
+public record HyperfocusEffector() : PersistantEffector()
 {
     public int Intensity { get; init; } = 1;
 
@@ -179,18 +182,23 @@ public record HyperfocusEffector(ElementIdentifier Identifier) : PersistantEffec
 }
 
 // Clear all Overthinker cards in deck
-public record TherapeuticExerciseCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
+public record TherapeuticExerciseCard() : StandardPlayerCard()
 {
     public override int ActionCost => 0;
 
     protected override EncounterState GetModifiedState(EncounterState state)
     {
-        throw new NotImplementedException("");
+        List<OverthinkerCard> overthinkers = state.AllCards.OfType<OverthinkerCard>().ToList();
+        foreach(OverthinkerCard overthinker in overthinkers)
+        {
+            state = state.GetWithCardDissolved(overthinker.Identifier);
+        }
+        return state;
     }
 }
 
 // Next turn add 3 danger and remove this
-public record StillMovingEffector(ElementIdentifier Identifier) : PersistantEffector(Identifier)
+public record StillMovingEffector() : PersistantEffector()
 {
     protected override EncounterState GetEffectedState(EncounterState state)
     {
@@ -199,7 +207,7 @@ public record StillMovingEffector(ElementIdentifier Identifier) : PersistantEffe
 }
 
 // Gain research equal to danger gained at end of turn
-public record HandsOnResearchCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
+public record HandsOnResearchCard() : StandardPlayerCard()
 {
     public override int ActionCost => 0;
 
@@ -209,17 +217,8 @@ public record HandsOnResearchCard(ElementIdentifier Identifier) : StandardPlayer
     }
 }
 
-// Every turn, do 1 danger, Increase danger each time deck is shuffled
-public record HauntedCoffeeMachineEffector(ElementIdentifier Identifier) : PersistantEffector(Identifier)
-{
-    protected override EncounterState GetEffectedState(EncounterState state)
-    {
-        throw new NotImplementedException("");
-    }
-}
-
 // Costs 5 insight. Does 1 damage. Adds 1 ghost witness
-public record SeanceCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
+public record SeanceCard() : StandardPlayerCard()
 {
     public override int ActionCost => 0;
 
@@ -230,7 +229,7 @@ public record SeanceCard(ElementIdentifier Identifier) : StandardPlayerCard(Iden
 }
 
 // Witness with 10 charges. 1 advantage and 1 danger each time a charge is removed
-public record GhostWitnessEffector(ElementIdentifier Identifier) : PersistantEffector(Identifier)
+public record GhostWitnessEffector() : PersistantEffector()
 {
     protected override EncounterState GetEffectedState(EncounterState state)
     {
@@ -239,7 +238,7 @@ public record GhostWitnessEffector(ElementIdentifier Identifier) : PersistantEff
 }
 
 // Costs 5 insight. Transforms into Unravel the Mystery
-public record KeyEvidenceCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
+public record KeyEvidenceCard() : StandardPlayerCard()
 {
     public override int ActionCost => 0;
 
@@ -250,7 +249,7 @@ public record KeyEvidenceCard(ElementIdentifier Identifier) : StandardPlayerCard
 }
 
 // Gain 2 advantage
-public record MysteryUnravelledCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
+public record MysteryUnravelledCard() : StandardPlayerCard()
 {
     public override int ActionCost => 0;
 
@@ -262,7 +261,7 @@ public record MysteryUnravelledCard(ElementIdentifier Identifier) : StandardPlay
 }
 
 // Discard hand and draw that many cards
-public record NewPlanCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
+public record NewPlanCard() : StandardPlayerCard()
 {
     public override int ActionCost => 2;
 
@@ -283,7 +282,7 @@ public record NewPlanCard(ElementIdentifier Identifier) : StandardPlayerCard(Ide
 }
 
 // Prevent 2 danger
-public record CautionCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
+public record CautionCard() : StandardPlayerCard()
 {
     public override int ActionCost => 0;
 
@@ -295,59 +294,90 @@ public record CautionCard(ElementIdentifier Identifier) : StandardPlayerCard(Ide
 }
 
 // Costs 5 insights, Prevents 1 danger each turn
-public record BuildDefensesCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
+public record BuildDefensesCard() : StandardPlayerCard()
 {
     public override int ActionCost => 0;
+    public override int InsightCost => 5;
 
     protected override EncounterState GetModifiedState(EncounterState state)
     {
-        throw new NotImplementedException("Costs 5 insights, Prevents 1 danger each turn");
+        throw new NotImplementedException("");
     }
 }
 
-public record NewLeadsCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
+// Prevents 1 danger each turn
+public record BuiltDefensesEffector() : PersistantEffector()
 {
-    public override int ActionCost => 0;
-
-    protected override EncounterState GetModifiedState(EncounterState state)
+    protected override EncounterState GetEffectedState(EncounterState state)
     {
-        throw new NotImplementedException("Costs 3 insights, Draw 3 cards");
+        return state with { Defenses = state.Defenses + 1 };
     }
 }
 
-public record LayTheTrapCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
+// Costs 3 insights, Draw 3 cards
+public record NewLeadsCard() : StandardPlayerCard()
 {
     public override int ActionCost => 0;
+    public override int InsightCost => 3;
 
     protected override EncounterState GetModifiedState(EncounterState state)
     {
-        throw new NotImplementedException("Adds Lay the Trap modifier, becomes Spring the Trap card");
+        state = state.GetWithDraw();
+        state = state.GetWithDraw();
+        state = state.GetWithDraw();
+        return state;
     }
 }
-public record SpringTheTrapCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
+
+// Adds Lay the Trap modifier, becomes Spring the Trap card
+public record LayTheTrapCard() : StandardPlayerCard()
 {
     public override int ActionCost => 0;
 
     protected override EncounterState GetModifiedState(EncounterState state)
     {
-        throw new NotImplementedException("Gain advantage equal to charges on “lay the trap” modifiers");
+        throw new NotImplementedException("");
     }
 }
-public record MomentumCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
+
+// Gain advantage equal to charges on “lay the trap” modifiers
+public record SpringTheTrapCard() : StandardPlayerCard()
 {
     public override int ActionCost => 0;
 
     protected override EncounterState GetModifiedState(EncounterState state)
     {
-        throw new NotImplementedException("Costs 4 insight, Gain 1 energy");
+        throw new NotImplementedException("");
     }
 }
-public record RecuperateCard(ElementIdentifier Identifier) : StandardPlayerCard(Identifier)
+
+// Costs 4 insight, Gain 1 energy
+public record MomentumCard() : StandardPlayerCard()
 {
     public override int ActionCost => 0;
 
     protected override EncounterState GetModifiedState(EncounterState state)
     {
-        throw new NotImplementedException("Remove 1 danger");
+        throw new NotImplementedException();
+    }
+}
+
+// Remove 1 danger
+public record RecuperateCard() : StandardPlayerCard()
+{
+    public override int ActionCost => 0;
+
+    protected override EncounterState GetModifiedState(EncounterState state)
+    {
+        return state with { Danger = state.Danger - 1 };
+    }
+}
+
+// Every turn, apply 1 danger, Increase danger each time deck is shuffled
+public record HauntedCoffeeMachineEffector() : PersistantEffector()
+{
+    protected override EncounterState GetEffectedState(EncounterState state)
+    {
+        throw new NotImplementedException("");
     }
 }
