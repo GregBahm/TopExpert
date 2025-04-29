@@ -1,7 +1,7 @@
 ﻿namespace Investigation.Model
 {
-    public record HauntedCoffeeMachine(ElementIdentifier Identifier) 
-        : PersistantEffector(Identifier)
+    public record HauntedCoffeeMachine() 
+        : PersistantEffector()
     {
         public override bool IsEnemyEffect => true;
         public int TurnsBetweenEffect => 1;

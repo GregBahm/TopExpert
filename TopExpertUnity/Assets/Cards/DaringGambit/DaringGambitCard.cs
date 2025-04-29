@@ -3,8 +3,8 @@ using System.Linq;
 
 namespace Investigation.Model
 {
-    public record DaringGambitCard(ElementIdentifier Identifier) 
-        : StandardPlayerCard(Identifier)
+    public record DaringGambitCard() 
+        : StandardPlayerCard()
     {
         public override int ActionCost => 0;
 

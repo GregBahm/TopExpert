@@ -261,5 +261,37 @@ namespace Investigation.Model
             }
             return this with { Hand = hand };
         }
+
+        public EncounterState GetWithCardDissolved(ElementIdentifier identifier)
+        {
+            List<PlayerCard> newHand = new List<PlayerCard>();
+            List<PlayerCard> newDiscard = new List<PlayerCard>();
+            List<PlayerCard> newDrawDeck = new List<PlayerCard>();
+
+            List<PlayerCard> dissolved = DissolveDeck.ToList();
+            
+            foreach (PlayerCard card in Hand)
+            {
+                if(card.Identifier == identifier)
+                    dissolved.Add(card);
+                else
+                    newHand.Add(card);
+            }
+            foreach (PlayerCard card in DiscardDeck)
+            {
+                if (card.Identifier == identifier)
+                    dissolved.Add(card);
+                else
+                    newDiscard.Add(card);
+            }
+            foreach (PlayerCard card in DrawDeck)
+            {
+                if (card.Identifier == identifier)
+                    dissolved.Add(card);
+                else
+                    newDrawDeck.Add(card);
+            }
+            return this with { Hand = newHand, DiscardDeck= newDiscard,DrawDeck = newDrawDeck, DissolveDeck = dissolved };
+        }
     }
 }

@@ -3,8 +3,8 @@ using System.Linq;
 
 namespace Investigation.Model
 {
-    public record DistractionCard(ElementIdentifier Identifier)
-        : StandardPlayerCard(Identifier)
+    public record DistractionCard()
+        : StandardPlayerCard()
     {
         public override int ActionCost => 3;
         public override int InsightCost => 5;

@@ -3,8 +3,8 @@ using System.Linq;
 
 namespace Investigation.Model
 {
-    public record DrawHand(ElementIdentifier Identifier) 
-        : PersistantEffector(Identifier)
+    public record DrawHand() 
+        : PersistantEffector()
     {
         protected override EncounterState GetEffectedState(EncounterState state)
         {

@@ -3,8 +3,10 @@ using System.Linq;
 
 namespace Investigation.Model
 {
-    public abstract record PersistantEffector(ElementIdentifier Identifier) : IStateModifier, ITrackedElement
+    public abstract record PersistantEffector() : IStateModifier, ITrackedElement
     {
+        public ElementIdentifier Identifier { get; init; } = new ElementIdentifier();
+
         public virtual bool IsEnemyEffect => false;
 
         public EncounterState GetModifiedState(EncounterState state)

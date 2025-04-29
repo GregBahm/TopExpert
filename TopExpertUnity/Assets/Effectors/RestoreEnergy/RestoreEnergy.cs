@@ -1,7 +1,7 @@
 ﻿namespace Investigation.Model
 {
-    public record RestoreEnergy(ElementIdentifier Identifier) 
-        : PersistantEffector(Identifier)
+    public record RestoreEnergy() 
+        : PersistantEffector()
     {
         protected override EncounterState GetEffectedState(EncounterState state)
         {

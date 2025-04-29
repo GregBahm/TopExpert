@@ -3,8 +3,8 @@ using System.Linq;
 
 namespace Investigation.Model
 {
-    public record NewPlanCard(ElementIdentifier Identifier) 
-        : StandardPlayerCard(Identifier)
+    public record NewPlanCard() 
+        : StandardPlayerCard()
     {
         public override int ActionCost => 2;
 

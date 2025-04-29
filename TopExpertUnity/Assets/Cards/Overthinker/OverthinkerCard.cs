@@ -5,15 +5,15 @@ using Unity.VisualScripting;
 
 namespace Investigation.Model
 {
-    public record OverthinkerCard(ElementIdentifier Identifier) 
-        : StandardPlayerCard(Identifier)
+    public record OverthinkerCard() 
+        : StandardPlayerCard()
     {
         public override int ActionCost => 0;
 
         protected override EncounterState GetModifiedState(EncounterState state)
         {
             List<PlayerCard> discard = state.DiscardDeck.ToList();
-            OverthinkerCard newOverthinker = new OverthinkerCard(new ElementIdentifier());
+            OverthinkerCard newOverthinker = new OverthinkerCard();
             discard.Insert(discard.Count - 1, newOverthinker);
 
             int count = GetNumberOfOverthinkerCards(state) + 1;

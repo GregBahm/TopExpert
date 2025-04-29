@@ -1,7 +1,7 @@
 ﻿namespace Investigation.Model
 {
-    public record OfCourseCard(ElementIdentifier Identifier) 
-        : StandardPlayerCard(Identifier)
+    public record OfCourseCard() 
+        : StandardPlayerCard()
     {
         public override int ActionCost => 1;
 

@@ -1,7 +1,7 @@
 ﻿namespace Investigation.Model
 {
-    public record SpringTheTrapCard(ElementIdentifier Identifier) 
-        : StandardPlayerCard(Identifier)
+    public record SpringTheTrapCard() 
+        : StandardPlayerCard()
     {
         public override int ActionCost => 1;
         public override bool DissolvesOnPlay => true;
