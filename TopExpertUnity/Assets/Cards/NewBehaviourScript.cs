@@ -3,7 +3,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
 // Add 1 witness to the board with 3 charges, dissolves
 public record WitnessCard() : StandardPlayerCard()
@@ -19,9 +18,22 @@ public record WitnessCard() : StandardPlayerCard()
 }
 
 // Starts with 3 charges
-public record WitnessEffector() : PersistantEffector()
+public record WitnessEffector() : BaseWitnessEffector()
 {
-    public int Charges { get; init; } = 3;
+    public override int Charges { get; init; } = 3;
+
+    public override EncounterState GetWithCardRemoved(EncounterState state)
+    {
+        WitnessEffector newWitness = this with { Charges = Charges - 1 };
+        if (newWitness.Charges > 0)
+        {
+            return state.GetWithEffectorReplaced(newWitness);
+        }
+        else
+        {
+            return state.GetWithEffectorRemoved(Identifier);
+        }
+    }
 
     protected override EncounterState GetEffectedState(EncounterState state)
     {
@@ -36,19 +48,11 @@ public record InterviewWitnessesCard() : StandardPlayerCard()
 
     protected override EncounterState GetModifiedState(EncounterState state)
     {
-        IEnumerable<WitnessEffector> oldWitnesses = state.AllEffectors.OfType<WitnessEffector>();
+        IEnumerable<BaseWitnessEffector> oldWitnesses = state.AllEffectors.OfType<BaseWitnessEffector>();
         EncounterState newState = state;
-        foreach(WitnessEffector witness in oldWitnesses)
+        foreach (BaseWitnessEffector witness in oldWitnesses)
         {
-            WitnessEffector newWitness = witness with { Charges= witness.Charges - 1 };
-            if(newWitness.Charges > 0)
-            {
-                newState = newState.GetWithEffectorReplaced(witness.Identifier, newWitness);
-            }
-            else
-            {
-                newState = newState.GetWithEffectorRemoved(witness.Identifier);
-            }
+            newState = witness.GetWithCardRemoved(newState);
         }
         return newState;
     }
@@ -75,7 +79,7 @@ public record ResearchTheArchivesCard() : StandardPlayerCard()
     protected override EncounterState GetModifiedState(EncounterState state)
     {
         IEnumerable<TheArchivesEffector> archives = state.AllEffectors.OfType<TheArchivesEffector>().ToList();
-        if(!archives.Any())
+        if (!archives.Any())
         {
             state = state.GetWithEffectorAdded(new TheArchivesEffector());
         }
@@ -95,7 +99,7 @@ public record TheArchivesEffector() : PersistantEffector()
 
     protected override EncounterState GetEffectedState(EncounterState state)
     {
-        if(SearchedLevel >= 10)
+        if (SearchedLevel >= 10)
         {
             state = state with { Advantage = state.Advantage + 10 };
             state = state.GetWithEffectorRemoved(Identifier); // Make sure this works. It might automatically add itself after the process
@@ -115,7 +119,7 @@ public record StudiousResearchCard() : StandardPlayerCard()
         foreach (TheArchivesEffector item in archives)
         {
             TheArchivesEffector newArchives = item with { SearchedLevel = item.SearchedLevel + 1 };
-            state = state.GetWithEffectorReplaced(item.Identifier, newArchives);
+            state = state.GetWithEffectorReplaced(newArchives);
         }
         return state;
     }
@@ -157,7 +161,7 @@ public record HyperfocusCard() : StandardPlayerCard()
     protected override EncounterState GetModifiedState(EncounterState state)
     {
         HyperfocusEffector effector = state.AllEffectors.OfType<HyperfocusEffector>().FirstOrDefault();
-        if(effector != null)
+        if (effector != null)
         {
             HyperfocusEffector newEffector = effector with { Intensity = effector.Intensity + 1 };
             return state.GetWithEffectorReplaced(effector.Identifier, newEffector);
@@ -189,7 +193,7 @@ public record TherapeuticExerciseCard() : StandardPlayerCard()
     protected override EncounterState GetModifiedState(EncounterState state)
     {
         List<OverthinkerCard> overthinkers = state.AllCards.OfType<OverthinkerCard>().ToList();
-        foreach(OverthinkerCard overthinker in overthinkers)
+        foreach (OverthinkerCard overthinker in overthinkers)
         {
             state = state.GetWithCardDissolved(overthinker.Identifier);
         }
@@ -200,20 +204,29 @@ public record TherapeuticExerciseCard() : StandardPlayerCard()
 // Next turn add 3 danger and remove this
 public record StillMovingEffector() : PersistantEffector()
 {
+    public override bool IsEnemyEffect => true;
+
+    public const int DANGER = 3;
+
+    public override int GetIntendedDanger(EncounterState state) { return DANGER; }
+
     protected override EncounterState GetEffectedState(EncounterState state)
     {
-        throw new NotImplementedException("");
+        state = state.GetWithDangerApplied(DANGER);
+        state = state.GetWithEffectorRemoved(Identifier);
+        return state;
     }
 }
 
-// Gain research equal to danger gained at end of turn
+// Gain insight equal to danger gained at end of turn
 public record HandsOnResearchCard() : StandardPlayerCard()
 {
     public override int ActionCost => 0;
 
     protected override EncounterState GetModifiedState(EncounterState state)
     {
-        throw new NotImplementedException("");
+        int danger = state.AllEffectors.Sum(item => item.GetIntendedDanger(state));
+        return state with { Insights = state.Insights + danger };
     }
 }
 
@@ -224,27 +237,58 @@ public record SeanceCard() : StandardPlayerCard()
 
     protected override EncounterState GetModifiedState(EncounterState state)
     {
-        throw new NotImplementedException("");
+        state = state.GetWithDangerApplied(1);
+        state = state.GetWithEffectorAdded(new GhostWitnessEffector());
+        return state;
     }
 }
 
-// Witness with 10 charges. 1 advantage and 1 danger each time a charge is removed
-public record GhostWitnessEffector() : PersistantEffector()
+public abstract record BaseWitnessEffector() : PersistantEffector()
 {
+    public abstract int Charges { get; init; }
+
+    public abstract EncounterState GetWithCardRemoved(EncounterState state);
+}
+
+// Witness with 10 charges. 1 advantage and 1 danger each time a charge is removed
+public record GhostWitnessEffector() : BaseWitnessEffector()
+{
+    public override int Charges { get; init; } = 10;
+
     protected override EncounterState GetEffectedState(EncounterState state)
     {
-        throw new NotImplementedException("");
+        return state;
+    }
+
+    public override EncounterState GetWithCardRemoved(EncounterState state)
+    {
+        state = state.GetWithDangerApplied(1);
+        state = state with { Advantage = state.Advantage + 1 };
+
+        GhostWitnessEffector newWitness = this with { Charges = Charges - 1 };
+        if (newWitness.Charges > 0)
+        {
+            return state.GetWithEffectorReplaced(newWitness);
+        }
+        else
+        {
+            return state.GetWithEffectorRemoved(Identifier);
+        }
     }
 }
 
 // Costs 5 insight. Transforms into Unravel the Mystery
 public record KeyEvidenceCard() : StandardPlayerCard()
 {
+    public override int InsightCost => 5;
+
     public override int ActionCost => 0;
 
     protected override EncounterState GetModifiedState(EncounterState state)
     {
-        throw new NotImplementedException("");
+        state = state.GetWithCardDissolved(Identifier);
+        state = state.GetWithCardAdded(new KeyEvidenceCard(), CardExistenceLocation.Discard);
+        return state;
     }
 }
 
@@ -288,8 +332,7 @@ public record CautionCard() : StandardPlayerCard()
 
     protected override EncounterState GetModifiedState(EncounterState state)
     {
-        // Maybe add a modifier that 
-        throw new NotImplementedException("Prevent 2 danger");
+        return state with { Defenses = state.Defenses + 2 };
     }
 }
 
@@ -301,16 +344,28 @@ public record BuildDefensesCard() : StandardPlayerCard()
 
     protected override EncounterState GetModifiedState(EncounterState state)
     {
-        throw new NotImplementedException("");
+        BuiltDefensesEffector defenses = state.AllEffectors.OfType<BuiltDefensesEffector>().FirstOrDefault();
+        if (defenses == null)
+        {
+            BuiltDefensesEffector newDefenses = new BuiltDefensesEffector();
+            return state.GetWithEffectorAdded(newDefenses);
+        }
+        else
+        {
+            BuiltDefensesEffector newDefenses = defenses with { Defenses = defenses.Defenses + 1 };
+            return state.GetWithEffectorReplaced(newDefenses);
+        }
     }
 }
 
 // Prevents 1 danger each turn
 public record BuiltDefensesEffector() : PersistantEffector()
 {
+    public int Defenses { get; init; } = 1;
+
     protected override EncounterState GetEffectedState(EncounterState state)
     {
-        return state with { Defenses = state.Defenses + 1 };
+        return state with { Defenses = state.Defenses + Defenses };
     }
 }
 
@@ -336,7 +391,34 @@ public record LayTheTrapCard() : StandardPlayerCard()
 
     protected override EncounterState GetModifiedState(EncounterState state)
     {
-        throw new NotImplementedException("");
+        // Add the lay the trap modifier
+        LayTheTrapModifier oldLayTheTrap = state.AllEffectors.OfType<LayTheTrapModifier>().FirstOrDefault();
+        if (oldLayTheTrap == null)
+        {
+            LayTheTrapModifier newModifier = new LayTheTrapModifier();
+            state = state.GetWithEffectorAdded(newModifier);
+        }
+        else
+        {
+            LayTheTrapModifier newModifier = oldLayTheTrap with { Advantage = oldLayTheTrap.Advantage + 1 };
+            state = state.GetWithEffectorReplaced(newModifier);
+        }
+
+        // Transform "Lay the Trap" into "Spring the Trap" 
+        state = state.GetWithCardDissolved(Identifier);
+        SpringTheTrapCard spring = new SpringTheTrapCard();
+        state = state.GetWithCardAdded(spring, CardExistenceLocation.Discard);
+        return state;
+    }
+}
+
+public record LayTheTrapModifier() : PersistantEffector
+{
+    public int Advantage { get; init; } = 1;
+
+    protected override EncounterState GetEffectedState(EncounterState state)
+    {
+        return state;
     }
 }
 
@@ -347,7 +429,14 @@ public record SpringTheTrapCard() : StandardPlayerCard()
 
     protected override EncounterState GetModifiedState(EncounterState state)
     {
-        throw new NotImplementedException("");
+        LayTheTrapModifier[] traps = state.AllEffectors.OfType<LayTheTrapModifier>().ToArray();
+        int advantage = 0;
+        foreach (LayTheTrapModifier item in traps)
+        {
+            advantage += item.Advantage;
+            state = state.GetWithEffectorRemoved(item.Identifier);
+        }
+        return state with { Advantage = state.Advantage + advantage };
     }
 }
 
@@ -358,7 +447,7 @@ public record MomentumCard() : StandardPlayerCard()
 
     protected override EncounterState GetModifiedState(EncounterState state)
     {
-        throw new NotImplementedException();
+        return state with { Actions = state.Actions + 1 };
     }
 }
 
@@ -376,8 +465,13 @@ public record RecuperateCard() : StandardPlayerCard()
 // Every turn, apply 1 danger, Increase danger each time deck is shuffled
 public record HauntedCoffeeMachineEffector() : PersistantEffector()
 {
+    public override int GetIntendedDanger(EncounterState state)
+    {
+        return state.DeckReshuffles;
+    }
+
     protected override EncounterState GetEffectedState(EncounterState state)
     {
-        throw new NotImplementedException("");
+        return state.GetWithDangerApplied(state.DeckReshuffles);
     }
 }

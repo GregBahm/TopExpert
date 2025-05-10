@@ -41,6 +41,8 @@ namespace Investigation.Model
 
         public int SpiritsPower { get; init; }
 
+        public int DeckReshuffles { get; init; }
+
         public IEnumerable<PlayerCard> AllCards
         {
             get
@@ -121,7 +123,7 @@ namespace Investigation.Model
                 newDrawDeck.Add(card);
             }
 
-            return state with { DiscardDeck = new List<PlayerCard>(), DrawDeck = newDrawDeck };
+            return state with { DiscardDeck = new List<PlayerCard>(), DrawDeck = newDrawDeck, DeckReshuffles = state.DeckReshuffles + 1 };
         }
 
         public EncounterState GetWithCardDiscarded(PlayerCard card)
@@ -143,6 +145,11 @@ namespace Investigation.Model
             List<PersistantEffector> unappliedEffectors = UnappliedEffectors.ToList();
             unappliedEffectors.Add(effector);
             return this with { UnappliedEffectors = unappliedEffectors };
+        }
+
+        public EncounterState GetWithEffectorReplaced(PersistantEffector newEffector)
+        {
+            return GetWithEffectorReplaced(newEffector.Identifier, newEffector);
         }
 
         public EncounterState GetWithEffectorReplaced(ElementIdentifier identifier, PersistantEffector newEffector)

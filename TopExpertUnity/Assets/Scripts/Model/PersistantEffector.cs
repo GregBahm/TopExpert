@@ -9,6 +9,11 @@ namespace Investigation.Model
 
         public virtual bool IsEnemyEffect => false;
 
+        /// <summary>
+        /// The amount of danger the effector will try to inflict on the player
+        /// </summary>
+        public virtual int GetIntendedDanger(EncounterState state) { return 0; }
+
         public EncounterState GetModifiedState(EncounterState state)
         {
             List<PersistantEffector> unappliedEffectors = state.UnappliedEffectors.ToList();
