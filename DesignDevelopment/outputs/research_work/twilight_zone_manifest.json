@@ -1,0 +1,27 @@
+{
+  "lane": "twilight_zone",
+  "discovery_basis": "Source-discovery agent identified accessible original-series episode synopses before this lane was selected.",
+  "bounded_slice": "Ten explicitly selected original-series episodes; not a sequential season slice.",
+  "complete_count": 10,
+  "considered_titles": [
+    "The After Hours",
+    "The Hitch-Hiker",
+    "The Monsters Are Due on Maple Street",
+    "Walking Distance",
+    "A Stop at Willoughby",
+    "The Howling Man",
+    "Living Doll",
+    "It's a Good Life",
+    "The Invaders",
+    "The Last Rites of Jeff Myrtlebank"
+  ],
+  "remaining": "Other original-series episodes, later revivals, and original short-story versions unprocessed. Next queue: A Nice Place to Visit; Night Call; The Grave; The Jungle; The Bewitchin Pool; Person or Persons Unknown; Long Distance Call; A Piano in the House; Mirror Image; Twenty Two.",
+  "limitations": [
+    "Detailed secondary synopses verify final scenes; no primary viewing.",
+    "Includes two alien encounters under the broad uncanny/speculative umbrella.",
+    "Episode adaptations are distinct works; original short-story source versions were not merged or independently harvested."
+  ],
+  "source_catalogs": [
+    "https://en.wikipedia.org/wiki/List_of_The_Twilight_Zone_(1959_TV_series)_episodes"
+  ]
+}

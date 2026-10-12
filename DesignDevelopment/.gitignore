@@ -1,0 +1,19 @@
+# Portable source only; personal/runtime state stays outside version control.
+**/node_modules/
+**/.git/
+**/dist/
+**/.next/
+**/.vinext/
+**/.wrangler/
+**/.sites-runtime/
+**/.agents/
+**/.codex/
+**/coverage/
+**/.env
+**/.env.*
+!**/.env.example
+**/*.log
+**/*.tsbuildinfo
+**/*.tar.gz
+**/top-expert-selects.json
+**/top-expert-review-backup.json

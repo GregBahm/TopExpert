@@ -1,0 +1,23 @@
+{
+  "lane": "radio",
+  "scope": "Three original Quiet, Please radio plays verified against opened script transcripts",
+  "considered_ids": [
+    "QuietPlease-01",
+    "QuietPlease-59",
+    "QuietPlease-70",
+    "QuietPlease-68"
+  ],
+  "complete_count": 3,
+  "incomplete_count": 0,
+  "no_ending_count": 0,
+  "remaining_ids": [
+    "QuietPlease-68"
+  ],
+  "limitations": [
+    "Beezer's Cellar Generic Radio link redirected to inaccessible archived script; omitted rather than summarized from memory.",
+    "Scripts are primary dramatic texts hosted by archival sites, not scans of original production manuscripts.",
+    "Nothing Behind the Door intentionally leaves the void and creature indistinct; no invented explanation added.",
+    "Good Ghost stairway suggests reunion with Ada, but transcript does not explicitly name waiting figure or state Schuster's death."
+  ],
+  "verified_date": "2026-10-11"
+}

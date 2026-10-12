@@ -1,0 +1,252 @@
+[
+  {
+    "number": 1,
+    "title": "Strange lights",
+    "description": "Strange lights are appearing over the town"
+  },
+  {
+    "number": 2,
+    "title": "Concerned parent",
+    "description": "Kids at school are behaving weirdly"
+  },
+  {
+    "number": 3,
+    "title": "Voices",
+    "description": "Voices can be heard in the woods"
+  },
+  {
+    "number": 4,
+    "title": "Mutilated remains",
+    "description": "Animal remains are found strangely mutilated"
+  },
+  {
+    "number": 5,
+    "title": "Graveyard activity",
+    "description": "Something is going on in the graveyard"
+  },
+  {
+    "number": 6,
+    "title": "Shared dreams",
+    "description": "Citizens report they all had the same dream"
+  },
+  {
+    "number": 7,
+    "title": "Deep hum",
+    "description": "A hum can be heard with an unknown source"
+  },
+  {
+    "number": 8,
+    "title": "Mysterious stairwell",
+    "description": "People who explored the stairwell haven’t returned"
+  },
+  {
+    "number": 9,
+    "title": "Secret ingredient",
+    "description": "Townsfolk are obsessed with the new restaurant"
+  },
+  {
+    "number": 10,
+    "title": "Unscheduled eclipse",
+    "description": "An eclipse when there shouldn’t be"
+  },
+  {
+    "number": 11,
+    "title": "Strange fog",
+    "description": "An unnatural fog clings to the city streets"
+  },
+  {
+    "number": 12,
+    "title": "Rooftop cryptid",
+    "description": "A strange form is spotted on rooftops"
+  },
+  {
+    "number": 13,
+    "title": "Strange markings",
+    "description": "Mysterious graffiti is appearing around town"
+  },
+  {
+    "number": 14,
+    "title": "Odd animal behavior",
+    "description": "The dogs are acting strange"
+  },
+  {
+    "number": 15,
+    "title": "Erratic electronics",
+    "description": "Technological devices aren’t behaving like they should"
+  },
+  {
+    "number": 16,
+    "title": "Strange art gallery",
+    "description": "Something is off with the latest gallery opening"
+  },
+  {
+    "number": 17,
+    "title": "The damn museum again",
+    "description": "Shit’s popping off at the damn museum again"
+  },
+  {
+    "number": 18,
+    "title": "New treatment",
+    "description": "Reports of a controversial new treatment at the hospital"
+  },
+  {
+    "number": 19,
+    "title": "Reformed prisoners",
+    "description": "Prisoners leaving the local jail are perhaps too reformed"
+  },
+  {
+    "number": 20,
+    "title": "Interrupted construction",
+    "description": "A construction project has dug up something strange"
+  },
+  {
+    "number": 21,
+    "title": "Escaped experiment",
+    "description": "A lab is requesting help retrieving an escaped specimen"
+  },
+  {
+    "number": 22,
+    "title": "Noisy neighbor",
+    "description": "Strange noises are coming from a neighbor's house"
+  },
+  {
+    "number": 23,
+    "title": "Request from the mansion",
+    "description": "Investigators requested to a prominent estate"
+  },
+  {
+    "number": 24,
+    "title": "Request from the corporation",
+    "description": "Investigators requested to a local office tower"
+  },
+  {
+    "number": 25,
+    "title": "Lost library",
+    "description": "Investigators requested to catalog some strange books"
+  },
+  {
+    "number": 26,
+    "title": "Estate sale",
+    "description": "Investigators requested to catalog some strange artifacts"
+  },
+  {
+    "number": 27,
+    "title": "Performance enhancement",
+    "description": "The high school sports team is doing unusually well"
+  },
+  {
+    "number": 28,
+    "title": "Dance fever",
+    "description": "A concert won’t stop (can’t stop?)"
+  },
+  {
+    "number": 29,
+    "title": "Weird french circus",
+    "description": "The french circus is supposed to be weird, but is it supposed to be this weird?"
+  },
+  {
+    "number": 30,
+    "title": "Convention trouble",
+    "description": "Investigators requested to the con"
+  },
+  {
+    "number": 31,
+    "title": "Strange broadcast",
+    "description": "A creepy broadcast is appearing on people’s TV screens"
+  },
+  {
+    "number": 32,
+    "title": "Strange photographs",
+    "description": "A collection of photographs has been discovered which deserves attention"
+  },
+  {
+    "number": 33,
+    "title": "Supporting school club",
+    "description": "An after school club dedicated to the paranormal"
+  },
+  {
+    "number": 34,
+    "title": "Strange screenings",
+    "description": "The local movie festival includes some disturbing entries"
+  },
+  {
+    "number": 35,
+    "title": "Weird science project",
+    "description": "A student’s science project is getting out of control"
+  },
+  {
+    "number": 36,
+    "title": "Weird tracks",
+    "description": "Unusual tracks are being found in the woods"
+  },
+  {
+    "number": 37,
+    "title": "Strange gigs",
+    "description": "An app is offering good money for very strange work"
+  },
+  {
+    "number": 38,
+    "title": "Overly difficult escape room",
+    "description": "The local escape room has an unusual design"
+  },
+  {
+    "number": 39,
+    "title": "Weird abandoned building",
+    "description": "Investigators requested to a local abandoned building"
+  },
+  {
+    "number": 40,
+    "title": "Mall problem",
+    "description": "Investigators requested to the local mall"
+  },
+  {
+    "number": 41,
+    "title": "Strange catch",
+    "description": "Local fishermen have caught something strange"
+  },
+  {
+    "number": 42,
+    "title": "Strange statue",
+    "description": "An eerie statue has appeared over night"
+  },
+  {
+    "number": 43,
+    "title": "Sounds from the cave",
+    "description": "Strange sounds are coming from a local cave"
+  },
+  {
+    "number": 44,
+    "title": "Cat problem",
+    "description": "Investigators requested to the local cat cafe"
+  },
+  {
+    "number": 45,
+    "title": "Mysterious car",
+    "description": "A strange car has been causing trouble around town"
+  },
+  {
+    "number": 46,
+    "title": "Weird vending machine",
+    "description": "A local vending machine doesn’t have the normal stock"
+  },
+  {
+    "number": 47,
+    "title": "Weird meme",
+    "description": "Investigators requested to figure out what the kids are on about"
+  },
+  {
+    "number": 48,
+    "title": "Community college problem",
+    "description": "Investigators are requested to the local community college"
+  },
+  {
+    "number": 49,
+    "title": "Problem at the amusement park",
+    "description": "Investigators are requested to the local amusement park"
+  },
+  {
+    "number": 50,
+    "title": "Missing business",
+    "description": "A cherished local business has vanished without a trace"
+  }
+]

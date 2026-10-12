@@ -1,0 +1,107 @@
+[
+  {
+    "title": "Two Spirits",
+    "catalog_id": "FOLK-Wolf-1845-136",
+    "lane": "folklore",
+    "premise": "A man dresses as a ghost to frighten his wife in a graveyard.",
+    "plays_out": "A real shrouded skeleton appears beside him; he flees, but the women lock him out and he collapses unconscious until morning.",
+    "status": "complete",
+    "country": "Belgium",
+    "author": "Traditional; specific published version listed in provenance",
+    "version_provenance": "Johannes Wilhelm Wolf, Deutsche Märchen und Sagen (1845), no. 136, pp. 241–42; oral source.",
+    "sources": [
+      {
+        "url": "https://sites.pitt.edu/~dash/type1676.html",
+        "locator": "Two Spirits — Belgium",
+        "evidence_quality": "full text; attributed published retelling in scholarly edited collection",
+        "ending_evidence": "Skeleton appears; prankster collapses."
+      }
+    ],
+    "verification_note": "Read full titled retelling and printed source citation on Ashliman page; original-language volume not independently opened.",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "The Death Shroud",
+    "catalog_id": "FOLK-Haase-1887-49",
+    "lane": "folklore",
+    "premise": "A servant steals a wandering dead man's shroud and hides inside a church.",
+    "plays_out": "The corpse persuades him to pass a corner through the keyhole and bursts the door open; the servant is found nearly dead and dies young afterward.",
+    "status": "complete",
+    "country": "Germany",
+    "author": "Traditional; specific published version listed in provenance",
+    "version_provenance": "Karl Eduard Haase, Volkstümliches aus der Grafschaft Ruppin und Umgegend, vol. 1 (1887), no. 49, p. 53; communicated by Teacher Fehse.",
+    "sources": [
+      {
+        "url": "https://sites.pitt.edu/~dash/type1676.html",
+        "locator": "The Death Shroud — Germany",
+        "evidence_quality": "full text; attributed published retelling in scholarly edited collection",
+        "ending_evidence": "Door bursts; servant dies young."
+      }
+    ],
+    "verification_note": "Read full titled retelling and printed source citation on Ashliman page; original-language volume not independently opened.",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "The Preacher and the Ghost",
+    "catalog_id": "FOLK-Afzelius-1842-245",
+    "lane": "folklore",
+    "premise": "A wife sends a sheet-covered servant to frighten her husband returning from midnight prayers.",
+    "plays_out": "When the preacher challenges him, the servant starts sinking into the earth; his pleas cannot save him, and he disappears completely beneath it.",
+    "status": "complete",
+    "country": "Sweden",
+    "author": "Traditional; specific published version listed in provenance",
+    "version_provenance": "Arvid August Afzelius, Volkssagen und Volkslieder aus Schwedens älterer und neuerer Zeit, vol. 3 (1842), p. 245.",
+    "sources": [
+      {
+        "url": "https://sites.pitt.edu/~dash/type1676.html",
+        "locator": "The Preacher and the Ghost — Sweden",
+        "evidence_quality": "full text; attributed published retelling in scholarly edited collection",
+        "ending_evidence": "Servant sinks completely underground."
+      }
+    ],
+    "verification_note": "Read full titled retelling and printed source citation on Ashliman page; original-language volume not independently opened.",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "White Cap",
+    "catalog_id": "FOLK-Arnason-1864-157",
+    "lane": "folklore",
+    "premise": "A girl mistakes a graveyard ghost for a familiar prankster and steals its cap.",
+    "plays_out": "Ordered to replace it silently, she instead speaks; the ghost strikes her dead and sinks back into its grave.",
+    "status": "complete",
+    "country": "Iceland",
+    "author": "Traditional; specific published version listed in provenance",
+    "version_provenance": "Jón Arnason, Icelandic Legends, translated by George E. J. Powell and Eiríkur Magnússon (1864), pp. 157–58.",
+    "sources": [
+      {
+        "url": "https://sites.pitt.edu/~dash/type0366.html",
+        "locator": "White Cap — Iceland",
+        "evidence_quality": "full text; attributed published retelling in scholarly edited collection",
+        "ending_evidence": "Girl struck dead; ghost vanishes."
+      }
+    ],
+    "verification_note": "Read full titled retelling and printed source citation on Ashliman page; original-language volume not independently opened.",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "The Stolen Liver",
+    "catalog_id": "FOLK-Knoop-1909-85",
+    "lane": "folklore",
+    "premise": "A husband spends the food money drinking, then substitutes a hanged man's liver for his wife's supper.",
+    "plays_out": "The dead man arrives demanding it; when she questions him about his missing liver, he seizes and strangles her.",
+    "status": "complete",
+    "country": "Poland",
+    "author": "Traditional; specific published version listed in provenance",
+    "version_provenance": "Otto Knoop, Ostmärkische Sagen, Märchen und Erzählungen (1909), no. 85, pp. 181–82.",
+    "sources": [
+      {
+        "url": "https://sites.pitt.edu/~dash/type0366.html",
+        "locator": "The Stolen Liver — Poland",
+        "evidence_quality": "full text; attributed published retelling in scholarly edited collection",
+        "ending_evidence": "Corpse strangles the wife."
+      }
+    ],
+    "verification_note": "Read full titled retelling and printed source citation on Ashliman page; original-language volume not independently opened.",
+    "verified_date": "2026-10-11"
+  }
+]

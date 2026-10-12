@@ -1,0 +1,3100 @@
+{
+  "schema_version": "1.0",
+  "research_date": "2026-10-11",
+  "counts": {
+    "complete": 134,
+    "no_ending": 12,
+    "incomplete": 0
+  },
+  "definition": "complete = verified actual final outcome or bounded narrative incident payoff; unresolved supernatural explanation is preserved. no_ending = source read but no developed completed plot. incomplete = ending not verified.",
+  "entries": [
+    {
+      "lane": "xfiles",
+      "catalog_id": "S01E03",
+      "title": "Squeeze",
+      "premise": "Office workers are murdered in locked rooms, their livers removed by an intruder who can squeeze through tiny openings.",
+      "plays_out": "The ageless killer eats five livers before hibernating for thirty years; agents catch him attacking Scully. Institutionalized, he studies the food slot with a grin.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Squeeze_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "The ageless killer eats five livers before hibernating for thirty years; agents catch him attacking Scully. Institutionalized, he studies the food slot with a grin."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 44,
+      "record_id": "xfiles:S01E03"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S01E06",
+      "title": "Shadows",
+      "premise": "A grieving office worker survives attacks while an invisible force kills her attackers.",
+      "plays_out": "Her murdered boss's ghost protects her and exposes a hidden disk implicating his business partner in illegal sales. She takes a new job, where further activity suggests the ghost has followed her.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Shadows_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "Her murdered boss's ghost protects her and exposes a hidden disk implicating his business partner in illegal sales. She takes a new job, where further activity suggests the ghost has followed her."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 45,
+      "record_id": "xfiles:S01E06"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S01E08",
+      "title": "Ice",
+      "premise": "Investigators stranded at an Arctic research station discover parasites that turn their hosts violently paranoid.",
+      "plays_out": "They learn that two worms in one host kill each other and use a second worm to cure the infected scientist. The survivors are evacuated, and the government destroys the station.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Ice_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "They learn that two worms in one host kill each other and use a second worm to cure the infected scientist. The survivors are evacuated, and the government destroys the station."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 46,
+      "record_id": "xfiles:S01E08"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S01E09",
+      "title": "Space",
+      "premise": "A shuttle mission suffers sabotage linked to a former astronaut possessed by an entity he encountered in space.",
+      "plays_out": "The entity threatens the shuttle's return, but its host warns investigators in time to change the landing trajectory. Still struggling against possession in hospital, he jumps to his death.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Space_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "The entity threatens the shuttle's return, but its host warns investigators in time to change the landing trajectory. Still struggling against possession in hospital, he jumps to his death."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 47,
+      "record_id": "xfiles:S01E09"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S01E11",
+      "title": "Eve",
+      "premise": "Two fathers die simultaneously across the country, leaving daughters who look exactly alike.",
+      "plays_out": "The girls are engineered clones who independently knew to murder their fathers; they kill their creator and nearly poison the agents. Captured and institutionalized, they recognize another clone arriving, suggesting their shared knowledge continues.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Eve_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "The girls are engineered clones who independently knew to murder their fathers; they kill their creator and nearly poison the agents. Captured and institutionalized, they recognize another clone arriving, suggesting their shared knowledge continues."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 47,
+      "record_id": "xfiles:S01E11"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S01E12",
+      "title": "Fire",
+      "premise": "A wealthy family seeks protection from a killer who can ignite fires by thought.",
+      "plays_out": "The killer infiltrates their household and sets it ablaze, but the children are rescued and fuel thrown at him makes him ignite himself. He survives in custody, heals rapidly, and asks for a cigarette.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Fire_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "The killer infiltrates their household and sets it ablaze, but the children are rescued and fuel thrown at him makes him ignite himself. He survives in custody, heals rapidly, and asks for a cigarette."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 48,
+      "record_id": "xfiles:S01E12"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S01E13",
+      "title": "Beyond the Sea",
+      "premise": "After an agent sees her recently dead father, a condemned killer offers psychic clues to a kidnapping in exchange for clemency.",
+      "plays_out": "His clues rescue the captives, and a warning keeps her from following their abductor onto a fatal collapsing gantry. He is executed without the agent attending; she declines his promised final message from her father.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Beyond_the_Sea_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "His clues rescue the captives, and a warning keeps her from following their abductor onto a fatal collapsing gantry. He is executed without the agent attending; she declines his promised final message from her father."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 56,
+      "record_id": "xfiles:S01E13"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S01E14",
+      "title": "Gender Bender",
+      "premise": "Nightclub patrons die after sex with someone who appears to change sex, leading investigators to a secluded religious community.",
+      "plays_out": "The community can transform bodies and uses irresistible attraction; its members reclaim the rogue killer before agents can arrest them. Their settlement is abandoned overnight, leaving a crop circle that suggests alien departure.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Gender_Bender_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "The community can transform bodies and uses irresistible attraction; its members reclaim the rogue killer before agents can arrest them. Their settlement is abandoned overnight, leaving a crop circle that suggests alien departure."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 52,
+      "record_id": "xfiles:S01E14"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S01E15",
+      "title": "Lazarus",
+      "premise": "An agent revived after a bank shootout appears to carry the consciousness of the robber who died beside him.",
+      "plays_out": "He reunites with the robber's partner and takes Scully hostage, but his diabetic host needs insulin. His partner withholds it; he shoots her before dying, and his watch remains stopped at the agent's original death.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Lazarus_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "He reunites with the robber's partner and takes Scully hostage, but his diabetic host needs insulin. His partner withholds it; he shoots her before dying, and his watch remains stopped at the agent's original death."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 54,
+      "record_id": "xfiles:S01E15"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S01E18",
+      "title": "Miracle Man",
+      "premise": "A young faith healer loses confidence when people die during his healing services.",
+      "plays_out": "A man he once resurrected is poisoning followers out of resentment over his disfigured survival. The healer is beaten to death in jail, confronts the culprit as an apparition, and later disappears from the morgue amid reports of him walking.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Miracle_Man_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "A man he once resurrected is poisoning followers out of resentment over his disfigured survival. The healer is beaten to death in jail, confronts the culprit as an apparition, and later disappears from the morgue amid reports of him walking."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 53,
+      "record_id": "xfiles:S01E18"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S01E19",
+      "title": "Shapes",
+      "premise": "A rancher shoots an apparent attacking beast, but its body is human and his scratched son begins behaving strangely.",
+      "plays_out": "A shapeshifting curse has passed to the son, who kills his father and attacks the investigators. The sheriff shoots him; an elder predicts another outbreak in eight years as a wolf howls.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Shapes_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "A shapeshifting curse has passed to the son, who kills his father and attacks the investigators. The sheriff shoots him; an elder predicts another outbreak in eight years as a wolf howls."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 51,
+      "record_id": "xfiles:S01E19"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S01E20",
+      "title": "Darkness Falls",
+      "premise": "Investigators reach an abandoned logging camp where ancient insects released from a felled tree attack only in darkness.",
+      "plays_out": "They ration generator light, then attempt an escape that fails when their vehicle is disabled. The insects engulf them, but rescuers save and quarantine the survivors while authorities try to eradicate the swarm with fire and pesticides.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Darkness_Falls_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "They ration generator light, then attempt an escape that fails when their vehicle is disabled. The insects engulf them, but rescuers save and quarantine the survivors while authorities try to eradicate the swarm with fire and pesticides."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 55,
+      "record_id": "xfiles:S01E20"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S01E21",
+      "title": "Tooms",
+      "premise": "A liver-eating mutant released from custody needs one final victim before another thirty-year hibernation.",
+      "plays_out": "He frames his pursuer, murders his doctor, and retreats beneath a shopping mall built over his former lair. When he attacks, the agent escapes and activates the escalator, crushing him.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Tooms",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "He frames his pursuer, murders his doctor, and retreats beneath a shopping mall built over his former lair. When he attacks, the agent escapes and activates the escalator, crushing him."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 44,
+      "record_id": "xfiles:S01E21"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S01E22",
+      "title": "Born Again",
+      "premise": "A little girl is present when former police colleagues die mysteriously, and she seems to recall a murdered detective's life.",
+      "plays_out": "She is apparently the detective reincarnated and uses telekinesis to avenge his murder. Investigators uncover the officers' theft and betrayal; she spares the final culprit after his wife's plea, and returns to an ordinary childhood as he confesses.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Born_Again_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "She is apparently the detective reincarnated and uses telekinesis to avenge his murder. Investigators uncover the officers' theft and betrayal; she spares the final culprit after his wife's plea, and returns to an ordinary childhood as he confesses."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 58,
+      "record_id": "xfiles:S01E22"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S01E23",
+      "title": "Roland",
+      "premise": "Scientists die at a propulsion laboratory where an intellectually disabled janitor suddenly displays advanced mathematical knowledge.",
+      "plays_out": "His cryogenically preserved twin appears to control him to punish colleagues who stole his research. Agents stop the final killing as sabotage destroys the twin's preserved remains, but the janitor's departing hairstyle hints that the influence persists.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Roland_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "His cryogenically preserved twin appears to control him to punish colleagues who stole his research. Agents stop the final killing as sabotage destroys the twin's preserved remains, but the janitor's departing hairstyle hints that the influence persists."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 53,
+      "record_id": "xfiles:S01E23"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S02E02",
+      "title": "The Host",
+      "premise": "A corpse in the sewers leads investigators to a humanoid fluke parasite attacking sanitation workers.",
+      "plays_out": "The captured creature escapes and heads through an overflow pipe toward the ocean. An agent cuts it in half with a sewer grate, but its eyes remain open underground, leaving its survival unresolved.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Host_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "The captured creature escapes and heads through an overflow pipe toward the ocean. An agent cuts it in half with a sewer grate, but its eyes remain open underground, leaving its survival unresolved."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 48,
+      "record_id": "xfiles:S02E02"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S02E12",
+      "title": "Aubrey",
+      "premise": "A pregnant detective experiences visions that uncover old FBI bodies while new murders repeat a decades-old killer's signature.",
+      "plays_out": "She is the killer's granddaughter, apparently reenacting his crimes through inherited memories. After attacking others she kills her grandfather and surrenders, then is confined under suicide watch following an attempt to end her pregnancy.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Aubrey_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "She is the killer's granddaughter, apparently reenacting his crimes through inherited memories. After attacking others she kills her grandfather and surrenders, then is confined under suicide watch following an attempt to end her pregnancy."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 52,
+      "record_id": "xfiles:S02E12"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S02E14",
+      "title": "Die Hand Die Verletzt",
+      "premise": "A teenager's ritual death exposes a high school's secret Satanist faculty and a sinister substitute teacher.",
+      "plays_out": "The teacher manipulates deaths while punishing the adults' lapsed devotion. When they try to sacrifice the investigating agents, she makes the remaining cultists kill themselves instead, then disappears after leaving a farewell on the chalkboard.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Die_Hand_Die_Verletzt",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "The teacher manipulates deaths while punishing the adults' lapsed devotion. When they try to sacrifice the investigating agents, she makes the remaining cultists kill themselves instead, then disappears after leaving a farewell on the chalkboard."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 51,
+      "record_id": "xfiles:S02E14"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S02E20",
+      "title": "Humbug",
+      "premise": "Murders plague a community of retired sideshow performers, suggesting a small creature is roaming at night.",
+      "plays_out": "A dying man's detachable conjoined twin is killing people while seeking a replacement brother. It escapes after its brother dies and vanishes near a performer who eats anything; his stomachache and final remark imply he ate it.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Humbug_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "A dying man's detachable conjoined twin is killing people while seeking a replacement brother. It escapes after its brother dies and vanishes near a performer who eats anything; his stomachache and final remark imply he ate it."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 53,
+      "record_id": "xfiles:S02E20"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S02E21",
+      "title": "The Calusari",
+      "premise": "A child's apparent accident is followed by deaths around his older brother and his grandmother's protective rituals.",
+      "plays_out": "The boy's stillborn twin is the malevolent presence, impersonating him and attacking the family. Mystics complete a separation ritual while the spirit threatens Scully and the mother; it disappears, and mother and surviving son reunite.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Calusari",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "The boy's stillborn twin is the malevolent presence, impersonating him and attacking the family. Mystics complete a separation ritual while the spirit threatens Scully and the mother; it disappears, and mother and surviving son reunite."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 52,
+      "record_id": "xfiles:S02E21"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S02E23",
+      "title": "Soft Light",
+      "premise": "People vanish into scorch marks around a physicist whose laboratory accident made his shadow lethal.",
+      "plays_out": "He seeks shelter in diffuse light, but attempts to capture him cause more deaths. Investigators believe he was destroyed in a particle accelerator; the final scene reveals him alive and subjected to government experiments.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Soft_Light_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "He seeks shelter in diffuse light, but attempts to capture him cause more deaths. Investigators believe he was destroyed in a particle accelerator; the final scene reveals him alive and subjected to government experiments."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 49,
+      "record_id": "xfiles:S02E23"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S03E03",
+      "title": "D.P.O.",
+      "premise": "A young mechanic who survived lightning can control electricity and uses it against people who frustrate him.",
+      "plays_out": "He murders his friend and threatens his former teacher until another lightning strike kills the pursuing sheriff. Confined in a psychiatric hospital, he retains his power and uses it to change his television channels.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/D.P.O.",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "He murders his friend and threatens his former teacher until another lightning strike kills the pursuing sheriff. Confined in a psychiatric hospital, he retains his power and uses it to change his television channels."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 51,
+      "record_id": "xfiles:S03E03"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S03E04",
+      "title": "Clyde Bruckman's Final Repose",
+      "premise": "An insurance salesman who foresees people's deaths helps investigate a murderer targeting fortune tellers.",
+      "plays_out": "His vision appears to predict Mulder's murder, but Scully shoots the attacker and the vision proves to be the killer's final thoughts. They find the salesman dead by suicide; Scully holds his hand on his bed, fulfilling another prediction.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Clyde_Bruckman%27s_Final_Repose",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "His vision appears to predict Mulder's murder, but Scully shoots the attacker and the vision proves to be the killer's final thoughts. They find the salesman dead by suicide; Scully holds his hand on his bed, fulfilling another prediction."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 53,
+      "record_id": "xfiles:S03E04"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S03E07",
+      "title": "The Walk",
+      "premise": "Military patients and officers suffer deaths blamed on a phantom soldier who prevents one survivor from killing himself.",
+      "plays_out": "A quadruple amputee is projecting an astral body to punish commanders by murdering their families. As his apparition attacks again, a surviving victim smothers his physical body, ending the attacks; authorities cannot prove the paranormal murders.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Walk_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "A quadruple amputee is projecting an astral body to punish commanders by murdering their families. As his apparition attacks again, a surviving victim smothers his physical body, ending the attacks; authorities cannot prove the paranormal murders."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 54,
+      "record_id": "xfiles:S03E07"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S03E08",
+      "title": "Oubliette",
+      "premise": "A former kidnapping victim develops a psychic link to a girl abducted by the same man, sharing her injuries.",
+      "plays_out": "The link leads investigators to the girl being drowned. They kill the abductor, but resuscitation initially benefits the older woman instead; the girl finally revives as the older woman dies, apparently sacrificing herself.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Oubliette_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "The link leads investigators to the girl being drowned. They kill the abductor, but resuscitation initially benefits the older woman instead; the girl finally revives as the older woman dies, apparently sacrificing herself."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 52,
+      "record_id": "xfiles:S03E08"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S03E11",
+      "title": "Revelations",
+      "premise": "A murderer of fraudulent stigmatics targets a boy whose bleeding wounds and apparent bilocation seem genuine.",
+      "plays_out": "Scully follows religious clues to a recycling plant where the killer tries to take the boy into a shredder. The boy catches the edge, the killer falls in, and Scully saves him before seeking confession about the miracles she witnessed.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Revelations_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "Scully follows religious clues to a recycling plant where the killer tries to take the boy into a shredder. The boy catches the edge, the killer falls in, and Scully saves him before seeking confession about the miracles she witnessed."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 56,
+      "record_id": "xfiles:S03E11"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S03E13",
+      "title": "Syzygy",
+      "premise": "A town blames teenage deaths on Satanists while two birthday-sharing girls secretly wield destructive powers.",
+      "plays_out": "A rare planetary alignment amplifies the girls' cosmic energy, and jealousy turns their shared power murderous. Agents confine them together as the police station erupts in chaos; at midnight the alignment's influence ends and their powers stop.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Syzygy_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "A rare planetary alignment amplifies the girls' cosmic energy, and jealousy turns their shared power murderous. Agents confine them together as the police station erupts in chaos; at midnight the alignment's influence ends and their powers stop."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 52,
+      "record_id": "xfiles:S03E13"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S03E14",
+      "title": "Grotesque",
+      "premise": "An artist arrested for mutilation murders claims a gargoyle possessed him, and killings continue while he is imprisoned.",
+      "plays_out": "The investigator obsessed with understanding the artist has become the new killer. He is shot and arrested, yet Mulder's glimpse of him as a gargoyle and a blood-drawn image in his cell leave possession versus madness ambiguous.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Grotesque_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "The investigator obsessed with understanding the artist has become the new killer. He is shot and arrested, yet Mulder's glimpse of him as a gargoyle and a blood-drawn image in his cell leave possession versus madness ambiguous."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 55,
+      "record_id": "xfiles:S03E14"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S03E17",
+      "title": "Pusher",
+      "premise": "A contract killer can talk people into obeying commands, disguising murders as suicides.",
+      "plays_out": "His brain tumor may cause the power, which he refused to lose through surgery. He forces Mulder into Russian roulette, but Scully's fire alarm breaks his concentration; Mulder shoots him, leaving him comatose and expected to die.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Pusher_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "His brain tumor may cause the power, which he refused to lose through surgery. He forces Mulder into Russian roulette, but Scully's fire alarm breaks his concentration; Mulder shoots him, leaving him comatose and expected to die."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 50,
+      "record_id": "xfiles:S03E17"
+    },
+    {
+      "lane": "xfiles",
+      "catalog_id": "S03E22",
+      "title": "Quagmire",
+      "premise": "Deaths around a lake famous for a dinosaur-like monster draw investigators as the local frog population declines.",
+      "plays_out": "A boat attack strands the agents, and further pursuit ends when Mulder shoots an alligator believed responsible for the killings. They depart disappointed, while the real lake monster swims past unseen.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Quagmire_(The_X-Files)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "A boat attack strands the agents, and further pursuit ends when Mulder shoots an alligator believed responsible for the killings. They depart disappointed, while the real lake monster swims past unseen."
+        }
+      ],
+      "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 48,
+      "record_id": "xfiles:S03E22"
+    },
+    {
+      "title": "Welcome to Dead House",
+      "catalog_id": "Goosebumps-original-01",
+      "premise": "A family inherits a house in a strangely deserted town, where their children keep seeing unfamiliar people inside.",
+      "plays_out": "The townspeople are undead who lure fresh victims to sustain themselves with blood. The children expose them to sunlight and rescue their parents, but another family arrives with an agent who resembles the supposedly destroyed undead ringleader.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Welcome_to_Dead_House",
+          "evidence_quality": "detailed synopsis; opened",
+          "ending_evidence": "Sunlight destroys the undead; departing family sees apparent agent guiding new victims."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 55,
+      "record_id": "goosebumps:Goosebumps-original-01"
+    },
+    {
+      "title": "Stay Out of the Basement",
+      "catalog_id": "Goosebumps-original-02",
+      "premise": "Two children investigate their botanist father's locked basement as he develops disturbing plantlike habits.",
+      "plays_out": "They discover a plant duplicate has imprisoned their real father, identify him by his red blood, and help him destroy the clone. After he clears out his experiments, a surviving flower claims to be their real father.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/Stay_Out_of_the_Basement",
+          "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+          "ending_evidence": "Red-blood test identifies father; clone axed; flower claims fatherhood."
+        },
+        {
+          "url": "https://greatbooksguy.com/2025/06/17/goosebumps-review-stay-out-of-the-basement-1992-by-r-l-stine/",
+          "evidence_quality": "secondary review; opened supporting page",
+          "ending_evidence": "Red-blood test identifies father; clone axed; flower claims fatherhood."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 51,
+      "record_id": "goosebumps:Goosebumps-original-02"
+    },
+    {
+      "title": "Monster Blood",
+      "catalog_id": "Goosebumps-original-03",
+      "premise": "A boy visiting his aunt buys novelty slime that keeps growing and makes his dog enormous.",
+      "plays_out": "The slime begins swallowing people, and the aunt's cat is revealed as a witch controlling it. The giant dog knocks her into the slime, breaking the spell and releasing its victims; the leftover slime then disappears.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/Monster_Blood_%28book%29",
+          "evidence_quality": "detailed synopsis; opened",
+          "ending_evidence": "Dog pushes witch into slime; victims freed and dog shrinks; remainder vanishes."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 52,
+      "record_id": "goosebumps:Goosebumps-original-03"
+    },
+    {
+      "title": "Say Cheese and Die!",
+      "catalog_id": "Goosebumps-original-04",
+      "premise": "Friends steal a camera whose photographs show disasters that subsequently happen to their subjects.",
+      "plays_out": "They discover its inventor cursed it after his partner stole it; the thief tries to imprison them to protect the secret. Photographing him kills him, and they hide the camera again, but two bullies retrieve it and photograph themselves.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/Say_Cheese_and_Die%21",
+          "evidence_quality": "detailed synopsis; opened",
+          "ending_evidence": "Thief dies after photo; bullies take own photograph with retrieved camera."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 53,
+      "record_id": "goosebumps:Goosebumps-original-04"
+    },
+    {
+      "title": "The Curse of the Mummy's Tomb",
+      "catalog_id": "Goosebumps-original-05",
+      "premise": "A boy visiting an archaeological dig carries a mummy's hand as a charm while mysterious dangers surround the excavation.",
+      "plays_out": "A guardian of the tomb traps him, his cousin, and his uncle and tries to kill them for disturbing it. The charm animates the mummies, who drive the guardian away, allowing the family to escape; a final apparent mummy scare is only the boy's returning parents.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/The_Curse_of_the_Mummy%27s_Tomb",
+          "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+          "ending_evidence": "Hand summons mummies against attacker; family escapes; parents cause final knock."
+        },
+        {
+          "url": "https://greatbooksguy.com/2025/09/19/goosebumps-review-5-the-curse-of-the-mummys-tomb-1993-by-r-l-stine/",
+          "evidence_quality": "secondary review; opened supporting page",
+          "ending_evidence": "Hand summons mummies against attacker; family escapes; parents cause final knock."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 65,
+      "record_id": "goosebumps:Goosebumps-original-05"
+    },
+    {
+      "title": "Let's Get Invisible!",
+      "catalog_id": "Goosebumps-original-06",
+      "premise": "Children discover an attic mirror that makes them invisible and compete to remain invisible longer.",
+      "plays_out": "The mirror's reflections replace two children and try to trap the others inside. Smashing it restores the prisoners and removes the doubles, but the protagonist notices his left-handed brother now throws right-handed, implying his double remains.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/Let%27s_Get_Invisible%21",
+          "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+          "ending_evidence": "Mirror smashed; friends restored; left-handed brother uses right hand."
+        },
+        {
+          "url": "https://greatbooksguy.com/2025/11/14/goosebumps-6-lets-get-invisible-1993-by-r-l-stine/",
+          "evidence_quality": "secondary review; opened supporting page",
+          "ending_evidence": "Mirror smashed; friends restored; left-handed brother uses right hand."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 51,
+      "record_id": "goosebumps:Goosebumps-original-06"
+    },
+    {
+      "title": "Night of the Living Dummy",
+      "catalog_id": "Goosebumps-original-07",
+      "premise": "Two rival sisters acquire ventriloquist dummies, and one begins behaving maliciously without its owner's control.",
+      "plays_out": "The second dummy demands that they become his slaves and survives their attempts to destroy or bury him. They finally get him crushed by a steamroller, then return home to discover the first dummy is also alive.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/Night_of_the_Living_Dummy",
+          "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+          "ending_evidence": "Mr. Wood crushed by second steamroller; Slappy speaks afterward."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 52,
+      "record_id": "goosebumps:Goosebumps-original-07"
+    },
+    {
+      "title": "The Girl Who Cried Monster",
+      "catalog_id": "Goosebumps-original-08",
+      "premise": "A girl notorious for invented monster stories discovers her librarian really transforms into a monster, but nobody believes her.",
+      "plays_out": "He catches her spying and tries to eat her; another witness finally convinces her parents. They invite the librarian to dinner, reveal themselves as monsters, and eat him to keep their neighborhood from attracting attention; their children are monsters too.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/The_Girl_Who_Cried_Monster",
+          "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+          "ending_evidence": "Parents eat librarian; children also monsters whose fangs have not grown."
+        },
+        {
+          "url": "https://greatbooksguy.com/2025/11/27/goosebumps-review-8-the-girl-who-cried-monster-1993-by-r-l-stine/",
+          "evidence_quality": "secondary review; opened supporting page",
+          "ending_evidence": "Parents eat librarian; children also monsters whose fangs have not grown."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 59,
+      "record_id": "goosebumps:Goosebumps-original-08"
+    },
+    {
+      "title": "Welcome to Camp Nightmare",
+      "catalog_id": "Goosebumps-original-09",
+      "premise": "A boy's summer camp becomes terrifying as campers disappear, dangerous creatures prowl, and the staff refuse to explain anything.",
+      "plays_out": "He finally refuses orders to hunt escaped girls, passing a concealed government test: everyone was staging the threats to assess his judgment and bravery. His scientist parents can now take him on their expedition to the dangerous alien planet Earth.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/Welcome_to_Camp_Nightmare",
+          "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+          "ending_evidence": "Camp is test; all missing campers unharmed; parents' destination Earth."
+        },
+        {
+          "url": "https://greatbooksguy.com/2025/12/10/goosebumps-review-9-welcome-to-camp-nightmare-1993-by-r-l-stine/",
+          "evidence_quality": "secondary review; opened supporting page",
+          "ending_evidence": "Camp is test; all missing campers unharmed; parents' destination Earth."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 59,
+      "record_id": "goosebumps:Goosebumps-original-09"
+    },
+    {
+      "title": "The Ghost Next Door",
+      "catalog_id": "Goosebumps-original-10",
+      "premise": "A lonely girl suspects the new boy next door is a ghost because he keeps appearing and disappearing.",
+      "plays_out": "She discovers she and her family died in a fire five years earlier, while the boy is alive and threatened by a shadow seeking to replace him. She saves him from another house fire, then rejoins her family in the afterlife.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en-academic.com/dic.nsf/enwiki/2339453/",
+          "evidence_quality": "detailed synopsis; opened; older Wikipedia mirror",
+          "ending_evidence": "Girl saves boy from burning house, then joins dead family."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 59,
+      "record_id": "goosebumps:Goosebumps-original-10"
+    },
+    {
+      "title": "The Haunted Mask",
+      "catalog_id": "Goosebumps-original-11",
+      "premise": "A bullied girl buys a frightening Halloween mask to scare her tormentors, but it changes her behavior and fuses to her face.",
+      "plays_out": "The mask is a living face that can be removed only with a symbol of love. Her mother's handmade likeness breaks its hold and repels the other masks, but her younger brother puts the discarded mask on despite the warning that another attachment will be permanent.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Haunted_Mask",
+          "evidence_quality": "detailed synopsis; opened",
+          "ending_evidence": "Mother's plaster likeness removes face; brother dons mask; reattachment permanent."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 68,
+      "record_id": "goosebumps:Goosebumps-original-11"
+    },
+    {
+      "title": "Be Careful What You Wish For...",
+      "catalog_id": "Goosebumps-original-12",
+      "premise": "A bullied, clumsy girl receives three wishes from a mysterious woman, hoping to improve her school life.",
+      "plays_out": "Her wishes weaken her teammates, empty the town, and turn her bully into an obsessive admirer. She wishes the bully had met the woman instead; the bully promptly wishes she would fly away, transforming her into a bird.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://greatbooksguy.com/2026/01/03/goosebumps-review-12-be-careful-what-you-wish-for-1993-by-r-l-stine/",
+          "evidence_quality": "detailed synopsis; opened",
+          "ending_evidence": "Final transfer of encounter lets bully wish protagonist into bird."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 55,
+      "record_id": "goosebumps:Goosebumps-original-12"
+    },
+    {
+      "title": "Piano Lessons Can Be Murder",
+      "catalog_id": "Goosebumps-original-13",
+      "premise": "A boy discovers a ghost playing the piano in his new house and starts lessons with a teacher obsessed with his hands.",
+      "plays_out": "The teacher is a robot, and the school's inventor harvests children's hands for perfect piano-playing machines. The warning ghost and other victims' spirits carry the inventor away; the boy quits piano for baseball, where people again praise his hands.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/Piano_Lessons_Can_Be_Murder",
+          "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+          "ending_evidence": "Ghost victims seize hand-harvesting inventor; boy takes up baseball."
+        },
+        {
+          "url": "https://greatbooksguy.com/2026/01/03/goosebumps-review-13-piano-lessons-can-be-murder-1993-by-r-l-stine/",
+          "evidence_quality": "secondary review; opened supporting page",
+          "ending_evidence": "Ghost victims seize hand-harvesting inventor; boy takes up baseball."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 61,
+      "record_id": "goosebumps:Goosebumps-original-13"
+    },
+    {
+      "title": "The Werewolf of Fever Swamp",
+      "catalog_id": "Goosebumps-original-14",
+      "premise": "A boy living beside a swamp adopts a stray dog that is blamed for mutilated animals, although he suspects a werewolf.",
+      "plays_out": "His new friend turns out to be the werewolf and bites him before the dog drives the attacker away. A feared swamp hermit rescues the boy, but the bite has passed on the curse: he now transforms and hunts with his dog.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://greatbooksguy.com/2026/02/04/goosebumps-review-14-the-werewolf-of-fever-swamp-1993-by-r-l-stine/",
+          "evidence_quality": "detailed synopsis; opened",
+          "ending_evidence": "Friend Will bites boy; Wolf saves him; boy becomes werewolf."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 63,
+      "record_id": "goosebumps:Goosebumps-original-14"
+    },
+    {
+      "title": "You Can't Scare Me!",
+      "catalog_id": "Goosebumps-original-15",
+      "premise": "Children try increasingly elaborate pranks to frighten a classmate who boasts of her courage, finally staging a local mud-monster legend.",
+      "plays_out": "Real mud monsters appear before the costumed pranksters arrive, and everyone runs away. Weeks later the target brags that she has seen genuine monsters, while the would-be tormentors remain too frightened to try again.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/You_Can%27t_Scare_Me%21",
+          "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+          "ending_evidence": "Actual mud monsters precede costumes; target brags, pranksters still scared."
+        },
+        {
+          "url": "https://greatbooksguy.com/2026/02/04/goosebumps-review-15-you-cant-scare-me-1994-by-r-l-stine/",
+          "evidence_quality": "secondary review; opened supporting page",
+          "ending_evidence": "Actual mud monsters precede costumes; target brags, pranksters still scared."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 54,
+      "record_id": "goosebumps:Goosebumps-original-15"
+    },
+    {
+      "title": "One Day at HorrorLand",
+      "catalog_id": "Goosebumps-original-16",
+      "premise": "A lost family visits a horror theme park where the rides become genuinely dangerous and their car explodes.",
+      "plays_out": "The staff are real monsters broadcasting the visitors' ordeals as entertainment, and they block escape. The family discovers pinching deflates them and flees in another vehicle, only to find a monster has followed home to offer return passes.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/One_Day_at_HorrorLand",
+          "evidence_quality": "detailed synopsis; opened",
+          "ending_evidence": "Pinching deflates monsters; stowaway offers free passes at home."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 56,
+      "record_id": "goosebumps:Goosebumps-original-16"
+    },
+    {
+      "title": "Why I'm Afraid of Bees",
+      "catalog_id": "Goosebumps-original-17",
+      "premise": "A bullied boy signs up to swap bodies with a confident peer, but a stray bee enters the transfer and leaves him in its body.",
+      "plays_out": "The other boy refuses to return his body, so he rallies a swarm and stings the impostor, apparently dying as a bee. He wakes restored and more confident, but still sucks pollen from a flower.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/Why_I%27m_Afraid_of_Bees",
+          "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+          "ending_evidence": "Stinging impostor triggers blackout and restoration; ending pollen habit."
+        },
+        {
+          "url": "https://greatbooksguy.com/2026/03/21/goosebumps-review-17-why-im-afraid-of-bees-1994-by-r-l-stine/",
+          "evidence_quality": "secondary review; opened supporting page",
+          "ending_evidence": "Stinging impostor triggers blackout and restoration; ending pollen habit."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 60,
+      "record_id": "goosebumps:Goosebumps-original-17"
+    },
+    {
+      "title": "Monster Blood II",
+      "catalog_id": "Goosebumps-original-18",
+      "premise": "A boy's friend feeds magical slime to his classroom hamster, which grows into an uncontrollable giant.",
+      "plays_out": "He eats some himself to wrestle the hamster and save a bully, but both suddenly shrink when the slime's magic expires. The teacher gives him the hamster, his friend brings a fresh can, and they discover the hamster eating more green slime.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumpsblogger.com/goosebumps-18-monster-blood-ii/",
+          "evidence_quality": "detailed synopsis; opened; corroborated by detailed quiz",
+          "ending_evidence": "Slime expiration shrinks combatants; hamster eats fresh slime in final scene."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 58,
+      "record_id": "goosebumps:Goosebumps-original-18"
+    },
+    {
+      "title": "Deep Trouble",
+      "catalog_id": "Goosebumps-original-19",
+      "premise": "A boy snorkeling during a Caribbean visit is saved from a shark by a mermaid whom his scientist uncle captures for a zoo.",
+      "plays_out": "The uncle's assistant helps kidnappers steal her and attempts to drown the family in a tank. Other mermaids rescue them and free their companion; the uncle conceals their existence, but the boy returns underwater and encounters a real sea monster.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/Deep_Trouble",
+          "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+          "ending_evidence": "Mermaids rescue family and captive; secrecy agreed; final sea monster attack."
+        },
+        {
+          "url": "https://greatbooksguy.com/2026/03/30/goosebumps-review-19-deep-trouble-1994-by-r-l-stine/",
+          "evidence_quality": "secondary review; opened supporting page",
+          "ending_evidence": "Mermaids rescue family and captive; secrecy agreed; final sea monster attack."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 63,
+      "record_id": "goosebumps:Goosebumps-original-19"
+    },
+    {
+      "title": "The Scarecrow Walks at Midnight",
+      "catalog_id": "Goosebumps-original-20",
+      "premise": "Children visiting their grandparents' farm notice their fearful behavior and scarecrows moving in the fields.",
+      "plays_out": "A farmhand animated the scarecrows to force the grandparents to obey him, but loses control when a prank provokes another spell. His son burns the attacking scarecrows, restoring normality until the farmhand's spellbook apparently animates a stuffed bear.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/The_Scarecrow_Walks_at_Midnight",
+          "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+          "ending_evidence": "Sticks burns uncontrolled scarecrows; taxidermied bear begins moving."
+        },
+        {
+          "url": "https://greatbooksguy.com/2026/04/08/goosebumps-review-20-the-scarecrow-walks-at-midnight-1994-by-r-l-stine/",
+          "evidence_quality": "secondary review; opened supporting page",
+          "ending_evidence": "Sticks burns uncontrolled scarecrows; taxidermied bear begins moving."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 53,
+      "record_id": "goosebumps:Goosebumps-original-20"
+    },
+    {
+      "title": "Go Eat Worms!",
+      "catalog_id": "Goosebumps-original-21",
+      "premise": "A boy who collects and torments worms starts finding them in his food and belongings after cutting one in half.",
+      "plays_out": "His sister admits to the small-scale pranks, but a giant worm really emerges and drags him toward its burrow until her model bird scares it off. He abandons worms for pinning butterflies, then faces a giant butterfly carrying a pin.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/Go_Eat_Worms%21",
+          "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+          "ending_evidence": "Model robin frightens giant worm; butterfly with pin ends replacement hobby."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 60,
+      "record_id": "goosebumps:Goosebumps-original-21"
+    },
+    {
+      "title": "Ghost Beach",
+      "catalog_id": "Goosebumps-original-22",
+      "premise": "Siblings visiting coastal relatives meet children who urge them to imprison a supposedly dangerous ghost in a cave.",
+      "plays_out": "The cave-dweller is an occult investigator, and the friendly children are ghosts who want the siblings dead; he sacrifices himself to trap them. Back at the relatives' house, his dog's barking reveals their hosts are ghosts too, leaving the children endangered.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/Ghost_Beach",
+          "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+          "ending_evidence": "Investigator seals ghost children; dog exposes hosts as ghosts; fate unresolved."
+        },
+        {
+          "url": "https://greatbooksguy.com/2026/05/10/goosebumps-review-22-ghost-beach-1994-by-r-l-stine/",
+          "evidence_quality": "secondary review; opened supporting page",
+          "ending_evidence": "Investigator seals ghost children; dog exposes hosts as ghosts; fate unresolved."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 59,
+      "record_id": "goosebumps:Goosebumps-original-22"
+    },
+    {
+      "title": "Return of the Mummy",
+      "catalog_id": "Goosebumps-original-23",
+      "premise": "A boy returns to an Egyptian excavation and reads a chant supposedly capable of awakening its ancient mummy.",
+      "plays_out": "A reporter is the mummy's immortal sister, using a magical hand to raise him, but he attacks her for disturbing his rest. Breaking her pendant turns her into a scarab and stops the mummy; afterward the boy cries out in bed, suggesting the scarab has reached him.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/Return_of_the_Mummy",
+          "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+          "ending_evidence": "Mummy attacks sister; pendant breaks and she becomes scarab; final pain ambiguous."
+        },
+        {
+          "url": "https://greatbooksguy.com/2026/05/28/goosebumps-review-23-return-of-the-mummy-1994-by-r-l-stine/",
+          "evidence_quality": "secondary review; opened supporting page",
+          "ending_evidence": "Mummy attacks sister; pendant breaks and she becomes scarab; final pain ambiguous."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 65,
+      "record_id": "goosebumps:Goosebumps-original-23"
+    },
+    {
+      "title": "Phantom of the Auditorium",
+      "catalog_id": "Goosebumps-original-24",
+      "premise": "Children rehearsing a supposedly cursed school play find threatening messages and a masked intruder beneath the stage.",
+      "plays_out": "They expose a homeless man sabotaging rehearsals, but the opening-night Phantom is a real ghost who tells how he died in the trapdoor. An old yearbook reveals that the friendly new student helping them was the long-dead original actor.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/Phantom_of_the_Auditorium",
+          "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+          "ending_evidence": "Ghost performs death story; yearbook identifies Brian as original actor."
+        },
+        {
+          "url": "https://greatbooksguy.com/2026/07/07/goosebumps-review-24-phantom-of-the-auditorium-1994-by-r-l-stine/",
+          "evidence_quality": "secondary review; opened supporting page",
+          "ending_evidence": "Ghost performs death story; yearbook identifies Brian as original actor."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 56,
+      "record_id": "goosebumps:Goosebumps-original-24"
+    },
+    {
+      "title": "Attack of the Mutant",
+      "catalog_id": "Goosebumps-original-25",
+      "premise": "A comic-book fan finds a building identical to his favorite supervillain's headquarters and discovers himself drawn into new issues.",
+      "plays_out": "The villain has turned him into a comic character and disguised himself as his new friend. The boy tricks the shapeshifter into becoming liquid, trapping him permanently, but later cuts himself and bleeds ink: he has not returned fully to normal.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/Attack_of_the_Mutant",
+          "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+          "ending_evidence": "Liquid transformation traps villain; boy bleeds ink after returning home."
+        },
+        {
+          "url": "https://greatbooksguy.com/2026/07/19/goosebumps-review-25-attack-of-the-mutant-1994-by-r-l-stine/",
+          "evidence_quality": "secondary review; opened supporting page",
+          "ending_evidence": "Liquid transformation traps villain; boy bleeds ink after returning home."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 60,
+      "record_id": "goosebumps:Goosebumps-original-25"
+    },
+    {
+      "title": "My Hairiest Adventure",
+      "catalog_id": "Goosebumps-original-26",
+      "premise": "After trying discarded tanning lotion, a boy grows uncontrollable hair while his friends disappear and familiar-looking dogs appear.",
+      "plays_out": "His parents reveal that he and those friends were dogs transformed into children by injections whose effects are wearing off. He reverts permanently and still plays with his dog friends; his parents then bring home a baby bearing their former cat's distinctive eyes.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/My_Hairiest_Adventure",
+          "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+          "ending_evidence": "Dog-to-child serum fails; protagonist becomes dog; cat implied new baby."
+        },
+        {
+          "url": "https://greatbooksguy.com/2026/07/30/goosebumps-review-26-my-hairiest-adventure-1994-by-r-l-stine/",
+          "evidence_quality": "secondary review; opened supporting page",
+          "ending_evidence": "Dog-to-child serum fails; protagonist becomes dog; cat implied new baby."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 61,
+      "record_id": "goosebumps:Goosebumps-original-26"
+    },
+    {
+      "title": "A Night in Terror Tower",
+      "catalog_id": "Goosebumps-original-27",
+      "premise": "Two children touring a London prison tower are pursued by a hooded man, lose their memories, and are transported into the Middle Ages.",
+      "plays_out": "They are royal heirs hidden in the future by a sorcerer to evade their murderous uncle, and their pursuer is his executioner. The boy steals magical stones and returns them all to the present, where the sorcerer becomes their guardian.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/A_Night_in_Terror_Tower",
+          "evidence_quality": "detailed synopsis; opened",
+          "ending_evidence": "Royal children escape execution using stolen stones; sorcerer joins them as guardian."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 63,
+      "record_id": "goosebumps:Goosebumps-original-27"
+    },
+    {
+      "title": "The Cuckoo Clock of Doom",
+      "catalog_id": "Goosebumps-original-28",
+      "premise": "A boy twists an antique clock's cuckoo backward to frame his troublesome sister and instead starts living progressively earlier days.",
+      "plays_out": "He becomes a baby before finally reaching the clock and restoring forward time. He returns to his twelfth birthday, but accidentally knocked out the year of his sister's birth, erasing her; he thinks he might bring her back someday.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/The_Cuckoo_Clock_of_Doom",
+          "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+          "ending_evidence": "Baby reverses bird and year dial; missing sister's birth year erases her."
+        },
+        {
+          "url": "https://greatbooksguy.com/2026/08/16/goosebumps-review-28-the-cuckoo-clock-of-doom-1995-by-r-l-stine/",
+          "evidence_quality": "secondary review; opened supporting page",
+          "ending_evidence": "Baby reverses bird and year dial; missing sister's birth year erases her."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 59,
+      "record_id": "goosebumps:Goosebumps-original-28"
+    },
+    {
+      "title": "Monster Blood III",
+      "catalog_id": "Goosebumps-original-29",
+      "premise": "While babysitting a cousin who plays chemical pranks, a boy accidentally eats magical slime planted in one of the experiments.",
+      "plays_out": "He grows enormous and flees police who mistake him for a threat. His cousin eventually concocts a successful shrinking mixture after several failures, but it keeps working afterward, leaving him tiny enough for his dog to carry him in its mouth.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/Monster_Blood_III",
+          "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+          "ending_evidence": "Shrinking formula restores boy then overshoots; dog carries tiny boy to parents."
+        },
+        {
+          "url": "https://greatbooksguy.com/2026/08/25/goosebumps-review-29-monster-blood-iii-1995-by-r-l-stine/",
+          "evidence_quality": "secondary review; opened supporting page",
+          "ending_evidence": "Shrinking formula restores boy then overshoots; dog carries tiny boy to parents."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 61,
+      "record_id": "goosebumps:Goosebumps-original-29"
+    },
+    {
+      "title": "It Came from Beneath the Sink!",
+      "catalog_id": "Goosebumps-original-30",
+      "premise": "Children moving into a new house discover a living sponge beneath the sink, followed by worsening accidents and bad luck.",
+      "plays_out": "The creature feeds on misfortune, survives violent attempts to destroy it, and harms anyone who receives it. The girl defeats it by cuddling and singing to it, but their returned dog brings home a fanged potato resembling another dangerous creature.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/It_Came_from_Beneath_the_Sink%21",
+          "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+          "ending_evidence": "Affection shrinks Grool; dog brings fanged potato Lanx."
+        },
+        {
+          "url": "https://greatbooksguy.com/2026/08/25/goosebumps-review-30-it-came-from-beneath-the-sink-1995-by-r-l-stine/",
+          "evidence_quality": "secondary review; opened supporting page",
+          "ending_evidence": "Affection shrinks Grool; dog brings fanged potato Lanx."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 60,
+      "record_id": "goosebumps:Goosebumps-original-30"
+    },
+    {
+      "title": "Night of the Living Dummy II",
+      "catalog_id": "Goosebumps-original-31",
+      "premise": "A girl receives a replacement ventriloquist dummy that comes alive after she reads the words in its pocket and frames her for its vandalism.",
+      "plays_out": "She and her sister plan to have their brother disguise himself as her old dummy to expose it. The apparent decoy smashes the evil dummy's head, but their brother slept through the plan, implying the old dummy truly acted on its own.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/Night_of_the_Living_Dummy_II",
+          "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+          "ending_evidence": "Dennis-like attacker cracks Slappy's head; Jed never participated."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 66,
+      "record_id": "goosebumps:Goosebumps-original-31"
+    },
+    {
+      "title": "The Barking Ghost",
+      "catalog_id": "Goosebumps-original-32",
+      "premise": "A boy in a new woodland home and his neighbor follow ghostly dogs into a shack where bodies can be exchanged.",
+      "plays_out": "The dogs are displaced humans who steal the children's bodies, leaving them as dogs. They drag the impostors back for another exchange, but accidentally swap with chipmunks instead and end up considering a search for acorns.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://goosebumps.fandom.com/wiki/The_Barking_Ghost",
+          "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked; corroborated by opened recap",
+          "ending_evidence": "Attempted reversal swaps children into chipmunks; recap mislabels them squirrels."
+        }
+      ],
+      "lane": "goosebumps",
+      "author": "R. L. Stine",
+      "medium": "novella",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 57,
+      "record_id": "goosebumps:Goosebumps-original-32"
+    },
+    {
+      "title": "A Bad Composition",
+      "catalog_id": "SCP-012",
+      "premise": "Archaeologists uncover an unfinished musical score written in human blood.",
+      "plays_out": "Readers compulsively cut themselves to supply more blood; those who finish a section kill themselves after declaring the composition impossible to complete, and performances produce only discord.",
+      "resolution": "No completed central plot; verified description or explanatory observation only.",
+      "status": "no_ending",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-012",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Description: section-completers commit suicide; performance remains discordant."
+        }
+      ],
+      "status_note": "Describes recurring compulsion and deaths across anonymous tests, without a bounded developed narrative.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 37,
+      "record_id": "scp:SCP-012"
+    },
+    {
+      "title": "The Morgue",
+      "catalog_id": "SCP-022",
+      "premise": "A hospital morgue begins producing animated corpses that try to leave.",
+      "plays_out": "The bodies match cadavers missing elsewhere; experiments reveal that objects sent inside emerge upstairs aged and ruined, while entering humans are absorbed into the morgue and can return as its corpses.",
+      "resolution": "No completed central plot; verified description or explanatory observation only.",
+      "status": "no_ending",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-022",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Addendum 022-002 distinguishes aged discarded objects from incorporated humans."
+        }
+      ],
+      "status_note": "Morgue mechanics and explanatory testing reveal are verified, but no sufficiently developed central incident concludes in this record.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 42,
+      "record_id": "scp:SCP-022"
+    },
+    {
+      "title": "Knowledge",
+      "catalog_id": "SCP-028",
+      "premise": "A miner suddenly invents cold fusion after walking through a spot that grants perfect random knowledge.",
+      "plays_out": "Testing brings useless facts and devastating revelations; an accidentally exposed agent learns classified Foundation secrets, shoots colleagues, and is restrained, after which exposed staff must be detained indefinitely.",
+      "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+      "status": "complete",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-028",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "EL-028-1125 records shootings and restraint, followed by indefinite detention rule."
+        }
+      ],
+      "completion_scope": "article incident/reveal, not permanent elimination of anomaly",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 44,
+      "record_id": "scp:SCP-028"
+    },
+    {
+      "title": "Obsidian Ritual Knife",
+      "catalog_id": "SCP-034",
+      "premise": "A man infiltrates a research facility wearing a scientist’s identity through an ancient skin-cutting knife.",
+      "plays_out": "Investigators find the real scientist tied up and partly flayed, exposing the disguise; the captured infiltrator reveals instructions from an unknown benefactor but dies during interrogation.",
+      "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+      "status": "complete",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-034",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Acquisition paragraph and Post Interrogation Report 2211 give capture and death."
+        }
+      ],
+      "completion_scope": "article incident/reveal, not permanent elimination of anomaly",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 41,
+      "record_id": "scp:SCP-034"
+    },
+    {
+      "title": "\"Predatory\" Holly Bush",
+      "catalog_id": "SCP-046",
+      "premise": "A supposedly predatory plant draws gravely ill people to lie down and be consumed.",
+      "plays_out": "An older suppressed report shows willing visitors peacefully relieved of pain as they die; a researcher disputes the hostile rewrite, but management removes him and retains the prohibition on access.",
+      "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+      "status": "complete",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-046",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Document 046-07 and Addenda 046-1 through 046-3 give voluntary deaths and reassignment."
+        }
+      ],
+      "completion_scope": "article incident/reveal, not permanent elimination of anomaly",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 44,
+      "record_id": "scp:SCP-046"
+    },
+    {
+      "title": "Plague Doctor",
+      "catalog_id": "SCP-049",
+      "premise": "A plague-doctor figure kills people by touch and turns their bodies into mindless surgical creations while claiming to cure disease.",
+      "plays_out": "After months of cooperation it kills and remakes its regular interviewer; its privileges are revoked, but the final interview shows it still insisting the death advanced its cure and requesting living patients.",
+      "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+      "status": "complete",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-049",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Addenda 049.3 and 049.4 document interviewer death, revoked allowances, and final insistence."
+        }
+      ],
+      "completion_scope": "article incident/reveal, not permanent elimination of anomaly",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 52,
+      "record_id": "scp:SCP-049"
+    },
+    {
+      "title": "Time-Traveling Train",
+      "catalog_id": "SCP-052",
+      "premise": "A scrapped subway train reappears every Saturday, dropping passengers into different years.",
+      "plays_out": "Investigators send agents aboard; one returns without hands and carrying a warning to send nobody else, and a later agent’s future corpse is thrown from the train, leaving further boarding tests prohibited.",
+      "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+      "status": "complete",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-052",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Test 052-3 and recovered passengers 052-4/5 disclose warning, mutilation, corpse, and test ban."
+        }
+      ],
+      "completion_scope": "article incident/reveal, not permanent elimination of anomaly",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 44,
+      "record_id": "scp:SCP-052"
+    },
+    {
+      "title": "Destroyed Organic Catalyst",
+      "catalog_id": "SCP-065",
+      "premise": "Officials destroy a farmer’s strange crop-boosting artifact, leaving a zone that grotesquely transforms living things.",
+      "plays_out": "The destruction kills operatives and civilians; a robot later retrieves fragments of a fertility figurine, revealing that an attempt to eliminate the original anomaly created the lethal region now being contained.",
+      "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+      "status": "complete",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-065",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Description gives destruction casualties; Addendum 065-1 identifies the figurine and causal sequence."
+        }
+      ],
+      "completion_scope": "article incident/reveal, not permanent elimination of anomaly",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 46,
+      "record_id": "scp:SCP-065"
+    },
+    {
+      "title": "\"Cain\"",
+      "catalog_id": "SCP-073",
+      "premise": "Police find a courteous stranger standing among dead gang members.",
+      "plays_out": "The gang had attacked him and received their own injuries instead, killing themselves while he remained unharmed; police jail the unidentified survivor, and a Foundation inspection transfers him into its custody.",
+      "resolution": "Attackers die from reflected violence; survivor is detained and transferred.",
+      "status": "complete",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-073",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Additional Notes gives gang attack, reflected fatal injuries, police incarceration, and transfer to Foundation custody."
+        }
+      ],
+      "completion_scope": "article incident/reveal, not permanent elimination of anomaly",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 41,
+      "record_id": "scp:SCP-073"
+    },
+    {
+      "title": "\"Able\"",
+      "catalog_id": "SCP-076",
+      "premise": "An ancient coffin periodically releases a superhuman man who hunts and kills people.",
+      "plays_out": "The worst escape forces personnel to destroy their own facility with a warhead; the stone coffin survives, and killing its occupant merely makes him dissolve and eventually reform inside it.",
+      "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+      "status": "complete",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-076",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Description records warhead/site destruction and subsequent regeneration mechanism."
+        }
+      ],
+      "completion_scope": "article incident/reveal, not permanent elimination of anomaly",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 43,
+      "record_id": "scp:SCP-076"
+    },
+    {
+      "title": "The Lizard King",
+      "catalog_id": "SCP-088",
+      "premise": "A recovered ancient reptilian humanoid appears mummified but is actually hibernating.",
+      "plays_out": "When it wakes, it dissolves its prison and mutates personnel into protectors; during the second breach, cooling the sealed facility sends it back into hibernation, allowing the transformed personnel to be killed and containment restored.",
+      "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+      "status": "complete",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-088",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Containment breach overview gives cooling, pedestal, hibernation, neutralization, and recontainment."
+        }
+      ],
+      "completion_scope": "article incident/reveal, not permanent elimination of anomaly",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 46,
+      "record_id": "scp:SCP-088"
+    },
+    {
+      "title": "The \"Shy Guy\"",
+      "catalog_id": "SCP-096",
+      "premise": "A retrieval team approaches an apparently helpless humanoid without being warned against seeing its face.",
+      "plays_out": "Everyone who looks is torn apart despite heavy gunfire; the captain survives because he turned away, and a backup team finally bags the creature’s head and returns it to containment.",
+      "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+      "status": "complete",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-096",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Interview 096-1 gives squad deaths, captain’s averted gaze, bagging, and transport."
+        }
+      ],
+      "completion_scope": "article incident/reveal, not permanent elimination of anomaly",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 45,
+      "record_id": "scp:SCP-096"
+    },
+    {
+      "title": "Old Fairgrounds",
+      "catalog_id": "SCP-097",
+      "premise": "Children near an abandoned fairground begin sleepwalking toward a giant pumpkin.",
+      "plays_out": "If not interrupted early, they arrive for a dance with figures resembling previously missing children; once the newcomer wakes and cries out, the figures kill them and carry their remains inside the pumpkin.",
+      "resolution": "No completed central plot; verified description or explanatory observation only.",
+      "status": "no_ending",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-097",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Effects on Children section explicitly ends with killing, depositing remains, closing pumpkin, and stopped music."
+        }
+      ],
+      "status_note": "Describes a recurring seasonal predation sequence; no individual incident develops into a distinct completed plot.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 44,
+      "record_id": "scp:SCP-097"
+    },
+    {
+      "title": "\"Iris\"",
+      "catalog_id": "SCP-105",
+      "premise": "A young woman who can reach into photographs witnesses her boyfriend’s murder through one and becomes a suspect.",
+      "plays_out": "The Foundation confines her and uses her for reconnaissance, then pushes her toward assassination; she refuses, fakes losing her power, and attempts escape, but is recaptured and ultimately denied her special camera.",
+      "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+      "status": "complete",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-105",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Acquisition appendix and Addendum 3 give confinement, refusal, failed escape, and camera denial."
+        }
+      ],
+      "completion_scope": "article incident/reveal, not permanent elimination of anomaly",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 50,
+      "record_id": "scp:SCP-105"
+    },
+    {
+      "title": "Kinetic Energy Entity",
+      "catalog_id": "SCP-128",
+      "premise": "Investigators mistake flying household objects for a poltergeist caused by a stressed family.",
+      "plays_out": "They discover a hamster controls the force, but killing it leaves the activity permanently intensified; after improvised capture and further fatalities, a researcher’s brother supplies the solution: give the force a hamster wheel.",
+      "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+      "status": "complete",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-128",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Recovery closing notes gives truck capture; final chat explains stuck valve and wheel solution."
+        }
+      ],
+      "completion_scope": "article incident/reveal, not permanent elimination of anomaly",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 46,
+      "record_id": "scp:SCP-128"
+    },
+    {
+      "title": "Broken Desert",
+      "catalog_id": "SCP-132",
+      "premise": "Researchers treat glass pyramids showing tiny desert scenes as harmless decorative curiosities.",
+      "plays_out": "When one falls and breaks, a sandstorm visible inside blasts into the office, revealing the apparent miniature can affect its surroundings; restrictions follow, and a mysterious later shipment includes views of Martian ground.",
+      "resolution": "No completed central plot; verified description or explanatory observation only.",
+      "status": "no_ending",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-132",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Incident 132-01 gives shattered pyramid and real winds; Addendum 03 gives Martian shipment."
+        }
+      ],
+      "status_note": "Contains an isolated breakage incident and later unexplained shipment, but these do not form a developed plot with a concluded central escalation.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 45,
+      "record_id": "scp:SCP-132"
+    },
+    {
+      "title": "Man-Absorbing Phone",
+      "catalog_id": "SCP-145",
+      "premise": "An unplugged cordless phone constantly rings with pleas from unseen torture victims.",
+      "plays_out": "Anyone answering alone vanishes and is heard among the victims; sending a caller equipped with explosives instead produces more missing personnel, and that rescue-by-destruction experiment is stopped.",
+      "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+      "status": "complete",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-145",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Description establishes vanished callers as victims; Test 145-D gives additional disappearances and suspension, with mechanism redacted."
+        }
+      ],
+      "completion_scope": "article incident/reveal, not permanent elimination of anomaly",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 39,
+      "record_id": "scp:SCP-145"
+    },
+    {
+      "title": "Bronze Head of Shame",
+      "catalog_id": "SCP-146",
+      "premise": "An auction buyer acquires a bronze head whose gaze forces guilty memories to surface.",
+      "plays_out": "Tests drive subjects from recollection into hallucinations and irreversible collapse; after the head is kept in cramped storage, a later exposure triggers almost immediate terror and a fatal self-inflicted wound, revealing containment changes its intensity.",
+      "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+      "status": "complete",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-146",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Experiment 146-04 ends in death during surgery; note ties strengthened effect to containment."
+        }
+      ],
+      "completion_scope": "article incident/reveal, not permanent elimination of anomaly",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 49,
+      "record_id": "scp:SCP-146"
+    },
+    {
+      "title": "Ship of Theseus",
+      "catalog_id": "SCP-150",
+      "premise": "A parasite gradually replaces a person’s flesh and brain while leaving them apparently themselves.",
+      "plays_out": "Researchers transplant one infected person’s replacement brain into another body; the recipient wakes identifying as the donor, then the living brain visibly retracts as its new occupant casually asks to rest.",
+      "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+      "status": "complete",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-150",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Addendum 150-E ends with donor identity, brain movement/retraction, and continued conversation."
+        }
+      ],
+      "completion_scope": "article incident/reveal, not permanent elimination of anomaly",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 45,
+      "record_id": "scp:SCP-150"
+    },
+    {
+      "title": "The Painting",
+      "catalog_id": "SCP-151",
+      "premise": "People in a landlocked area inexplicably drown on dry ground after seeing an underwater painting.",
+      "plays_out": "Agents trace the deaths to an antique shop: viewers’ lungs fill with seawater and medical treatment only delays death; names on the painting belong to students missing from a trip abroad, whose fate remains unresolved.",
+      "resolution": "Fatal effect verified, but no concluded central incident; origin investigation remains open.",
+      "status": "no_ending",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-151",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Description verifies fatal seawater accumulation; acquisition addendum links shop and missing students without solving their fate."
+        }
+      ],
+      "verified_date": "2026-10-11",
+      "summary_word_count": 50,
+      "record_id": "scp:SCP-151"
+    },
+    {
+      "title": "Offensive Bracelets",
+      "catalog_id": "SCP-154",
+      "premise": "Bronze bracelets conjure a bow that fires the wearer’s own arm bones and then regenerates the limb.",
+      "plays_out": "Repeated use causes increasingly strange mutations; one test subject unknowingly regrows explosive bone that detonates, killing two people and injuring three others.",
+      "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+      "status": "complete",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-154",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Description explicitly reports explosive-bone detonation and casualty counts."
+        }
+      ],
+      "completion_scope": "article incident/reveal, not permanent elimination of anomaly",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 39,
+      "record_id": "scp:SCP-154"
+    },
+    {
+      "title": "Reanimating Pomegranate",
+      "catalog_id": "SCP-156",
+      "premise": "Party guests eat pomegranate seeds, die together in autumn, and some unexpectedly return to life in spring.",
+      "plays_out": "Survivors in above-ground vaults revive, but their buried host suffocates in her coffin; a later autopsied test subject also restarts despite the dissection and dies again, exposing the danger of treating the seasonal deaths as permanent.",
+      "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+      "status": "complete",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-156",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Acquisition history verifies host’s asphyxiation and first test subject’s post-autopsy revival/death."
+        }
+      ],
+      "completion_scope": "article incident/reveal, not permanent elimination of anomaly",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 53,
+      "record_id": "scp:SCP-156"
+    },
+    {
+      "title": "The Creeping, Hungry Sands of Tule",
+      "catalog_id": "SCP-165",
+      "premise": "Soldiers spending a night in an abandoned desert town watch sand flood the hotel and strip their horses to bone.",
+      "plays_out": "Most flee and four disappear; decades later investigators identify swarms of flesh-eating sand-covered mites, use intense heat to reduce them, and extract a surviving dune into containment.",
+      "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+      "status": "complete",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-165",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Acquisition section gives troop losses, identification, glassing, and four-ton containment."
+        }
+      ],
+      "completion_scope": "article incident/reveal, not permanent elimination of anomaly",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 47,
+      "record_id": "scp:SCP-165"
+    },
+    {
+      "title": "The Tissue Snail",
+      "catalog_id": "SCP-193",
+      "premise": "A normal-looking tissue box makes users produce ever more mucus, pushing them to use more tissues.",
+      "plays_out": "Researchers discover the box is a mollusk and the tissues are shed body segments; used tissues left alone crawl back toward the box to rejoin it, revealing that the apparent convenience product is harvesting mucus.",
+      "resolution": "No completed central plot; verified description or explanatory observation only.",
+      "status": "no_ending",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-193",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Addendum 193-1 gives unattended tissue return, reintegration, feeding interpretation, and discovery incident."
+        }
+      ],
+      "status_note": "Feeding mechanism is exposed by an unattended-tissue observation; this is an explanatory anomaly reveal rather than a completed story.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 51,
+      "record_id": "scp:SCP-193"
+    },
+    {
+      "title": "Cup of Joe",
+      "catalog_id": "SCP-198",
+      "premise": "A researcher reaches for his iced tea and finds a disguised cursed container fused to his hand.",
+      "plays_out": "It fills with human excretions, and only drinking them can slow his otherwise unstoppable starvation and dehydration; after 31 hours he refuses any more, while another victim chooses immediate death, prompting stronger containment.",
+      "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+      "status": "complete",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-198",
+          "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+          "ending_evidence": "Description establishes refusal leads to death; Incidents 198-A/B give 31-hour refusal, suicide, and Euclid upgrade."
+        }
+      ],
+      "completion_scope": "article incident/reveal, not permanent elimination of anomaly",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 50,
+      "record_id": "scp:SCP-198"
+    },
+    {
+      "title": "The Wire Figure",
+      "catalog_id": "SCP-068",
+      "premise": "An electrified wire figure converts nearby metal into copies that combine into larger figures.",
+      "plays_out": "The article describes its repeating growth-and-dormancy behavior and rejects a disposal proposal; it supplies no concluded incident or story ending.",
+      "resolution": "No story ending in the source.",
+      "status": "no_ending",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-068",
+          "evidence_quality": "full text (primary SCP Wiki article)",
+          "ending_evidence": "Static description or open research; no concluded narrative incident."
+        }
+      ],
+      "verified_date": "2026-10-11",
+      "summary_word_count": 34,
+      "record_id": "scp:SCP-068"
+    },
+    {
+      "title": "Dragon-Snails™",
+      "catalog_id": "SCP-111",
+      "premise": "A mailed package contains eggs that hatch into miniature fire-breathing dragon snails.",
+      "plays_out": "A whimsical care sheet disclaims responsibility for fires and injuries; the article describes the species and containment without a concluded narrative.",
+      "resolution": "No story ending in the source.",
+      "status": "no_ending",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-111",
+          "evidence_quality": "full text (primary SCP Wiki article)",
+          "ending_evidence": "Static description or open research; no concluded narrative incident."
+        }
+      ],
+      "verified_date": "2026-10-11",
+      "summary_word_count": 33,
+      "record_id": "scp:SCP-111"
+    },
+    {
+      "title": "Contained Miniature Black Hole",
+      "catalog_id": "SCP-123",
+      "premise": "A hollow tabletop sphere contains an apparent black hole that swallows inserted objects.",
+      "plays_out": "Researchers debate using it for disposal, but authorize only experiments while its durability is unknown; no narrative resolution is supplied.",
+      "resolution": "No story ending in the source.",
+      "status": "no_ending",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-123",
+          "evidence_quality": "full text (primary SCP Wiki article)",
+          "ending_evidence": "Static description or open research; no concluded narrative incident."
+        }
+      ],
+      "verified_date": "2026-10-11",
+      "summary_word_count": 33,
+      "record_id": "scp:SCP-123"
+    },
+    {
+      "title": "Star-Eyed Child",
+      "catalog_id": "SCP-134",
+      "premise": "An orphaned blind child has eyes that show distant stars and galaxies.",
+      "plays_out": "Researchers study the moving viewpoints and accommodate her daily life; the source leaves her origins unexplained and has no completed plot.",
+      "resolution": "No story ending in the source.",
+      "status": "no_ending",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-134",
+          "evidence_quality": "full text (primary SCP Wiki article)",
+          "ending_evidence": "Static description or open research; no concluded narrative incident."
+        }
+      ],
+      "verified_date": "2026-10-11",
+      "summary_word_count": 33,
+      "record_id": "scp:SCP-134"
+    },
+    {
+      "title": "The Sculpture -  The Original",
+      "catalog_id": "SCP-173",
+      "premise": "A hostile concrete figure moves only while nobody watches it.",
+      "plays_out": "The article lays out coordinated observation and cleaning procedures to prevent neck-breaking attacks; it has no developing incident or ending.",
+      "resolution": "No story ending in the source.",
+      "status": "no_ending",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-173",
+          "evidence_quality": "full text (primary SCP Wiki article)",
+          "ending_evidence": "Static description or open research; no concluded narrative incident."
+        }
+      ],
+      "verified_date": "2026-10-11",
+      "summary_word_count": 30,
+      "record_id": "scp:SCP-173"
+    },
+    {
+      "title": "The Craftsman",
+      "catalog_id": "SCP-188",
+      "premise": "A metal spike found in farmland reshapes its surroundings into intricate patterns.",
+      "plays_out": "Attempts to suppress the effect fail, and researchers establish no connection to the crop-circle fad; the article continues as an unresolved anomaly description.",
+      "resolution": "No story ending in the source.",
+      "status": "no_ending",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-188",
+          "evidence_quality": "full text (primary SCP Wiki article)",
+          "ending_evidence": "Static description or open research; no concluded narrative incident."
+        }
+      ],
+      "verified_date": "2026-10-11",
+      "summary_word_count": 35,
+      "record_id": "scp:SCP-188"
+    },
+    {
+      "title": "\"Lucky\"",
+      "catalog_id": "SCP-181",
+      "premise": "A convicted gambler repeatedly survives lethal anomaly experiments through extraordinary luck.",
+      "plays_out": "Researchers confirm his impossible winning streak and spare him from routine execution, but an audit finds sharply increased deaths and injuries elsewhere around him; he is transferred into solitary confinement under stricter precautions.",
+      "resolution": "Casualty audit reverses his favorable treatment and leads to isolation.",
+      "status": "complete",
+      "lane": "scp",
+      "sources": [
+        {
+          "url": "https://scp-wiki.wikidot.com/scp-181",
+          "evidence_quality": "full text (primary SCP Wiki article, including addenda)",
+          "ending_evidence": "Description verifies tests and reclassification; final addendum and staff memo give casualty audit and solitary transfer."
+        }
+      ],
+      "completion_scope": "article incident/reveal, not permanent elimination of anomaly",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 44,
+      "record_id": "scp:SCP-181"
+    },
+    {
+      "title": "Canon Alberic's Scrap-Book",
+      "catalog_id": "CLASSIC-001",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "A tourist buys a bargain manuscript containing a drawing of a demon.",
+      "plays_out": "The pictured creature appears beside him, but he survives by clutching a crucifix; he burns the drawing and preserves the rest of the book.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/8486/pg8486.txt",
+          "evidence_quality": "full text",
+          "locator": "Canon Alberic's Scrap-Book (story heading; final paragraphs)",
+          "ending_evidence": "The pictured creature appears beside him, but he survives by clutching a crucifix; he burns the drawing and preserves the rest of the book.",
+          "access_method": "downloaded and read ending paragraphs"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Canon_Alberic's_Scrap-Book",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "The pictured creature appears beside him, but he survives by clutching a crucifix; he burns the drawing and preserves the rest of the book.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 36,
+      "record_id": "classics:CLASSIC-001"
+    },
+    {
+      "title": "Lost Hearts",
+      "catalog_id": "CLASSIC-002",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "An orphan living with an elderly scholar sees two ghostly children with wounds over their hearts.",
+      "plays_out": "They kill his guardian before he can sacrifice the boy; his papers reveal he consumed their hearts and needed a third child's heart for occult power.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/8486/pg8486.txt",
+          "evidence_quality": "full text",
+          "locator": "Lost Hearts (story heading; final paragraphs)",
+          "ending_evidence": "They kill his guardian before he can sacrifice the boy; his papers reveal he consumed their hearts and needed a third child's heart for occult power.",
+          "access_method": "downloaded and read ending paragraphs"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Lost_Hearts",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "They kill his guardian before he can sacrifice the boy; his papers reveal he consumed their hearts and needed a third child's heart for occult power.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 42,
+      "record_id": "classics:CLASSIC-002"
+    },
+    {
+      "title": "The Mezzotint",
+      "catalog_id": "CLASSIC-003",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "A museum curator buys an ordinary house engraving whose figures begin changing.",
+      "plays_out": "It shows a revenant carrying away a child, replaying a hanged poacher's revenge on the landowner who ended his family; after the kidnapping, the picture never changes again.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/8486/pg8486.txt",
+          "evidence_quality": "full text",
+          "locator": "The Mezzotint (story heading; final paragraphs)",
+          "ending_evidence": "It shows a revenant carrying away a child, replaying a hanged poacher's revenge on the landowner who ended his family; after the kidnapping, the picture never changes again.",
+          "access_method": "downloaded and read ending paragraphs"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Mezzotint",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "It shows a revenant carrying away a child, replaying a hanged poacher's revenge on the landowner who ended his family; after the kidnapping, the picture never changes again.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 40,
+      "record_id": "classics:CLASSIC-003"
+    },
+    {
+      "title": "The Ash-tree",
+      "catalog_id": "CLASSIC-004",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "After a landowner helps condemn a woman as a witch, he dies mysteriously beside an ash tree.",
+      "plays_out": "His grandson dies in the same bedroom decades later; burning the tree exposes enormous lethal spiders and a woman's remains beneath it.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/8486/pg8486.txt",
+          "evidence_quality": "full text",
+          "locator": "The Ash-tree (story heading; final paragraphs)",
+          "ending_evidence": "His grandson dies in the same bedroom decades later; burning the tree exposes enormous lethal spiders and a woman's remains beneath it.",
+          "access_method": "downloaded and read ending paragraphs"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Ash-tree",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "His grandson dies in the same bedroom decades later; burning the tree exposes enormous lethal spiders and a woman's remains beneath it.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 39,
+      "record_id": "classics:CLASSIC-004"
+    },
+    {
+      "title": "Number 13",
+      "catalog_id": "CLASSIC-005",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "A hotel guest notices his room shrinking at night when an impossible extra room appears next door.",
+      "plays_out": "A clawed hand attacks the investigators before room 13 vanishes at dawn; beneath the floor they find an occult-looking document they cannot decipher.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/8486/pg8486.txt",
+          "evidence_quality": "full text",
+          "locator": "Number 13 (story heading; final paragraphs)",
+          "ending_evidence": "A clawed hand attacks the investigators before room 13 vanishes at dawn; beneath the floor they find an occult-looking document they cannot decipher.",
+          "access_method": "downloaded and read ending paragraphs"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Number_13_(short_story)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "A clawed hand attacks the investigators before room 13 vanishes at dawn; beneath the floor they find an occult-looking document they cannot decipher.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 40,
+      "record_id": "classics:CLASSIC-005"
+    },
+    {
+      "title": "Count Magnus",
+      "catalog_id": "CLASSIC-006",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "A traveler investigating a sinister nobleman's history repeatedly wishes to see him beside his tomb.",
+      "plays_out": "The coffin's locks open, and two figures pursue the traveler back to England; he is found horribly dead, and his lodging remains abandoned until demolished.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/8486/pg8486.txt",
+          "evidence_quality": "full text",
+          "locator": "Count Magnus (story heading; final paragraphs)",
+          "ending_evidence": "The coffin's locks open, and two figures pursue the traveler back to England; he is found horribly dead, and his lodging remains abandoned until demolished.",
+          "access_method": "downloaded and read ending paragraphs"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Count_Magnus",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "The coffin's locks open, and two figures pursue the traveler back to England; he is found horribly dead, and his lodging remains abandoned until demolished.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 40,
+      "record_id": "classics:CLASSIC-006"
+    },
+    {
+      "title": "'Oh, Whistle, and I'll Come to You, My Lad'",
+      "catalog_id": "CLASSIC-007",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "A skeptical professor blows an ancient whistle found during his seaside holiday.",
+      "plays_out": "A figure made from bedclothes corners him at his window until another guest intervenes; they burn the linen and throw the whistle into the sea, leaving him permanently shaken.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/8486/pg8486.txt",
+          "evidence_quality": "full text",
+          "locator": "'Oh, Whistle, and I'll Come to You, My Lad' (story heading; final paragraphs)",
+          "ending_evidence": "A figure made from bedclothes corners him at his window until another guest intervenes; they burn the linen and throw the whistle into the sea, leaving him permanently shaken.",
+          "access_method": "downloaded and read ending paragraphs"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/'Oh%2C_Whistle%2C_and_I'll_Come_to_You%2C_My_Lad'",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "A figure made from bedclothes corners him at his window until another guest intervenes; they burn the linen and throw the whistle into the sea, leaving him permanently shaken.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 41,
+      "record_id": "classics:CLASSIC-007"
+    },
+    {
+      "title": "The Treasure of Abbot Thomas",
+      "catalog_id": "CLASSIC-008",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "An antiquary deciphers stained-glass clues to treasure hidden in an abbey well.",
+      "plays_out": "What he pulls out embraces him like a corpse, and something subsequently watches his door at night; replacing the stone over the hiding place ends the pursuit.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/8486/pg8486.txt",
+          "evidence_quality": "full text",
+          "locator": "The Treasure of Abbot Thomas (story heading; final paragraphs)",
+          "ending_evidence": "What he pulls out embraces him like a corpse, and something subsequently watches his door at night; replacing the stone over the hiding place ends the pursuit.",
+          "access_method": "downloaded and read ending paragraphs"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Treasure_of_Abbot_Thomas",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "What he pulls out embraces him like a corpse, and something subsequently watches his door at night; replacing the stone over the hiding place ends the pursuit.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 39,
+      "record_id": "classics:CLASSIC-008"
+    },
+    {
+      "title": "A School Story",
+      "catalog_id": "CLASSIC-009",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "A teacher receives uncanny Latin exercises referring to a well and threatening a visit.",
+      "plays_out": "A wet corpse-like figure appears at his window, and he disappears; years later his identifying coin is found on a body locked in another body's embrace inside a well.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/A_School_Story",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "A wet corpse-like figure appears at his window, and he disappears; years later his identifying coin is found on a body locked in another body's embrace inside a well.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 43,
+      "record_id": "classics:CLASSIC-009"
+    },
+    {
+      "title": "The Rose Garden",
+      "catalog_id": "CLASSIC-010",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "A homeowner removes an old post while preparing a rose garden.",
+      "plays_out": "Execution nightmares and a sinister face follow; the post had restrained a cruel dead judge, whose haunting gradually weakens after being released.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Rose_Garden_(short_story)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "Execution nightmares and a sinister face follow; the post had restrained a cruel dead judge, whose haunting gradually weakens after being released.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 33,
+      "record_id": "classics:CLASSIC-010"
+    },
+    {
+      "title": "The Tractate Middoth",
+      "catalog_id": "CLASSIC-011",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "A librarian searching for a requested book encounters a dusty ghostly clergyman.",
+      "plays_out": "He discovers an heir wants to destroy a hidden will; the ghost kills that heir, the will benefits the rightful family, and the librarian marries their daughter.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Tractate_Middoth",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "He discovers an heir wants to destroy a hidden will; the ghost kills that heir, the will benefits the rightful family, and the librarian marries their daughter.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 39,
+      "record_id": "classics:CLASSIC-011"
+    },
+    {
+      "title": "Casting the Runes",
+      "catalog_id": "CLASSIC-012",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "A researcher who rejects an occultist's paper unknowingly accepts a slip carrying a death curse.",
+      "plays_out": "He learns to transfer it back through an accepted handover and slips it into the occultist's ticket case; the occultist dies under falling masonry on the curse's deadline.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Casting_the_Runes",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "He learns to transfer it back through an accepted handover and slips it into the occultist's ticket case; the occultist dies under falling masonry on the curse's deadline.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 43,
+      "record_id": "classics:CLASSIC-012"
+    },
+    {
+      "title": "The Stalls of Barchester Cathedral",
+      "catalog_id": "CLASSIC-013",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "A new archdeacon is haunted by presences resembling the figures carved into his cathedral stall.",
+      "plays_out": "He dies mutilated on his stairs; his papers implicate him in his predecessor's murder, while a hidden inscription warns that the blood-fed wood destroys anyone with blood on their hands.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Stalls_of_Barchester_Cathedral",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "He dies mutilated on his stairs; his papers implicate him in his predecessor's murder, while a hidden inscription warns that the blood-fed wood destroys anyone with blood on their hands.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 45,
+      "record_id": "classics:CLASSIC-013"
+    },
+    {
+      "title": "Martin's Close",
+      "catalog_id": "CLASSIC-014",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "A man on trial for murdering a young woman is pursued by her wet apparition.",
+      "plays_out": "Witnesses describe her emerging from the pond and chasing him; he is convicted and sentenced to hang, while the song connecting them remains locally taboo.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Martin's_Close",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "Witnesses describe her emerging from the pond and chasing him; he is convicted and sentenced to hang, while the song connecting them remains locally taboo.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 40,
+      "record_id": "classics:CLASSIC-014"
+    },
+    {
+      "title": "Mr. Humphreys and His Inheritance",
+      "catalog_id": "CLASSIC-015",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "An heir reopens a neglected maze containing a sinister copper globe.",
+      "plays_out": "A burnt-faced creature climbs toward him through his drawn plan of the maze; he survives, discovers cremated remains inside the globe, and has the maze destroyed.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Mr._Humphreys_and_His_Inheritance",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "A burnt-faced creature climbs toward him through his drawn plan of the maze; he survives, discovers cremated remains inside the globe, and has the maze destroyed.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 37,
+      "record_id": "classics:CLASSIC-015"
+    },
+    {
+      "title": "The Diary of Mr. Poynter",
+      "catalog_id": "CLASSIC-016",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "An antiquary copies a fabric sample from an old diary into bedroom curtains.",
+      "plays_out": "A faceless hairy figure emerges from them; the diary reveals the pattern memorialized a dead man's unnaturally persistent hair, and the antiquary burns the curtains.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Diary_of_Mr._Poynter",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "A faceless hairy figure emerges from them; the diary reveals the pattern memorialized a dead man's unnaturally persistent hair, and the antiquary burns the curtains.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 38,
+      "record_id": "classics:CLASSIC-016"
+    },
+    {
+      "title": "An Episode of Cathedral History",
+      "catalog_id": "CLASSIC-017",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "Cathedral renovations expose a sealed tomb, after which sickness and night cries spread nearby.",
+      "plays_out": "When workers open it, a hairy red-eyed creature knocks the dean aside and escapes; the tomb contains scraps taken from visitors and receives an inscription identifying the former occupant as a lamia.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/An_Episode_of_Cathedral_History",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "When workers open it, a hairy red-eyed creature knocks the dean aside and escapes; the tomb contains scraps taken from visitors and receives an inscription identifying the former occupant as a lamia.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 46,
+      "record_id": "classics:CLASSIC-017"
+    },
+    {
+      "title": "The Story of a Disappearance and an Appearance",
+      "catalog_id": "CLASSIC-018",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "A man searching for his missing uncle dreams of a murderous Punch-and-Judy show.",
+      "plays_out": "At a real performance, an apparition attacks the puppeteers and both die; the uncle's murdered body is found where one fell, tying the showmen to his disappearance.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Story_of_a_Disappearance_and_an_Appearance",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "At a real performance, an apparition attacks the puppeteers and both die; the uncle's murdered body is found where one fell, tying the showmen to his disappearance.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 40,
+      "record_id": "classics:CLASSIC-018"
+    },
+    {
+      "title": "The Haunted Dolls' House",
+      "catalog_id": "CLASSIC-019",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "An antique buyer's elaborate dolls' house comes alive and stages a family tragedy.",
+      "plays_out": "A woman poisons an old man before a will can arrive, then a monstrous visitor kills her children; investigation links the scenes to a real family's lost children and ruined house.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Haunted_Dolls'_House",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "A woman poisons an old man before a will can arrive, then a monstrous visitor kills her children; investigation links the scenes to a real family's lost children and ruined house.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 44,
+      "record_id": "classics:CLASSIC-019"
+    },
+    {
+      "title": "A View from a Hill",
+      "catalog_id": "CLASSIC-020",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "A holidaying scholar borrows binoculars that show vanished buildings and a long-gone gallows.",
+      "plays_out": "He feels pursued near the gallows; the glasses break and release foul liquid, suggesting their dead maker used hanged men's bones to see through their eyes, and his host orders them buried.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/A_View_from_a_Hill_(short_story)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "He feels pursued near the gallows; the glasses break and release foul liquid, suggesting their dead maker used hanged men's bones to see through their eyes, and his host orders them buried.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 45,
+      "record_id": "classics:CLASSIC-020"
+    },
+    {
+      "title": "A Warning to the Curious",
+      "catalog_id": "CLASSIC-021",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "An amateur archaeologist digs up a legendary crown believed to protect England from invasion.",
+      "plays_out": "Its dead guardian stalks him even after friends help rebury it; a false call lures him to the beach, where they find his violently killed body and resolve to keep the crown's location secret.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/A_Warning_to_the_Curious",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "Its dead guardian stalks him even after friends help rebury it; a false call lures him to the beach, where they find his violently killed body and resolve to keep the crown's location secret.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 48,
+      "record_id": "classics:CLASSIC-021"
+    },
+    {
+      "title": "The Monkey's Paw",
+      "catalog_id": "CLASSIC-022",
+      "author": "W. W. Jacobs",
+      "lane": "classics",
+      "premise": "A family uses a magical monkey's paw to wish for money.",
+      "plays_out": "Their son's fatal workplace accident brings exactly that sum; a resurrection wish produces knocking at the door, but the father's final wish stops it before the mother opens onto an empty street.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Monkey's_Paw",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "Their son's fatal workplace accident brings exactly that sum; a resurrection wish produces knocking at the door, but the father's final wish stops it before the mother opens onto an empty street.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 43,
+      "record_id": "classics:CLASSIC-022"
+    },
+    {
+      "title": "The Signal-Man",
+      "catalog_id": "CLASSIC-023",
+      "author": "Charles Dickens",
+      "lane": "classics",
+      "premise": "A railway signalman sees a warning apparition before deadly incidents.",
+      "plays_out": "Unable to interpret its latest appearances, he is himself struck by a train; the driver's desperate words and gesture echo the ghost's warnings.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Signal-Man",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "Unable to interpret its latest appearances, he is himself struck by a train; the driver's desperate words and gesture echo the ghost's warnings.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 33,
+      "record_id": "classics:CLASSIC-023"
+    },
+    {
+      "title": "The Upper Berth",
+      "catalog_id": "CLASSIC-024",
+      "author": "F. Marion Crawford",
+      "lane": "classics",
+      "premise": "A ship passenger's cabinmate vanishes, and their supposedly closed porthole keeps opening.",
+      "plays_out": "A watch with the captain exposes a powerful drowned-looking body in the upper berth; it injures them and escapes through the porthole, after which the cabin is permanently shut.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Upper_Berth",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "A watch with the captain exposes a powerful drowned-looking body in the upper berth; it injures them and escapes through the porthole, after which the cabin is permanently shut.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 41,
+      "record_id": "classics:CLASSIC-024"
+    },
+    {
+      "title": "The Willows",
+      "catalog_id": "CLASSIC-025",
+      "author": "Algernon Blackwood",
+      "lane": "classics",
+      "premise": "Two canoeists camp on a Danube island where the vegetation and unseen forces seem increasingly hostile.",
+      "plays_out": "Their equipment is damaged and one nearly offers himself as a sacrifice; they find a marked drowned stranger and believe the forces have accepted this other victim, releasing them.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Willows_(story)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "Their equipment is damaged and one nearly offers himself as a sacrifice; they find a marked drowned stranger and believe the forces have accepted this other victim, releasing them.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 45,
+      "record_id": "classics:CLASSIC-025"
+    },
+    {
+      "title": "The Wendigo",
+      "catalog_id": "CLASSIC-026",
+      "author": "Algernon Blackwood",
+      "lane": "classics",
+      "premise": "A wilderness hunting guide hears a strange call and disappears into the forest.",
+      "plays_out": "His tracks become inhuman, and a distorted likeness returns before vanishing; the actual guide reaches camp delirious and frostbitten, then dies, while the cook recognizes the dreaded Wendigo's influence.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Wendigo_(novella)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "His tracks become inhuman, and a distorted likeness returns before vanishing; the actual guide reaches camp delirious and frostbitten, then dies, while the cook recognizes the dreaded Wendigo's influence.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 42,
+      "record_id": "classics:CLASSIC-026"
+    },
+    {
+      "title": "The Canterville Ghost",
+      "catalog_id": "CLASSIC-027",
+      "author": "Oscar Wilde",
+      "lane": "classics",
+      "premise": "An American family moves into an English house and responds pragmatically to its resident ghost's scares.",
+      "plays_out": "Humiliated by their pranks, he asks the daughter to pray and weep for him; she accompanies him toward death and obtains his release, later remembering his lesson about love and mortality.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Canterville_Ghost",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "Humiliated by their pranks, he asks the daughter to pray and weep for him; she accompanies him toward death and obtains his release, later remembering his lesson about love and mortality.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 47,
+      "record_id": "classics:CLASSIC-027"
+    },
+    {
+      "title": "The Body Snatcher",
+      "catalog_id": "CLASSIC-028",
+      "author": "Robert Louis Stevenson",
+      "lane": "classics",
+      "premise": "Two medical students knowingly buy murdered corpses and conceal a colleague's killing of an acquaintance.",
+      "plays_out": "After they dissect that victim beyond recognition, they rob a woman's grave; during the return journey they discover her body has inexplicably become the murdered man's.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Body_Snatcher",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "After they dissect that victim beyond recognition, they rob a woman's grave; during the return journey they discover her body has inexplicably become the murdered man's.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 41,
+      "record_id": "classics:CLASSIC-028"
+    },
+    {
+      "title": "Rats",
+      "catalog_id": "CLASSIC-029",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "A student lodging alone in an inn investigates movement beneath a locked bedroom's bedclothes.",
+      "plays_out": "On returning he finds a corpse-like former landlord wearing a gibbet collar advancing on him; the current landlord explains the executed highwayman's room must stay locked, and the student leaves shaken.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Rats_(short_story)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "On returning he finds a corpse-like former landlord wearing a gibbet collar advancing on him; the current landlord explains the executed highwayman's room must stay locked, and the student leaves shaken.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 45,
+      "record_id": "classics:CLASSIC-029"
+    },
+    {
+      "title": "Wailing Well",
+      "catalog_id": "CLASSIC-030",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "A Scout ignores warnings against visiting a well in a field occupied by four undead figures.",
+      "plays_out": "They intercept the attempted rescue, hang the boy, and drain his blood; the trees resist destruction, and the field's haunting population now includes a boy.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Wailing_Well",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "They intercept the attempted rescue, hang the boy, and drain his blood; the trees resist destruction, and the field's haunting population now includes a boy.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 41,
+      "record_id": "classics:CLASSIC-030"
+    },
+    {
+      "title": "The Uncommon Prayer-Book",
+      "catalog_id": "CLASSIC-031",
+      "author": "M. R. James",
+      "lane": "classics",
+      "premise": "Rare chapel prayer books repeatedly open themselves to a curse psalm marked for Cromwell's birthday.",
+      "plays_out": "A dealer steals them and substitutes copies; on the marked date a shrouded creature emerges from his safe and kills him, and the recovered books are placed in secure storage.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Uncommon_Prayer-Book",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "A dealer steals them and substitutes copies; on the marked date a shrouded creature emerges from his safe and kills him, and the recovered books are placed in secure storage.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 45,
+      "record_id": "classics:CLASSIC-031"
+    },
+    {
+      "title": "The Turn of the Screw",
+      "catalog_id": "CLASSIC-032",
+      "author": "Henry James",
+      "lane": "classics",
+      "premise": "A governess caring for two children believes dead household employees are appearing and corrupting them.",
+      "plays_out": "The girl rejects her accusations and is taken away; confronting the boy while she sees a ghost at the window, the governess declares him free of its influence, then discovers he has died in her arms.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Turn_of_the_Screw",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "The girl rejects her accusations and is taken away; confronting the boy while she sees a ghost at the window, the governess declares him free of its influence, then discovers he has died in her arms.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 51,
+      "record_id": "classics:CLASSIC-032"
+    },
+    {
+      "title": "Dracula",
+      "catalog_id": "CLASSIC-033",
+      "author": "Bram Stoker",
+      "lane": "classics",
+      "premise": "A solicitor visiting a foreign count discovers he is a vampire preparing to move to England.",
+      "plays_out": "After the vampire kills one woman and curses another, a group pursues him back to his castle; they cut his throat and stab his heart, destroying him and freeing the surviving woman, though one hunter dies.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Dracula",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "After the vampire kills one woman and curses another, a group pursues him back to his castle; they cut his throat and stab his heart, destroying him and freeing the surviving woman, though one hunter dies.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 52,
+      "record_id": "classics:CLASSIC-033"
+    },
+    {
+      "title": "Strange Case of Dr Jekyll and Mr Hyde",
+      "catalog_id": "CLASSIC-034",
+      "author": "Robert Louis Stevenson",
+      "lane": "classics",
+      "premise": "A lawyer investigates a respectable doctor's disturbing ties to a violent criminal.",
+      "plays_out": "The criminal is found dead in the doctor's clothes; documents reveal a potion made them the same person, transformations became involuntary, and the exhausted antidote supply left the doctor's identity disappearing.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Strange_Case_of_Dr_Jekyll_and_Mr_Hyde",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "The criminal is found dead in the doctor's clothes; documents reveal a potion made them the same person, transformations became involuntary, and the exhausted antidote supply left the doctor's identity disappearing.",
+          "access_method": "opened web page or direct HTTP retrieval"
+        }
+      ],
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 43,
+      "record_id": "classics:CLASSIC-034"
+    },
+    {
+      "lane": "twilight_zone",
+      "catalog_id": "TZ-ORIGINAL-The_After_Hours",
+      "title": "The After Hours",
+      "premise": "A department-store shopper buys a gift on a floor the staff insist does not exist.",
+      "plays_out": "Locked in after closing, she is confronted by living mannequins and remembers she is one herself, overdue from a month living as human; next morning she stands motionless on display.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_After_Hours",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "Locked in after closing, she is confronted by living mannequins and remembers she is one herself, overdue from a month living as human; next morning she stands motionless on display.",
+          "access_method": "opened full Plot section via direct HTTP retrieval"
+        }
+      ],
+      "verification_note": "Actual final scene checked in retrieved Plot section; no episode or script viewing.",
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 45,
+      "record_id": "twilight_zone:TZ-ORIGINAL-The_After_Hours"
+    },
+    {
+      "lane": "twilight_zone",
+      "catalog_id": "TZ-ORIGINAL-The_Hitch-Hiker_(The_Twilight_Zone)",
+      "title": "The Hitch-Hiker",
+      "premise": "A driver sees the same hitchhiker repeatedly after apparently surviving a tire blowout.",
+      "plays_out": "A call home reveals she died in that accident six days earlier; recognizing the pursuer as death, she returns to her car and sees him awaiting her in the mirror.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Hitch-Hiker_(The_Twilight_Zone)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "A call home reveals she died in that accident six days earlier; recognizing the pursuer as death, she returns to her car and sees him awaiting her in the mirror.",
+          "access_method": "opened full Plot section via direct HTTP retrieval"
+        }
+      ],
+      "verification_note": "Actual final scene checked in retrieved Plot section; no episode or script viewing.",
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 43,
+      "record_id": "twilight_zone:TZ-ORIGINAL-The_Hitch-Hiker_(The_Twilight_Zone)"
+    },
+    {
+      "lane": "twilight_zone",
+      "catalog_id": "TZ-ORIGINAL-The_Monsters_Are_Due_on_Maple_Street",
+      "title": "The Monsters Are Due on Maple Street",
+      "premise": "An unexplained blackout makes neighbors suspect that disguised alien invaders live among them.",
+      "plays_out": "One man shoots a returning neighbor, and manipulated lights turn suspicion into a riot; nearby aliens reveal they are deliberately provoking human self-destruction before repeating it elsewhere.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Monsters_Are_Due_on_Maple_Street",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "One man shoots a returning neighbor, and manipulated lights turn suspicion into a riot; nearby aliens reveal they are deliberately provoking human self-destruction before repeating it elsewhere.",
+          "access_method": "opened full Plot section via direct HTTP retrieval"
+        }
+      ],
+      "verification_note": "Actual final scene checked in retrieved Plot section; no episode or script viewing.",
+      "scope": "extraterrestrial speculative fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 40,
+      "record_id": "twilight_zone:TZ-ORIGINAL-The_Monsters_Are_Due_on_Maple_Street"
+    },
+    {
+      "lane": "twilight_zone",
+      "catalog_id": "TZ-ORIGINAL-Walking_Distance",
+      "title": "Walking Distance",
+      "premise": "A dissatisfied executive walks into his hometown and discovers it is still his childhood year.",
+      "plays_out": "He frightens his younger self into an accident and acquires the same limp; his father urges him to live in his own time, and he returns to the present accepting that advice.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Walking_Distance",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "He frightens his younger self into an accident and acquires the same limp; his father urges him to live in his own time, and he returns to the present accepting that advice.",
+          "access_method": "opened full Plot section via direct HTTP retrieval"
+        }
+      ],
+      "verification_note": "Actual final scene checked in retrieved Plot section; no episode or script viewing.",
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 47,
+      "record_id": "twilight_zone:TZ-ORIGINAL-Walking_Distance"
+    },
+    {
+      "lane": "twilight_zone",
+      "catalog_id": "TZ-ORIGINAL-A_Stop_at_Willoughby",
+      "title": "A Stop at Willoughby",
+      "premise": "A stressed commuter repeatedly dreams his train stops at an idyllic nineteenth-century town.",
+      "plays_out": "He finally steps off and is welcomed, but the present-day conductor reports he jumped from the moving train and died; the hearse collecting him belongs to Willoughby & Son.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/A_Stop_at_Willoughby",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "He finally steps off and is welcomed, but the present-day conductor reports he jumped from the moving train and died; the hearse collecting him belongs to Willoughby & Son.",
+          "access_method": "opened full Plot section via direct HTTP retrieval"
+        }
+      ],
+      "verification_note": "Actual final scene checked in retrieved Plot section; no episode or script viewing.",
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 42,
+      "record_id": "twilight_zone:TZ-ORIGINAL-A_Stop_at_Willoughby"
+    },
+    {
+      "lane": "twilight_zone",
+      "catalog_id": "TZ-ORIGINAL-The_Howling_Man",
+      "title": "The Howling Man",
+      "premise": "A storm-stranded traveler finds monks holding a man who claims to be unjustly imprisoned.",
+      "plays_out": "He frees the prisoner, who transforms into the Devil; after years of ensuing wars, the traveler recaptures him, only for his skeptical housekeeper to repeat the release.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Howling_Man",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "He frees the prisoner, who transforms into the Devil; after years of ensuing wars, the traveler recaptures him, only for his skeptical housekeeper to repeat the release.",
+          "access_method": "opened full Plot section via direct HTTP retrieval"
+        }
+      ],
+      "verification_note": "Actual final scene checked in retrieved Plot section; no episode or script viewing.",
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 41,
+      "record_id": "twilight_zone:TZ-ORIGINAL-The_Howling_Man"
+    },
+    {
+      "lane": "twilight_zone",
+      "catalog_id": "TZ-ORIGINAL-Living_Doll_(The_Twilight_Zone)",
+      "title": "Living Doll",
+      "premise": "A girl's talking doll privately threatens her hostile stepfather.",
+      "plays_out": "His attempts to destroy it fail; it trips him down the stairs to his death, then warns the mother to treat it well, confirming his apparently impossible accusations.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Living_Doll_(The_Twilight_Zone)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "His attempts to destroy it fail; it trips him down the stairs to his death, then warns the mother to treat it well, confirming his apparently impossible accusations.",
+          "access_method": "opened full Plot section via direct HTTP retrieval"
+        }
+      ],
+      "verification_note": "Actual final scene checked in retrieved Plot section; no episode or script viewing.",
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 37,
+      "record_id": "twilight_zone:TZ-ORIGINAL-Living_Doll_(The_Twilight_Zone)"
+    },
+    {
+      "lane": "twilight_zone",
+      "catalog_id": "TZ-ORIGINAL-It's_a_Good_Life_(The_Twilight_Zone)",
+      "title": "It's a Good Life",
+      "premise": "A town lives under a young boy whose mental powers can reshape reality and punish unwelcome thoughts.",
+      "plays_out": "At a birthday party he transforms a protesting man into a toy and banishes him; snow threatens the remaining crops, but the terrified adults continue praising everything he does.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/It's_a_Good_Life_(The_Twilight_Zone)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "At a birthday party he transforms a protesting man into a toy and banishes him; snow threatens the remaining crops, but the terrified adults continue praising everything he does.",
+          "access_method": "opened full Plot section via direct HTTP retrieval"
+        }
+      ],
+      "verification_note": "Actual final scene checked in retrieved Plot section; no episode or script viewing.",
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 46,
+      "record_id": "twilight_zone:TZ-ORIGINAL-It's_a_Good_Life_(The_Twilight_Zone)"
+    },
+    {
+      "lane": "twilight_zone",
+      "catalog_id": "TZ-ORIGINAL-The_Invaders_(The_Twilight_Zone)",
+      "title": "The Invaders",
+      "premise": "An isolated woman is attacked in her cabin by tiny figures from a flying saucer.",
+      "plays_out": "She kills one and destroys their craft; their final distress call reveals they are human astronauts and she belongs to a planet of giants.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Invaders_(The_Twilight_Zone)",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "She kills one and destroys their craft; their final distress call reveals they are human astronauts and she belongs to a planet of giants.",
+          "access_method": "opened full Plot section via direct HTTP retrieval"
+        }
+      ],
+      "verification_note": "Actual final scene checked in retrieved Plot section; no episode or script viewing.",
+      "scope": "extraterrestrial speculative fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 39,
+      "record_id": "twilight_zone:TZ-ORIGINAL-The_Invaders_(The_Twilight_Zone)"
+    },
+    {
+      "lane": "twilight_zone",
+      "catalog_id": "TZ-ORIGINAL-The_Last_Rites_of_Jeff_Myrtlebank",
+      "title": "The Last Rites of Jeff Myrtlebank",
+      "premise": "A young man wakes at his funeral and returns stronger, prompting fears he is demon-possessed.",
+      "plays_out": "He wins his girlfriend back and persuades a hostile crowd that kindness is prudent either way; after denying supernatural powers, he lights a match without striking it and a gate closes itself.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/The_Last_Rites_of_Jeff_Myrtlebank",
+          "evidence_quality": "detailed synopsis",
+          "ending_evidence": "He wins his girlfriend back and persuades a hostile crowd that kindness is prudent either way; after denying supernatural powers, he lights a match without striking it and a gate closes itself.",
+          "access_method": "opened full Plot section via direct HTTP retrieval"
+        }
+      ],
+      "verification_note": "Actual final scene checked in retrieved Plot section; no episode or script viewing.",
+      "scope": "supernatural or uncanny fiction",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 47,
+      "record_id": "twilight_zone:TZ-ORIGINAL-The_Last_Rites_of_Jeff_Myrtlebank"
+    },
+    {
+      "title": "The Thing on the Fourble Board",
+      "catalog_id": "QuietPlease-59",
+      "premise": "Oil drillers recover a stone finger and ancient ring, then suffer fatal accidents around their derrick.",
+      "plays_out": "The narrator reveals an invisible creature brought up from underground, with a girl's face and a monstrous stone body. Twenty years later it is his disguised wife; he holds his listener at gunpoint as she approaches to eat the guest.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://www.genericradio.com/show/32d959511701a5ea",
+          "evidence_quality": "primary radio script transcript; opened and ending read",
+          "ending_evidence": "Paint reveals the subterranean creature; final narration identifies it as wife and the captive guest as dinner."
+        }
+      ],
+      "lane": "radio",
+      "author": "Wyllis Cooper",
+      "medium": "original radio drama",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 56,
+      "record_id": "radio:QuietPlease-59"
+    },
+    {
+      "title": "Good Ghost",
+      "catalog_id": "QuietPlease-70",
+      "premise": "A murdered man's ghost tries to enrich his killer so the woman they both loved can have a happy marriage.",
+      "plays_out": "The ghost learns the killer has kept the fortune while leaving the woman abused and starving. Forbidden to kill his murderer directly, he kills a gangster and frames the killer for the gang's revenge, then ascends an uncanny stairway to a waiting woman resembling the woman.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://www.genericradio.com/show/2V5K86IUZA",
+          "evidence_quality": "primary radio script transcript; opened and ending read",
+          "ending_evidence": "Schuster is trapped with Rollo's corpse and his own knife; gang approaches; Gus ascends to black-pompadoured woman."
+        }
+      ],
+      "lane": "radio",
+      "author": "Wyllis Cooper",
+      "medium": "original radio drama",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 66,
+      "record_id": "radio:QuietPlease-70"
+    },
+    {
+      "title": "Nothing Behind the Door",
+      "catalog_id": "QuietPlease-01",
+      "premise": "Three bank robbers choose a locked, fenced-off mountain observatory building to conceal their stolen money.",
+      "plays_out": "Two enter its darkness and vanish, taking the loot with them. An astronomer shows the survivor cosmic patches of literal nothing through a telescope, implying the doorway shares that void; The survivor glimpses eyes and clawing shapes but refuses to describe them.",
+      "status": "complete",
+      "sources": [
+        {
+          "url": "https://www.quietplease.org/scripts/nothing-behind-the-door-1.html",
+          "evidence_quality": "primary radio script transcript; opened and ending read",
+          "ending_evidence": "Companions never return; telescope shows cosmic nothing linked to the door; survivor warns against unknown doors."
+        }
+      ],
+      "lane": "radio",
+      "author": "Wyllis Cooper",
+      "medium": "original radio drama",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 57,
+      "record_id": "radio:QuietPlease-01"
+    },
+    {
+      "title": "Two Spirits",
+      "catalog_id": "FOLK-Wolf-1845-136",
+      "lane": "folklore",
+      "premise": "A man dresses as a ghost to frighten his wife in a graveyard.",
+      "plays_out": "A real shrouded skeleton appears beside him; he flees, but the women lock him out and he collapses unconscious until morning.",
+      "status": "complete",
+      "country": "Belgium",
+      "author": "Traditional; specific published version listed in provenance",
+      "version_provenance": "Johannes Wilhelm Wolf, Deutsche Märchen und Sagen (1845), no. 136, pp. 241–42; oral source.",
+      "sources": [
+        {
+          "url": "https://sites.pitt.edu/~dash/type1676.html",
+          "locator": "Two Spirits — Belgium",
+          "evidence_quality": "full text; attributed published retelling in scholarly edited collection",
+          "ending_evidence": "Skeleton appears; prankster collapses."
+        }
+      ],
+      "verification_note": "Read full titled retelling and printed source citation on Ashliman page; original-language volume not independently opened.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 34,
+      "record_id": "folklore:FOLK-Wolf-1845-136"
+    },
+    {
+      "title": "The Death Shroud",
+      "catalog_id": "FOLK-Haase-1887-49",
+      "lane": "folklore",
+      "premise": "A servant steals a wandering dead man's shroud and hides inside a church.",
+      "plays_out": "The corpse persuades him to pass a corner through the keyhole and bursts the door open; the servant is found nearly dead and dies young afterward.",
+      "status": "complete",
+      "country": "Germany",
+      "author": "Traditional; specific published version listed in provenance",
+      "version_provenance": "Karl Eduard Haase, Volkstümliches aus der Grafschaft Ruppin und Umgegend, vol. 1 (1887), no. 49, p. 53; communicated by Teacher Fehse.",
+      "sources": [
+        {
+          "url": "https://sites.pitt.edu/~dash/type1676.html",
+          "locator": "The Death Shroud — Germany",
+          "evidence_quality": "full text; attributed published retelling in scholarly edited collection",
+          "ending_evidence": "Door bursts; servant dies young."
+        }
+      ],
+      "verification_note": "Read full titled retelling and printed source citation on Ashliman page; original-language volume not independently opened.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 39,
+      "record_id": "folklore:FOLK-Haase-1887-49"
+    },
+    {
+      "title": "The Preacher and the Ghost",
+      "catalog_id": "FOLK-Afzelius-1842-245",
+      "lane": "folklore",
+      "premise": "A wife sends a sheet-covered servant to frighten her husband returning from midnight prayers.",
+      "plays_out": "When the preacher challenges him, the servant starts sinking into the earth; his pleas cannot save him, and he disappears completely beneath it.",
+      "status": "complete",
+      "country": "Sweden",
+      "author": "Traditional; specific published version listed in provenance",
+      "version_provenance": "Arvid August Afzelius, Volkssagen und Volkslieder aus Schwedens älterer und neuerer Zeit, vol. 3 (1842), p. 245.",
+      "sources": [
+        {
+          "url": "https://sites.pitt.edu/~dash/type1676.html",
+          "locator": "The Preacher and the Ghost — Sweden",
+          "evidence_quality": "full text; attributed published retelling in scholarly edited collection",
+          "ending_evidence": "Servant sinks completely underground."
+        }
+      ],
+      "verification_note": "Read full titled retelling and printed source citation on Ashliman page; original-language volume not independently opened.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 37,
+      "record_id": "folklore:FOLK-Afzelius-1842-245"
+    },
+    {
+      "title": "White Cap",
+      "catalog_id": "FOLK-Arnason-1864-157",
+      "lane": "folklore",
+      "premise": "A girl mistakes a graveyard ghost for a familiar prankster and steals its cap.",
+      "plays_out": "Ordered to replace it silently, she instead speaks; the ghost strikes her dead and sinks back into its grave.",
+      "status": "complete",
+      "country": "Iceland",
+      "author": "Traditional; specific published version listed in provenance",
+      "version_provenance": "Jón Arnason, Icelandic Legends, translated by George E. J. Powell and Eiríkur Magnússon (1864), pp. 157–58.",
+      "sources": [
+        {
+          "url": "https://sites.pitt.edu/~dash/type0366.html",
+          "locator": "White Cap — Iceland",
+          "evidence_quality": "full text; attributed published retelling in scholarly edited collection",
+          "ending_evidence": "Girl struck dead; ghost vanishes."
+        }
+      ],
+      "verification_note": "Read full titled retelling and printed source citation on Ashliman page; original-language volume not independently opened.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 33,
+      "record_id": "folklore:FOLK-Arnason-1864-157"
+    },
+    {
+      "title": "The Stolen Liver",
+      "catalog_id": "FOLK-Knoop-1909-85",
+      "lane": "folklore",
+      "premise": "A husband spends the food money drinking, then substitutes a hanged man's liver for his wife's supper.",
+      "plays_out": "The dead man arrives demanding it; when she questions him about his missing liver, he seizes and strangles her.",
+      "status": "complete",
+      "country": "Poland",
+      "author": "Traditional; specific published version listed in provenance",
+      "version_provenance": "Otto Knoop, Ostmärkische Sagen, Märchen und Erzählungen (1909), no. 85, pp. 181–82.",
+      "sources": [
+        {
+          "url": "https://sites.pitt.edu/~dash/type0366.html",
+          "locator": "The Stolen Liver — Poland",
+          "evidence_quality": "full text; attributed published retelling in scholarly edited collection",
+          "ending_evidence": "Corpse strangles the wife."
+        }
+      ],
+      "verification_note": "Read full titled retelling and printed source citation on Ashliman page; original-language volume not independently opened.",
+      "verified_date": "2026-10-11",
+      "summary_word_count": 36,
+      "record_id": "folklore:FOLK-Knoop-1909-85"
+    }
+  ]
+}

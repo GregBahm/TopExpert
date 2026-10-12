@@ -1,0 +1,236 @@
+{
+  "lane": "xfiles",
+  "date": "2026-10-11",
+  "bounded_catalog": "The X-Files seasons 1–3; selected standalone paranormal/monster-of-week cases",
+  "catalog_total": 73,
+  "complete": 30,
+  "incomplete": 0,
+  "no_ending": 0,
+  "considered": [
+    {
+      "catalog_id": "S01E03",
+      "title": "Squeeze",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S01E06",
+      "title": "Shadows",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S01E08",
+      "title": "Ice",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S01E09",
+      "title": "Space",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S01E11",
+      "title": "Eve",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S01E12",
+      "title": "Fire",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S01E13",
+      "title": "Beyond the Sea",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S01E14",
+      "title": "Gender Bender",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S01E15",
+      "title": "Lazarus",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S01E18",
+      "title": "Miracle Man",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S01E19",
+      "title": "Shapes",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S01E20",
+      "title": "Darkness Falls",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S01E21",
+      "title": "Tooms",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S01E22",
+      "title": "Born Again",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S01E23",
+      "title": "Roland",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S02E02",
+      "title": "The Host",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S02E12",
+      "title": "Aubrey",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S02E14",
+      "title": "Die Hand Die Verletzt",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S02E20",
+      "title": "Humbug",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S02E21",
+      "title": "The Calusari",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S02E23",
+      "title": "Soft Light",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S03E03",
+      "title": "D.P.O.",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S03E04",
+      "title": "Clyde Bruckman's Final Repose",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S03E07",
+      "title": "The Walk",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S03E08",
+      "title": "Oubliette",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S03E11",
+      "title": "Revelations",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S03E13",
+      "title": "Syzygy",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S03E14",
+      "title": "Grotesque",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S03E17",
+      "title": "Pusher",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S03E22",
+      "title": "Quagmire",
+      "disposition": "included"
+    },
+    {
+      "catalog_id": "S01E07",
+      "title": "Ghost in the Machine",
+      "reason": "AI thriller; outside this lane's narrower paranormal selection.",
+      "disposition": "deferred_after_source_read"
+    },
+    {
+      "catalog_id": "S01E16",
+      "title": "Young at Heart",
+      "reason": "Rejuvenation experiment thriller; deferred speculative-science case.",
+      "disposition": "deferred_after_source_read"
+    },
+    {
+      "catalog_id": "S02E03",
+      "title": "Blood",
+      "reason": "Pesticide and subliminal-message experiment; deferred non-supernatural case.",
+      "disposition": "deferred_after_source_read"
+    },
+    {
+      "catalog_id": "S02E04",
+      "title": "Sleepless",
+      "reason": "Paranormal case intertwined with mythology; deferred to keep initial standalone lane clearer.",
+      "disposition": "deferred_after_source_read"
+    }
+  ],
+  "remaining_ids": [
+    "S01E01",
+    "S01E02",
+    "S01E04",
+    "S01E05",
+    "S01E10",
+    "S01E17",
+    "S01E24",
+    "S02E01",
+    "S02E05",
+    "S02E06",
+    "S02E07",
+    "S02E08",
+    "S02E09",
+    "S02E10",
+    "S02E11",
+    "S02E13",
+    "S02E15",
+    "S02E16",
+    "S02E17",
+    "S02E18",
+    "S02E19",
+    "S02E22",
+    "S02E24",
+    "S02E25",
+    "S03E01",
+    "S03E02",
+    "S03E05",
+    "S03E06",
+    "S03E09",
+    "S03E10",
+    "S03E12",
+    "S03E15",
+    "S03E16",
+    "S03E18",
+    "S03E19",
+    "S03E20",
+    "S03E21",
+    "S03E23",
+    "S03E24"
+  ],
+  "remaining_note": "Unprocessed IDs include mythology episodes and other non-paranormal cases; remaining is catalog coverage, not a promise that all qualify.",
+  "limitations": [
+    "All included endings verified against individually opened detailed Wikipedia Plot sections; no episode-viewing or primary-script verification.",
+    "Source references often point to official companion guides, but this pass did not independently open those books.",
+    "Paranormal umbrella includes cryptids, mutants, psychic abilities, alien possession and anomalous organisms.",
+    "Complete means the actual final resolution or final ambiguity was verified; it does not mean every antagonist is destroyed or every paranormal question answered.",
+    "Tooms is a distinct sequel episode to Squeeze; preserved as its own story.",
+    "Season 4 and seasons 5–11 not processed."
+  ],
+  "evidence_handling": "Summaries and evidence notes are original concise paraphrases, each page represented by fewer than 200 derived words. Temporary full plot extracts discarded after review."
+}

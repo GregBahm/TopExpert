@@ -1,0 +1,31 @@
+const fs=require('fs'),path=require('path');
+const root=__dirname;
+const read=f=>JSON.parse(fs.readFileSync(path.join(root,f),'utf8').replace(/^\uFEFF/,''));
+const seeds=read('seeds.json');
+const files=['01_17','18_34','35_50'];
+const generated=files.flatMap(x=>read(`generated_${x}.json`)).sort((a,b)=>a.number-b.number);
+const rankings=files.flatMap(x=>read(`rankings_${x}.json`));
+const assert=(v,m)=>{if(!v)throw Error(m)};
+assert(seeds.length===50&&generated.length===50,'Exactly 50 concepts');
+const ids=new Set(),texts=new Set();
+const concepts=generated.map((c,i)=>{
+ const seed=seeds[i];assert(c.number===seed.number&&c.title===seed.title&&c.description===seed.description,`Seed mismatch ${i+1}`);
+ assert(c.pitches.length===10,`Pitch count ${c.number}`);
+ assert(new Set(c.pitches.map(p=>p.title)).size===10,`Duplicate pitch titles ${c.number}`);
+ const expectedIds=Array.from({length:10},(_,j)=>`C${String(c.number).padStart(2,'0')}-P${String(j+1).padStart(2,'0')}`).sort().join(',');
+ assert(c.pitches.map(p=>p.id).sort().join(',')===expectedIds,`Stable IDs ${c.number}`);
+ const r=rankings.find(x=>x.number===c.number);assert(r&&r.rankings.length===10,`Ranking count ${c.number}`);
+ assert(new Set(r.rankings.map(x=>x.id)).size===10,`Ranking ids ${c.number}`);
+ assert(r.rankings.map(x=>x.rank).sort((a,b)=>a-b).join(',')==='1,2,3,4,5,6,7,8,9,10',`Ranks ${c.number}`);
+ const pitches=c.pitches.map(p=>{assert(!ids.has(p.id),'Duplicate id');ids.add(p.id);assert(!texts.has(p.text),'Duplicate text');texts.add(p.text);assert(p.text.length>180&&p.adjustment&&p.title,'Incomplete fields');const q=r.rankings.find(x=>x.id===p.id);assert(q&&q.rationale,'Missing rationale');return {...p,...q}}).sort((a,b)=>a.rank-b.rank);
+ return {...seed,winner_id:pitches[0].id,pitches};
+});
+const method='Subjective editorial ordering within each concept, considering satisfying and complete payoff, originality, clear causal arc, paranormal hook, Top Expert tonal fit, and opportunities for investigative discovery. Ranks compare alternatives for the same seed; they are not numerical quality scores or a ranking of the 50 concepts.';
+const data={title:'Top Expert · Payoff Lab',method,concepts};
+fs.writeFileSync(path.join(root,'ranked_pitches.json'),JSON.stringify(data,null,2));
+let md=`# Top Expert — Payoff Lab\n\n50 concepts · 500 spoiler-complete pitches\n\n${method}\n`;
+for(const c of concepts){md+=`\n## ${c.number}. ${c.title}\n\n**Original prompt:** ${c.description}\n\n**Winner:** ${c.pitches[0].title} (${c.winner_id})\n`;for(const p of c.pitches)md+=`\n### Rank ${p.rank}: ${p.title} — ${p.id}\n\n${p.text}\n\n**Premise adjustment:** ${p.adjustment}\n\n**Ranking rationale:** ${p.rationale}\n`;}
+fs.writeFileSync(path.join(root,'report.md'),md);
+require('./render-review.cjs');
+const verification={concepts:concepts.length,pitches:ids.size,originalSeedsPreserved:true,uniqueIds:true,uniqueTexts:true,ranksPerConcept:'1–10',winnerCorrespondence:true,completeFields:true};
+fs.writeFileSync(path.join(root,'validation.json'),JSON.stringify(verification,null,2));console.log(verification);

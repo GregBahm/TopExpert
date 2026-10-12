@@ -1,0 +1,539 @@
+[
+  {
+    "title": "A Bad Composition",
+    "catalog_id": "SCP-012",
+    "premise": "Archaeologists uncover an unfinished musical score written in human blood.",
+    "plays_out": "Readers compulsively cut themselves to supply more blood; those who finish a section kill themselves after declaring the composition impossible to complete, and performances produce only discord.",
+    "resolution": "No completed central plot; verified description or explanatory observation only.",
+    "status": "no_ending",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-012",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Description: section-completers commit suicide; performance remains discordant."
+      }
+    ],
+    "status_note": "Describes recurring compulsion and deaths across anonymous tests, without a bounded developed narrative."
+  },
+  {
+    "title": "The Morgue",
+    "catalog_id": "SCP-022",
+    "premise": "A hospital morgue begins producing animated corpses that try to leave.",
+    "plays_out": "The bodies match cadavers missing elsewhere; experiments reveal that objects sent inside emerge upstairs aged and ruined, while entering humans are absorbed into the morgue and can return as its corpses.",
+    "resolution": "No completed central plot; verified description or explanatory observation only.",
+    "status": "no_ending",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-022",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Addendum 022-002 distinguishes aged discarded objects from incorporated humans."
+      }
+    ],
+    "status_note": "Morgue mechanics and explanatory testing reveal are verified, but no sufficiently developed central incident concludes in this record."
+  },
+  {
+    "title": "Knowledge",
+    "catalog_id": "SCP-028",
+    "premise": "A miner suddenly invents cold fusion after walking through a spot that grants perfect random knowledge.",
+    "plays_out": "Testing brings useless facts and devastating revelations; an accidentally exposed agent learns classified Foundation secrets, shoots colleagues, and is restrained, after which exposed staff must be detained indefinitely.",
+    "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+    "status": "complete",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-028",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "EL-028-1125 records shootings and restraint, followed by indefinite detention rule."
+      }
+    ],
+    "completion_scope": "article incident/reveal, not permanent elimination of anomaly"
+  },
+  {
+    "title": "Obsidian Ritual Knife",
+    "catalog_id": "SCP-034",
+    "premise": "A man infiltrates a research facility wearing a scientist’s identity through an ancient skin-cutting knife.",
+    "plays_out": "Investigators find the real scientist tied up and partly flayed, exposing the disguise; the captured infiltrator reveals instructions from an unknown benefactor but dies during interrogation.",
+    "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+    "status": "complete",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-034",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Acquisition paragraph and Post Interrogation Report 2211 give capture and death."
+      }
+    ],
+    "completion_scope": "article incident/reveal, not permanent elimination of anomaly"
+  },
+  {
+    "title": "\"Predatory\" Holly Bush",
+    "catalog_id": "SCP-046",
+    "premise": "A supposedly predatory plant draws gravely ill people to lie down and be consumed.",
+    "plays_out": "An older suppressed report shows willing visitors peacefully relieved of pain as they die; a researcher disputes the hostile rewrite, but management removes him and retains the prohibition on access.",
+    "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+    "status": "complete",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-046",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Document 046-07 and Addenda 046-1 through 046-3 give voluntary deaths and reassignment."
+      }
+    ],
+    "completion_scope": "article incident/reveal, not permanent elimination of anomaly"
+  },
+  {
+    "title": "Plague Doctor",
+    "catalog_id": "SCP-049",
+    "premise": "A plague-doctor figure kills people by touch and turns their bodies into mindless surgical creations while claiming to cure disease.",
+    "plays_out": "After months of cooperation it kills and remakes its regular interviewer; its privileges are revoked, but the final interview shows it still insisting the death advanced its cure and requesting living patients.",
+    "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+    "status": "complete",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-049",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Addenda 049.3 and 049.4 document interviewer death, revoked allowances, and final insistence."
+      }
+    ],
+    "completion_scope": "article incident/reveal, not permanent elimination of anomaly"
+  },
+  {
+    "title": "Time-Traveling Train",
+    "catalog_id": "SCP-052",
+    "premise": "A scrapped subway train reappears every Saturday, dropping passengers into different years.",
+    "plays_out": "Investigators send agents aboard; one returns without hands and carrying a warning to send nobody else, and a later agent’s future corpse is thrown from the train, leaving further boarding tests prohibited.",
+    "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+    "status": "complete",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-052",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Test 052-3 and recovered passengers 052-4/5 disclose warning, mutilation, corpse, and test ban."
+      }
+    ],
+    "completion_scope": "article incident/reveal, not permanent elimination of anomaly"
+  },
+  {
+    "title": "Destroyed Organic Catalyst",
+    "catalog_id": "SCP-065",
+    "premise": "Officials destroy a farmer’s strange crop-boosting artifact, leaving a zone that grotesquely transforms living things.",
+    "plays_out": "The destruction kills operatives and civilians; a robot later retrieves fragments of a fertility figurine, revealing that an attempt to eliminate the original anomaly created the lethal region now being contained.",
+    "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+    "status": "complete",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-065",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Description gives destruction casualties; Addendum 065-1 identifies the figurine and causal sequence."
+      }
+    ],
+    "completion_scope": "article incident/reveal, not permanent elimination of anomaly"
+  },
+  {
+    "title": "\"Cain\"",
+    "catalog_id": "SCP-073",
+    "premise": "Police find a courteous stranger standing among dead gang members.",
+    "plays_out": "The gang had attacked him and received their own injuries instead, killing themselves while he remained unharmed; police jail the unidentified survivor, and a Foundation inspection transfers him into its custody.",
+    "resolution": "Attackers die from reflected violence; survivor is detained and transferred.",
+    "status": "complete",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-073",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Additional Notes gives gang attack, reflected fatal injuries, police incarceration, and transfer to Foundation custody."
+      }
+    ],
+    "completion_scope": "article incident/reveal, not permanent elimination of anomaly"
+  },
+  {
+    "title": "\"Able\"",
+    "catalog_id": "SCP-076",
+    "premise": "An ancient coffin periodically releases a superhuman man who hunts and kills people.",
+    "plays_out": "The worst escape forces personnel to destroy their own facility with a warhead; the stone coffin survives, and killing its occupant merely makes him dissolve and eventually reform inside it.",
+    "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+    "status": "complete",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-076",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Description records warhead/site destruction and subsequent regeneration mechanism."
+      }
+    ],
+    "completion_scope": "article incident/reveal, not permanent elimination of anomaly"
+  },
+  {
+    "title": "The Lizard King",
+    "catalog_id": "SCP-088",
+    "premise": "A recovered ancient reptilian humanoid appears mummified but is actually hibernating.",
+    "plays_out": "When it wakes, it dissolves its prison and mutates personnel into protectors; during the second breach, cooling the sealed facility sends it back into hibernation, allowing the transformed personnel to be killed and containment restored.",
+    "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+    "status": "complete",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-088",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Containment breach overview gives cooling, pedestal, hibernation, neutralization, and recontainment."
+      }
+    ],
+    "completion_scope": "article incident/reveal, not permanent elimination of anomaly"
+  },
+  {
+    "title": "The \"Shy Guy\"",
+    "catalog_id": "SCP-096",
+    "premise": "A retrieval team approaches an apparently helpless humanoid without being warned against seeing its face.",
+    "plays_out": "Everyone who looks is torn apart despite heavy gunfire; the captain survives because he turned away, and a backup team finally bags the creature’s head and returns it to containment.",
+    "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+    "status": "complete",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-096",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Interview 096-1 gives squad deaths, captain’s averted gaze, bagging, and transport."
+      }
+    ],
+    "completion_scope": "article incident/reveal, not permanent elimination of anomaly"
+  },
+  {
+    "title": "Old Fairgrounds",
+    "catalog_id": "SCP-097",
+    "premise": "Children near an abandoned fairground begin sleepwalking toward a giant pumpkin.",
+    "plays_out": "If not interrupted early, they arrive for a dance with figures resembling previously missing children; once the newcomer wakes and cries out, the figures kill them and carry their remains inside the pumpkin.",
+    "resolution": "No completed central plot; verified description or explanatory observation only.",
+    "status": "no_ending",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-097",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Effects on Children section explicitly ends with killing, depositing remains, closing pumpkin, and stopped music."
+      }
+    ],
+    "status_note": "Describes a recurring seasonal predation sequence; no individual incident develops into a distinct completed plot."
+  },
+  {
+    "title": "\"Iris\"",
+    "catalog_id": "SCP-105",
+    "premise": "A young woman who can reach into photographs witnesses her boyfriend’s murder through one and becomes a suspect.",
+    "plays_out": "The Foundation confines her and uses her for reconnaissance, then pushes her toward assassination; she refuses, fakes losing her power, and attempts escape, but is recaptured and ultimately denied her special camera.",
+    "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+    "status": "complete",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-105",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Acquisition appendix and Addendum 3 give confinement, refusal, failed escape, and camera denial."
+      }
+    ],
+    "completion_scope": "article incident/reveal, not permanent elimination of anomaly"
+  },
+  {
+    "title": "Kinetic Energy Entity",
+    "catalog_id": "SCP-128",
+    "premise": "Investigators mistake flying household objects for a poltergeist caused by a stressed family.",
+    "plays_out": "They discover a hamster controls the force, but killing it leaves the activity permanently intensified; after improvised capture and further fatalities, a researcher’s brother supplies the solution: give the force a hamster wheel.",
+    "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+    "status": "complete",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-128",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Recovery closing notes gives truck capture; final chat explains stuck valve and wheel solution."
+      }
+    ],
+    "completion_scope": "article incident/reveal, not permanent elimination of anomaly"
+  },
+  {
+    "title": "Broken Desert",
+    "catalog_id": "SCP-132",
+    "premise": "Researchers treat glass pyramids showing tiny desert scenes as harmless decorative curiosities.",
+    "plays_out": "When one falls and breaks, a sandstorm visible inside blasts into the office, revealing the apparent miniature can affect its surroundings; restrictions follow, and a mysterious later shipment includes views of Martian ground.",
+    "resolution": "No completed central plot; verified description or explanatory observation only.",
+    "status": "no_ending",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-132",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Incident 132-01 gives shattered pyramid and real winds; Addendum 03 gives Martian shipment."
+      }
+    ],
+    "status_note": "Contains an isolated breakage incident and later unexplained shipment, but these do not form a developed plot with a concluded central escalation."
+  },
+  {
+    "title": "Man-Absorbing Phone",
+    "catalog_id": "SCP-145",
+    "premise": "An unplugged cordless phone constantly rings with pleas from unseen torture victims.",
+    "plays_out": "Anyone answering alone vanishes and is heard among the victims; sending a caller equipped with explosives instead produces more missing personnel, and that rescue-by-destruction experiment is stopped.",
+    "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+    "status": "complete",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-145",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Description establishes vanished callers as victims; Test 145-D gives additional disappearances and suspension, with mechanism redacted."
+      }
+    ],
+    "completion_scope": "article incident/reveal, not permanent elimination of anomaly"
+  },
+  {
+    "title": "Bronze Head of Shame",
+    "catalog_id": "SCP-146",
+    "premise": "An auction buyer acquires a bronze head whose gaze forces guilty memories to surface.",
+    "plays_out": "Tests drive subjects from recollection into hallucinations and irreversible collapse; after the head is kept in cramped storage, a later exposure triggers almost immediate terror and a fatal self-inflicted wound, revealing containment changes its intensity.",
+    "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+    "status": "complete",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-146",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Experiment 146-04 ends in death during surgery; note ties strengthened effect to containment."
+      }
+    ],
+    "completion_scope": "article incident/reveal, not permanent elimination of anomaly"
+  },
+  {
+    "title": "Ship of Theseus",
+    "catalog_id": "SCP-150",
+    "premise": "A parasite gradually replaces a person’s flesh and brain while leaving them apparently themselves.",
+    "plays_out": "Researchers transplant one infected person’s replacement brain into another body; the recipient wakes identifying as the donor, then the living brain visibly retracts as its new occupant casually asks to rest.",
+    "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+    "status": "complete",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-150",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Addendum 150-E ends with donor identity, brain movement/retraction, and continued conversation."
+      }
+    ],
+    "completion_scope": "article incident/reveal, not permanent elimination of anomaly"
+  },
+  {
+    "title": "The Painting",
+    "catalog_id": "SCP-151",
+    "premise": "People in a landlocked area inexplicably drown on dry ground after seeing an underwater painting.",
+    "plays_out": "Agents trace the deaths to an antique shop: viewers’ lungs fill with seawater and medical treatment only delays death; names on the painting belong to students missing from a trip abroad, whose fate remains unresolved.",
+    "resolution": "Fatal effect verified, but no concluded central incident; origin investigation remains open.",
+    "status": "no_ending",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-151",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Description verifies fatal seawater accumulation; acquisition addendum links shop and missing students without solving their fate."
+      }
+    ]
+  },
+  {
+    "title": "Offensive Bracelets",
+    "catalog_id": "SCP-154",
+    "premise": "Bronze bracelets conjure a bow that fires the wearer’s own arm bones and then regenerates the limb.",
+    "plays_out": "Repeated use causes increasingly strange mutations; one test subject unknowingly regrows explosive bone that detonates, killing two people and injuring three others.",
+    "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+    "status": "complete",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-154",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Description explicitly reports explosive-bone detonation and casualty counts."
+      }
+    ],
+    "completion_scope": "article incident/reveal, not permanent elimination of anomaly"
+  },
+  {
+    "title": "Reanimating Pomegranate",
+    "catalog_id": "SCP-156",
+    "premise": "Party guests eat pomegranate seeds, die together in autumn, and some unexpectedly return to life in spring.",
+    "plays_out": "Survivors in above-ground vaults revive, but their buried host suffocates in her coffin; a later autopsied test subject also restarts despite the dissection and dies again, exposing the danger of treating the seasonal deaths as permanent.",
+    "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+    "status": "complete",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-156",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Acquisition history verifies host’s asphyxiation and first test subject’s post-autopsy revival/death."
+      }
+    ],
+    "completion_scope": "article incident/reveal, not permanent elimination of anomaly"
+  },
+  {
+    "title": "The Creeping, Hungry Sands of Tule",
+    "catalog_id": "SCP-165",
+    "premise": "Soldiers spending a night in an abandoned desert town watch sand flood the hotel and strip their horses to bone.",
+    "plays_out": "Most flee and four disappear; decades later investigators identify swarms of flesh-eating sand-covered mites, use intense heat to reduce them, and extract a surviving dune into containment.",
+    "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+    "status": "complete",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-165",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Acquisition section gives troop losses, identification, glassing, and four-ton containment."
+      }
+    ],
+    "completion_scope": "article incident/reveal, not permanent elimination of anomaly"
+  },
+  {
+    "title": "The Tissue Snail",
+    "catalog_id": "SCP-193",
+    "premise": "A normal-looking tissue box makes users produce ever more mucus, pushing them to use more tissues.",
+    "plays_out": "Researchers discover the box is a mollusk and the tissues are shed body segments; used tissues left alone crawl back toward the box to rejoin it, revealing that the apparent convenience product is harvesting mucus.",
+    "resolution": "No completed central plot; verified description or explanatory observation only.",
+    "status": "no_ending",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-193",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Addendum 193-1 gives unattended tissue return, reintegration, feeding interpretation, and discovery incident."
+      }
+    ],
+    "status_note": "Feeding mechanism is exposed by an unattended-tissue observation; this is an explanatory anomaly reveal rather than a completed story."
+  },
+  {
+    "title": "Cup of Joe",
+    "catalog_id": "SCP-198",
+    "premise": "A researcher reaches for his iced tea and finds a disguised cursed container fused to his hand.",
+    "plays_out": "It fills with human excretions, and only drinking them can slow his otherwise unstoppable starvation and dehydration; after 31 hours he refuses any more, while another victim chooses immediate death, prompting stronger containment.",
+    "resolution": "Verified documented incident or narrative reveal; continuing anomaly may remain unresolved.",
+    "status": "complete",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-198",
+        "evidence_quality": "full text (primary SCP Wiki article, including embedded addenda)",
+        "ending_evidence": "Description establishes refusal leads to death; Incidents 198-A/B give 31-hour refusal, suicide, and Euclid upgrade."
+      }
+    ],
+    "completion_scope": "article incident/reveal, not permanent elimination of anomaly"
+  },
+  {
+    "title": "The Wire Figure",
+    "catalog_id": "SCP-068",
+    "premise": "An electrified wire figure converts nearby metal into copies that combine into larger figures.",
+    "plays_out": "The article describes its repeating growth-and-dormancy behavior and rejects a disposal proposal; it supplies no concluded incident or story ending.",
+    "resolution": "No story ending in the source.",
+    "status": "no_ending",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-068",
+        "evidence_quality": "full text (primary SCP Wiki article)",
+        "ending_evidence": "Static description or open research; no concluded narrative incident."
+      }
+    ]
+  },
+  {
+    "title": "Dragon-Snails™",
+    "catalog_id": "SCP-111",
+    "premise": "A mailed package contains eggs that hatch into miniature fire-breathing dragon snails.",
+    "plays_out": "A whimsical care sheet disclaims responsibility for fires and injuries; the article describes the species and containment without a concluded narrative.",
+    "resolution": "No story ending in the source.",
+    "status": "no_ending",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-111",
+        "evidence_quality": "full text (primary SCP Wiki article)",
+        "ending_evidence": "Static description or open research; no concluded narrative incident."
+      }
+    ]
+  },
+  {
+    "title": "Contained Miniature Black Hole",
+    "catalog_id": "SCP-123",
+    "premise": "A hollow tabletop sphere contains an apparent black hole that swallows inserted objects.",
+    "plays_out": "Researchers debate using it for disposal, but authorize only experiments while its durability is unknown; no narrative resolution is supplied.",
+    "resolution": "No story ending in the source.",
+    "status": "no_ending",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-123",
+        "evidence_quality": "full text (primary SCP Wiki article)",
+        "ending_evidence": "Static description or open research; no concluded narrative incident."
+      }
+    ]
+  },
+  {
+    "title": "Star-Eyed Child",
+    "catalog_id": "SCP-134",
+    "premise": "An orphaned blind child has eyes that show distant stars and galaxies.",
+    "plays_out": "Researchers study the moving viewpoints and accommodate her daily life; the source leaves her origins unexplained and has no completed plot.",
+    "resolution": "No story ending in the source.",
+    "status": "no_ending",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-134",
+        "evidence_quality": "full text (primary SCP Wiki article)",
+        "ending_evidence": "Static description or open research; no concluded narrative incident."
+      }
+    ]
+  },
+  {
+    "title": "The Sculpture -  The Original",
+    "catalog_id": "SCP-173",
+    "premise": "A hostile concrete figure moves only while nobody watches it.",
+    "plays_out": "The article lays out coordinated observation and cleaning procedures to prevent neck-breaking attacks; it has no developing incident or ending.",
+    "resolution": "No story ending in the source.",
+    "status": "no_ending",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-173",
+        "evidence_quality": "full text (primary SCP Wiki article)",
+        "ending_evidence": "Static description or open research; no concluded narrative incident."
+      }
+    ]
+  },
+  {
+    "title": "The Craftsman",
+    "catalog_id": "SCP-188",
+    "premise": "A metal spike found in farmland reshapes its surroundings into intricate patterns.",
+    "plays_out": "Attempts to suppress the effect fail, and researchers establish no connection to the crop-circle fad; the article continues as an unresolved anomaly description.",
+    "resolution": "No story ending in the source.",
+    "status": "no_ending",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-188",
+        "evidence_quality": "full text (primary SCP Wiki article)",
+        "ending_evidence": "Static description or open research; no concluded narrative incident."
+      }
+    ]
+  },
+  {
+    "title": "\"Lucky\"",
+    "catalog_id": "SCP-181",
+    "premise": "A convicted gambler repeatedly survives lethal anomaly experiments through extraordinary luck.",
+    "plays_out": "Researchers confirm his impossible winning streak and spare him from routine execution, but an audit finds sharply increased deaths and injuries elsewhere around him; he is transferred into solitary confinement under stricter precautions.",
+    "resolution": "Casualty audit reverses his favorable treatment and leads to isolation.",
+    "status": "complete",
+    "lane": "SCP Wiki",
+    "sources": [
+      {
+        "url": "https://scp-wiki.wikidot.com/scp-181",
+        "evidence_quality": "full text (primary SCP Wiki article, including addenda)",
+        "ending_evidence": "Description verifies tests and reclassification; final addendum and staff memo give casualty audit and solitary transfer."
+      }
+    ],
+    "completion_scope": "article incident/reveal, not permanent elimination of anomaly"
+  }
+]

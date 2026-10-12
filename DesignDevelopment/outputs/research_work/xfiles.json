@@ -1,0 +1,482 @@
+[
+  {
+    "lane": "xfiles",
+    "catalog_id": "S01E03",
+    "title": "Squeeze",
+    "premise": "Office workers are murdered in locked rooms, their livers removed by an intruder who can squeeze through tiny openings.",
+    "plays_out": "The ageless killer eats five livers before hibernating for thirty years; agents catch him attacking Scully. Institutionalized, he studies the food slot with a grin.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Squeeze_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "The ageless killer eats five livers before hibernating for thirty years; agents catch him attacking Scully. Institutionalized, he studies the food slot with a grin."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S01E06",
+    "title": "Shadows",
+    "premise": "A grieving office worker survives attacks while an invisible force kills her attackers.",
+    "plays_out": "Her murdered boss's ghost protects her and exposes a hidden disk implicating his business partner in illegal sales. She takes a new job, where further activity suggests the ghost has followed her.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Shadows_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "Her murdered boss's ghost protects her and exposes a hidden disk implicating his business partner in illegal sales. She takes a new job, where further activity suggests the ghost has followed her."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S01E08",
+    "title": "Ice",
+    "premise": "Investigators stranded at an Arctic research station discover parasites that turn their hosts violently paranoid.",
+    "plays_out": "They learn that two worms in one host kill each other and use a second worm to cure the infected scientist. The survivors are evacuated, and the government destroys the station.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Ice_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "They learn that two worms in one host kill each other and use a second worm to cure the infected scientist. The survivors are evacuated, and the government destroys the station."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S01E09",
+    "title": "Space",
+    "premise": "A shuttle mission suffers sabotage linked to a former astronaut possessed by an entity he encountered in space.",
+    "plays_out": "The entity threatens the shuttle's return, but its host warns investigators in time to change the landing trajectory. Still struggling against possession in hospital, he jumps to his death.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Space_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "The entity threatens the shuttle's return, but its host warns investigators in time to change the landing trajectory. Still struggling against possession in hospital, he jumps to his death."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S01E11",
+    "title": "Eve",
+    "premise": "Two fathers die simultaneously across the country, leaving daughters who look exactly alike.",
+    "plays_out": "The girls are engineered clones who independently knew to murder their fathers; they kill their creator and nearly poison the agents. Captured and institutionalized, they recognize another clone arriving, suggesting their shared knowledge continues.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Eve_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "The girls are engineered clones who independently knew to murder their fathers; they kill their creator and nearly poison the agents. Captured and institutionalized, they recognize another clone arriving, suggesting their shared knowledge continues."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S01E12",
+    "title": "Fire",
+    "premise": "A wealthy family seeks protection from a killer who can ignite fires by thought.",
+    "plays_out": "The killer infiltrates their household and sets it ablaze, but the children are rescued and fuel thrown at him makes him ignite himself. He survives in custody, heals rapidly, and asks for a cigarette.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Fire_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "The killer infiltrates their household and sets it ablaze, but the children are rescued and fuel thrown at him makes him ignite himself. He survives in custody, heals rapidly, and asks for a cigarette."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S01E13",
+    "title": "Beyond the Sea",
+    "premise": "After an agent sees her recently dead father, a condemned killer offers psychic clues to a kidnapping in exchange for clemency.",
+    "plays_out": "His clues rescue the captives, and a warning keeps her from following their abductor onto a fatal collapsing gantry. He is executed without the agent attending; she declines his promised final message from her father.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Beyond_the_Sea_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "His clues rescue the captives, and a warning keeps her from following their abductor onto a fatal collapsing gantry. He is executed without the agent attending; she declines his promised final message from her father."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S01E14",
+    "title": "Gender Bender",
+    "premise": "Nightclub patrons die after sex with someone who appears to change sex, leading investigators to a secluded religious community.",
+    "plays_out": "The community can transform bodies and uses irresistible attraction; its members reclaim the rogue killer before agents can arrest them. Their settlement is abandoned overnight, leaving a crop circle that suggests alien departure.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Gender_Bender_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "The community can transform bodies and uses irresistible attraction; its members reclaim the rogue killer before agents can arrest them. Their settlement is abandoned overnight, leaving a crop circle that suggests alien departure."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S01E15",
+    "title": "Lazarus",
+    "premise": "An agent revived after a bank shootout appears to carry the consciousness of the robber who died beside him.",
+    "plays_out": "He reunites with the robber's partner and takes Scully hostage, but his diabetic host needs insulin. His partner withholds it; he shoots her before dying, and his watch remains stopped at the agent's original death.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Lazarus_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "He reunites with the robber's partner and takes Scully hostage, but his diabetic host needs insulin. His partner withholds it; he shoots her before dying, and his watch remains stopped at the agent's original death."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S01E18",
+    "title": "Miracle Man",
+    "premise": "A young faith healer loses confidence when people die during his healing services.",
+    "plays_out": "A man he once resurrected is poisoning followers out of resentment over his disfigured survival. The healer is beaten to death in jail, confronts the culprit as an apparition, and later disappears from the morgue amid reports of him walking.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Miracle_Man_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "A man he once resurrected is poisoning followers out of resentment over his disfigured survival. The healer is beaten to death in jail, confronts the culprit as an apparition, and later disappears from the morgue amid reports of him walking."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S01E19",
+    "title": "Shapes",
+    "premise": "A rancher shoots an apparent attacking beast, but its body is human and his scratched son begins behaving strangely.",
+    "plays_out": "A shapeshifting curse has passed to the son, who kills his father and attacks the investigators. The sheriff shoots him; an elder predicts another outbreak in eight years as a wolf howls.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Shapes_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "A shapeshifting curse has passed to the son, who kills his father and attacks the investigators. The sheriff shoots him; an elder predicts another outbreak in eight years as a wolf howls."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S01E20",
+    "title": "Darkness Falls",
+    "premise": "Investigators reach an abandoned logging camp where ancient insects released from a felled tree attack only in darkness.",
+    "plays_out": "They ration generator light, then attempt an escape that fails when their vehicle is disabled. The insects engulf them, but rescuers save and quarantine the survivors while authorities try to eradicate the swarm with fire and pesticides.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Darkness_Falls_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "They ration generator light, then attempt an escape that fails when their vehicle is disabled. The insects engulf them, but rescuers save and quarantine the survivors while authorities try to eradicate the swarm with fire and pesticides."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S01E21",
+    "title": "Tooms",
+    "premise": "A liver-eating mutant released from custody needs one final victim before another thirty-year hibernation.",
+    "plays_out": "He frames his pursuer, murders his doctor, and retreats beneath a shopping mall built over his former lair. When he attacks, the agent escapes and activates the escalator, crushing him.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Tooms",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "He frames his pursuer, murders his doctor, and retreats beneath a shopping mall built over his former lair. When he attacks, the agent escapes and activates the escalator, crushing him."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S01E22",
+    "title": "Born Again",
+    "premise": "A little girl is present when former police colleagues die mysteriously, and she seems to recall a murdered detective's life.",
+    "plays_out": "She is apparently the detective reincarnated and uses telekinesis to avenge his murder. Investigators uncover the officers' theft and betrayal; she spares the final culprit after his wife's plea, and returns to an ordinary childhood as he confesses.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Born_Again_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "She is apparently the detective reincarnated and uses telekinesis to avenge his murder. Investigators uncover the officers' theft and betrayal; she spares the final culprit after his wife's plea, and returns to an ordinary childhood as he confesses."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S01E23",
+    "title": "Roland",
+    "premise": "Scientists die at a propulsion laboratory where an intellectually disabled janitor suddenly displays advanced mathematical knowledge.",
+    "plays_out": "His cryogenically preserved twin appears to control him to punish colleagues who stole his research. Agents stop the final killing as sabotage destroys the twin's preserved remains, but the janitor's departing hairstyle hints that the influence persists.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Roland_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "His cryogenically preserved twin appears to control him to punish colleagues who stole his research. Agents stop the final killing as sabotage destroys the twin's preserved remains, but the janitor's departing hairstyle hints that the influence persists."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S02E02",
+    "title": "The Host",
+    "premise": "A corpse in the sewers leads investigators to a humanoid fluke parasite attacking sanitation workers.",
+    "plays_out": "The captured creature escapes and heads through an overflow pipe toward the ocean. An agent cuts it in half with a sewer grate, but its eyes remain open underground, leaving its survival unresolved.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/The_Host_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "The captured creature escapes and heads through an overflow pipe toward the ocean. An agent cuts it in half with a sewer grate, but its eyes remain open underground, leaving its survival unresolved."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S02E12",
+    "title": "Aubrey",
+    "premise": "A pregnant detective experiences visions that uncover old FBI bodies while new murders repeat a decades-old killer's signature.",
+    "plays_out": "She is the killer's granddaughter, apparently reenacting his crimes through inherited memories. After attacking others she kills her grandfather and surrenders, then is confined under suicide watch following an attempt to end her pregnancy.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Aubrey_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "She is the killer's granddaughter, apparently reenacting his crimes through inherited memories. After attacking others she kills her grandfather and surrenders, then is confined under suicide watch following an attempt to end her pregnancy."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S02E14",
+    "title": "Die Hand Die Verletzt",
+    "premise": "A teenager's ritual death exposes a high school's secret Satanist faculty and a sinister substitute teacher.",
+    "plays_out": "The teacher manipulates deaths while punishing the adults' lapsed devotion. When they try to sacrifice the investigating agents, she makes the remaining cultists kill themselves instead, then disappears after leaving a farewell on the chalkboard.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Die_Hand_Die_Verletzt",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "The teacher manipulates deaths while punishing the adults' lapsed devotion. When they try to sacrifice the investigating agents, she makes the remaining cultists kill themselves instead, then disappears after leaving a farewell on the chalkboard."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S02E20",
+    "title": "Humbug",
+    "premise": "Murders plague a community of retired sideshow performers, suggesting a small creature is roaming at night.",
+    "plays_out": "A dying man's detachable conjoined twin is killing people while seeking a replacement brother. It escapes after its brother dies and vanishes near a performer who eats anything; his stomachache and final remark imply he ate it.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Humbug_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "A dying man's detachable conjoined twin is killing people while seeking a replacement brother. It escapes after its brother dies and vanishes near a performer who eats anything; his stomachache and final remark imply he ate it."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S02E21",
+    "title": "The Calusari",
+    "premise": "A child's apparent accident is followed by deaths around his older brother and his grandmother's protective rituals.",
+    "plays_out": "The boy's stillborn twin is the malevolent presence, impersonating him and attacking the family. Mystics complete a separation ritual while the spirit threatens Scully and the mother; it disappears, and mother and surviving son reunite.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/The_Calusari",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "The boy's stillborn twin is the malevolent presence, impersonating him and attacking the family. Mystics complete a separation ritual while the spirit threatens Scully and the mother; it disappears, and mother and surviving son reunite."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S02E23",
+    "title": "Soft Light",
+    "premise": "People vanish into scorch marks around a physicist whose laboratory accident made his shadow lethal.",
+    "plays_out": "He seeks shelter in diffuse light, but attempts to capture him cause more deaths. Investigators believe he was destroyed in a particle accelerator; the final scene reveals him alive and subjected to government experiments.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Soft_Light_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "He seeks shelter in diffuse light, but attempts to capture him cause more deaths. Investigators believe he was destroyed in a particle accelerator; the final scene reveals him alive and subjected to government experiments."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S03E03",
+    "title": "D.P.O.",
+    "premise": "A young mechanic who survived lightning can control electricity and uses it against people who frustrate him.",
+    "plays_out": "He murders his friend and threatens his former teacher until another lightning strike kills the pursuing sheriff. Confined in a psychiatric hospital, he retains his power and uses it to change his television channels.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/D.P.O.",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "He murders his friend and threatens his former teacher until another lightning strike kills the pursuing sheriff. Confined in a psychiatric hospital, he retains his power and uses it to change his television channels."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S03E04",
+    "title": "Clyde Bruckman's Final Repose",
+    "premise": "An insurance salesman who foresees people's deaths helps investigate a murderer targeting fortune tellers.",
+    "plays_out": "His vision appears to predict Mulder's murder, but Scully shoots the attacker and the vision proves to be the killer's final thoughts. They find the salesman dead by suicide; Scully holds his hand on his bed, fulfilling another prediction.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Clyde_Bruckman%27s_Final_Repose",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "His vision appears to predict Mulder's murder, but Scully shoots the attacker and the vision proves to be the killer's final thoughts. They find the salesman dead by suicide; Scully holds his hand on his bed, fulfilling another prediction."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S03E07",
+    "title": "The Walk",
+    "premise": "Military patients and officers suffer deaths blamed on a phantom soldier who prevents one survivor from killing himself.",
+    "plays_out": "A quadruple amputee is projecting an astral body to punish commanders by murdering their families. As his apparition attacks again, a surviving victim smothers his physical body, ending the attacks; authorities cannot prove the paranormal murders.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/The_Walk_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "A quadruple amputee is projecting an astral body to punish commanders by murdering their families. As his apparition attacks again, a surviving victim smothers his physical body, ending the attacks; authorities cannot prove the paranormal murders."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S03E08",
+    "title": "Oubliette",
+    "premise": "A former kidnapping victim develops a psychic link to a girl abducted by the same man, sharing her injuries.",
+    "plays_out": "The link leads investigators to the girl being drowned. They kill the abductor, but resuscitation initially benefits the older woman instead; the girl finally revives as the older woman dies, apparently sacrificing herself.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Oubliette_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "The link leads investigators to the girl being drowned. They kill the abductor, but resuscitation initially benefits the older woman instead; the girl finally revives as the older woman dies, apparently sacrificing herself."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S03E11",
+    "title": "Revelations",
+    "premise": "A murderer of fraudulent stigmatics targets a boy whose bleeding wounds and apparent bilocation seem genuine.",
+    "plays_out": "Scully follows religious clues to a recycling plant where the killer tries to take the boy into a shredder. The boy catches the edge, the killer falls in, and Scully saves him before seeking confession about the miracles she witnessed.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Revelations_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "Scully follows religious clues to a recycling plant where the killer tries to take the boy into a shredder. The boy catches the edge, the killer falls in, and Scully saves him before seeking confession about the miracles she witnessed."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S03E13",
+    "title": "Syzygy",
+    "premise": "A town blames teenage deaths on Satanists while two birthday-sharing girls secretly wield destructive powers.",
+    "plays_out": "A rare planetary alignment amplifies the girls' cosmic energy, and jealousy turns their shared power murderous. Agents confine them together as the police station erupts in chaos; at midnight the alignment's influence ends and their powers stop.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Syzygy_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "A rare planetary alignment amplifies the girls' cosmic energy, and jealousy turns their shared power murderous. Agents confine them together as the police station erupts in chaos; at midnight the alignment's influence ends and their powers stop."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S03E14",
+    "title": "Grotesque",
+    "premise": "An artist arrested for mutilation murders claims a gargoyle possessed him, and killings continue while he is imprisoned.",
+    "plays_out": "The investigator obsessed with understanding the artist has become the new killer. He is shot and arrested, yet Mulder's glimpse of him as a gargoyle and a blood-drawn image in his cell leave possession versus madness ambiguous.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Grotesque_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "The investigator obsessed with understanding the artist has become the new killer. He is shot and arrested, yet Mulder's glimpse of him as a gargoyle and a blood-drawn image in his cell leave possession versus madness ambiguous."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S03E17",
+    "title": "Pusher",
+    "premise": "A contract killer can talk people into obeying commands, disguising murders as suicides.",
+    "plays_out": "His brain tumor may cause the power, which he refused to lose through surgery. He forces Mulder into Russian roulette, but Scully's fire alarm breaks his concentration; Mulder shoots him, leaving him comatose and expected to die.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Pusher_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "His brain tumor may cause the power, which he refused to lose through surgery. He forces Mulder into Russian roulette, but Scully's fire alarm breaks his concentration; Mulder shoots him, leaving him comatose and expected to die."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  },
+  {
+    "lane": "xfiles",
+    "catalog_id": "S03E22",
+    "title": "Quagmire",
+    "premise": "Deaths around a lake famous for a dinosaur-like monster draw investigators as the local frog population declines.",
+    "plays_out": "A boat attack strands the agents, and further pursuit ends when Mulder shoots an alligator believed responsible for the killings. They depart disappointed, while the real lake monster swims past unseen.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Quagmire_(The_X-Files)",
+        "evidence_quality": "detailed synopsis",
+        "ending_evidence": "A boat attack strands the agents, and further pursuit ends when Mulder shoots an alligator believed responsible for the killings. They depart disappointed, while the real lake monster swims past unseen."
+      }
+    ],
+    "verification_note": "Ending checked against opened plot section; secondary synopsis, not episode viewing."
+  }
+]

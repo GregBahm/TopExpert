@@ -1,0 +1,53 @@
+{
+  "record_count": 146,
+  "status_counts": {
+    "complete": 134,
+    "no_ending": 12,
+    "incomplete": 0
+  },
+  "counts_by_lane": {
+    "xfiles": {
+      "complete": 30
+    },
+    "goosebumps": {
+      "complete": 32
+    },
+    "scp": {
+      "no_ending": 12,
+      "complete": 20
+    },
+    "classics": {
+      "complete": 34
+    },
+    "twilight_zone": {
+      "complete": 10
+    },
+    "radio": {
+      "complete": 3
+    },
+    "folklore": {
+      "complete": 5
+    }
+  },
+  "unique_record_ids": 146,
+  "unique_lane_titles": 146,
+  "summary_words": {
+    "min": 30,
+    "max": 68,
+    "mean": 47.9
+  },
+  "missing_required_fields": 0,
+  "reviews": [
+    "All lane workers verified actual outcomes against retrieved source text.",
+    "Parent reviewed every compact entry for final outcome, format, links, length, and duplication.",
+    "Independent classic QA corrected two overcertain assertions and removed an unsupported Body Snatcher flight detail.",
+    "Independent X-Files QA reopened eight complex endings; no changes needed.",
+    "SCP strict review reclassified five more static descriptions as no_ending.",
+    "Cached Goosebumps plot evidence is explicitly labeled; direct-blocked pages are not called opened."
+  ],
+  "limitations": [
+    "No independent primary episode viewing or copyrighted book reading for most television/Goosebumps entries.",
+    "Same secondary synopses used for some independent checks; not triangulation.",
+    "Source access and endings can be revised; this is a dated research pass, not exhaustive verification of all editions."
+  ]
+}

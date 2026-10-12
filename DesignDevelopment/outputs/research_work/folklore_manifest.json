@@ -1,0 +1,27 @@
+{
+  "lane": "folklore",
+  "discovery_basis": "Broad discovery map prioritized attributed Folktexts units before this harvest.",
+  "bounded_slice": "Three selected titled retellings on type1676 page and two on type0366 page.",
+  "complete_count": 5,
+  "considered_titles": [
+    "Two Spirits",
+    "The Death Shroud",
+    "The Preacher and the Ghost",
+    "White Cap",
+    "The Stolen Liver"
+  ],
+  "remaining": [
+    "Other titled units on these two pages; other Folktexts thematic pages.",
+    "Fake-ghost-only tales require scope screening; do not treat generic legend types as published stories."
+  ],
+  "limitations": [
+    "Specific published versions retained; not claims of historical paranormal events.",
+    "Original cited volumes not independently consulted; evidence is full text and attribution on scholarly edited site.",
+    "Summaries plus evidence notes from each collection page total fewer than 200 words; links alone do not reset page budgets."
+  ],
+  "source_catalogs": [
+    "https://sites.pitt.edu/~dash/folktexts.html",
+    "https://sites.pitt.edu/~dash/type1676.html",
+    "https://sites.pitt.edu/~dash/type0366.html"
+  ]
+}

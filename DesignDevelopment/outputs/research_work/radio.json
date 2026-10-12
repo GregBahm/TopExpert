@@ -1,0 +1,56 @@
+[
+  {
+    "title": "The Thing on the Fourble Board",
+    "catalog_id": "QuietPlease-59",
+    "premise": "Oil drillers recover a stone finger and ancient ring, then suffer fatal accidents around their derrick.",
+    "plays_out": "Porky reveals an invisible creature brought up from underground, with a girl's face and a monstrous stone body. Twenty years later it is his disguised wife; he holds his listener at gunpoint as she approaches to eat the guest.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://www.genericradio.com/show/32d959511701a5ea",
+        "evidence_quality": "primary radio script transcript; opened and ending read",
+        "ending_evidence": "Paint reveals the subterranean creature; final narration identifies it as wife and the captive guest as dinner."
+      }
+    ],
+    "lane": "radio",
+    "author": "Wyllis Cooper",
+    "medium": "original radio drama",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "Good Ghost",
+    "catalog_id": "QuietPlease-70",
+    "premise": "A murdered man's ghost tries to enrich his killer so the woman they both loved can have a happy marriage.",
+    "plays_out": "Gus learns the killer has kept the fortune while leaving Ada abused and starving. Forbidden to kill his murderer directly, he kills a gangster and frames Schuster for the gang's revenge, then ascends an uncanny stairway to a waiting woman resembling Ada.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://www.genericradio.com/show/2V5K86IUZA",
+        "evidence_quality": "primary radio script transcript; opened and ending read",
+        "ending_evidence": "Schuster is trapped with Rollo's corpse and his own knife; gang approaches; Gus ascends to black-pompadoured woman."
+      }
+    ],
+    "lane": "radio",
+    "author": "Wyllis Cooper",
+    "medium": "original radio drama",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "Nothing Behind the Door",
+    "catalog_id": "QuietPlease-01",
+    "premise": "Three bank robbers choose a locked, fenced-off mountain observatory building to conceal their stolen money.",
+    "plays_out": "Two enter its darkness and vanish, taking the loot with them. An astronomer shows the survivor cosmic patches of literal nothing through a telescope, implying the doorway shares that void; Ross glimpses eyes and clawing shapes but refuses to describe them.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://www.quietplease.org/scripts/nothing-behind-the-door-1.html",
+        "evidence_quality": "primary radio script transcript; opened and ending read",
+        "ending_evidence": "Companions never return; telescope shows cosmic nothing linked to the door; survivor warns against unknown doors."
+      }
+    ],
+    "lane": "radio",
+    "author": "Wyllis Cooper",
+    "medium": "original radio drama",
+    "verified_date": "2026-10-11"
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "concepts": 50,
+  "pitches": 500,
+  "originalSeedsPreserved": true,
+  "uniqueIds": true,
+  "uniqueTexts": true,
+  "ranksPerConcept": "1–10",
+  "winnerCorrespondence": true,
+  "completeFields": true
+}

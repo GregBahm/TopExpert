@@ -1,0 +1,73 @@
+{
+  "lane": "classics",
+  "bounded_slice": "Ghost Stories of an Antiquary (all 8); More Ghost Stories of an Antiquary (all 7); selected later James stories; seven additional classic uncanny stories; three classic novels/novellas",
+  "complete_count": 34,
+  "considered_titles": [
+    "Canon Alberic's Scrap-Book",
+    "Lost Hearts",
+    "The Mezzotint",
+    "The Ash-tree",
+    "Number 13",
+    "Count Magnus",
+    "'Oh, Whistle, and I'll Come to You, My Lad'",
+    "The Treasure of Abbot Thomas",
+    "A School Story",
+    "The Rose Garden",
+    "The Tractate Middoth",
+    "Casting the Runes",
+    "The Stalls of Barchester Cathedral",
+    "Martin's Close",
+    "Mr. Humphreys and His Inheritance",
+    "The Diary of Mr. Poynter",
+    "An Episode of Cathedral History",
+    "The Story of a Disappearance and an Appearance",
+    "The Haunted Dolls' House",
+    "A View from a Hill",
+    "A Warning to the Curious",
+    "The Monkey's Paw",
+    "The Signal-Man",
+    "The Upper Berth",
+    "The Willows",
+    "The Wendigo",
+    "The Canterville Ghost",
+    "The Body Snatcher",
+    "Rats",
+    "Wailing Well",
+    "The Uncommon Prayer-Book",
+    "The Turn of the Screw",
+    "Dracula",
+    "Strange Case of Dr Jekyll and Mr Hyde",
+    "The Phantom Coach",
+    "The Open Window"
+  ],
+  "excluded": [
+    {
+      "title": "The Phantom Coach",
+      "reason": "page did not yield ending evidence in this pass; deferred rather than summarized from memory"
+    },
+    {
+      "title": "The Open Window",
+      "reason": "initial URL was disambiguation; hoax-story candidate deferred outside core supernatural slice"
+    }
+  ],
+  "remaining": [
+    "The Residence at Whitminster",
+    "Two Doctors",
+    "An Evening’s Entertainment",
+    "A Neighbour’s Landmark",
+    "The Experiment",
+    "The Phantom Coach",
+    "The Open Window"
+  ],
+  "limitations": [
+    "26 summaries use detailed secondary synopses rather than a full-text reading. First eight checked against Project Gutenberg primary text endings.",
+    "Classic lane is heavily weighted toward M. R. James for bounded-catalog coverage, not a representative survey of all classic fiction.",
+    "Unexplained endings are preserved; no definitive mechanism added where story leaves it uncertain."
+  ],
+  "source_catalogs": [
+    "https://en.wikipedia.org/wiki/Ghost_Stories_of_an_Antiquary",
+    "https://en.wikipedia.org/wiki/More_Ghost_Stories",
+    "https://en.wikipedia.org/wiki/A_Thin_Ghost_and_Others",
+    "https://en.wikipedia.org/wiki/A_Warning_to_the_Curious_and_Other_Ghost_Stories"
+  ]
+}

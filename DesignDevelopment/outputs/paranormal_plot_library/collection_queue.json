@@ -1,0 +1,286 @@
+{
+  "policy": "Prefer source variety, bounded 10–25 story slices and actual ending evidence. Complete means actual narrative ending/reveal read or heard; unresolved published ending can still be complete if accurately described. Separate non-narrative anomalies. No design/adaptation.",
+  "harvest_status": "Initial pass complete: 10 Twilight Zone episodes, 3 Quiet Please scripts, 5 Folktexts retellings harvested after source discovery. Other mapped collections remain unharvested unless listed in plots.json.",
+  "queue": [
+    {
+      "rank": 1,
+      "id": "dark_mag",
+      "collection": "The Dark Magazine",
+      "proposed_slice": "First 20 archive stories with supernatural hook and complete text",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 2,
+      "id": "nightmare_mag",
+      "collection": "Nightmare Magazine",
+      "proposed_slice": "First 20 archive stories with supernatural hook and complete text",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 3,
+      "id": "folktexts",
+      "collection": "D. L. Ashliman Folktexts ghost collections",
+      "proposed_slice": "Type1676 real-ghost variants then type0366: 10–20 attributable retellings",
+      "status": "partially_harvested",
+      "verified_complete_count": 5,
+      "harvested_record_ids": [
+        "folklore:FOLK-Wolf-1845-136",
+        "folklore:FOLK-Haase-1887-49",
+        "folklore:FOLK-Afzelius-1842-245",
+        "folklore:FOLK-Arnason-1864-157",
+        "folklore:FOLK-Knoop-1909-85"
+      ]
+    },
+    {
+      "rank": 4,
+      "id": "quiet_please",
+      "collection": "Quiet, Please",
+      "proposed_slice": "First 15 unique supernatural titles with surviving full script/audio; omit repeats",
+      "status": "partially_harvested",
+      "verified_complete_count": 3,
+      "harvested_record_ids": [
+        "radio:QuietPlease-59",
+        "radio:QuietPlease-70",
+        "radio:QuietPlease-01"
+      ]
+    },
+    {
+      "rank": 5,
+      "id": "magnus",
+      "collection": "The Magnus Archives",
+      "proposed_slice": "MAG001–020 statement narratives; join MAG019–020 and screen actual local payoffs",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 6,
+      "id": "twilight_zone",
+      "collection": "The Twilight Zone (1959)",
+      "proposed_slice": "Continue episode order after parent selected 10; obtain exact harvested title set first",
+      "status": "partially_harvested",
+      "verified_complete_count": 10,
+      "harvested_record_ids": [
+        "twilight_zone:TZ-ORIGINAL-The_After_Hours",
+        "twilight_zone:TZ-ORIGINAL-The_Hitch-Hiker_(The_Twilight_Zone)",
+        "twilight_zone:TZ-ORIGINAL-The_Monsters_Are_Due_on_Maple_Street",
+        "twilight_zone:TZ-ORIGINAL-Walking_Distance",
+        "twilight_zone:TZ-ORIGINAL-A_Stop_at_Willoughby",
+        "twilight_zone:TZ-ORIGINAL-The_Howling_Man",
+        "twilight_zone:TZ-ORIGINAL-Living_Doll_(The_Twilight_Zone)",
+        "twilight_zone:TZ-ORIGINAL-It's_a_Good_Life_(The_Twilight_Zone)",
+        "twilight_zone:TZ-ORIGINAL-The_Invaders_(The_Twilight_Zone)",
+        "twilight_zone:TZ-ORIGINAL-The_Last_Rites_of_Jeff_Myrtlebank"
+      ]
+    },
+    {
+      "rank": 7,
+      "id": "kwaidan",
+      "collection": "Lafcadio Hearn: Kwaidan",
+      "proposed_slice": "10–20 bounded units from catalog, ending evidence checked individually",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 8,
+      "id": "american_lit",
+      "collection": "American Literature horror/ghost library",
+      "proposed_slice": "10–20 bounded units from catalog, ending evidence checked individually",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 9,
+      "id": "haunting_hour",
+      "collection": "R.L. Stine's The Haunting Hour",
+      "proposed_slice": "10–20 bounded units from catalog, ending evidence checked individually",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 10,
+      "id": "afraid",
+      "collection": "Are You Afraid of the Dark?",
+      "proposed_slice": "10–20 bounded units from catalog, ending evidence checked individually",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 11,
+      "id": "night_gallery",
+      "collection": "Night Gallery",
+      "proposed_slice": "10–20 bounded units from catalog, ending evidence checked individually",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 12,
+      "id": "podcastle",
+      "collection": "PodCastle",
+      "proposed_slice": "10–20 bounded units from catalog, ending evidence checked individually",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 13,
+      "id": "pseudopod",
+      "collection": "PseudoPod",
+      "proposed_slice": "10–20 bounded units from catalog, ending evidence checked individually",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 14,
+      "id": "eerie",
+      "collection": "Eerie, Indiana",
+      "proposed_slice": "10–20 bounded units from catalog, ending evidence checked individually",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 15,
+      "id": "darkside",
+      "collection": "Tales from the Darkside",
+      "proposed_slice": "10–20 bounded units from catalog, ending evidence checked individually",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 16,
+      "id": "monsters",
+      "collection": "Monsters",
+      "proposed_slice": "10–20 bounded units from catalog, ending evidence checked individually",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 17,
+      "id": "lightspeed",
+      "collection": "Lightspeed fantasy fiction",
+      "proposed_slice": "10–20 bounded units from catalog, ending evidence checked individually",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 18,
+      "id": "nightvale",
+      "collection": "Welcome to Night Vale",
+      "proposed_slice": "One explicitly named completed arc, all installments through resolution",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 19,
+      "id": "crypt_tv",
+      "collection": "Tales from the Crypt (TV)",
+      "proposed_slice": "10–20 bounded units from catalog, ending evidence checked individually",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 20,
+      "id": "generic_radio",
+      "collection": "Generic Radio Workshop supernatural scripts",
+      "proposed_slice": "10–20 bounded units from catalog, ending evidence checked individually",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 21,
+      "id": "creepshow",
+      "collection": "Creepshow (1982)",
+      "proposed_slice": "10–20 bounded units from catalog, ending evidence checked individually",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 22,
+      "id": "kwaidan_film",
+      "collection": "Kwaidan (1964 film)",
+      "proposed_slice": "10–20 bounded units from catalog, ending evidence checked individually",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 23,
+      "id": "trick_treat",
+      "collection": "Trick 'r Treat",
+      "proposed_slice": "10–20 bounded units from catalog, ending evidence checked individually",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 24,
+      "id": "ito",
+      "collection": "Junji Ito English story collections",
+      "proposed_slice": "One accessible complete collection/arc after legitimate full-source access",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 25,
+      "id": "unusual",
+      "collection": "Tales of the Unusual",
+      "proposed_slice": "One accessible complete collection/arc after legitimate full-source access",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 26,
+      "id": "scary_stories",
+      "collection": "Scary Stories to Tell in the Dark trilogy",
+      "proposed_slice": "10–20 bounded units from catalog, ending evidence checked individually",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 27,
+      "id": "nightmare_room",
+      "collection": "The Nightmare Room books",
+      "proposed_slice": "10–20 bounded units from catalog, ending evidence checked individually",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 28,
+      "id": "crypt_comics",
+      "collection": "EC Tales from the Crypt comics",
+      "proposed_slice": "One accessible complete collection/arc after legitimate full-source access",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 29,
+      "id": "nosleep",
+      "collection": "The NoSleep Podcast",
+      "proposed_slice": "10–20 bounded units from catalog, ending evidence checked individually",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 30,
+      "id": "alice_dead",
+      "collection": "Alice Isn't Dead",
+      "proposed_slice": "10–20 bounded units from catalog, ending evidence checked individually",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 31,
+      "id": "knifepoint",
+      "collection": "Knifepoint Horror",
+      "proposed_slice": "Repair source access and locate evidence before assigning harvest",
+      "status": "queued",
+      "verified_complete_count": null
+    },
+    {
+      "rank": 32,
+      "id": "old_gods",
+      "collection": "Old Gods of Appalachia",
+      "proposed_slice": "Repair source access and locate evidence before assigning harvest",
+      "status": "queued",
+      "verified_complete_count": null
+    }
+  ]
+}

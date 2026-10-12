@@ -1,0 +1,775 @@
+{
+  "date": "2026-10-11",
+  "counts": {
+    "complete": 134,
+    "no_ending": 12,
+    "incomplete": 0
+  },
+  "counts_by_lane": {
+    "xfiles": {
+      "complete": 30
+    },
+    "goosebumps": {
+      "complete": 32
+    },
+    "scp": {
+      "no_ending": 12,
+      "complete": 20
+    },
+    "classics": {
+      "complete": 34
+    },
+    "twilight_zone": {
+      "complete": 10
+    },
+    "radio": {
+      "complete": 3
+    },
+    "folklore": {
+      "complete": 5
+    }
+  },
+  "lanes": [
+    {
+      "lane": "xfiles",
+      "date": "2026-10-11",
+      "bounded_catalog": "The X-Files seasons 1–3; selected standalone paranormal/monster-of-week cases",
+      "catalog_total": 73,
+      "complete": 30,
+      "incomplete": 0,
+      "no_ending": 0,
+      "considered": [
+        {
+          "catalog_id": "S01E03",
+          "title": "Squeeze",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S01E06",
+          "title": "Shadows",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S01E08",
+          "title": "Ice",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S01E09",
+          "title": "Space",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S01E11",
+          "title": "Eve",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S01E12",
+          "title": "Fire",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S01E13",
+          "title": "Beyond the Sea",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S01E14",
+          "title": "Gender Bender",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S01E15",
+          "title": "Lazarus",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S01E18",
+          "title": "Miracle Man",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S01E19",
+          "title": "Shapes",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S01E20",
+          "title": "Darkness Falls",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S01E21",
+          "title": "Tooms",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S01E22",
+          "title": "Born Again",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S01E23",
+          "title": "Roland",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S02E02",
+          "title": "The Host",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S02E12",
+          "title": "Aubrey",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S02E14",
+          "title": "Die Hand Die Verletzt",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S02E20",
+          "title": "Humbug",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S02E21",
+          "title": "The Calusari",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S02E23",
+          "title": "Soft Light",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S03E03",
+          "title": "D.P.O.",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S03E04",
+          "title": "Clyde Bruckman's Final Repose",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S03E07",
+          "title": "The Walk",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S03E08",
+          "title": "Oubliette",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S03E11",
+          "title": "Revelations",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S03E13",
+          "title": "Syzygy",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S03E14",
+          "title": "Grotesque",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S03E17",
+          "title": "Pusher",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S03E22",
+          "title": "Quagmire",
+          "disposition": "included"
+        },
+        {
+          "catalog_id": "S01E07",
+          "title": "Ghost in the Machine",
+          "reason": "AI thriller; outside this lane's narrower paranormal selection.",
+          "disposition": "deferred_after_source_read"
+        },
+        {
+          "catalog_id": "S01E16",
+          "title": "Young at Heart",
+          "reason": "Rejuvenation experiment thriller; deferred speculative-science case.",
+          "disposition": "deferred_after_source_read"
+        },
+        {
+          "catalog_id": "S02E03",
+          "title": "Blood",
+          "reason": "Pesticide and subliminal-message experiment; deferred non-supernatural case.",
+          "disposition": "deferred_after_source_read"
+        },
+        {
+          "catalog_id": "S02E04",
+          "title": "Sleepless",
+          "reason": "Paranormal case intertwined with mythology; deferred to keep initial standalone lane clearer.",
+          "disposition": "deferred_after_source_read"
+        }
+      ],
+      "remaining_ids": [
+        "S01E01",
+        "S01E02",
+        "S01E04",
+        "S01E05",
+        "S01E10",
+        "S01E17",
+        "S01E24",
+        "S02E01",
+        "S02E05",
+        "S02E06",
+        "S02E07",
+        "S02E08",
+        "S02E09",
+        "S02E10",
+        "S02E11",
+        "S02E13",
+        "S02E15",
+        "S02E16",
+        "S02E17",
+        "S02E18",
+        "S02E19",
+        "S02E22",
+        "S02E24",
+        "S02E25",
+        "S03E01",
+        "S03E02",
+        "S03E05",
+        "S03E06",
+        "S03E09",
+        "S03E10",
+        "S03E12",
+        "S03E15",
+        "S03E16",
+        "S03E18",
+        "S03E19",
+        "S03E20",
+        "S03E21",
+        "S03E23",
+        "S03E24"
+      ],
+      "remaining_note": "Unprocessed IDs include mythology episodes and other non-paranormal cases; remaining is catalog coverage, not a promise that all qualify.",
+      "limitations": [
+        "All included endings verified against individually opened detailed Wikipedia Plot sections; no episode-viewing or primary-script verification.",
+        "Source references often point to official companion guides, but this pass did not independently open those books.",
+        "Paranormal umbrella includes cryptids, mutants, psychic abilities, alien possession and anomalous organisms.",
+        "Complete means the actual final resolution or final ambiguity was verified; it does not mean every antagonist is destroyed or every paranormal question answered.",
+        "Tooms is a distinct sequel episode to Squeeze; preserved as its own story.",
+        "Season 4 and seasons 5–11 not processed."
+      ],
+      "evidence_handling": "Summaries and evidence notes are original concise paraphrases, each page represented by fewer than 200 derived words. Temporary full plot extracts discarded after review."
+    },
+    {
+      "lane": "goosebumps",
+      "scope": "Goosebumps original series numbers 1–32",
+      "considered_ids": [
+        "Goosebumps-original-01",
+        "Goosebumps-original-02",
+        "Goosebumps-original-03",
+        "Goosebumps-original-04",
+        "Goosebumps-original-05",
+        "Goosebumps-original-06",
+        "Goosebumps-original-07",
+        "Goosebumps-original-08",
+        "Goosebumps-original-09",
+        "Goosebumps-original-10",
+        "Goosebumps-original-11",
+        "Goosebumps-original-12",
+        "Goosebumps-original-13",
+        "Goosebumps-original-14",
+        "Goosebumps-original-15",
+        "Goosebumps-original-16",
+        "Goosebumps-original-17",
+        "Goosebumps-original-18",
+        "Goosebumps-original-19",
+        "Goosebumps-original-20",
+        "Goosebumps-original-21",
+        "Goosebumps-original-22",
+        "Goosebumps-original-23",
+        "Goosebumps-original-24",
+        "Goosebumps-original-25",
+        "Goosebumps-original-26",
+        "Goosebumps-original-27",
+        "Goosebumps-original-28",
+        "Goosebumps-original-29",
+        "Goosebumps-original-30",
+        "Goosebumps-original-31",
+        "Goosebumps-original-32"
+      ],
+      "complete_count": 32,
+      "incomplete_count": 0,
+      "no_ending_count": 0,
+      "remaining_ids": [],
+      "limitations": [
+        "All book endings verified against secondary detailed plot descriptions; no complete primary book texts consulted.",
+        "Fandom direct opens often returned 402 or restricted errors. Cached excerpts include actual Plot resolution and final twist, not marketing teasers; evidence_quality distinguishes cached access.",
+        "Accessible alternative supporting pages opened for most titles. Some alternative reviews have minor factual slips; detailed cached book synopsis used for disputed details (notably #32 chipmunks, not squirrels).",
+        "Ambiguous final threats remain ambiguous: #6 brother reflection, #22 ghost guardians, #23 scarab bite. A complete entry records the published unresolved ending rather than inventing a later resolution.",
+        "Bounded slice excludes original series #33–62, all other Goosebumps series, and adaptations."
+      ],
+      "verified_date": "2026-10-11"
+    },
+    {
+      "lane": "SCP Wiki",
+      "bounded_catalog": "SCP-002 through SCP-199; selected candidates, not an exhaustive linear scan. SCP-001 proposals excluded.",
+      "access_date": "2026-10-11",
+      "method": "Opened primary article pages directly; read selected description and embedded incident/addendum texts. Official series index verified titles.",
+      "complete_count": 20,
+      "no_ending_count": 12,
+      "incomplete_count": 0,
+      "considered_article_ids": [
+        "SCP-012",
+        "SCP-022",
+        "SCP-023",
+        "SCP-026",
+        "SCP-028",
+        "SCP-031",
+        "SCP-034",
+        "SCP-035",
+        "SCP-038",
+        "SCP-039",
+        "SCP-046",
+        "SCP-049",
+        "SCP-052",
+        "SCP-056",
+        "SCP-058",
+        "SCP-060",
+        "SCP-062",
+        "SCP-065",
+        "SCP-068",
+        "SCP-073",
+        "SCP-075",
+        "SCP-076",
+        "SCP-077",
+        "SCP-080",
+        "SCP-082",
+        "SCP-087",
+        "SCP-088",
+        "SCP-089",
+        "SCP-093",
+        "SCP-095",
+        "SCP-096",
+        "SCP-097",
+        "SCP-099",
+        "SCP-105",
+        "SCP-111",
+        "SCP-117",
+        "SCP-123",
+        "SCP-128",
+        "SCP-132",
+        "SCP-134",
+        "SCP-144",
+        "SCP-145",
+        "SCP-146",
+        "SCP-150",
+        "SCP-151",
+        "SCP-153",
+        "SCP-154",
+        "SCP-156",
+        "SCP-158",
+        "SCP-162",
+        "SCP-165",
+        "SCP-167",
+        "SCP-173",
+        "SCP-176",
+        "SCP-178",
+        "SCP-181",
+        "SCP-186",
+        "SCP-188",
+        "SCP-193",
+        "SCP-198"
+      ],
+      "completed_article_ids": [
+        "SCP-028",
+        "SCP-034",
+        "SCP-046",
+        "SCP-049",
+        "SCP-052",
+        "SCP-065",
+        "SCP-073",
+        "SCP-076",
+        "SCP-088",
+        "SCP-096",
+        "SCP-105",
+        "SCP-128",
+        "SCP-145",
+        "SCP-146",
+        "SCP-150",
+        "SCP-154",
+        "SCP-156",
+        "SCP-165",
+        "SCP-198",
+        "SCP-181"
+      ],
+      "no_ending_article_ids": [
+        "SCP-012",
+        "SCP-022",
+        "SCP-097",
+        "SCP-132",
+        "SCP-151",
+        "SCP-193",
+        "SCP-068",
+        "SCP-111",
+        "SCP-123",
+        "SCP-134",
+        "SCP-173",
+        "SCP-188"
+      ],
+      "opened_not_collected": [
+        "SCP-023",
+        "SCP-026",
+        "SCP-031",
+        "SCP-035",
+        "SCP-038",
+        "SCP-039",
+        "SCP-056",
+        "SCP-058",
+        "SCP-060",
+        "SCP-062",
+        "SCP-075",
+        "SCP-077",
+        "SCP-080",
+        "SCP-082",
+        "SCP-087",
+        "SCP-089",
+        "SCP-093",
+        "SCP-095",
+        "SCP-099",
+        "SCP-117",
+        "SCP-144",
+        "SCP-153",
+        "SCP-158",
+        "SCP-162",
+        "SCP-167",
+        "SCP-176",
+        "SCP-178",
+        "SCP-186"
+      ],
+      "remaining_unopened_in_catalog": [
+        "SCP-002",
+        "SCP-003",
+        "SCP-004",
+        "SCP-005",
+        "SCP-006",
+        "SCP-007",
+        "SCP-008",
+        "SCP-009",
+        "SCP-010",
+        "SCP-011",
+        "SCP-013",
+        "SCP-014",
+        "SCP-015",
+        "SCP-016",
+        "SCP-017",
+        "SCP-018",
+        "SCP-019",
+        "SCP-020",
+        "SCP-021",
+        "SCP-024",
+        "SCP-025",
+        "SCP-027",
+        "SCP-029",
+        "SCP-030",
+        "SCP-032",
+        "SCP-033",
+        "SCP-036",
+        "SCP-037",
+        "SCP-040",
+        "SCP-041",
+        "SCP-042",
+        "SCP-043",
+        "SCP-044",
+        "SCP-045",
+        "SCP-047",
+        "SCP-048",
+        "SCP-050",
+        "SCP-051",
+        "SCP-053",
+        "SCP-054",
+        "SCP-055",
+        "SCP-057",
+        "SCP-059",
+        "SCP-061",
+        "SCP-063",
+        "SCP-064",
+        "SCP-066",
+        "SCP-067",
+        "SCP-069",
+        "SCP-070",
+        "SCP-071",
+        "SCP-072",
+        "SCP-074",
+        "SCP-078",
+        "SCP-079",
+        "SCP-081",
+        "SCP-083",
+        "SCP-084",
+        "SCP-085",
+        "SCP-086",
+        "SCP-090",
+        "SCP-091",
+        "SCP-092",
+        "SCP-094",
+        "SCP-098",
+        "SCP-100",
+        "SCP-101",
+        "SCP-102",
+        "SCP-103",
+        "SCP-104",
+        "SCP-106",
+        "SCP-107",
+        "SCP-108",
+        "SCP-109",
+        "SCP-110",
+        "SCP-112",
+        "SCP-113",
+        "SCP-114",
+        "SCP-115",
+        "SCP-116",
+        "SCP-118",
+        "SCP-119",
+        "SCP-120",
+        "SCP-121",
+        "SCP-122",
+        "SCP-124",
+        "SCP-125",
+        "SCP-126",
+        "SCP-127",
+        "SCP-129",
+        "SCP-130",
+        "SCP-131",
+        "SCP-133",
+        "SCP-135",
+        "SCP-136",
+        "SCP-137",
+        "SCP-138",
+        "SCP-139",
+        "SCP-140",
+        "SCP-141",
+        "SCP-142",
+        "SCP-143",
+        "SCP-147",
+        "SCP-148",
+        "SCP-149",
+        "SCP-152",
+        "SCP-155",
+        "SCP-157",
+        "SCP-159",
+        "SCP-160",
+        "SCP-161",
+        "SCP-163",
+        "SCP-164",
+        "SCP-166",
+        "SCP-168",
+        "SCP-169",
+        "SCP-170",
+        "SCP-171",
+        "SCP-172",
+        "SCP-174",
+        "SCP-175",
+        "SCP-177",
+        "SCP-179",
+        "SCP-180",
+        "SCP-182",
+        "SCP-183",
+        "SCP-184",
+        "SCP-185",
+        "SCP-187",
+        "SCP-189",
+        "SCP-190",
+        "SCP-191",
+        "SCP-192",
+        "SCP-194",
+        "SCP-195",
+        "SCP-196",
+        "SCP-197",
+        "SCP-199"
+      ],
+      "remaining_work": [
+        "Read linked exploration/recovered-material pages for SCP-087 and SCP-093 before making complete plot records.",
+        "Review opened_not_collected for longer incident narratives and linked logs.",
+        "Continue remaining unopened IDs, then consider bounded 200–399 expansion."
+      ],
+      "source_index": "https://scp-wiki.wikidot.com/scp-series",
+      "limitations": [
+        "Complete requires a bounded documented narrative incident with actual outcome or a developed documentary narrative with final payoff; explanatory anomaly mechanics alone do not qualify. Continuing anomalies need not be permanently eliminated.",
+        "Some articles consist of several incidents rather than conventional stories; each article remains one record, with a selected central incident and documented aftermath.",
+        "SCP-151 is separated as no_ending because the origin investigation remains open and no central incident concludes.",
+        "SCP-145 redacts the explosive test mechanism; only documented disappearances and suspension are summarized.",
+        "No linked tales or external incident pages were counted without reading them.",
+        "Primary texts can change; summaries refer to accessed versions. SCP Wiki material is CC BY-SA; retain source attribution and review applicable licensing for reuse."
+      ],
+      "strict_qa_reclassifications": {
+        "SCP-012": "Describes recurring compulsion and deaths across anonymous tests, without a bounded developed narrative.",
+        "SCP-022": "Morgue mechanics and explanatory testing reveal are verified, but no sufficiently developed central incident concludes in this record.",
+        "SCP-097": "Describes a recurring seasonal predation sequence; no individual incident develops into a distinct completed plot.",
+        "SCP-132": "Contains an isolated breakage incident and later unexplained shipment, but these do not form a developed plot with a concluded central escalation.",
+        "SCP-193": "Feeding mechanism is exposed by an unattended-tissue observation; this is an explanatory anomaly reveal rather than a completed story."
+      },
+      "qa_notes": [
+        "SCP-012,022,097,132,193 conservatively separated as no_ending after stricter narrative review.",
+        "SCP-154 is a borderline compact but actual bounded experiment incident: repeated firing leads to explosive regeneration and fatal detonation.",
+        "SCP-146 includes an actual recorded escalating experiment, fatal outcome, and containment-effect finding.",
+        "SCP-073 shortened to the actual gang-attack/acquisition narrative rather than combining it with later unrelated backup duties."
+      ]
+    },
+    {
+      "lane": "classics",
+      "bounded_slice": "Ghost Stories of an Antiquary (all 8); More Ghost Stories of an Antiquary (all 7); selected later James stories; seven additional classic uncanny stories; three classic novels/novellas",
+      "complete_count": 34,
+      "considered_titles": [
+        "Canon Alberic's Scrap-Book",
+        "Lost Hearts",
+        "The Mezzotint",
+        "The Ash-tree",
+        "Number 13",
+        "Count Magnus",
+        "'Oh, Whistle, and I'll Come to You, My Lad'",
+        "The Treasure of Abbot Thomas",
+        "A School Story",
+        "The Rose Garden",
+        "The Tractate Middoth",
+        "Casting the Runes",
+        "The Stalls of Barchester Cathedral",
+        "Martin's Close",
+        "Mr. Humphreys and His Inheritance",
+        "The Diary of Mr. Poynter",
+        "An Episode of Cathedral History",
+        "The Story of a Disappearance and an Appearance",
+        "The Haunted Dolls' House",
+        "A View from a Hill",
+        "A Warning to the Curious",
+        "The Monkey's Paw",
+        "The Signal-Man",
+        "The Upper Berth",
+        "The Willows",
+        "The Wendigo",
+        "The Canterville Ghost",
+        "The Body Snatcher",
+        "Rats",
+        "Wailing Well",
+        "The Uncommon Prayer-Book",
+        "The Turn of the Screw",
+        "Dracula",
+        "Strange Case of Dr Jekyll and Mr Hyde",
+        "The Phantom Coach",
+        "The Open Window"
+      ],
+      "excluded": [
+        {
+          "title": "The Phantom Coach",
+          "reason": "page did not yield ending evidence in this pass; deferred rather than summarized from memory"
+        },
+        {
+          "title": "The Open Window",
+          "reason": "initial URL was disambiguation; hoax-story candidate deferred outside core supernatural slice"
+        }
+      ],
+      "remaining": [
+        "The Residence at Whitminster",
+        "Two Doctors",
+        "An Evening’s Entertainment",
+        "A Neighbour’s Landmark",
+        "The Experiment",
+        "The Phantom Coach",
+        "The Open Window"
+      ],
+      "limitations": [
+        "26 summaries use detailed secondary synopses rather than a full-text reading. First eight checked against Project Gutenberg primary text endings.",
+        "Classic lane is heavily weighted toward M. R. James for bounded-catalog coverage, not a representative survey of all classic fiction.",
+        "Unexplained endings are preserved; no definitive mechanism added where story leaves it uncertain."
+      ],
+      "source_catalogs": [
+        "https://en.wikipedia.org/wiki/Ghost_Stories_of_an_Antiquary",
+        "https://en.wikipedia.org/wiki/More_Ghost_Stories",
+        "https://en.wikipedia.org/wiki/A_Thin_Ghost_and_Others",
+        "https://en.wikipedia.org/wiki/A_Warning_to_the_Curious_and_Other_Ghost_Stories"
+      ]
+    },
+    {
+      "lane": "twilight_zone",
+      "discovery_basis": "Source-discovery agent identified accessible original-series episode synopses before this lane was selected.",
+      "bounded_slice": "Ten explicitly selected original-series episodes; not a sequential season slice.",
+      "complete_count": 10,
+      "considered_titles": [
+        "The After Hours",
+        "The Hitch-Hiker",
+        "The Monsters Are Due on Maple Street",
+        "Walking Distance",
+        "A Stop at Willoughby",
+        "The Howling Man",
+        "Living Doll",
+        "It's a Good Life",
+        "The Invaders",
+        "The Last Rites of Jeff Myrtlebank"
+      ],
+      "remaining": "Other original-series episodes, later revivals, and original short-story versions unprocessed. Next queue: A Nice Place to Visit; Night Call; The Grave; The Jungle; The Bewitchin Pool; Person or Persons Unknown; Long Distance Call; A Piano in the House; Mirror Image; Twenty Two.",
+      "limitations": [
+        "Detailed secondary synopses verify final scenes; no primary viewing.",
+        "Includes two alien encounters under the broad uncanny/speculative umbrella.",
+        "Episode adaptations are distinct works; original short-story source versions were not merged or independently harvested."
+      ],
+      "source_catalogs": [
+        "https://en.wikipedia.org/wiki/List_of_The_Twilight_Zone_(1959_TV_series)_episodes"
+      ]
+    },
+    {
+      "lane": "radio",
+      "scope": "Three original Quiet, Please radio plays verified against opened script transcripts",
+      "considered_ids": [
+        "QuietPlease-01",
+        "QuietPlease-59",
+        "QuietPlease-70",
+        "QuietPlease-68"
+      ],
+      "complete_count": 3,
+      "incomplete_count": 0,
+      "no_ending_count": 0,
+      "remaining_ids": [
+        "QuietPlease-68"
+      ],
+      "limitations": [
+        "Beezer's Cellar Generic Radio link redirected to inaccessible archived script; omitted rather than summarized from memory.",
+        "Scripts are primary dramatic texts hosted by archival sites, not scans of original production manuscripts.",
+        "Nothing Behind the Door intentionally leaves the void and creature indistinct; no invented explanation added.",
+        "Good Ghost stairway suggests reunion with Ada, but transcript does not explicitly name waiting figure or state Schuster's death."
+      ],
+      "verified_date": "2026-10-11"
+    },
+    {
+      "lane": "folklore",
+      "discovery_basis": "Broad discovery map prioritized attributed Folktexts units before this harvest.",
+      "bounded_slice": "Three selected titled retellings on type1676 page and two on type0366 page.",
+      "complete_count": 5,
+      "considered_titles": [
+        "Two Spirits",
+        "The Death Shroud",
+        "The Preacher and the Ghost",
+        "White Cap",
+        "The Stolen Liver"
+      ],
+      "remaining": [
+        "Other titled units on these two pages; other Folktexts thematic pages.",
+        "Fake-ghost-only tales require scope screening; do not treat generic legend types as published stories."
+      ],
+      "limitations": [
+        "Specific published versions retained; not claims of historical paranormal events.",
+        "Original cited volumes not independently consulted; evidence is full text and attribution on scholarly edited site.",
+        "Summaries plus evidence notes from each collection page total fewer than 200 words; links alone do not reset page budgets."
+      ],
+      "source_catalogs": [
+        "https://sites.pitt.edu/~dash/folktexts.html",
+        "https://sites.pitt.edu/~dash/type1676.html",
+        "https://sites.pitt.edu/~dash/type0366.html"
+      ]
+    }
+  ],
+  "discovery_vs_harvest": "Source map catalogs are discovery only unless exact harvested records appear in plots.json. Estimates are planning ranges, not verified plot counts."
+}

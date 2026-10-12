@@ -1,0 +1,668 @@
+[
+  {
+    "title": "Welcome to Dead House",
+    "catalog_id": "Goosebumps-original-01",
+    "premise": "A family inherits a house in a strangely deserted town, where their children keep seeing unfamiliar people inside.",
+    "plays_out": "The townspeople are undead who lure fresh victims to sustain themselves with blood. The children expose them to sunlight and rescue their parents, but another family arrives with an agent who resembles the supposedly destroyed undead ringleader.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Welcome_to_Dead_House",
+        "evidence_quality": "detailed synopsis; opened",
+        "ending_evidence": "Sunlight destroys the undead; departing family sees apparent agent guiding new victims."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "Stay Out of the Basement",
+    "catalog_id": "Goosebumps-original-02",
+    "premise": "Two children investigate their botanist father's locked basement as he develops disturbing plantlike habits.",
+    "plays_out": "They discover a plant duplicate has imprisoned their real father, identify him by his red blood, and help him destroy the clone. After he clears out his experiments, a surviving flower claims to be their real father.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/Stay_Out_of_the_Basement",
+        "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+        "ending_evidence": "Red-blood test identifies father; clone axed; flower claims fatherhood."
+      },
+      {
+        "url": "https://greatbooksguy.com/2025/06/17/goosebumps-review-stay-out-of-the-basement-1992-by-r-l-stine/",
+        "evidence_quality": "secondary review; opened supporting page",
+        "ending_evidence": "Red-blood test identifies father; clone axed; flower claims fatherhood."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "Monster Blood",
+    "catalog_id": "Goosebumps-original-03",
+    "premise": "A boy visiting his aunt buys novelty slime that keeps growing and makes his dog enormous.",
+    "plays_out": "The slime begins swallowing people, and the aunt's cat is revealed as a witch controlling it. The giant dog knocks her into the slime, breaking the spell and releasing its victims; the leftover slime then disappears.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/Monster_Blood_%28book%29",
+        "evidence_quality": "detailed synopsis; opened",
+        "ending_evidence": "Dog pushes witch into slime; victims freed and dog shrinks; remainder vanishes."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "Say Cheese and Die!",
+    "catalog_id": "Goosebumps-original-04",
+    "premise": "Friends steal a camera whose photographs show disasters that subsequently happen to their subjects.",
+    "plays_out": "They discover its inventor cursed it after his partner stole it; the thief tries to imprison them to protect the secret. Photographing him kills him, and they hide the camera again, but two bullies retrieve it and photograph themselves.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/Say_Cheese_and_Die%21",
+        "evidence_quality": "detailed synopsis; opened",
+        "ending_evidence": "Thief dies after photo; bullies take own photograph with retrieved camera."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "The Curse of the Mummy's Tomb",
+    "catalog_id": "Goosebumps-original-05",
+    "premise": "A boy visiting an archaeological dig carries a mummy's hand as a charm while mysterious dangers surround the excavation.",
+    "plays_out": "A guardian of the tomb traps him, his cousin, and his uncle and tries to kill them for disturbing it. The charm animates the mummies, who drive the guardian away, allowing the family to escape; a final apparent mummy scare is only the boy's returning parents.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/The_Curse_of_the_Mummy%27s_Tomb",
+        "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+        "ending_evidence": "Hand summons mummies against attacker; family escapes; parents cause final knock."
+      },
+      {
+        "url": "https://greatbooksguy.com/2025/09/19/goosebumps-review-5-the-curse-of-the-mummys-tomb-1993-by-r-l-stine/",
+        "evidence_quality": "secondary review; opened supporting page",
+        "ending_evidence": "Hand summons mummies against attacker; family escapes; parents cause final knock."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "Let's Get Invisible!",
+    "catalog_id": "Goosebumps-original-06",
+    "premise": "Children discover an attic mirror that makes them invisible and compete to remain invisible longer.",
+    "plays_out": "The mirror's reflections replace two children and try to trap the others inside. Smashing it restores the prisoners and removes the doubles, but the protagonist notices his left-handed brother now throws right-handed, implying his double remains.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/Let%27s_Get_Invisible%21",
+        "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+        "ending_evidence": "Mirror smashed; friends restored; left-handed brother uses right hand."
+      },
+      {
+        "url": "https://greatbooksguy.com/2025/11/14/goosebumps-6-lets-get-invisible-1993-by-r-l-stine/",
+        "evidence_quality": "secondary review; opened supporting page",
+        "ending_evidence": "Mirror smashed; friends restored; left-handed brother uses right hand."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "Night of the Living Dummy",
+    "catalog_id": "Goosebumps-original-07",
+    "premise": "Two rival sisters acquire ventriloquist dummies, and one begins behaving maliciously without its owner's control.",
+    "plays_out": "The second dummy demands that they become his slaves and survives their attempts to destroy or bury him. They finally get him crushed by a steamroller, then return home to discover the first dummy is also alive.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/Night_of_the_Living_Dummy",
+        "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+        "ending_evidence": "Mr. Wood crushed by second steamroller; Slappy speaks afterward."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "The Girl Who Cried Monster",
+    "catalog_id": "Goosebumps-original-08",
+    "premise": "A girl notorious for invented monster stories discovers her librarian really transforms into a monster, but nobody believes her.",
+    "plays_out": "He catches her spying and tries to eat her; another witness finally convinces her parents. They invite the librarian to dinner, reveal themselves as monsters, and eat him to keep their neighborhood from attracting attention; their children are monsters too.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/The_Girl_Who_Cried_Monster",
+        "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+        "ending_evidence": "Parents eat librarian; children also monsters whose fangs have not grown."
+      },
+      {
+        "url": "https://greatbooksguy.com/2025/11/27/goosebumps-review-8-the-girl-who-cried-monster-1993-by-r-l-stine/",
+        "evidence_quality": "secondary review; opened supporting page",
+        "ending_evidence": "Parents eat librarian; children also monsters whose fangs have not grown."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "Welcome to Camp Nightmare",
+    "catalog_id": "Goosebumps-original-09",
+    "premise": "A boy's summer camp becomes terrifying as campers disappear, dangerous creatures prowl, and the staff refuse to explain anything.",
+    "plays_out": "He finally refuses orders to hunt escaped girls, passing a concealed government test: everyone was staging the threats to assess his judgment and bravery. His scientist parents can now take him on their expedition to the dangerous alien planet Earth.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/Welcome_to_Camp_Nightmare",
+        "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+        "ending_evidence": "Camp is test; all missing campers unharmed; parents' destination Earth."
+      },
+      {
+        "url": "https://greatbooksguy.com/2025/12/10/goosebumps-review-9-welcome-to-camp-nightmare-1993-by-r-l-stine/",
+        "evidence_quality": "secondary review; opened supporting page",
+        "ending_evidence": "Camp is test; all missing campers unharmed; parents' destination Earth."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "The Ghost Next Door",
+    "catalog_id": "Goosebumps-original-10",
+    "premise": "A lonely girl suspects the new boy next door is a ghost because he keeps appearing and disappearing.",
+    "plays_out": "She discovers she and her family died in a fire five years earlier, while the boy is alive and threatened by a shadow seeking to replace him. She saves him from another house fire, then rejoins her family in the afterlife.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en-academic.com/dic.nsf/enwiki/2339453/",
+        "evidence_quality": "detailed synopsis; opened; older Wikipedia mirror",
+        "ending_evidence": "Girl saves boy from burning house, then joins dead family."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "The Haunted Mask",
+    "catalog_id": "Goosebumps-original-11",
+    "premise": "A bullied girl buys a frightening Halloween mask to scare her tormentors, but it changes her behavior and fuses to her face.",
+    "plays_out": "The mask is a living face that can be removed only with a symbol of love. Her mother's handmade likeness breaks its hold and repels the other masks, but her younger brother puts the discarded mask on despite the warning that another attachment will be permanent.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/The_Haunted_Mask",
+        "evidence_quality": "detailed synopsis; opened",
+        "ending_evidence": "Mother's plaster likeness removes face; brother dons mask; reattachment permanent."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "Be Careful What You Wish For...",
+    "catalog_id": "Goosebumps-original-12",
+    "premise": "A bullied, clumsy girl receives three wishes from a mysterious woman, hoping to improve her school life.",
+    "plays_out": "Her wishes weaken her teammates, empty the town, and turn her bully into an obsessive admirer. She wishes the bully had met the woman instead; the bully promptly wishes she would fly away, transforming her into a bird.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://greatbooksguy.com/2026/01/03/goosebumps-review-12-be-careful-what-you-wish-for-1993-by-r-l-stine/",
+        "evidence_quality": "detailed synopsis; opened",
+        "ending_evidence": "Final transfer of encounter lets bully wish protagonist into bird."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "Piano Lessons Can Be Murder",
+    "catalog_id": "Goosebumps-original-13",
+    "premise": "A boy discovers a ghost playing the piano in his new house and starts lessons with a teacher obsessed with his hands.",
+    "plays_out": "The teacher is a robot, and the school's inventor harvests children's hands for perfect piano-playing machines. The warning ghost and other victims' spirits carry the inventor away; the boy quits piano for baseball, where people again praise his hands.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/Piano_Lessons_Can_Be_Murder",
+        "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+        "ending_evidence": "Ghost victims seize hand-harvesting inventor; boy takes up baseball."
+      },
+      {
+        "url": "https://greatbooksguy.com/2026/01/03/goosebumps-review-13-piano-lessons-can-be-murder-1993-by-r-l-stine/",
+        "evidence_quality": "secondary review; opened supporting page",
+        "ending_evidence": "Ghost victims seize hand-harvesting inventor; boy takes up baseball."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "The Werewolf of Fever Swamp",
+    "catalog_id": "Goosebumps-original-14",
+    "premise": "A boy living beside a swamp adopts a stray dog that is blamed for mutilated animals, although he suspects a werewolf.",
+    "plays_out": "His new friend turns out to be the werewolf and bites him before the dog drives the attacker away. A feared swamp hermit rescues the boy, but the bite has passed on the curse: he now transforms and hunts with his dog.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://greatbooksguy.com/2026/02/04/goosebumps-review-14-the-werewolf-of-fever-swamp-1993-by-r-l-stine/",
+        "evidence_quality": "detailed synopsis; opened",
+        "ending_evidence": "Friend Will bites boy; Wolf saves him; boy becomes werewolf."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "You Can't Scare Me!",
+    "catalog_id": "Goosebumps-original-15",
+    "premise": "Children try increasingly elaborate pranks to frighten a classmate who boasts of her courage, finally staging a local mud-monster legend.",
+    "plays_out": "Real mud monsters appear before the costumed pranksters arrive, and everyone runs away. Weeks later the target brags that she has seen genuine monsters, while the would-be tormentors remain too frightened to try again.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/You_Can%27t_Scare_Me%21",
+        "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+        "ending_evidence": "Actual mud monsters precede costumes; target brags, pranksters still scared."
+      },
+      {
+        "url": "https://greatbooksguy.com/2026/02/04/goosebumps-review-15-you-cant-scare-me-1994-by-r-l-stine/",
+        "evidence_quality": "secondary review; opened supporting page",
+        "ending_evidence": "Actual mud monsters precede costumes; target brags, pranksters still scared."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "One Day at HorrorLand",
+    "catalog_id": "Goosebumps-original-16",
+    "premise": "A lost family visits a horror theme park where the rides become genuinely dangerous and their car explodes.",
+    "plays_out": "The staff are real monsters broadcasting the visitors' ordeals as entertainment, and they block escape. The family discovers pinching deflates them and flees in another vehicle, only to find a monster has followed home to offer return passes.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/One_Day_at_HorrorLand",
+        "evidence_quality": "detailed synopsis; opened",
+        "ending_evidence": "Pinching deflates monsters; stowaway offers free passes at home."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "Why I'm Afraid of Bees",
+    "catalog_id": "Goosebumps-original-17",
+    "premise": "A bullied boy signs up to swap bodies with a confident peer, but a stray bee enters the transfer and leaves him in its body.",
+    "plays_out": "The other boy refuses to return his body, so he rallies a swarm and stings the impostor, apparently dying as a bee. He wakes restored and more confident, but still sucks pollen from a flower.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/Why_I%27m_Afraid_of_Bees",
+        "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+        "ending_evidence": "Stinging impostor triggers blackout and restoration; ending pollen habit."
+      },
+      {
+        "url": "https://greatbooksguy.com/2026/03/21/goosebumps-review-17-why-im-afraid-of-bees-1994-by-r-l-stine/",
+        "evidence_quality": "secondary review; opened supporting page",
+        "ending_evidence": "Stinging impostor triggers blackout and restoration; ending pollen habit."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "Monster Blood II",
+    "catalog_id": "Goosebumps-original-18",
+    "premise": "A boy's friend feeds magical slime to his classroom hamster, which grows into an uncontrollable giant.",
+    "plays_out": "He eats some himself to wrestle the hamster and save a bully, but both suddenly shrink when the slime's magic expires. The teacher gives him the hamster, his friend brings a fresh can, and they discover the hamster eating more green slime.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumpsblogger.com/goosebumps-18-monster-blood-ii/",
+        "evidence_quality": "detailed synopsis; opened; corroborated by detailed quiz",
+        "ending_evidence": "Slime expiration shrinks combatants; hamster eats fresh slime in final scene."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "Deep Trouble",
+    "catalog_id": "Goosebumps-original-19",
+    "premise": "A boy snorkeling during a Caribbean visit is saved from a shark by a mermaid whom his scientist uncle captures for a zoo.",
+    "plays_out": "The uncle's assistant helps kidnappers steal her and attempts to drown the family in a tank. Other mermaids rescue them and free their companion; the uncle conceals their existence, but the boy returns underwater and encounters a real sea monster.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/Deep_Trouble",
+        "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+        "ending_evidence": "Mermaids rescue family and captive; secrecy agreed; final sea monster attack."
+      },
+      {
+        "url": "https://greatbooksguy.com/2026/03/30/goosebumps-review-19-deep-trouble-1994-by-r-l-stine/",
+        "evidence_quality": "secondary review; opened supporting page",
+        "ending_evidence": "Mermaids rescue family and captive; secrecy agreed; final sea monster attack."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "The Scarecrow Walks at Midnight",
+    "catalog_id": "Goosebumps-original-20",
+    "premise": "Children visiting their grandparents' farm notice their fearful behavior and scarecrows moving in the fields.",
+    "plays_out": "A farmhand animated the scarecrows to force the grandparents to obey him, but loses control when a prank provokes another spell. His son burns the attacking scarecrows, restoring normality until the farmhand's spellbook apparently animates a stuffed bear.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/The_Scarecrow_Walks_at_Midnight",
+        "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+        "ending_evidence": "Sticks burns uncontrolled scarecrows; taxidermied bear begins moving."
+      },
+      {
+        "url": "https://greatbooksguy.com/2026/04/08/goosebumps-review-20-the-scarecrow-walks-at-midnight-1994-by-r-l-stine/",
+        "evidence_quality": "secondary review; opened supporting page",
+        "ending_evidence": "Sticks burns uncontrolled scarecrows; taxidermied bear begins moving."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "Go Eat Worms!",
+    "catalog_id": "Goosebumps-original-21",
+    "premise": "A boy who collects and torments worms starts finding them in his food and belongings after cutting one in half.",
+    "plays_out": "His sister admits to the small-scale pranks, but a giant worm really emerges and drags him toward its burrow until her model bird scares it off. He abandons worms for pinning butterflies, then faces a giant butterfly carrying a pin.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/Go_Eat_Worms%21",
+        "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+        "ending_evidence": "Model robin frightens giant worm; butterfly with pin ends replacement hobby."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "Ghost Beach",
+    "catalog_id": "Goosebumps-original-22",
+    "premise": "Siblings visiting coastal relatives meet children who urge them to imprison a supposedly dangerous ghost in a cave.",
+    "plays_out": "The cave-dweller is an occult investigator, and the friendly children are ghosts who want the siblings dead; he sacrifices himself to trap them. Back at the relatives' house, his dog's barking reveals their hosts are ghosts too, leaving the children endangered.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/Ghost_Beach",
+        "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+        "ending_evidence": "Investigator seals ghost children; dog exposes hosts as ghosts; fate unresolved."
+      },
+      {
+        "url": "https://greatbooksguy.com/2026/05/10/goosebumps-review-22-ghost-beach-1994-by-r-l-stine/",
+        "evidence_quality": "secondary review; opened supporting page",
+        "ending_evidence": "Investigator seals ghost children; dog exposes hosts as ghosts; fate unresolved."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "Return of the Mummy",
+    "catalog_id": "Goosebumps-original-23",
+    "premise": "A boy returns to an Egyptian excavation and reads a chant supposedly capable of awakening its ancient mummy.",
+    "plays_out": "A reporter is the mummy's immortal sister, using a magical hand to raise him, but he attacks her for disturbing his rest. Breaking her pendant turns her into a scarab and stops the mummy; afterward the boy cries out in bed, suggesting the scarab has reached him.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/Return_of_the_Mummy",
+        "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+        "ending_evidence": "Mummy attacks sister; pendant breaks and she becomes scarab; final pain ambiguous."
+      },
+      {
+        "url": "https://greatbooksguy.com/2026/05/28/goosebumps-review-23-return-of-the-mummy-1994-by-r-l-stine/",
+        "evidence_quality": "secondary review; opened supporting page",
+        "ending_evidence": "Mummy attacks sister; pendant breaks and she becomes scarab; final pain ambiguous."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "Phantom of the Auditorium",
+    "catalog_id": "Goosebumps-original-24",
+    "premise": "Children rehearsing a supposedly cursed school play find threatening messages and a masked intruder beneath the stage.",
+    "plays_out": "They expose a homeless man sabotaging rehearsals, but the opening-night Phantom is a real ghost who tells how he died in the trapdoor. An old yearbook reveals that the friendly new student helping them was the long-dead original actor.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/Phantom_of_the_Auditorium",
+        "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+        "ending_evidence": "Ghost performs death story; yearbook identifies Brian as original actor."
+      },
+      {
+        "url": "https://greatbooksguy.com/2026/07/07/goosebumps-review-24-phantom-of-the-auditorium-1994-by-r-l-stine/",
+        "evidence_quality": "secondary review; opened supporting page",
+        "ending_evidence": "Ghost performs death story; yearbook identifies Brian as original actor."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "Attack of the Mutant",
+    "catalog_id": "Goosebumps-original-25",
+    "premise": "A comic-book fan finds a building identical to his favorite supervillain's headquarters and discovers himself drawn into new issues.",
+    "plays_out": "The villain has turned him into a comic character and disguised himself as his new friend. The boy tricks the shapeshifter into becoming liquid, trapping him permanently, but later cuts himself and bleeds ink: he has not returned fully to normal.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/Attack_of_the_Mutant",
+        "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+        "ending_evidence": "Liquid transformation traps villain; boy bleeds ink after returning home."
+      },
+      {
+        "url": "https://greatbooksguy.com/2026/07/19/goosebumps-review-25-attack-of-the-mutant-1994-by-r-l-stine/",
+        "evidence_quality": "secondary review; opened supporting page",
+        "ending_evidence": "Liquid transformation traps villain; boy bleeds ink after returning home."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "My Hairiest Adventure",
+    "catalog_id": "Goosebumps-original-26",
+    "premise": "After trying discarded tanning lotion, a boy grows uncontrollable hair while his friends disappear and familiar-looking dogs appear.",
+    "plays_out": "His parents reveal that he and those friends were dogs transformed into children by injections whose effects are wearing off. He reverts permanently and still plays with his dog friends; his parents then bring home a baby bearing their former cat's distinctive eyes.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/My_Hairiest_Adventure",
+        "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+        "ending_evidence": "Dog-to-child serum fails; protagonist becomes dog; cat implied new baby."
+      },
+      {
+        "url": "https://greatbooksguy.com/2026/07/30/goosebumps-review-26-my-hairiest-adventure-1994-by-r-l-stine/",
+        "evidence_quality": "secondary review; opened supporting page",
+        "ending_evidence": "Dog-to-child serum fails; protagonist becomes dog; cat implied new baby."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "A Night in Terror Tower",
+    "catalog_id": "Goosebumps-original-27",
+    "premise": "Two children touring a London prison tower are pursued by a hooded man, lose their memories, and are transported into the Middle Ages.",
+    "plays_out": "They are royal heirs hidden in the future by a sorcerer to evade their murderous uncle, and their pursuer is his executioner. The boy steals magical stones and returns them all to the present, where the sorcerer becomes their guardian.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/A_Night_in_Terror_Tower",
+        "evidence_quality": "detailed synopsis; opened",
+        "ending_evidence": "Royal children escape execution using stolen stones; sorcerer joins them as guardian."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "The Cuckoo Clock of Doom",
+    "catalog_id": "Goosebumps-original-28",
+    "premise": "A boy twists an antique clock's cuckoo backward to frame his troublesome sister and instead starts living progressively earlier days.",
+    "plays_out": "He becomes a baby before finally reaching the clock and restoring forward time. He returns to his twelfth birthday, but accidentally knocked out the year of his sister's birth, erasing her; he thinks he might bring her back someday.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/The_Cuckoo_Clock_of_Doom",
+        "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+        "ending_evidence": "Baby reverses bird and year dial; missing sister's birth year erases her."
+      },
+      {
+        "url": "https://greatbooksguy.com/2026/08/16/goosebumps-review-28-the-cuckoo-clock-of-doom-1995-by-r-l-stine/",
+        "evidence_quality": "secondary review; opened supporting page",
+        "ending_evidence": "Baby reverses bird and year dial; missing sister's birth year erases her."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "Monster Blood III",
+    "catalog_id": "Goosebumps-original-29",
+    "premise": "While babysitting a cousin who plays chemical pranks, a boy accidentally eats magical slime planted in one of the experiments.",
+    "plays_out": "He grows enormous and flees police who mistake him for a threat. His cousin eventually concocts a successful shrinking mixture after several failures, but it keeps working afterward, leaving him tiny enough for his dog to carry him in its mouth.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/Monster_Blood_III",
+        "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+        "ending_evidence": "Shrinking formula restores boy then overshoots; dog carries tiny boy to parents."
+      },
+      {
+        "url": "https://greatbooksguy.com/2026/08/25/goosebumps-review-29-monster-blood-iii-1995-by-r-l-stine/",
+        "evidence_quality": "secondary review; opened supporting page",
+        "ending_evidence": "Shrinking formula restores boy then overshoots; dog carries tiny boy to parents."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "It Came from Beneath the Sink!",
+    "catalog_id": "Goosebumps-original-30",
+    "premise": "Children moving into a new house discover a living sponge beneath the sink, followed by worsening accidents and bad luck.",
+    "plays_out": "The creature feeds on misfortune, survives violent attempts to destroy it, and harms anyone who receives it. The girl defeats it by cuddling and singing to it, but their returned dog brings home a fanged potato resembling another dangerous creature.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/It_Came_from_Beneath_the_Sink%21",
+        "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+        "ending_evidence": "Affection shrinks Grool; dog brings fanged potato Lanx."
+      },
+      {
+        "url": "https://greatbooksguy.com/2026/08/25/goosebumps-review-30-it-came-from-beneath-the-sink-1995-by-r-l-stine/",
+        "evidence_quality": "secondary review; opened supporting page",
+        "ending_evidence": "Affection shrinks Grool; dog brings fanged potato Lanx."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "Night of the Living Dummy II",
+    "catalog_id": "Goosebumps-original-31",
+    "premise": "A girl receives a replacement ventriloquist dummy that comes alive after she reads the words in its pocket and frames her for its vandalism.",
+    "plays_out": "She and her sister plan to have their brother disguise himself as her old dummy to expose it. The apparent decoy smashes the evil dummy's head, but their brother slept through the plan, implying the old dummy truly acted on its own.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/Night_of_the_Living_Dummy_II",
+        "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked",
+        "ending_evidence": "Dennis-like attacker cracks Slappy's head; Jed never participated."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  },
+  {
+    "title": "The Barking Ghost",
+    "catalog_id": "Goosebumps-original-32",
+    "premise": "A boy in a new woodland home and his neighbor follow ghostly dogs into a shack where bodies can be exchanged.",
+    "plays_out": "The dogs are displaced humans who steal the children's bodies, leaving them as dogs. They drag the impostors back for another exchange, but accidentally swap with chipmunks instead and end up considering a search for acorns.",
+    "status": "complete",
+    "sources": [
+      {
+        "url": "https://goosebumps.fandom.com/wiki/The_Barking_Ghost",
+        "evidence_quality": "detailed synopsis; cached excerpt (resolution and twist retrieved); direct open blocked; corroborated by opened recap",
+        "ending_evidence": "Attempted reversal swaps children into chipmunks; recap mislabels them squirrels."
+      }
+    ],
+    "lane": "goosebumps",
+    "author": "R. L. Stine",
+    "medium": "novella",
+    "verified_date": "2026-10-11"
+  }
+]
