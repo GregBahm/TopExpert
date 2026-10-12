@@ -17,3 +17,4 @@
 **/*.tar.gz
 **/top-expert-selects.json
 **/top-expert-review-backup.json
+**/reviews.json.*.tmp

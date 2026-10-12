@@ -6,7 +6,9 @@
 
 `build-report.cjs` validates counts, IDs, seed fidelity, ranks and winner correspondence. It invokes `render-review.cjs`, which generates the standalone report, `site/app/report.ts`, and report downloads under `site/public`. No research fetching or AI generation is needed to rebuild these artifacts.
 
-The website source in `site/` implements selects, notes, filtering and export/import. Hosted reviews persist in private Sites D1 by signed-in user and pitch ID; account review records are not part of this repository. The standalone HTML instead stores reviews in the current browser and labels that limitation.
+For automatic local saves, run `node .\outputs\payoff_exploration\review-server.cjs` from `DesignDevelopment` and open http://127.0.0.1:8765. The dependency-free server loads and atomically updates `reviews.json` in this directory. Commit that file to preserve selections and notes in Git; wait for **Saved to reviews.json** before closing. Rebuilding the report does not overwrite reviews. Opening the HTML as `file:///` is read-only, but can still export old browser-only reviews for import on the server.
+
+The website source in `site/` implements selects, notes, filtering and export/import. Hosted reviews still persist in private Sites D1 by signed-in user and pitch ID; account review records are separate from the local `reviews.json` and are not part of this repository.
 
 `validation.json`, `browser-validation.json`, and `review-validation.json` preserve historical verification evidence. Some original visual/verification limits remain documented; these are not guarantees about every browser or story mechanism. `review-preview.jpg` shows the simplified review interface without personal notes.
 

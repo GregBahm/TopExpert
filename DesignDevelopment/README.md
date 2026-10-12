@@ -14,7 +14,23 @@ The three `generated_*.json` files preserve original generation, and the three `
 
 ## Read or regenerate the reports
 
-Open `outputs/payoff_exploration/report.html` for a standalone reading/review tool, or read `report.md`. The standalone file saves selects and notes only in that browser; export/import transfers them. It does not sync with the hosted Site. The standalone storage mode was not browser-tested because the automation tool blocks file URLs.
+For local review with automatic, Git-trackable saves, run from `DesignDevelopment` (Node.js 22.13 or newer; no packages or database setup required):
+
+```powershell
+node .\outputs\payoff_exploration\review-server.cjs
+```
+
+Open **http://127.0.0.1:8765**, not the `file:///` HTML URL. Every selection and note automatically saves to `outputs/payoff_exploration/reviews.json`, including notes on unselected pitches. The server reads that file when you reopen or refresh the page. Wait for **Saved to reviews.json** before closing; failed saves are shown explicitly with a retry button and pending drafts are kept in browser storage when available. Keep the terminal running while reviewing; Ctrl+C stops the server. Commit `reviews.json` normally to preserve your review history. It is intentionally not ignored. The server binds only to this computer's loopback address and writes via atomic file replacement.
+
+Opening `report.html` directly is now a read-only preview. If you made browser-only edits using the old standalone page, open the file URL in that same browser, use **Export / import → Back up all reviews**, then import the backup on the local server. Imports merge by pitch ID and automatically save to `reviews.json`. Default downloaded backup/selects filenames remain ignored; the canonical `reviews.json` is tracked. Local file reviews and hosted account reviews are separate.
+
+Run the local persistence tests from `DesignDevelopment`:
+
+```powershell
+node --test .\outputs\payoff_exploration\review-server.test.cjs
+```
+
+You can also read `report.md` without a server.
 
 To validate the 50×10 dataset and regenerate the report and website HTML source, run from the repository root:
 
@@ -22,7 +38,7 @@ To validate the 50×10 dataset and regenerate the report and website HTML source
 node DesignDevelopment/outputs/payoff_exploration/build-report.cjs
 ```
 
-The generator uses relative paths and no external services. It updates `ranked_pitches.json`, `report.md`, `report.html`, `validation.json`, `site/app/report.ts`, and the report downloads under `site/public/`.
+The generator uses relative paths and no external services. It updates `ranked_pitches.json`, `report.md`, `report.html`, `validation.json`, `site/app/report.ts`, and the report downloads under `site/public/`. It never overwrites `reviews.json`.
 
 ## Develop the website on another computer
 
@@ -64,4 +80,4 @@ Publishing requires the authorized Sites workflow and fresh short-lived source c
 
 ## Excluded local material
 
-Dependency installations/caches, nested Git metadata, generated framework builds, Wrangler/Miniflare databases and logs, machine-specific runtime settings, environment secrets, deployment archives, copied full-text/page evidence caches, duplicate text drafts, QA import fixtures, and throwaway research/generation scripts were excluded. Substantive datasets, coverage/provenance metadata, original seeds, all pitches/rankings, reproducible report generators, current website source, schema, and lockfile are retained.
+Dependency installations/caches, nested Git metadata, generated framework builds, Wrangler/Miniflare databases and logs, machine-specific runtime settings, environment secrets, deployment archives, copied full-text/page evidence caches, duplicate text drafts, QA import fixtures, and throwaway research/generation scripts were excluded. Substantive datasets, coverage/provenance metadata, original seeds, all pitches/rankings, reproducible report generators, current website source, schema, and lockfile are retained. Local `reviews.json` is intentionally version-controlled; do not put sensitive notes in it if they should not be shared with repository readers.
