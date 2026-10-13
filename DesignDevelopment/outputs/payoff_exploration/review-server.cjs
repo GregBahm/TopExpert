@@ -2,31 +2,28 @@ const fs = require('node:fs/promises');
 const http = require('node:http');
 const path = require('node:path');
 const {randomUUID} = require('node:crypto');
+const {validateRecord, validateDocument} = require('./review-schema.cjs');
 
 function createReviewServer(root = __dirname) {
   const reviewPath = path.join(root, 'reviews.json');
   const ids = new Set(require(path.join(root, 'ranked_pitches.json')).concepts.flatMap(c => c.pitches.map(p => p.id)));
   let writes = Promise.resolve();
-  const validRecord = r => r && ids.has(r.id) && typeof r.selected === 'boolean' &&
-    typeof r.notes === 'string' && r.notes.length <= 10000;
+  const validRecord = r => {try {return ids.has(validateRecord(r).id)} catch {return false}};
 
   async function readReviews() {
-    const data = JSON.parse(await fs.readFile(reviewPath, 'utf8'));
-    if (data.format !== 'top-expert-reviews' || data.version !== 1 || !Array.isArray(data.records) ||
-        data.records.length > ids.size || !data.records.every(validRecord) ||
-        new Set(data.records.map(r => r.id)).size !== data.records.length) {
-      throw Error('Invalid reviews.json; restore a valid review backup before editing.');
-    }
-    return data;
+    return validateDocument(JSON.parse(await fs.readFile(reviewPath, 'utf8')));
   }
 
   function saveRecord(record) {
     const write = writes.then(async () => {
       const data = await readReviews();
-      const records = new Map(data.records.map(r => [r.id, {id: r.id, selected: r.selected, notes: r.notes}]));
-      if (record.selected || record.notes) records.set(record.id, record);
+      const records = new Map(data.records.map(r => [r.id, r]));
+      const previous = records.get(record.id);
+      const merged = {...previous, ...record};
+      const hasExtraData = Object.keys(merged).some(key => !['id', 'status', 'notes'].includes(key));
+      if (merged.status !== 'unreviewed' || merged.notes || hasExtraData) records.set(record.id, merged);
       else records.delete(record.id);
-      const payload = {format: 'top-expert-reviews', version: 1, records: [...records.values()].sort((a, b) => a.id.localeCompare(b.id))};
+      const payload = {...data, records: [...records.values()].sort((a, b) => a.id.localeCompare(b.id))};
       const temporary = reviewPath + '.' + randomUUID() + '.tmp';
       try {
         const file = await fs.open(temporary, 'wx');
@@ -50,6 +47,8 @@ function createReviewServer(root = __dirname) {
     '/report.html': ['report.html', 'text/html; charset=utf-8'],
     '/ranked_pitches.json': ['ranked_pitches.json', 'application/json'],
     '/report.md': ['report.md', 'text/markdown; charset=utf-8'],
+    '/review.js': ['review.js', 'text/javascript; charset=utf-8'],
+    '/review.css': ['review.css', 'text/css; charset=utf-8'],
   };
   const server = http.createServer(async (req, res) => {
     const reply = (code, data) => {
@@ -67,7 +66,7 @@ function createReviewServer(root = __dirname) {
         if (req.method === 'GET') {
           await writes;
           const data = await readReviews();
-          reply(200, {records: data.records, storage: 'file', userKey: 'local-file'});
+          reply(200, {records: data.records});
         } else if (req.method === 'PUT') {
           if (req.headers['content-type'] !== 'application/json') {
             reply(415, {error: 'Expected application/json.'});
@@ -91,10 +90,10 @@ function createReviewServer(root = __dirname) {
             return;
           }
           if (!validRecord(record)) {
-            reply(400, {error: 'Invalid pitch ID, selection, or notes (maximum 10000 characters).'});
+            reply(400, {error: 'Invalid pitch ID, status, or notes (maximum 10000 characters).'});
             return;
           }
-          await saveRecord({id: record.id, selected: record.selected, notes: record.notes});
+          await saveRecord(record);
           reply(200, {saved: true});
         } else {
           reply(405, {error: 'Method not allowed.'});
@@ -124,7 +123,7 @@ if (require.main === module) {
     });
     server.listen(8765, '127.0.0.1', () => {
       console.log('Pitch review: http://127.0.0.1:8765');
-      console.log(`Selections and notes automatically save to ${path.join(__dirname, 'reviews.json')}`);
+      console.log(`Review statuses and notes automatically save to ${path.join(__dirname, 'reviews.json')}`);
       console.log('Wait for "Saved to reviews.json" before closing the page. Press Ctrl+C to stop.');
     });
   }).catch(error => {

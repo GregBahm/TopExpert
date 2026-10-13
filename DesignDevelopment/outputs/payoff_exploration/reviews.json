@@ -1,21 +1,101 @@
 {
   "format": "top-expert-reviews",
-  "version": 1,
+  "version": 2,
   "records": [
     {
       "id": "C01-P01",
-      "selected": true,
-      "notes": "The aliens wanting to engage in the marching band practice, but being mad at a bad trumpeter is great. Finding ancient records of it is fine. \"Intentionally playing poorly so they'll go away\" (even though the aliens leave Earth bad reviews) is great. The lung-rupturing notes thing is weird. That can be cut. This can be a low-stakes case where the only problem is the aliens are being annoying and interrupting marching bandf practice."
+      "notes": "The aliens wanting to engage in the marching band practice, but being mad at a bad trumpeter is great. Finding ancient records of it is fine. \"Intentionally playing poorly so they'll go away\" (even though the aliens leave Earth bad reviews) is great. The lung-rupturing notes thing is weird. That can be cut. This can be a low-stakes case where the only problem is the aliens are being annoying and interrupting marching bandf practice.",
+      "status": "accepted"
     },
     {
       "id": "C01-P02",
-      "selected": true,
-      "notes": "I like the premise of people not remembering the people who lived here even though investigators find evidence of them. Putting together this weirdness and the lights and then finding out it's some weird supernatural creature is a fine case. The solution of reading names over the town's emergency speakers is kind of weird though. That's not a terrible solution, but I think it could be stronger. Townsfolk remembering their missing neighbors and their missing neighbor's debts is a fun sardonic ending. Can probably do more with that. The casserole thing is weak. I don't think that's needed."
+      "notes": "I like the premise of people not remembering the people who lived here even though investigators find evidence of them. Putting together this weirdness and the lights and then finding out it's some weird supernatural creature is a fine case. The solution of reading names over the town's emergency speakers is kind of weird though. That's not a terrible solution, but I think it could be stronger. Townsfolk remembering their missing neighbors and their missing neighbor's debts is a fun sardonic ending. Can probably do more with that. The casserole thing is weak. I don't think that's needed.",
+      "status": "accepted"
+    },
+    {
+      "id": "C01-P03",
+      "status": "rejected",
+      "notes": ""
+    },
+    {
+      "notes": "",
+      "status": "rejected",
+      "id": "C01-P04"
+    },
+    {
+      "id": "C01-P05",
+      "status": "rejected",
+      "notes": ""
     },
     {
       "id": "C01-P06",
-      "selected": true,
-      "notes": "Giant moths attracted to lights is a fine case but it's weird that the moths are attracted to their own eggs. If this is a big problem, how could the moths have been functioning so far. Maybe there's a story where townsfolk are think they're being menaced by monsters and the monsters are just big harmless (but annoying and scary) moths. Scared people turn on a bunch of lights in defense of the monsters, but skeptic people leave all their lights off and don't have any problems. So there's probably something in that. This isn't a \"lights in the sky\" story at all but it's a story that can probably be made to work. "
+      "notes": "Giant moths attracted to lights is a fine case but it's weird that the moths are attracted to their own eggs. If this is a big problem, how could the moths have been functioning so far. Maybe there's a story where townsfolk are think they're being menaced by monsters and the monsters are just big harmless (but annoying and scary) moths. Scared people turn on a bunch of lights in defense of the monsters, but skeptic people leave all their lights off and don't have any problems. So there's probably something in that. This isn't a \"lights in the sky\" story at all but it's a story that can probably be made to work. ",
+      "status": "accepted"
+    },
+    {
+      "notes": "The stakes and scale are too high for a regular case. Putting the world in a cosmic fishbowl is too grandiose and creates too many knock-on consequences for the setting.",
+      "id": "C01-P07",
+      "status": "rejected"
+    },
+    {
+      "status": "rejected",
+      "id": "C01-P08",
+      "notes": "Too esoteric."
+    },
+    {
+      "id": "C01-P09",
+      "notes": "The alien must appear human until the investigators discover and unmask him. Maintain the paranormal masquerade: jellyfish aliens should not be openly walking around as a normal part of this world.",
+      "status": "accepted"
+    },
+    {
+      "id": "C01-P10",
+      "notes": "The stakes are too high. The story is confusing, unfamiliar, and inaccessible.",
+      "status": "rejected"
+    },
+    {
+      "id": "C02-P01",
+      "notes": "I like the idea that the kids are simply making foolish choices, but the story can be better. Their motivation for following the streamer needs a stronger explanation.",
+      "status": "rejected"
+    },
+    {
+      "notes": "Too complicated.",
+      "id": "C02-P02",
+      "status": "rejected"
+    },
+    {
+      "status": "accepted",
+      "notes": "",
+      "id": "C02-P03"
+    },
+    {
+      "id": "C02-P04",
+      "status": "accepted",
+      "notes": "The teacher/principal deliberately resetting time to improve test scores is good. Eighteen years of accumulated complaints implies far too many resets; reduce that scale and clarify the ending."
+    },
+    {
+      "status": "rejected",
+      "id": "C02-P05",
+      "notes": "Too confusing."
+    },
+    {
+      "notes": "A downer; too sincere, rather than funny and fun.",
+      "id": "C02-P06",
+      "status": "rejected"
+    },
+    {
+      "id": "C02-P07",
+      "status": "rejected",
+      "notes": "Not very appealing."
+    },
+    {
+      "status": "accepted",
+      "id": "C02-P08",
+      "notes": "Classic kids-find-an-alien story; that premise is great."
+    },
+    {
+      "status": "accepted",
+      "notes": "The ending is not great, but the premise of the headmaster exploiting the students is fun. Keep that premise and improve the ending.",
+      "id": "C02-P09"
     }
   ]
 }

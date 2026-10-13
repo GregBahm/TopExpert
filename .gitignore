@@ -7,3 +7,6 @@ TopExpertUnity/obj
 .vsconfig
 *.sln
 .vs
+
+# Obsolete copies awaiting manual deletion after automatic cleanup was blocked.
+/cleanup-pending/

@@ -26,6 +26,5 @@ fs.writeFileSync(path.join(root,'ranked_pitches.json'),JSON.stringify(data,null,
 let md=`# Top Expert — Payoff Lab\n\n50 concepts · 500 spoiler-complete pitches\n\n${method}\n`;
 for(const c of concepts){md+=`\n## ${c.number}. ${c.title}\n\n**Original prompt:** ${c.description}\n\n**Winner:** ${c.pitches[0].title} (${c.winner_id})\n`;for(const p of c.pitches)md+=`\n### Rank ${p.rank}: ${p.title} — ${p.id}\n\n${p.text}\n\n**Premise adjustment:** ${p.adjustment}\n\n**Ranking rationale:** ${p.rationale}\n`;}
 fs.writeFileSync(path.join(root,'report.md'),md);
-require('./render-review.cjs');
 const verification={concepts:concepts.length,pitches:ids.size,originalSeedsPreserved:true,uniqueIds:true,uniqueTexts:true,ranksPerConcept:'1–10',winnerCorrespondence:true,completeFields:true};
 fs.writeFileSync(path.join(root,'validation.json'),JSON.stringify(verification,null,2));console.log(verification);

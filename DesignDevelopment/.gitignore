@@ -18,3 +18,7 @@
 **/top-expert-selects.json
 **/top-expert-review-backup.json
 **/reviews.json.*.tmp
+**/.review-backups/
+**/top-expert-accepted.json
+**/top-expert-accepted.md
+**/.test-tmp/
