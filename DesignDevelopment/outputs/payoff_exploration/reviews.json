@@ -15,17 +15,17 @@
     {
       "id": "C01-P03",
       "status": "rejected",
-      "notes": ""
+      "notes": "I don't really get how a sleeping animal has curled around the atmosphere. This has too many implications that negatively interact with other cases."
     },
     {
-      "notes": "",
+      "notes": "This story seems too demanding to follow for how little a payoff it gives.",
       "status": "rejected",
       "id": "C01-P04"
     },
     {
       "id": "C01-P05",
       "status": "rejected",
-      "notes": ""
+      "notes": "The angel angle seems to earnestly religious. Maybe if it was kind of a horrifying angel of some kind it could work, but then it seems like the story has too much complexity."
     },
     {
       "id": "C01-P06",
@@ -64,7 +64,7 @@
     },
     {
       "status": "accepted",
-      "notes": "",
+      "notes": "I like the idea of the kids being replaced with plants, in a kind of pod-people twist. I don't think the originals need to be stored under the gym. I don't think there needs to be a plant civilization with a weird ideas about \"reunion.\" The chaotic school talent show is kind of hokey. \n\nThe story would be better if the teacher was infecting students with an Ophiocordyceps type fungus to control them. The case revolves around figuring out it's fungus being promoted by a teacher who is also fungus, and the parents insist on having the fungus removed after midterms. Other parents argue that the fungus infection is cheating in terms of test scores since they're connected to a hive mind.",
       "id": "C02-P03"
     },
     {
@@ -96,6 +96,141 @@
       "status": "accepted",
       "notes": "The ending is not great, but the premise of the headmaster exploiting the students is fun. Keep that premise and improve the ending.",
       "id": "C02-P09"
+    },
+    {
+      "id": "C02-P10",
+      "status": "rejected",
+      "notes": "The ancestral-spring-water is one supernatural element and the ancestral-burial is a different super natural element and it feels convoluted. "
+    },
+    {
+      "id": "C03-P01",
+      "status": "rejected",
+      "notes": "The \"destroyed agency's surveillance familiars' is too complicated of a concept. I think players would not follow that with the amount of other stuff going on in this case. Too demanding of the player."
+    },
+    {
+      "id": "C03-P02",
+      "status": "rejected",
+      "notes": "\"Enjoying the echoes instead of exercising them\" is kind of funny, but the \"forest echoes have grown conscious and are rehearsing replacement lives\" is too confusing. It's hard to understand what all's going on there. If there was a way to make the origin of the echoes clear and coherent, the case would work."
+    },
+    {
+      "id": "C03-P03",
+      "status": "rejected",
+      "notes": "The unexpectedly successful green initiative bit is funny, but that's the only good part about this case and I don't feel like that's enough. I guess the developer can be developed as a jerk and then killed, but that's pretty boring stuff."
+    },
+    {
+      "id": "C03-P04",
+      "status": "accepted",
+      "notes": "This isn't a bad story idea, but the hunting-blind thing and the \"follows spoken names\" thing is confusing. I'd cut that.\nThe fun is the investigators learning they're being killed violently in other timelines. \nIt's more funny if the investigators never take the warnings very seriously, since the danger is only conceptual. \nThere needs to be some explanation for how the monster and the \"send message back in time\" thing are connected. Maybe the monster exists in all universes and is helping the investigators send back warnings so it can eat them more times and eventually they just make the monster full from eating them in other timelines and so it leaves. Thus they \"defeat\" the monster by incompetence and dooming other versions of themselves."
+    },
+    {
+      "id": "C03-P05",
+      "status": "rejected",
+      "notes": "I had to read this a couple of times to follow it. Hikers trapped in the mouth of some thing in the forest, while singing? Too confusing."
+    },
+    {
+      "id": "C03-P06",
+      "status": "rejected",
+      "notes": "I like the guy who wants to become a pet. That's funny. Encountering a bunch of talking animals from another dimension is not in tone with the sort of supernatural game I'm going for here though. It seems like it is more of a slapstick cartoon situation than an X-Files or SCP style situation."
+    },
+    {
+      "id": "C03-P07",
+      "status": "rejected",
+      "notes": "I could see this case working if it was as long as a book, because you could get to know the survivors and then hear their long conversations that are sincere or insincere. But integrating all this and integrating the investigators understanding of all this feels like it would take forever. In teh context of this  game, that's too much squeeze for too little juice. "
+    },
+    {
+      "id": "C03-P08",
+      "status": "accepted",
+      "notes": "The idea that the \"unfinished business\" of the ghost turns out to actually be very bad advice. That's a funny concept. I don't know if that comes through as well as it should in this case, but it can probably be tightened up around that concept by making the voice one ghost park-ranger instead of a team."
+    },
+    {
+      "id": "C03-P09",
+      "status": "rejected",
+      "notes": "Naw this story feels like it's trying too hard to antagonize real-estate developers. I'm not against antagonizing real-estate developers, but I don't want cases to sound forced and preachy."
+    },
+    {
+      "id": "C03-P10",
+      "status": "rejected",
+      "notes": "The faces inside the fur has kind of a japanese horror manga feel to it. I'm conflicted as to whether that fits or doesn't fit the tone of this project. I think the rest of the case isn't strong enough to convince me it fits, but it's a tough call."
+    },
+    {
+      "id": "C04-P01",
+      "status": "rejected",
+      "notes": "The one communal pyramid thing is good. But the rest of the story seems a bit too complicated."
+    },
+    {
+      "id": "C04-P02",
+      "status": "rejected",
+      "notes": "So a dog heart tries to get back in the dog and kills the dog in the process? But that means the dog was alive without its heart before the resurrection serum? Story makes no sense."
+    },
+    {
+      "id": "C04-P03",
+      "status": "rejected",
+      "notes": "Just kind of seems weird for the sake of weird. There needs to be more to it than randomness."
+    },
+    {
+      "id": "C04-P04",
+      "status": "rejected",
+      "notes": "First you got \"terminally ill animals escaping euthanasia appointments,\" which is weird. Then you got virtuous werewolf veterinarian, which is its own weird thing. Then you got \"consuming cancers and then the cancers turning the werewolf veterinarian into a tumor\" is a third weird thing. This is too many weird things. This story is bad. It needs to pick one weird thing and go with that thing instead of lurching from one supernatural premise to another."
+    },
+    {
+      "id": "C04-P05",
+      "status": "accepted",
+      "notes": "A forest god turning hunters into animals is a fine story, invocative of Circe from the Odyssey. Cut the bit about reconstruction. Just have the mutilated remains turn out to be humans hunters turned into animals by the angry forest god. Once the investigators figure this out, they can tell the hunter that hunted the other hunters. That hunter just ask if the forest is angry at them, since they were actually hunting humans. The investigators shrug, assuming they're might be on the forest god's good side for their work."
+    },
+    {
+      "id": "C04-P06",
+      "status": "accepted",
+      "notes": "Don't know what's up with the doorframes thing. Skin wearing spirits is fun. Finding them drying their skin at the laundromat is very fun. I don't understand the possum bit. Investigators can discover this situation here without a weird possum being involved. I also don't think the mauve thing is funny enough. The investigators can just leave the skin-wearing spirits to their business. The discarded animal skins are like baby clothes they don't need anymore. The end."
+    },
+    {
+      "id": "C04-P07",
+      "status": "rejected",
+      "notes": "The idea of a cult screwing up the ritual because of a mistranslation is funny. The carcasses erasing birthdays is weird. Cut that. The mistranslation is good, though I don't know why it's in a \"children's language textbook.\" This story is just too confusing. If the mutilations and the mistranslations came together in a clever way, the case would be worth doing. But currently it's just a bunch of random stuff that happens. "
+    },
+    {
+      "id": "C04-P08",
+      "status": "accepted",
+      "notes": "Yeah this is fun. Aliens abducting cattle is a classic motif. Supplying calcium from a quarry instead of animal bones is fun. Getting replacement cattle but they're porcelain is fun. I don't know about the \"moon shapes in flesh matching the moon shaped spaceship.\" The investigators can just find the crashed spaceship and figure out what's going on without the whole moon thing."
+    },
+    {
+      "id": "C04-P09",
+      "status": "rejected",
+      "notes": "I do like the nesting dolls idea, but it doesn't seem like it goes anywhere interesting from there. \"I used magic to turn the animals into nesting dolls.\" Seems like all premise and no payoff. "
+    },
+    {
+      "id": "C04-P10",
+      "status": "accepted",
+      "notes": "I like the idea of a spirit being appeased incorrectly, first assuming it wants to eat humans instead of animals, and then learning it just wants to eat tasty animals instead of nasty stuff like dog and rat. Uncovering that an undertaker tricked people into misunderstanding the lore to sell corpses, and then someone changing the lore twice to avoid needing human corpses, is very funny. The spirit can show up and be mad at how profoundly everyone has got this simple feast ritual wrong."
+    },
+    {
+      "id": "C05-P01",
+      "status": "rejected",
+      "notes": "Graveyard's plumbing? I don't think graveyards have plumbing. If it was reworked to not rely on that, the story could work. "
+    },
+    {
+      "id": "C05-P02",
+      "status": "rejected",
+      "notes": "Are people opening up the graves to see them empty, an then opening them up again to see them re-filled with corpses? That doesn't make sense."
+    },
+    {
+      "id": "C05-P03",
+      "status": "rejected",
+      "notes": "Too hard to follow with the memory thing and then the sacred pond thing and then the overlapping realities thing. It's too many things"
+    },
+    {
+      "id": "C05-P04",
+      "status": "rejected",
+      "notes": "I don't get what \"larger possessing intelligence\" is. If the story is just \"necromancer brings back corpses, and some want to stay reanimated\" that's just not enough payoff for the premise. "
+    },
+    {
+      "id": "C05-P05",
+      "status": "accepted",
+      "notes": "This can be simplified. Mournes leave funerals with surprisingly little grief, which they find weird. A new recently built drainage project is working too well, draining mourners of their grief. The investigators follow the drainage to find people incredibly grief stricken without knowing why. The funeral attendees are relieved someone is appropriately sad after all."
+    },
+    {
+      "id": "C05-P06",
+      "status": "accepted",
+      "notes": " The election for ruler of the underworld is a fun idea, but why would the dead guy have to murder people to get their votes? Could just be the town buried rival politicians in the same graveyard, and they've decided to run for office a ruler of the ghosts in the graveyard, and the other dead are extremely annoyed by this.\n\nCould also change to an HOA. Dead head of HOA dies, and as a ghost wants to institute an HOA over the graveyard, harassing the other dead about their graves. The other dead are annoyed and the bickering is spilling out into the world of the living with poltergeist type stuff. Do that case."
     }
   ]
 }
