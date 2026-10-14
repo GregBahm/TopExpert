@@ -6,7 +6,7 @@ const {validateRecord, validateDocument} = require('./review-schema.cjs');
 
 function createReviewServer(root = __dirname) {
   const reviewPath = path.join(root, 'reviews.json');
-  const ids = new Set(require(path.join(root, 'ranked_pitches.json')).concepts.flatMap(c => c.pitches.map(p => p.id)));
+  const ids = new Set(require(path.join(root, 'pitches.json')).concepts.flatMap(c => c.pitches.map(p => p.id)));
   let writes = Promise.resolve();
   const validRecord = r => {try {return ids.has(validateRecord(r).id)} catch {return false}};
 
@@ -45,7 +45,7 @@ function createReviewServer(root = __dirname) {
   const files = {
     '/': ['report.html', 'text/html; charset=utf-8'],
     '/report.html': ['report.html', 'text/html; charset=utf-8'],
-    '/ranked_pitches.json': ['ranked_pitches.json', 'application/json'],
+    '/pitches.json': ['pitches.json', 'application/json'],
     '/report.md': ['report.md', 'text/markdown; charset=utf-8'],
     '/review.js': ['review.js', 'text/javascript; charset=utf-8'],
     '/review.css': ['review.css', 'text/css; charset=utf-8'],

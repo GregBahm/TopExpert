@@ -12,9 +12,9 @@ node outputs/payoff_exploration/review-server.cjs
 
 Open **http://127.0.0.1:8765**. Keep the server running. No package installation, account, framework build, or database setup is needed.
 
-Each pitch has **Unreviewed**, **Reviewed and rejected**, or **Reviewed and accepted**, plus notes. Statuses and notes save to `outputs/payoff_exploration/reviews.json`. Wait for **Saved to reviews.json** before closing. Save failures show a retry action; unsaved edits remain only in the open page, so do not close it until saved or exported.
+Each pitch has **Unreviewed**, **Reviewed and rejected**, or **Reviewed and accepted**, plus notes. Statuses and notes save to `outputs/payoff_exploration/reviews.json`. Wait for **Saved to reviews.json** before closing. Save failures show a retry action; unsaved edits remain only in the open page, so do not close it until saved.
 
-`reviews.json` is the only review store. There is no cloud sync or browser-local review database. To share reviews between computers, commit/push that file normally, then pull it on the other computer. It is intentionally tracked; do not put private information there if repository readers should not see it. Accepted exports and full current-format backups/imports are available from the page. Imports merge by pitch ID. Only the current status format is supported.
+`reviews.json` is the only review store. There is no cloud sync or browser-local review database. To share reviews between computers, commit/push that file normally, then pull it on the other computer. It is intentionally tracked; do not put private information there if repository readers should not see it. Round 1 retains reviewed original pitches. Round 2 contains 50 fresh pitches, five each for premises 6–15. Status checkbox counts apply to the selected round; notes appear on reviewed pitches.
 
 ## Edit the tool
 
@@ -22,10 +22,10 @@ The frontend has one copy of each file under `outputs/payoff_exploration/`:
 
 - `report.html`: page shell and controls.
 - `review.css`: styling.
-- `review.js`: pitch rendering, status/notes, filtering, exports/imports and saving.
+- `review.js`: pitch rendering, status/notes, round tabs, filtering and saving.
 - `review-server.cjs`: loopback HTTP server and atomic JSON persistence.
 - `review-schema.cjs`: the current review format.
-- `ranked_pitches.json`: the 500 pitch records loaded by the page.
+- `pitches.json`: the active pitches with round metadata loaded by the page. Original 500-pitch drafts and `ranked_pitches.json` remain archival design artifacts.
 
 Refresh the browser after frontend edits; restart Node after server/schema edits. The server binds only to `127.0.0.1`. Opening the HTML file directly is not a separate application: use the server URL.
 

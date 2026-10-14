@@ -1,0 +1,798 @@
+{
+  "title": "Top Expert pitch review",
+  "concepts": [
+    {
+      "number": 1,
+      "title": "Strange lights",
+      "description": "Strange lights are appearing over the town",
+      "winner_id": "C01-P05",
+      "pitches": [
+        {
+          "id": "C01-P05",
+          "title": "The False Rapture",
+          "adjustment": "None",
+          "text": "People under the lights become weightless and start giving away their possessions, convinced an ascension is imminent. Footage shows the beams collecting laughter rather than souls: a stranded angel has mistaken the town’s sarcastic complaints for sincere requests to leave Earth. Its rescue vessel cannot carry bodies, only personalities. The investigators demonstrate the difference between wanting to die and wanting a day off by bringing the angel to a miserable staff meeting. It returns everyone intact and grants the town one actual paid holiday, terrifying local employers.",
+          "rank": 1,
+          "rationale": "The angel's misreading of workplace despair ties supernatural danger directly to the game's sardonic premise, and the staff meeting earns a memorable practical payoff."
+        },
+        {
+          "id": "C01-P03",
+          "title": "The Sky Is Leaking",
+          "adjustment": "None",
+          "text": "The lights fall into gardens as tiny suns, making tomatoes ripen instantly and tools melt. A broken weather balloon turns out to have punctured the translucent body of an enormous sleeping animal curled around the atmosphere; each light is a clot, and the balloon recovery firm has been harvesting them. The investigators return the stolen clots using the firm’s own launch equipment before the animal wakes and shakes Earth loose. The firm loses its miraculous energy contract, and the town spends winter eating suspiciously warm tomatoes.",
+          "rank": 2,
+          "rationale": "The falling suns yield strong physical clues and an unusual ecological explanation; returning stolen clots reverses the established cause rather than inventing a last-minute rescue."
+        },
+        {
+          "id": "C01-P01",
+          "title": "The Opening Act",
+          "adjustment": "None",
+          "text": "The lights answer marching-band practice, but recordings reveal they keep correcting one particularly bad trumpet part. Ancient accounts identify the visitors as touring aliens who mistake rehearsals for an invitation to perform; their opening note would rupture every human lung. With promised agency linguists never answering, the investigators translate the warning through musical imitation and stage a deliberately terrible audition. The disappointed aliens cancel Earth’s gig, leaving a scathing review and one instrument that can safely play their lethal frequency.",
+          "rank": 3,
+          "rationale": "The deliberate bad audition turns the document's musical contact idea into an actionable comic solution, with particularly good amateur-investigator fit."
+        },
+        {
+          "id": "C01-P06",
+          "title": "Night Shift Pollinators",
+          "adjustment": "None",
+          "text": "The lights appear over streetlamps, then households wake to glowing eggs in their ceilings. A blacked-out warehouse contains enormous transparent moths that use artificial light to mistake buildings for flowers; the eggs will hatch into larvae that eat the electromagnetic field keeping local matter solid. The team discovers the moths navigate by the true moon and persuades the town to switch off everything for one night. The swarm leaves peacefully, while investigators spend the blackout manually answering complaints that HQ’s nonexistent pest department should have handled.",
+          "rank": 4,
+          "rationale": "Artificial-light behavior supports a clear discovery chain and collective blackout solution, though the larval threat is more abstract than the strongest reveals."
+        },
+        {
+          "id": "C01-P02",
+          "title": "Lanterns for the Missing",
+          "adjustment": "None",
+          "text": "Every light stops over a house whose occupant has disappeared, while residents insist those people never existed. Following a discarded birthday card exposes a celestial scavenger that consumes people and their place in memory, leaving its glowing digestive organs overhead. The investigators preserve names by reading them over the town’s emergency speakers, forcing the creature to regurgitate its victims. It flees hungry; everyone remembers the missing neighbors, including their debts, and the team’s sole reimbursement is an unsolicited casserole.",
+          "rank": 5,
+          "rationale": "The names broadcast gives an emotionally satisfying rescue with a mundane reimbursement joke, but memory-erasing predators recur across the collection."
+        },
+        {
+          "id": "C01-P09",
+          "title": "The Search Party",
+          "adjustment": "None",
+          "text": "The lights inspect dumpsters and swimming pools, ignoring military targets while abducting anything shaped like a jellyfish. The investigators trace their search to an alien teenager who escaped a family vacation and is hiding as a local convenience-store clerk. His parents plan to sterilize the town to shake him out. The team gets him to reveal himself by confronting the real reason he fled: he was promised a summer internship on a slave planet. They negotiate his first ordinary wage instead, and the embarrassed parents depart with several regrettable human souvenirs.",
+          "rank": 6,
+          "rationale": "The ridiculous search targets and exploited alien teenager provide humane comedy; the parents' willingness to cancel sterilization could use a sharper causal hinge."
+        },
+        {
+          "id": "C01-P04",
+          "title": "Future Fireworks",
+          "adjustment": "None",
+          "text": "The lights precisely trace tomorrow’s accidents, although residents interpret the displays as a tourist attraction. An investigator recognizes their own impending death in the pattern, then finds a retired emergency dispatcher communicating backward through an electrical storm. She is the lone survivor of a catastrophe caused by the town’s new power plant and has only one night left to change it. The team evacuates the plant and cuts its cooling test short; the lights become an ordinary sunset, erasing both disaster and the dispatcher’s warning career.",
+          "rank": 7,
+          "rationale": "Recognizable emergency details make the warning investigable and the intervention complete, although backward disaster prevention is a familiar engine."
+        },
+        {
+          "id": "C01-P08",
+          "title": "Second-Hand Stars",
+          "adjustment": "None",
+          "text": "Each light appears after somebody buys a cheap lamp at a clearance sale, and illuminated rooms become windows onto different historical nights. The lamps contain captive stars sold by a sorcerer who financed immortality by stripping constellations; opening all of them will collapse the town’s timeline into his private midnight. Rather than wait for a nonexistent temporal unit, the team returns the lamps to the sky during the sale’s grand finale. The sorcerer ages centuries in seconds, and the rescued stars spell a thank-you visible only from the parking lot.",
+          "rank": 8,
+          "rationale": "Second-hand lamps and captive stars give appealing everyday contrast, but the timeline collapse and return procedure need more connective explanation."
+        },
+        {
+          "id": "C01-P07",
+          "title": "The Town in the Fishbowl",
+          "adjustment": "None",
+          "text": "The lights stay fixed despite wind, and telescope images show enormous fingers behind them. A child’s missing goldfish has grown into a cosmic pet and is observing the town inside a bowl stolen from a vanished agency depot; the apparent stars are its aquarium toys. Each feeding brings a tide through downtown. The investigators reconstruct the owner’s familiar feeding whistle, coax the fish away, and smash the bowl’s miniature Earth replica to release the real town. The child wants compensation for her fish, which now occupies the moon’s far side.",
+          "rank": 9,
+          "rationale": "A cosmic goldfish is memorably absurd, though the bowl replica's relationship to the actual town makes the decisive escape less intuitive."
+        },
+        {
+          "id": "C01-P10",
+          "title": "Light at the End of the World",
+          "adjustment": "None",
+          "text": "The lights extinguish whenever someone dies, and the newest ones resemble the faces of recently born children. A dying universe is using Earth as its next incarnation, threading its inhabitants into human souls; completion will overwrite everyone’s identity. The team locates the final light inside a maternity ward and learns the incoming universe cannot survive without consent. They persuade its elderly collective consciousness to die rather than steal a future. The lights become one harmless meteor shower, and an investigator must explain why the saved world still has a parking ticket.",
+          "rank": 10,
+          "rationale": "The dying universe creates a large ethical payoff, but a consent-based cosmic threat is resolved largely by persuasion rather than the seed's concrete discoveries."
+        }
+      ],
+      "round": 1
+    },
+    {
+      "number": 2,
+      "title": "Concerned parent",
+      "description": "Kids at school are behaving weirdly",
+      "winner_id": "C02-P04",
+      "pitches": [
+        {
+          "id": "C02-P04",
+          "title": "Tomorrow’s Detention",
+          "adjustment": "None",
+          "text": "The pupils refuse to enter one classroom and apologize for an accident that has not happened. A class experiment created a repeating afternoon ending in a gas explosion; children remember each cycle while adults reset. The principal keeps resetting it deliberately because this is the first semester his test scores have risen. Investigators entering the loop follow the students’ accumulated evidence to the leaking boiler and stop both explosion and reset. The school finally reaches Friday, and the children’s punishment for missing homework is overturned by eighteen years’ worth of dated complaints.",
+          "rank": 1,
+          "rationale": "Children accumulating eighteen years of complaints inside a principal's test-score loop makes both villain and resolution sharply specific to the school setting."
+        },
+        {
+          "id": "C02-P01",
+          "title": "The Eye Subscriber",
+          "adjustment": "Expands the design document’s streamer draft into a resolved case.",
+          "text": "Masked students mailed their eyes to a streamer after subtitles promised exclusive views, and the recovered eyes still follow his livestream. The broadcaster is a many-eyed exile using a mistranslated audience-growth charm to rebuild a body; each donor will eventually become one of its minds. The investigators confront it during a school watch party and exploit its dependence on engagement by persuading the children to genuinely lose interest. Its body unravels into the original eyes, which return to their owners, while the school bans masks and completely misses the actual issue.",
+          "rank": 2,
+          "rationale": "The mistranslated views charm develops the document's distinctive body-horror joke into a full rescue, and school policy missing the point lands well."
+        },
+        {
+          "id": "C02-P08",
+          "title": "The Recess Embassy",
+          "adjustment": "None",
+          "text": "The schoolchildren hum in unison and carry lunches they never eat. Beneath a playground slide, an alien refugee larva has been exchanging dreams with them, and the children are sheltering it from adults they correctly expect to panic. Its pursuers arrive disguised as district inspectors and begin deleting witnesses. The team realizes the weird behavior is a children's evacuation plan, helps move the larva through a storm drain, and broadcasts the inspectors’ crimes to their homeworld. The school’s secret rescue works; the investigators receive a friendship bracelet worth more than their agency badge.",
+          "rank": 3,
+          "rationale": "The children turn out to be competent rescuers rather than victims, giving the amateurs a strong reversal and concrete clues to a humane outcome."
+        },
+        {
+          "id": "C02-P05",
+          "title": "The Quietest Protest",
+          "adjustment": "None",
+          "text": "Kids stop talking and trade tooth-shaped tokens, while adults begin losing the ability to say no. An ancient playground spirit answered one child’s wish that grown-ups would listen, granting students commands in exchange for their voices. The most neglected pupils plan to silence the whole town permanently. The team discovers the tokens retain everything the children tried to tell adults, and plays them at a public meeting before breaking the spirit’s pact. Voices return when parents actually respond; the spirit takes the principal’s public-address system as a consolation prize.",
+          "rank": 4,
+          "rationale": "The voice tokens carry the evidence that solves the conflict, making the listening payoff emotionally earned; the tonal center is gentler than the leaders."
+        },
+        {
+          "id": "C02-P07",
+          "title": "The Competitive Possession",
+          "adjustment": "None",
+          "text": "Students suddenly excel in obscure skills, but quarrel over who gets to use the same hand. A trophy rescued from a demolished school holds generations of dead pupils who want one final chance to graduate; each exam gives them longer control of living bodies. The investigators uncover unfinished records and host a graduation for the spirits, only to learn the trophy’s founder trapped failing children deliberately. They force his ghost to award every diploma, freeing both generations. Living pupils lose the supernatural talents but retain a remarkable ability to detect a rigged institution.",
+          "rank": 5,
+          "rationale": "Possessed exam skills lead naturally to suppressed graduation records and the founder's culpability, though the extra founder reveal adds compression."
+        },
+        {
+          "id": "C02-P03",
+          "title": "The Substitute Species",
+          "adjustment": "None",
+          "text": "The children are eerily polite, never blink during roll call, and have started planting desks in the playground. A substitute teacher is a fungal intelligence replacing pupils with harmless-looking spores while storing the originals under the gym. Its civilization regards independent children as lonely fragments that require reunion. The team discovers the copies cannot understand private jokes and uses a chaotic school talent show to break their shared concentration. The originals escape and the substitute is contained in the neglected staff-room fern, where it finally experiences an authentically hostile collective.",
+          "rank": 6,
+          "rationale": "Fungal desk-planting and a hostile staff-room collective are vivid comedy; the talent-show disruption is slightly less established as a reliable cure."
+        },
+        {
+          "id": "C02-P06",
+          "title": "The Extra Child",
+          "adjustment": "None",
+          "text": "Teachers remember a universally beloved pupil who does not appear in photographs, while real students skip meals to bring him offerings. A grief-born imaginary friend has become tangible by consuming the attention owed to other children; soon forgotten pupils will vanish completely. The investigators trace him to a child whose sibling died, and realize killing him would erase her last memory of that sibling. They give him a single honest story instead of unlimited admiration, reducing him to a companion only she can see. The missing children return, furious nobody noticed their absence.",
+          "rank": 7,
+          "rationale": "Restricting the imaginary sibling to an honest private story preserves grief without erasing other children, though that limiting mechanism needs careful establishment."
+        },
+        {
+          "id": "C02-P02",
+          "title": "Adults on Loan",
+          "adjustment": "None",
+          "text": "Students suddenly speak like exhausted accountants, and homework contains details of divorces their parents never discussed. Interviews reveal an educational fundraiser swapped children’s minds with their own future adult selves, supposedly letting them see the value of studying. The organizer secretly intends to keep a younger body. The investigators expose that every altered future ends in his expanding youth business, then destroy the fundraiser’s shared portrait before the swaps stabilize. Childhood returns, but the children remember enough of adulthood to demand recess as a legally protected benefit.",
+          "rank": 8,
+          "rationale": "The future-adult fundraiser has excellent school satire, but the shared portrait's decisive role arrives late compared with the strongest solutions."
+        },
+        {
+          "id": "C02-P09",
+          "title": "Perfect Attendance",
+          "adjustment": "None",
+          "text": "Sick children appear at school anyway, even while their parents watch them asleep at home. The school’s new attendance bell summons obedient astral doubles, and their increasingly bruised originals reveal the doubles are working construction underneath the building at night. The headmaster is sacrificing them to grow a school that can teach forever. The team follows a double, finds the human foundations, and silences the bell with the headmaster’s own forbidden truancy. Every child returns to one body, while he becomes the building’s sole permanently enrolled student.",
+          "rank": 9,
+          "rationale": "Astral attendance doubles and a permanently enrolled headmaster deliver a nasty fitting reversal; the forbidden-truancy countermeasure needs clearer grounding."
+        },
+        {
+          "id": "C02-P10",
+          "title": "The Third Lunch",
+          "adjustment": "None",
+          "text": "Children argue with people nobody else sees, then develop memories of entire second families. A cafeteria cook is feeding them soup made from a spring that opens ancestral memory; the deceased are using descendant bodies to finish old feuds. As a playground dispute becomes a century-old blood vendetta, the investigators identify one ancestor who never received a burial and started the cascade. They recover her body from beneath the school and bury her properly, letting the dead leave. The cook replaces the soup with pizza, which causes a more ordinary parental emergency.",
+          "rank": 10,
+          "rationale": "Ancestral soup creates an immediate household hook and resolved haunting, but one ancestor's burial ending all the feuds is comparatively convenient."
+        }
+      ],
+      "round": 1
+    },
+    {
+      "number": 3,
+      "title": "Voices",
+      "description": "Voices can be heard in the woods",
+      "winner_id": "C03-P01",
+      "pitches": [
+        {
+          "id": "C03-P01",
+          "title": "The Birds Are Live",
+          "adjustment": "Expands the document’s surveillance-bird draft with a supernatural reveal and resolved threat.",
+          "text": "The voices sound like coworkers complaining about meetings, and a captured sparrow contains a speaker grown into its bones. The birds are descendants of the destroyed agency’s surveillance familiars, accidentally broadcasting the thoughts of the thing that ate headquarters. Its mundane chatter masks its search for surviving employees. The investigators lure it into ordering a nonexistent mandatory all-hands meeting, then send every bird to broadcast that command inside its body. It compulsively consumes its own fragments, leaving one sparrow that will not stop asking about mileage reimbursement.",
+          "rank": 1,
+          "rationale": "Destroyed-agency birds transmitting the headquarters-eater's office chatter strongly joins the core premise to a ridiculous investigation, ending with an appropriately improvised self-consuming trap."
+        },
+        {
+          "id": "C03-P08",
+          "title": "Dead Air Patrol",
+          "adjustment": "None",
+          "text": "The voices issue instructions in the style of emergency services, directing hikers toward obvious hazards. They come from dead rescue workers compulsively reenacting their own fatal search, believing every new visitor is the child they failed to find. Evidence in a rotted radio reveals the child survived by walking away from their instructions. The team finds her, now an elderly woman, and brings her to reassure the ghosts that the rescue succeeded despite them. They finally rest, leaving the investigators to explain why the official map still sends tourists into a ravine.",
+          "rank": 2,
+          "rationale": "The surviving child overturns the rescuers' eternal mistaken assumptions, giving a clear evidence-led haunting and a poignant conclusion with room for mundane incompetence."
+        },
+        {
+          "id": "C03-P09",
+          "title": "The Forest Wants a Name",
+          "adjustment": "None",
+          "text": "Voices argue about whether the woods should be called Greenhaven or Rustic Pines, and each proposed name changes the trees into housing materials. A land developer’s branding consultant accidentally taught a nameless place-spirit that names determine its body. It is trying to become something profitable before the bulldozers arrive, crushing hikers inside showroom kitchens. The investigators uncover its older, unmarketable local name and persuade residents to speak it together. The forest stabilizes as itself and devours the sales office; the spirit leaves the team one tasteful but unusable quartz countertop.",
+          "rank": 3,
+          "rationale": "Branding literally deforming a forest is distinctive workplace satire; recovering the older name directly repairs the causal mistake."
+        },
+        {
+          "id": "C03-P06",
+          "title": "The Other Camping Trip",
+          "adjustment": "None",
+          "text": "The voices belong to an identical group of campers who insist they are also hearing intruders. Trails reveal a parallel forest where animals domesticated humans, and both camping parties are separated by one thin patch of darkness. The other campers are pets whose owners intend to retrieve both groups as valuable breeding stock. The investigators coordinate with their counterparts to reverse a lantern ritual and seal the border. Each group goes home free, except the team’s intern, who voluntarily stays with a household offering excellent healthcare and regular walks.",
+          "rank": 4,
+          "rationale": "The parallel campers becoming human pets makes a strong discovery reversal, capped by an intern choosing the benefits over the agency."
+        },
+        {
+          "id": "C03-P05",
+          "title": "Emergency Choir",
+          "adjustment": "None",
+          "text": "The voices call hikers into a clearing, singing the names of missing people in perfect harmony. The clearing is a mouth of the forest’s dying guardian, and the singers are swallowed hikers trying to keep it alive because its death would release a subterranean swarm. With nobody coming to replace them, investigators discover the guardian once lived on animal sound, not human sacrifice. They restore the silenced wetland nearby, feeding it frogs and birdsong. The choir walks free; the guardian’s first independent word is a complaint about the team’s terrible singing.",
+          "rank": 5,
+          "rationale": "Restoring birdsong instead of recruiting sacrificial substitutes creates an earned ecological rescue, although the subterranean swarm remains broad background danger."
+        },
+        {
+          "id": "C03-P02",
+          "title": "The Echo Union",
+          "adjustment": "None",
+          "text": "Campers hear their own voices making increasingly incriminating statements they never said. The forest’s echoes have grown conscious after centuries of copying humans and are rehearsing replacement lives; anyone who answers gives an echo permission to take their mouth. A silenced ranger leads the team to a ravine full of stolen conversations. Instead of shouting an exorcism, they offer the echoes a radio station of their own and recover the trapped voices in exchange. The station becomes hugely popular, although every caller hears exactly what they hoped nobody recorded.",
+          "rank": 6,
+          "rationale": "Conscious echoes bargaining for a broadcast platform provide a funny alternative to exorcism; the station's later privacy problem is left more open."
+        },
+        {
+          "id": "C03-P07",
+          "title": "The Apology Hunting Ground",
+          "adjustment": "None",
+          "text": "Every voice sounds like someone a listener wronged, demanding an apology from deeper among the trees. A shapeless predator consumes people who confess out of shame; it learned its technique from a therapist who dumped confidential recordings in the woods. The investigators find survivors trapped in living bark and notice the predator cannot digest sincere reconciliation, only solitary guilt. They bring the actual injured parties into the clearing, allowing real conversations that split its body open. Survivors escape, the therapist faces consequences, and the creature is left feeding on a particularly stubborn litterbug.",
+          "rank": 7,
+          "rationale": "Actual reconciliation defeats weaponized shame in a satisfying way, but transporting everyone wronged into one clearing compresses the practical solution."
+        },
+        {
+          "id": "C03-P04",
+          "title": "The Sound of Next Week",
+          "adjustment": "None",
+          "text": "Voices describe banal future events, then begin narrating the investigators’ violent deaths. An abandoned hunting blind overlaps with a forest seven days ahead, where the team has become prey for a predator that follows spoken names. Their future selves are transmitting a warning but each transmission helps the creature locate them. The investigators exchange nameless instructions using gestures, burn the blind, and deliberately take different paths from the voices. The predator devours the abandoned timeline; the last transmission is their future selves celebrating that nobody has to finish the incident report.",
+          "rank": 8,
+          "rationale": "Nameless coordination fits the predator's tracking behavior, though burning the overlap and choosing different paths resolve a fairly familiar time-warning setup."
+        },
+        {
+          "id": "C03-P03",
+          "title": "Roots on Hold",
+          "adjustment": "None",
+          "text": "The voices repeatedly ask for help and give addresses of demolished houses. Tree rings contain human fingerprints: an old housing development transplanted a sacred grove, and its roots absorbed the residents killed during construction. They now lure hikers underground to make enough bodies for a revenge army. The investigators locate the surviving developer and make him publicly identify the hidden graves, giving the spirits witnesses rather than new victims. The grove releases its captives and grows through his mansion; the town calls it an unexpectedly successful green initiative.",
+          "rank": 9,
+          "rationale": "Fingerprinted roots and hidden graves give concrete investigative texture; the developer's public admission as the cure is less mechanically grounded."
+        },
+        {
+          "id": "C03-P10",
+          "title": "The Choir Beneath the Fur",
+          "adjustment": "None",
+          "text": "Tiny conversational voices seem to follow deer, until a fallen animal reveals hundreds of miniature human faces inside its fur. They are dreamers abducted by a wilderness deity that keeps people asleep as parasites on its favorite creatures. The voices become pleas when hunting season approaches. Following their descriptions, the investigators discover a lodge where the dreamers’ sleeping bodies are being sold as coma beds. They wake everyone by breaking the deity’s antler in the lodge fireplace; the deer lose their passengers and the team inherits several hundred indignant claims for lost vacation time.",
+          "rank": 10,
+          "rationale": "Faces in deer fur are memorable horror, but the coma-bed operation and antler destruction feel less causally connected than the higher-ranked arcs."
+        }
+      ],
+      "round": 1
+    },
+    {
+      "number": 4,
+      "title": "Mutilated remains",
+      "description": "Animal remains are found strangely mutilated",
+      "winner_id": "C04-P04",
+      "pitches": [
+        {
+          "id": "C04-P04",
+          "title": "The Kindest Monster",
+          "adjustment": "None",
+          "text": "The remains appear savagely mutilated, but every animal was terminally ill and several escaped euthanasia appointments. A werewolf veterinarian has been giving dying animals a painless supernatural end, then consuming the cancers to prevent them spreading as disease spirits. Her latest meal is transforming her into a walking tumor that threatens the town. Investigators uncover her secret through canceled appointments and missing medication, then help her transfer the malignant spirits into an already condemned building and burn it. She survives without her gift, and the town finally funds an ordinary low-cost clinic.",
+          "rank": 1,
+          "rationale": "A werewolf vet eating cancers reverses the apparent cruelty into dangerous compassion, with clinic funding providing a concrete human payoff beyond defeating the threat."
+        },
+        {
+          "id": "C04-P01",
+          "title": "Pyramid Scheme",
+          "adjustment": "Expands the design document’s pet-embalming draft with a paranormal payoff.",
+          "text": "The dried pets all belonged to customers of an overwhelmed graduate’s Egyptian burial service. She dumped unfinished work in the woods, unaware that removing organs without naming the dead created hungry animal spirits now nesting inside living customers. The team learns the half-built pyramids are genuinely necessary, but one communal memorial can substitute for hundreds of luxury tombs. They help the owners name and mourn their animals together, releasing the spirits. The graduate survives by selling honest grief counseling and stops offering eternally guaranteed cat protection at a discount.",
+          "rank": 2,
+          "rationale": "The communal memorial solves the supernatural consequence of an underpriced service and preserves the document's strongest workplace joke without stopping at exposure."
+        },
+        {
+          "id": "C04-P02",
+          "title": "The Parts That Ran Away",
+          "adjustment": "None",
+          "text": "Animal carcasses lack hearts, but muddy tracks reveal the hearts escaped on little muscular legs. A veterinary trainee used a resurrection serum on donated remains; each revived organ follows its strongest memory and seeks its former home, strangling living pets in mistaken attempts at reunion. The investigators find the serum’s source in a stolen saint’s blood and realize affection, not hunger, guides the organs. Gathering familiar toys at the clinic lets them reunite with their bodies, then die peacefully when the blood is returned. The trainee fails anatomy for an unusually practical reason.",
+          "rank": 3,
+          "rationale": "Runaway hearts following remembered homes are striking and internally motivated; familiar toys make the restoration feel discovered rather than imposed."
+        },
+        {
+          "id": "C04-P08",
+          "title": "The Moon’s Cleanup Crew",
+          "adjustment": "None",
+          "text": "Bones have been removed without opening the skin, and metal detectors register strange crescents in the remaining flesh. Lunar scavengers are harvesting skeletons to repair a moon-shaped spaceship that crashed beneath a ranch; its juvenile crew thinks dead livestock is abandoned building material. Their repairs will pull bones out of every living creature nearby. The team traces missing graveyard skeletons to the wreck, feeds its fabrication system calcium from a quarry, and sends it home. The rancher bills the aliens for cattle, then gets a replacement herd made of excellent but profoundly unsettling porcelain.",
+          "rank": 4,
+          "rationale": "Bone theft repairing a juvenile lunar ship gives strong material clues, a practical mineral substitute, and an especially good porcelain-cattle aftermath."
+        },
+        {
+          "id": "C04-P06",
+          "title": "Borrowed Skins",
+          "adjustment": "None",
+          "text": "The animal bodies are inside out, and local residents begin rubbing their faces against doorframes. A migrating species of skin-wearing spirits has outgrown small hosts and is moving into humans; the bodies are discarded coats, not slaughter for food. A surviving possum leads investigators to the laundromat where the spirits dry their new skins. They spoil the migration by dyeing every available host’s outline with a mineral the spirits cannot inhabit. The spirits retreat into donated taxidermy, allowing a humane relocation, while the town spends a week looking offensively mauve.",
+          "rank": 5,
+          "rationale": "Skin migration and the laundromat make a distinctive investigable threat, though the mineral dye's effectiveness requires some explicit prior testing."
+        },
+        {
+          "id": "C04-P10",
+          "title": "Night Harvest",
+          "adjustment": "None",
+          "text": "The remains are arranged like full place settings, but no flesh has been eaten. A hungry rural community once promised a spirit an annual banquet; descendants forgot the agreement and a local undertaker tried substituting animal carcasses for the human guests it actually demands. The investigators discover the banquet is a ceremony of hospitality, not cannibalism, and recover the songs deliberately omitted by the undertaker to justify his protection fees. A public feast satisfies the spirit and releases its intended victims. It blesses the town’s crops and blacklists the undertaker for serving cold dog.",
+          "rank": 6,
+          "rationale": "Recovering hospitality rather than assuming cannibalism creates a satisfying interpretive twist; the undertaker's manipulation grounds the sardonic ending."
+        },
+        {
+          "id": "C04-P03",
+          "title": "Predator Without Teeth",
+          "adjustment": "None",
+          "text": "Livestock have immaculate missing sections, yet witnesses saw the animals calmly walk away before collapsing. An invisible grazer feeds on the concept of an animal rather than its flesh, leaving whatever anatomy it cannot understand. The team maps its feeding route to a roadside petting zoo and discovers it is an alien infant learning species by taste. They feed it detailed taxonomic models until it recognizes that living creatures are individuals, not examples. Its parent retrieves it and restores the stolen parts, leaving a formal complaint about Earth’s confusing goat signage.",
+          "rank": 7,
+          "rationale": "The infant tasting concepts is novel and compassionate, but teaching individuality through taxonomic models is a softer causal bridge than the leaders."
+        },
+        {
+          "id": "C04-P09",
+          "title": "The Animal Inside the Animal",
+          "adjustment": "None",
+          "text": "Dissection reveals that every mutilated carcass contained a smaller identical animal, and the smallest ones are still alive. A contagious nesting curse shrinks beasts inside their own bodies to protect them from a coming cosmic winter; one exhausted farmer triggered it by begging his dead grandmother to save his herd. The investigators find her spirit sheltering miniature animals in a dollhouse and show her the winter ended decades ago. She releases the protection, restoring the herd and pets to ordinary size. The farmer has to apologize for making an afterlife emergency out of a poor insurance policy.",
+          "rank": 8,
+          "rationale": "Nested animals and the grandmother's outdated protection wish offer memorable images, though the cosmic winter never materially complicates the present investigation."
+        },
+        {
+          "id": "C04-P05",
+          "title": "The Meat That Remembers",
+          "adjustment": "None",
+          "text": "Butchered deer reappear in the woods with surgical scars and wedding rings caught in their flesh. A forest god is reconstructing hunted animals from the hunters who ate them, slowly turning the entire hunting club into its former prey. The team follows memories carried by the remains and confronts the god at a trophy lodge built around its sacred tree. Returning the trophies and ending the lodge’s staged slaughter interrupts the reconstruction. Most hunters regain humanity, but the club chairman chooses to remain a buck rather than face his membership refunds.",
+          "rank": 9,
+          "rationale": "A buck chairman dodging refunds lands well, but trophy restitution solving reconstruction uses a more familiar offended-forest-god arc."
+        },
+        {
+          "id": "C04-P07",
+          "title": "The Wrong Sacrifice",
+          "adjustment": "None",
+          "text": "The mutilations spell unfamiliar letters when mapped across the woods, and each new carcass erases a resident’s birthday from memory. A cult is sacrificing pets to summon an immortal guardian, but the spell actually summons the animals’ owners as fresh prey into a predator’s timeless stomach. The investigators discover the mistranslation in a bloodstained children’s language textbook. They replace the final offering with the cult’s cherished ceremonial mascot, causing the summons to seize the predator itself. It consumes its own pocket dimension and vanishes, returning the missing owners and an alarming volume of old collars.",
+          "rank": 10,
+          "rationale": "The mistranslation gives useful evidence, but substituting a mascot to make a predator consume its own dimension is comparatively difficult to infer from the stated rules."
+        }
+      ],
+      "round": 1
+    },
+    {
+      "number": 5,
+      "title": "Graveyard activity",
+      "description": "Something is going on in the graveyard",
+      "winner_id": "C05-P02",
+      "pitches": [
+        {
+          "id": "C05-P02",
+          "title": "The Dead Need a Ride",
+          "adjustment": "None",
+          "text": "Graves are empty by morning, but the bodies reappear each dawn wearing bus passes. Cemetery residents are commuting to visit places they loved because a new bypass severed the ancient footpath their ghosts normally use. Every missed return leaves a wandering corpse increasingly alive and hungry. The investigators follow one commuter and locate the blocked spirit route beneath a highway interchange. Reopening a modest pedestrian tunnel restores the procession; the dead return voluntarily, and the transit authority reluctantly honors fares paid in nineteenth-century coins.",
+          "rank": 1,
+          "rationale": "Dead commuters turn an everyday transit obstruction into both danger and a practical restoration, with old coins giving a clean comic aftermath."
+        },
+        {
+          "id": "C05-P01",
+          "title": "Grandmother’s Last Word",
+          "adjustment": "Expands the document’s insulting-gravestones draft into a full discovery and aftermath.",
+          "text": "A beloved grandmother’s stone starts insulting mourners, and every family attempt to sanitize her epitaph makes the cemetery spit sewage. A private diary reveals decades of polite neglect beneath her sweet reputation; she has seized the entire graveyard’s plumbing because nobody listened while she lived. The team persuades the family to admit the truth at her exhumation. Her coffin erupts in one final humiliating shower, then her ghost laughs and departs. The other dead leave their stones politely blank, except for a small engraved invoice addressed to the family.",
+          "rank": 2,
+          "rationale": "The grandmother's diary earns the scatological finale rather than leaving it arbitrary, preserving the source's sardonic family-neglect payoff."
+        },
+        {
+          "id": "C05-P04",
+          "title": "Night School for Corpses",
+          "adjustment": "None",
+          "text": "Neighbors hear chanting, then see dead residents practicing walking and introductions. A lonely necromancer is teaching corpses how to live independently, but his insistence they pass as ordinary workers strips away their personalities and feeds a larger possessing intelligence. The investigators trace the new cemetery janitors to the classes and show the revived students their own histories. Reclaiming their identities lets them expel the intelligence and choose whether to rest. Some do; others form a bluntly advertised undead cleaning cooperative, making the team’s recruitment standards look unnecessarily strict.",
+          "rank": 3,
+          "rationale": "Teaching corpses employability until personality is stripped away neatly satirizes work culture, and the undead cooperative gives the survivors genuine agency."
+        },
+        {
+          "id": "C05-P05",
+          "title": "Borrowed Grief",
+          "adjustment": "None",
+          "text": "Mourners leave funerals ecstatic while nearby strangers develop unbearable grief for people they never knew. A compassionate cemetery spirit has been taking sadness from visitors and storing it beneath the graves, but a drainage project is leaking the accumulated pain into town. The team finds a maintenance worker nearly crushed by someone else’s mourning and realizes destroying the spirit would release everything at once. They organize a memorial where people voluntarily reclaim manageable portions of their losses. The spirit shrinks to one crying willow, and local officials are appalled that recovery requires time instead of landscaping.",
+          "rank": 5,
+          "rationale": "Shared mourning remedies accumulated grief without a magic instant cure, though its somber center offers fewer comic pressure points than the leaders."
+        },
+        {
+          "id": "C05-P03",
+          "title": "The Wrong Cemetery",
+          "adjustment": "None",
+          "text": "Tombstones acquire names of living townspeople, whose memories slowly change to include having died. The cemetery is the shadow of a town that drowned in another reality, sliding into this one because a groundskeeper drained its sacred pond. Ghosts mistake the living for relatives and lovingly pull them under. Investigators use contradictory family records to identify the overlap, restore the pond, and guide the ghosts home using floating candles. The town survives, although everyone now remembers a favorite aunt who belonged to neither world and misses her terribly.",
+          "rank": 7,
+          "rationale": "The drained pond and contradictory family records make the overlap investigable; the emotional residue is strong but the other-reality cemetery is relatively familiar."
+        },
+        {
+          "id": "C05-P06",
+          "title": "The Missing Body Election",
+          "adjustment": "None",
+          "text": "Recently buried council members crawl out at night and gather around one unmarked grave. They are holding an election for ruler of the underworld, whose vacancy is allowing hostile dead into town; the favored candidate murdered them and intends to win with their coerced votes. Investigators identify his victims through overturned cemetery records and rescue the one witness he buried alive. That witness publicly names him, voiding his supernatural claim. A famously decent former crossing guard wins instead, shuts the breach, and promptly institutes better graveyard lighting.",
+          "rank": 9,
+          "rationale": "The crossing guard winning an underworld election is appealing, yet naming a murderer automatically voiding his claim is a convenient resolution."
+        }
+      ],
+      "round": 1
+    },
+    {
+      "number": 6,
+      "title": "Shared dreams",
+      "description": "Citizens report they all had the same dream",
+      "pitches": [
+        {
+          "id": "R2-C06-P01",
+          "title": "The Open House",
+          "adjustment": "None",
+          "text": "Residents dream of touring the same beautiful house, then wake to find its owner waiting outside their bedrooms. Matching their descriptions leads investigators to a vacant property and the ghost of an estate agent who can only show it to sleeping buyers. He has been appearing afterward to ask whether they have considered an offer. Investigators arrange a sale to a buyer who died before exchanging contracts; both ghosts immediately insist the other pay for the roof."
+        },
+        {
+          "id": "R2-C06-P02",
+          "title": "Mandatory Training",
+          "adjustment": "None",
+          "text": "Everyone dreams of working an overnight shift in the same factory and wakes exhausted. Investigators identify the machines from an old photograph and find the dead foreman still assigning work inside people's dreams. He insists production must continue, although the factory closed decades ago. Showing him the last batch of unsold merchandise finally stops the shifts; former employees complain that management waited until death to admit there was no demand."
+        },
+        {
+          "id": "R2-C06-P03",
+          "title": "Sleeping with the Enemy",
+          "adjustment": "None",
+          "text": "Residents share a nightmare in which a huge creature chases them through town, but each night's chase becomes shorter. Investigators find the exhausted creature hiding in a condemned house: it feeds on fear through dreams and has picked a town whose residents mostly resent being woken up. They suggest showing it to the local horror club, whose members volunteer to dream about it. The creature gets fed, but the club starts demanding better pacing and a less predictable ending."
+        },
+        {
+          "id": "R2-C06-P04",
+          "title": "The Last Audience",
+          "adjustment": "None",
+          "text": "Citizens dream of sitting through the same dreadful play and cannot wake until the curtain falls. Investigators recognize the stage as a demolished theater, where a dead actor has been summoning sleepers to his long-delayed farewell performance. He refuses to retire without a standing ovation. The team tells the audience what will get them home, and the actor leaves convinced his final performance was his best; everyone agrees it was his best because it was his final performance."
+        },
+        {
+          "id": "R2-C06-P05",
+          "title": "Dream Home",
+          "adjustment": "None",
+          "text": "Neighbors all dream they are living the same man's comfortable life and begin accusing him of concealing a fortune. Following details from the dreams, investigators find an ordinary pensioner whose experimental sleep device is broadcasting his fantasies to nearby houses. His actual home is shabby, and he is furious that even his imaginary swimming pool now has neighbors in it. Disconnecting the transmitter restores private dreams; the neighbors remain convinced he has simply moved the money."
+        }
+      ],
+      "round": 2
+    },
+    {
+      "number": 7,
+      "title": "Deep hum",
+      "description": "A hum can be heard with an unknown source",
+      "pitches": [
+        {
+          "id": "R2-C07-P01",
+          "title": "Idle Engine",
+          "adjustment": "None",
+          "text": "A deep hum shakes nearby houses every night, despite the power company shutting off the block. Investigators trace it to a van behind a garage and discover an alien hiding inside a human disguise, keeping its spacecraft running while waiting for a passenger. The passenger has been dead for forty years, but the driver insists leaving would cost it a five-star rating. The team produces the obituary, and the alien departs after rating its passenger as a no-show."
+        },
+        {
+          "id": "R2-C07-P02",
+          "title": "Quiet Enjoyment",
+          "adjustment": "None",
+          "text": "An apartment building vibrates with a hum that gets louder whenever anyone bangs on a wall. Following the vibration leads investigators to an enormous burrowing creature asleep beneath the foundations, purring whenever the residents scratch its ceiling. The increasingly desperate noise complaints have been keeping it delighted and awake. When the tenants stop banging, it falls silent; the landlord immediately claims his soundproofing repairs worked."
+        },
+        {
+          "id": "R2-C07-P03",
+          "title": "The Missing Bass",
+          "adjustment": "None",
+          "text": "A low note sounds across town every evening, while a local musician's bass amplifier produces nothing. Investigators discover that his secondhand amplifier projects sound from its matching cabinet, which is buried under an abandoned dance hall. The owner kept turning up the volume because he could not hear himself practicing. Recovering the cabinet ends the mystery, but the neighbors ask whether burying both pieces would also work."
+        },
+        {
+          "id": "R2-C07-P04",
+          "title": "An Unfinished Tune",
+          "adjustment": "None",
+          "text": "Residents hear the same low hummed phrase from empty rooms, over and over, with no final note. Investigators follow the first complaints to the house of a recently deceased singer and discover his ghost cannot remember how his favorite song ends. They locate an old recording and play it for him. He finishes the tune and departs, leaving his widow pleased that death has finally stopped him asking her to identify a song from three notes."
+        },
+        {
+          "id": "R2-C07-P05",
+          "title": "The New Neighbor",
+          "adjustment": "None",
+          "text": "A neighborhood hums all night, and investigators notice that houses nearest the noise have stopped reporting termites. They find a vast insect behind a false basement wall, its wings vibrating as it eats through an infestation. The homeowner concealed it after realizing exterminators charged more and ate less. Moving it to an empty, infested warehouse ends the residential noise; the homeowner demands compensation for losing a service the investigators were called to stop."
+        }
+      ],
+      "round": 2
+    },
+    {
+      "number": 8,
+      "title": "Mysterious stairwell",
+      "description": "People who explored the stairwell haven’t returned",
+      "pitches": [
+        {
+          "id": "R2-C08-P01",
+          "title": "One More Flight",
+          "adjustment": "None",
+          "text": "People entering an office stairwell disappear, although calls from their phones say they are still climbing. Investigators discover that each landing repeats whenever someone decides the lift would have been easier; walking back down brings them safely to the entrance. The missing people have refused to turn back after investing so much effort in going up. The team retrieves them by announcing that the upstairs meeting has been canceled, and they complain nobody told them sooner."
+        },
+        {
+          "id": "R2-C08-P02",
+          "title": "The Perfect Tenant",
+          "adjustment": "None",
+          "text": "Explorers vanish down a stairwell in a derelict apartment block, and investigators hear television sets playing beyond its bottom landing. The stairs lead into apartments preserved exactly as they were before a rent increase, where the missing tenants have voluntarily moved back in. The building's ghost keeps the rooms available because it misses having occupants. Everyone returns after discovering the same downstairs neighbor is there too, still practicing drums; the ghost admits it cannot make anyone stop."
+        },
+        {
+          "id": "R2-C08-P03",
+          "title": "The Long Way Round",
+          "adjustment": "None",
+          "text": "Visitors enter a stairwell and fail to emerge for hours, then insist they only climbed one flight. Investigators compare watches and discover an antique clock on the landing slows time inside the stairs. A caretaker installed it so he could finish his cleaning before anyone noticed how long he took. Removing the clock frees the remaining visitors, but the caretaker wants the team to explain why everyone else's impatience should determine how quickly he works."
+        },
+        {
+          "id": "R2-C08-P04",
+          "title": "At the Bottom",
+          "adjustment": "None",
+          "text": "Residents disappear down a stairwell that has begun descending far below its building's basement. Investigators lower a camera and find them seated around a subterranean creature, which has been imitating cries for help to lure company into its den. It lets anyone leave, but the visitors feel rude walking out while it is telling them about its day. The team brings a radio and retrieves everyone; the creature settles down to a call-in show and immediately becomes its most frequent caller."
+        },
+        {
+          "id": "R2-C08-P05",
+          "title": "The Staff Entrance",
+          "adjustment": "None",
+          "text": "A sealed hotel stairwell opens, and everyone who explores it vanishes. Investigators follow it into the hotel as it stood fifty years ago, where the missing people are being put to work by a manager desperate to prepare for opening night. The stairwell is the only surviving connection to that single evening, and returning through it is easy once the guests discover where their belongings were taken. The manager objects to the sudden staff shortage; investigators point out that opening night was already a disaster and he is not going to improve it now."
+        }
+      ],
+      "round": 2
+    },
+    {
+      "number": 9,
+      "title": "Secret ingredient",
+      "description": "Townsfolk are obsessed with the new restaurant",
+      "pitches": [
+        {
+          "id": "R2-C09-P01",
+          "title": "A Taste of Home",
+          "adjustment": "None",
+          "text": "Diners claim the new restaurant serves the best meal their mother ever made, even when they order different dishes. Investigators discover a stolen enchanted spoon makes any food taste like the eater's happiest meal. The chef is using it to serve cheap frozen dinners, and the kitchen's former owner wants the spoon back. Returning it ends the enchantment; several customers keep coming because their mothers also served cheap frozen dinners."
+        },
+        {
+          "id": "R2-C09-P02",
+          "title": "Repeat Customers",
+          "adjustment": "None",
+          "text": "Customers keep returning to the same restaurant while insisting they have never eaten there before. Investigators find the chef serving a mushroom that erases the memory of the meal but leaves the craving for it. He argues that the food cannot be disappointing if nobody remembers being disappointed. The team removes the mushrooms, and his regulars finally remember enough visits to ask why he has been welcoming them as new customers instead of giving them a loyalty discount."
+        },
+        {
+          "id": "R2-C09-P03",
+          "title": "The Compliments of the Chef",
+          "adjustment": "None",
+          "text": "A restaurant has queues around the block despite serving meals that taste distinctly unpleasant. Investigators notice every diner leaves glowing reviews in exactly the chef's voice and uncover a cook using possession to enjoy his own food through his customers. He honestly believes his success proves he has finally found an audience. Breaking his hold empties the dining room; he accuses the investigators of sabotaging the business, although he was its only satisfied customer."
+        },
+        {
+          "id": "R2-C09-P04",
+          "title": "Reservations Required",
+          "adjustment": "None",
+          "text": "Residents fight over tables at a restaurant whose food causes them to glimpse their immediate future. Investigators catch the chef sprinkling powder from a prophetic artifact over every plate, and find diners enduring terrible meals to learn tomorrow's lottery numbers. The visions only reach as far as the next meal, which is invariably another reservation at the same restaurant. Taking away the artifact breaks the cycle, and the diners discover the one prediction they should have acted on was that they would be wasting more money there."
+        },
+        {
+          "id": "R2-C09-P05",
+          "title": "Five Stars, No Substitutions",
+          "adjustment": "None",
+          "text": "People who hate the new restaurant become its most aggressive advocates immediately after eating there. Investigators discover a bound spirit in the oven granting the owner's wish that nobody ever say anything bad about his cooking. The diners still taste everything and are getting furious at their inability to complain. Freeing the spirit restores their speech; the owner insists the subsequent reviews are suspicious because all of them arrived on the same day."
+        }
+      ],
+      "round": 2
+    },
+    {
+      "number": 10,
+      "title": "Unscheduled eclipse",
+      "description": "An eclipse when there shouldn’t be",
+      "pitches": [
+        {
+          "id": "R2-C10-P01",
+          "title": "Shade Provided",
+          "adjustment": "None",
+          "text": "The sun disappears over a single neighborhood while the rest of town remains bright. Mapping the shadow leads investigators to a backyard telescope whose occult lens enlarges whatever is placed in front of it into a barrier against sunlight. Its owner has hung a dinner plate there because the outdoor umbrella broke. Removing the plate restores daylight, and the neighbors who reported the frightening eclipse complain that the investigators have ruined a pleasantly cool afternoon."
+        },
+        {
+          "id": "R2-C10-P02",
+          "title": "The Longest Night",
+          "adjustment": "None",
+          "text": "An eclipse begins precisely when a local night watchman is supposed to end his shift. Investigators trace the darkness to a vampire hiding as the factory owner, who has acquired a charm that prevents daylight reaching his property. He likes being able to work late and sees no reason the watchman should go home just because a clock says morning. Removing the charm restores the sun, and the vampire abruptly becomes much more receptive to a discussion of flexible working hours."
+        },
+        {
+          "id": "R2-C10-P03",
+          "title": "A Bad Omen",
+          "adjustment": "None",
+          "text": "A cult announces that its ritual will blot out the sun, and an impossible eclipse arrives on schedule. Investigators find the cult delighted but unprepared: every member assumed the ritual was symbolic and nobody planned what to do afterward. The eclipse persists only while they continue chanting. Persuading them to stop restores daylight, but the leader insists the abandoned apocalypse should still count as a successful first event."
+        },
+        {
+          "id": "R2-C10-P04",
+          "title": "Reserved Parking",
+          "adjustment": "None",
+          "text": "A black disk covers the sun, yet astronomy clubs outside town can see nothing unusual. Investigators track its shadow to a field and uncover an enormous alien ship using camouflage that hides it against the sky without hiding the sunlight it blocks. Its occupant mistook the empty field for a place to wait while visiting a relative concealed in town. Asked to move, it demands directions to somewhere convenient, and the team discovers that finding parking is apparently difficult throughout the universe."
+        },
+        {
+          "id": "R2-C10-P05",
+          "title": "A Moment of Silence",
+          "adjustment": "None",
+          "text": "An eclipse begins during the funeral of a man who repeatedly claimed the sun would go out when he died. Investigators find his ghost holding the darkness over the cemetery, waiting for mourners to admit he was more important than they thought. A hurried eulogy satisfies him, and the sun returns. Once he has departed, the family asks whether the improved weather means they can finally be honest about him."
+        }
+      ],
+      "round": 2
+    },
+    {
+      "number": 11,
+      "title": "Strange fog",
+      "description": "An unnatural fog clings to the city streets",
+      "pitches": [
+        {
+          "id": "R2-C11-P01",
+          "title": "The Scenic Route",
+          "adjustment": "None",
+          "text": "Drivers entering the fog keep emerging outside the same roadside diner, regardless of where they turn. Following an abandoned tram route, the investigators find its ghost driver still making his last run, with the diner now standing on the old terminus. He refuses to finish until someone pays a fare; everyone has been insisting their car should count as a transfer. The investigators buy one ticket and the fog lifts, leaving the diner owner furious that they have fixed his lunch rush."
+        },
+        {
+          "id": "R2-C11-P02",
+          "title": "Exterior Smoke",
+          "adjustment": "None",
+          "text": "Fog gathers around a closed theater, and passersby hear an audience coughing inside it. The investigators find a dead stagehand working a supernatural fog machine for a production whose cancellation he refuses to acknowledge. They arrange a final curtain call, which he accepts as proof the show is over. The relieved director immediately describes the haunting as their longest successful run, despite having sold no tickets."
+        },
+        {
+          "id": "R2-C11-P03",
+          "title": "Weatherproof Alibi",
+          "adjustment": "None",
+          "text": "Thick fog appears whenever a particular salesman is due home and clears as soon as he arrives. The investigators catch him using a stolen enchanted whistle to summon bad weather, providing a plausible excuse for staying at the bar. They confiscate it, and his wife says she knew the traffic excuse was nonsense because she works across the street. She is chiefly annoyed that he has been ruining her laundry to maintain it."
+        },
+        {
+          "id": "R2-C11-P04",
+          "title": "Please Give Us Some Privacy",
+          "adjustment": "None",
+          "text": "A bank of fog crawls along the streets, with wet footprints and stolen fish left in its wake. Tracking the deliveries, the investigators discover two enormous amphibious creatures using the fog as cover while their pond is being dredged. They get the dredging crew to leave one deep pool untouched, and the creatures return home with the fog. Residents who demanded the monsters be removed now complain that their newly unobstructed view is of the dredging crew."
+        },
+        {
+          "id": "R2-C11-P05",
+          "title": "A Very Private Sale",
+          "adjustment": "None",
+          "text": "A single block disappears into fog each morning, and people returning from it carry purchases they refuse to discuss. The investigators follow the shoppers to an estate sale, where a cursed privacy screen is concealing the entire property. They fold the screen and expose the supposedly respectable neighbors fighting over the deceased man's enormous collection of erotic ceramics. Everyone agrees the fog was a serious public safety issue once they have finished buying what they came for."
+        }
+      ],
+      "round": 2
+    },
+    {
+      "number": 12,
+      "title": "Rooftop cryptid",
+      "description": "A strange form is spotted on rooftops",
+      "pitches": [
+        {
+          "id": "R2-C12-P01",
+          "title": "Restoration Work",
+          "adjustment": "None",
+          "text": "A horned creature moves between rooftops at night, leaving broken masonry below. Comparing photographs, the investigators discover that a church gargoyle has come alive and is tearing down newer gargoyles it considers insulting copies of itself. They persuade the restoration contractor to remove the cheap replacements, and it returns to its perch. The contractor bills the church for correcting damage caused by an original feature."
+        },
+        {
+          "id": "R2-C12-P02",
+          "title": "Roof Inspection",
+          "adjustment": "None",
+          "text": "Residents report a huge winged shape stalking their homes, shortly before receiving unsolicited roof repair estimates. The investigators stake out the roofing company's warehouse and catch its owner removing a human disguise to reveal a mothlike creature. He really has been inspecting the roofs; the terrifying scratching is his attempt to take measurements without waking anyone. Told that his sales technique is frightening people, he starts making daytime appointments and immediately discovers that everyone was more receptive when they thought the roof might contain a monster."
+        },
+        {
+          "id": "R2-C12-P03",
+          "title": "Up on the Housetop",
+          "adjustment": "None",
+          "text": "Something antlered is peering down chimneys, and households find their belongings stacked outside afterward. The investigators trace it to a winter spirit summoned by a shop's badly translated seasonal promotion: instead of bringing gifts, it has been invited to collect them. They correct the invitation and send it away, then help residents retrieve their possessions. Several people insist the spirit can keep presents from their in-laws, who are standing right beside them."
+        },
+        {
+          "id": "R2-C12-P04",
+          "title": "The Good Nesting Schools",
+          "adjustment": "None",
+          "text": "An enormous birdlike silhouette is seen carrying patio furniture onto an apartment roof. The investigators follow the stolen furniture to a nest and discover a cryptid preparing to lay an egg. Moving the furniture to an unused water tower persuades it to nest there instead, out of sight. The landlord had already advertised the roof as an exclusive wildlife amenity and objects to losing it before he can raise the rent."
+        },
+        {
+          "id": "R2-C12-P05",
+          "title": "Can You Hear Me Now",
+          "adjustment": "None",
+          "text": "A crouching figure with too many limbs keeps appearing beside rooftop antennas, and residents hear muttering through their baby monitors. The investigators locate a stranded alien using the antennas to telephone home, with its private complaints leaking into nearby receivers. They help it make a proper connection and arrange its departure. The supposedly terrifying transmission turns out to be a lengthy argument with its spouse about whether getting stranded counts as an excuse for missing dinner."
+        }
+      ],
+      "round": 2
+    },
+    {
+      "number": 13,
+      "title": "Strange markings",
+      "description": "Mysterious graffiti is appearing around town",
+      "pitches": [
+        {
+          "id": "R2-C13-P01",
+          "title": "Wrong Address",
+          "adjustment": "None",
+          "text": "The same sinister symbol appears on buildings just before a furious horned visitor pounds on their doors. The investigators find a teenager copying a summoning mark from an occult book because it looks good as a tag. The summoned creature is required to answer every mark and has spent the week being told nobody ordered a demon. Removing the tags releases it, and it demands to know who is going to compensate it for the wasted travel."
+        },
+        {
+          "id": "R2-C13-P02",
+          "title": "Looking for Work",
+          "adjustment": "None",
+          "text": "Fresh graffiti appears on walls overnight, offering increasingly desperate messages in an unfamiliar script. The investigators translate it using a book from a local occult collector and learn that an invisible spirit is advertising its services as a guardian. It has been guarding vacant buildings for weeks because it assumes the absence of trouble means customers are satisfied. They refer it to the collector, who wants supernatural protection but immediately asks whether it can also watch his parking space."
+        },
+        {
+          "id": "R2-C13-P03",
+          "title": "The Artist Is Present",
+          "adjustment": "None",
+          "text": "Graffiti thought to have been painted over years ago is reappearing, often on buildings that no longer have the same walls. The investigators trace the tags to a dead street artist whose ghost is restoring his work after hearing that it is now valuable. They show him the gallery selling photographs of it for thousands, while the original sites keep getting cleaned. He moves his haunting to the gallery and starts putting his signature across the expensive prints, which the dealer immediately calls a new period."
+        },
+        {
+          "id": "R2-C13-P04",
+          "title": "Crossing Ahead",
+          "adjustment": "None",
+          "text": "Unfamiliar marks appear beside storm drains, and cars parked over them acquire deep scratches. Watching a marked drain at night, the investigators find a small underground creature painting warnings for the much larger animal that follows its route. They persuade the town to keep that short stretch of curb clear, allowing both creatures to cross the empty street at night without scraping parked cars. Drivers who complained about the monster promptly complain about the loss of free parking."
+        },
+        {
+          "id": "R2-C13-P05",
+          "title": "The Customer Is Always Here",
+          "adjustment": "None",
+          "text": "A restaurant owner reports that threatening writing returns on his wall no matter how often he scrubs it away. The investigators recognize the handwriting of a customer who died after years of complaining about the food and discover his ghost renewing the same bad review. Offering a refund finally makes him leave. The owner refuses until the investigators point out that arguing with a dead customer is costing him more meals than the refund."
+        }
+      ],
+      "round": 2
+    },
+    {
+      "number": 14,
+      "title": "Odd animal behavior",
+      "description": "The dogs are acting strange",
+      "pitches": [
+        {
+          "id": "R2-C14-P01",
+          "title": "Suspiciously Good Boys",
+          "adjustment": "None",
+          "text": "Dogs that used to bark at everyone now become silent and obedient whenever one particular dog walker arrives. Following him after work, the investigators discover he is a werewolf whose authority the dogs recognize instantly. He has taken the job because it is the only place his condition earns him compliments. The clients insist the investigators leave him alone, then ask whether his influence might extend to their teenagers."
+        },
+        {
+          "id": "R2-C14-P02",
+          "title": "Still on His Round",
+          "adjustment": "None",
+          "text": "Dogs race to their gates and bark at the same time every day, although nobody is visible in the street. The investigators compare the route with an old delivery map and find the ghost of a postal carrier continuing his rounds. Returning his undelivered final letter lets him stop, and the dogs settle down. Its recipient complains that a haunting is an excessive response to being late with a credit card offer."
+        },
+        {
+          "id": "R2-C14-P03",
+          "title": "Off-Leash Training",
+          "adjustment": "None",
+          "text": "Dogs across town keep escaping and returning with expensive cuts of meat. The investigators follow one to a locked butcher's shop and catch a young witch practicing animal control instead of paying for groceries. Her own dog keeps ignoring her spells, so she has recruited everyone else's. They confiscate her charm and make her reimburse the butcher; the owners are disappointed to learn their dogs were following commands all along, just never theirs."
+        },
+        {
+          "id": "R2-C14-P04",
+          "title": "Who's a Person",
+          "adjustment": "None",
+          "text": "Several residents say their dogs have begun sitting at the dinner table and trying to operate door handles. The investigators trace them to a dog trainer who has been using a cursed collar that temporarily swaps a dog and its owner. He demonstrates obedience by occupying the dog himself, leaving the customer to experience the lesson from the other end of the leash. Once everyone is restored, the trainer's toughest critic admits the praise and treats were more effective than expected and asks about repeat sessions."
+        },
+        {
+          "id": "R2-C14-P05",
+          "title": "Pet Friendly",
+          "adjustment": "None",
+          "text": "Dogs on walks refuse to pass one apparently ordinary house, while their owners complain of strange growling from its basement. The investigators discover the tenant keeps a hellhound hidden there and has mistaken its territorial threats for friendly barking. They arrange a discreet move to an isolated property, restoring the dogs' usual route. The tenant is relieved to find somewhere pet friendly after rejecting several perfectly adequate homes because they would not allow a dog large enough to eat the landlord."
+        }
+      ],
+      "round": 2
+    },
+    {
+      "number": 15,
+      "title": "Erratic electronics",
+      "description": "Technological devices aren’t behaving like they should",
+      "pitches": [
+        {
+          "id": "R2-C15-P01",
+          "title": "Not Another Upgrade",
+          "adjustment": "None",
+          "text": "Phones and computers keep switching themselves off whenever residents discuss buying replacements. The investigators trace the disturbances to a repair shop where a dead technician has been possessing discarded electronics to prove they still work. They get his old apprentice to restore the accumulated machines, giving him a reason to leave. Most of the customers still buy new ones, having now acquired a perfectly reasonable objection to devices that listen to everything they say."
+        },
+        {
+          "id": "R2-C15-P02",
+          "title": "Your Call Is Important",
+          "adjustment": "None",
+          "text": "Every telephone in an office begins receiving calls from an employee who died there years ago. The investigators find that her ghost is still at her desk, attempting to complete the customer follow-ups she was promised would earn her a promotion. Her manager admits he invented the target because he never expected anyone to finish it. Told this, she stops calling customers and starts calling him; the employees unanimously report that the problem has been resolved."
+        },
+        {
+          "id": "R2-C15-P03",
+          "title": "It Came with the House",
+          "adjustment": "None",
+          "text": "A family's appliances perform household chores in the middle of the night, with increasingly hostile notes appearing on their screens. The investigators discover a house spirit has moved into the smart home system after the family removed its old hearth. It is doing its usual domestic work but objects to being called stupid every time a device misunderstands an instruction. An apology settles the haunting, although the family now has to thank the dishwasher in front of guests."
+        },
+        {
+          "id": "R2-C15-P04",
+          "title": "Free Trial",
+          "adjustment": "None",
+          "text": "A neighborhood's devices start playing the same incomprehensible advertisement, even when unplugged. The investigators track the signal to a crashed alien probe that keeps repeating its sales demonstration because nobody has purchased anything. They find the checkout control and place the cheapest possible order, causing it to shut down and depart. The package that follows contains another probe, advertised as an excellent way to introduce friends to the product."
+        },
+        {
+          "id": "R2-C15-P05",
+          "title": "The Previous Owner",
+          "adjustment": "None",
+          "text": "A secondhand phone keeps rejecting its new owner's messages and placing calls to an elderly woman instead. The investigators learn its previous owner died while arguing with his mother, and his ghost is using the handset to resume the argument. They connect the call long enough for her to concede the trivial point he has been repeating, allowing him to leave. Once the line is clear, she tells the investigators he was still wrong but she has had enough practice ending conversations with him."
+        }
+      ],
+      "round": 2
+    }
+  ]
+}
