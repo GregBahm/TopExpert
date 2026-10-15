@@ -793,6 +793,386 @@
         }
       ],
       "round": 2
+    },
+    {
+      "number": 6,
+      "title": "Shared dreams",
+      "description": "Citizens report they all had the same dream",
+      "pitches": [
+        {
+          "id": "R2A-C06-P01",
+          "title": "A Private Matter",
+          "adjustment": "None",
+          "text": "Residents all dream of giving a speech in their underwear while the same woman laughs in the front row. Investigators identify her as the mayor's former teacher. The mayor is an undiscovered psychic, broadcasting his recurring nightmare as a televised debate approaches. Rehearsing in the empty venue helps him sleep without broadcasting, ending the shared dreams. He credits his newfound confidence to realizing that everyone in town has already seen the worst possible performance."
+        },
+        {
+          "id": "R2A-C06-P02",
+          "title": "Working in Your Sleep",
+          "adjustment": "None",
+          "text": "Several strangers dream of robbing the same jewelry shop, each remembering a different job in the heist. Then one finds real glass in his slippers. Investigators trace the group to a hypnotist's free relaxation sessions: he has been sending his sleeping clients out to commit burglaries and keeping the proceeds. The team catches him collecting the loot and has the suggestion removed. The clients are appalled that they have been doing skilled night work for nothing."
+        },
+        {
+          "id": "R2A-C06-P03",
+          "title": "Something in the Pot",
+          "adjustment": "None",
+          "text": "Residents dream of being held underwater while a huge man selects someone to boil alive. A tattoo from the dream identifies a local seafood chef. Investigators expect to find a dungeon; instead they find a lobster in his tank broadcasting its terror telepathically. Removing the lobster stops the dreams. The chef charges them market price, and the rescued animal immediately gives everyone in the car a dream of being put back in some water."
+        },
+        {
+          "id": "R2A-C06-P04",
+          "title": "The Dream Team",
+          "adjustment": "None",
+          "text": "Strangers share a dream of winning an enormous sports trophy, but all remember being the star player. Investigators trace them to a sleep coach selling an enchanted pillow that guarantees championship dreams. Every pillow leads to the same match, and the customers have started injuring one another in their sleep while fighting over the ball. Collecting the pillows ends the tournament. The coach offers refunds only to people willing to admit that they were not, in fact, winning."
+        },
+        {
+          "id": "R2A-C06-P05",
+          "title": "Sleeping Like a Baby",
+          "adjustment": "None",
+          "text": "A neighborhood shares a nightmare of looming faces, an unreachable bottle, and an urgent need nobody understands. Complaints cluster around a house with a newborn whose psychic abilities are considerably further along than its vocabulary. Investigators discover that the dreams stop whenever someone attends to the baby. They arrange for the exhausted parents to get help and restore the neighborhood's sleep. The parents are delighted to meet a government agency that apparently provides emergency babysitting."
+        }
+      ],
+      "round": 3
+    },
+    {
+      "number": 7,
+      "title": "Deep hum",
+      "description": "A hum can be heard with an unknown source",
+      "pitches": [
+        {
+          "id": "R2A-C07-P01",
+          "title": "Utilities Included",
+          "adjustment": "None",
+          "text": "A hum shakes an apartment block despite its electricity being disconnected. Investigators find a humming portal in the landlord's basement, with an extension cord running through it into somebody else's universe. He has been stealing their electricity while billing his tenants. Unplugging the cord lets the portal close and stops the hum. The last thing through is an overdue bill from the other side, where electricity turns out to be considerably more expensive."
+        },
+        {
+          "id": "R2A-C07-P02",
+          "title": "An Eligible Bachelor",
+          "adjustment": "None",
+          "text": "A low hum rises from a park pond every night, loud enough to rattle windows. Investigators spot an enormous throat inflating beneath the water: a previously concealed amphibian has begun courting the park's new frog sculpture. Removing the sculpture stops the calls, but the creature follows the truck. The team has it delivered to an isolated quarry pond, where the creature settles beside its silent companion. The sculptor considers this the most sustained interest anyone has shown in his work."
+        },
+        {
+          "id": "R2A-C07-P03",
+          "title": "Rest in Peace and Quiet",
+          "adjustment": "None",
+          "text": "A deep vibration from a mausoleum has mourners worried that something is trying to escape. Investigators find an occupied coffin and discover that the vampire inside is snoring. His long-suffering partner explains that separate coffins did not help and separate crypts apparently have not either. A sleep specialist fits him with an appliance that accommodates the fangs, silencing the disturbance. The vampire considers this an outrageous invasion of privacy; his partner considers it the agency's finest work."
+        },
+        {
+          "id": "R2A-C07-P04",
+          "title": "Higher Practice",
+          "adjustment": "None",
+          "text": "A continuous hum comes from a meditation studio whose curtains have stayed closed for three days. The class has achieved levitation and is huddled against the ceiling, afraid to stop chanting after one member stopped and fell. Investigators bring in scaffolding so everyone can descend safely. The instructor alone remains suspended: his harness has jammed. He insists that the deception was essential to getting the others to believe in themselves."
+        },
+        {
+          "id": "R2A-C07-P05",
+          "title": "Independent Confirmation",
+          "adjustment": "None",
+          "text": "A neighborhood hum grows louder as amateur ghost hunters arrive with increasingly sensitive instruments. Investigators discover that the detectors emit a tone when they sense another detector; each new arrival has been confirming everyone else's readings. Switching them off ends the disturbance. The manufacturer explains that the devices were never meant to be used near one another. The ghost hunters conclude that the agency has suppressed something important and upload footage of the investigators unplugging it."
+        }
+      ],
+      "round": 3
+    },
+    {
+      "number": 8,
+      "title": "Mysterious stairwell",
+      "description": "People who explored the stairwell haven’t returned",
+      "pitches": [
+        {
+          "id": "R2A-C08-P01",
+          "title": "Taking Years Off",
+          "adjustment": "None",
+          "text": "Searchers enter a basement stairwell and find elderly strangers wearing the missing explorers' clothes. Every step downward ages a person a year; climbing reverses it, but the explorers went too far to manage the ascent. The investigators carry them back up, getting progressively younger and less grateful passengers. The stairs are sealed. One rescued man asks whether a short walk in the other direction might fix his knees, preferably without any more discussion of what happened to his trousers."
+        },
+        {
+          "id": "R2A-C08-P02",
+          "title": "Not to Scale",
+          "adjustment": "None",
+          "text": "A narrow stairway in an architect's house swallows visitors, and its lower steps are covered in tiny footprints. Descending shrinks people until they emerge inside the architect's model apartment building, too small to climb back onto the final step. Investigators lower a strip of fabric as a ramp and lead everyone back up to full size. The rescued visitors identify several other accessibility problems with the development. The architect says the model was not intended for public consultation."
+        },
+        {
+          "id": "R2A-C08-P03",
+          "title": "The Downstairs Special",
+          "adjustment": "None",
+          "text": "People follow the smell of cooking down a restaurant's newly uncovered stairwell and disappear. Investigators notice that the banister is warm and the stairs move when salt is spilled on them. The entire passage is a creature's throat, with the smell serving as bait. A delivery of kitchen salt makes it spit out the missing diners and retreat beneath the building. The restaurant owner asks whether the team could leave the smell, since it was doing more for walk-ins than the actual kitchen."
+        },
+        {
+          "id": "R2A-C08-P04",
+          "title": "Assisted Access",
+          "adjustment": "None",
+          "text": "Visitors vanish into the stairwell of an inventor's workshop, although their phones still work. A camera reveals them stranded on the ceiling. The inventor's experimental stairlift reverses gravity instead of carrying a chair, and its remote is still attached to the chair downstairs. Investigators rig safety lines and lower the visitors before switching it off. The inventor claims the trial has proved that anyone can get upstairs. The rescued visitors would like returning to be included in the specification."
+        },
+        {
+          "id": "R2A-C08-P05",
+          "title": "Orientation",
+          "adjustment": "None",
+          "text": "People exploring a stairwell beneath an abandoned office are not coming back. Investigators find them in ceremonial robes, locked in a room awaiting initiation into a cult. They followed a promising recruitment notice at the bottom and only learned about the sacrifice after handing over their phones. Posing as replacement recruiters, the team gets the room opened and escorts the candidates out. The cult leader demands the return of his recruitment fees from the member who advertised permanent positions."
+        }
+      ],
+      "round": 3
+    },
+    {
+      "number": 9,
+      "title": "Secret ingredient",
+      "description": "Townsfolk are obsessed with the new restaurant",
+      "pitches": [
+        {
+          "id": "R2A-C09-P01",
+          "title": "Made with Love",
+          "adjustment": "None",
+          "text": "Customers praise a new restaurant but cannot name a dish they like; they just keep asking whether the chef is seeing anyone. Investigators catch him adding a love potion to the sauce. He expected people to fall in love with his cooking, not arrive with flowers and wait outside his house. The team confiscates the potion and waits for the infatuation to wear off. The chef welcomes the resulting one-star reviews because at least they are finally about the food."
+        },
+        {
+          "id": "R2A-C09-P02",
+          "title": "An Acquired Taste",
+          "adjustment": "Develops the design document's suggestion that a restaurant falsely implies its secret ingredient is people.",
+          "text": "A restaurant's discreet hints about its secret ingredient have made it an underground sensation. Investigators search the kitchen expecting human remains and find bulk cartons of ordinary pork. The owner admits the cannibalism rumors are marketing. Before the team leaves, a pale, long-fingered regular arrives to complain that he knows perfectly well what people taste like. The investigators escort him out after securing a refund; the owner finally agrees to stop attracting his target audience."
+        },
+        {
+          "id": "R2A-C09-P03",
+          "title": "Generous Portions",
+          "adjustment": "None",
+          "text": "A cheap steakhouse is packed, but takeaway portions keep growing inside their containers. Following a delivery, investigators discover a troll selling pieces of its rapidly regenerating flesh to the chef. The troll is delighted with the arrangement; the customers are less delighted when yesterday's dinner starts growing fingers in the refrigerator. The team halts sales and returns the stock. The chef complains that he finally found an ethical supplier who could personally consent and everyone is being difficult about it."
+        },
+        {
+          "id": "R2A-C09-P04",
+          "title": "Fresh from the Kitchen",
+          "adjustment": "None",
+          "text": "The new restaurant serves astonishingly good food despite never receiving deliveries. Meanwhile, an established restaurant keeps losing completed orders from its serving hatch. Investigators find that the newcomer's enchanted dumbwaiter opens into the rival kitchen. They let the next stolen trolley carry them straight to the thief and confiscate the mechanism. The customers return to the original restaurant, disappointed to discover that its prices include cooking the food."
+        },
+        {
+          "id": "R2A-C09-P05",
+          "title": "An Honest Meal",
+          "adjustment": "None",
+          "text": "A new restaurant is booked solid, although diners frequently leave in furious arguments. Investigators learn its soup contains a truth-inducing herb: customers are bringing spouses, business partners, and prospective employees there for discreet interrogations. The chef thinks the bookings prove his food brings people together. The team removes the herb after a tasting establishes what it does. Their report is unusually frank, and the chef learns considerably more about his soup than he wanted."
+        }
+      ],
+      "round": 3
+    },
+    {
+      "number": 10,
+      "title": "Unscheduled eclipse",
+      "description": "An eclipse when there shouldn’t be",
+      "pitches": [
+        {
+          "id": "R2A-C10-P01",
+          "title": "A Bird in the Way",
+          "adjustment": "None",
+          "text": "An unscheduled eclipse keeps shifting sideways, and telescopes reveal feathers along its edge. A crow has stolen an enlargement charm and grown vast enough to block the sun over town. It is perched on a hill, trying to conceal the charm beneath one foot. Investigators offer a much shinier hubcap; when the bird drops the charm to collect it, it returns to normal size. It spends the rest of the afternoon trying to carry away its vastly inferior purchase."
+        },
+        {
+          "id": "R2A-C10-P02",
+          "title": "Valid Until Sunset",
+          "adjustment": "None",
+          "text": "The sun vanishes shortly before a property auction is due to close at sunset. Investigators find that the losing bidder, an occult collector, has used a ritual to hold the sun behind the moon while he arranges another loan. The auctioneer refuses to accept that the deadline has been extended and closes the sale using the published sunset time. With nothing left to gain, the collector ends the eclipse. He wants his deposit back because the property's advertised natural light was misleading."
+        },
+        {
+          "id": "R2A-C10-P03",
+          "title": "Demonstration Mode",
+          "adjustment": "None",
+          "text": "A black disk covers the sun every afternoon at exactly the same time. Its movements match the demonstration playing in a new planetarium, where a donated projector is imposing its miniature sky on the real one above town. Investigators disconnect it before the presentation reaches the death of the sun. The director agrees to cancel the show but asks them to sign something confirming that the equipment was not, as the donor claimed, suitable for children."
+        },
+        {
+          "id": "R2A-C10-P04",
+          "title": "The End Is Postponed",
+          "adjustment": "None",
+          "text": "An eclipse accompanies a street preacher's announcement that the world ends today. Investigators find him frantically trying to dismiss his followers: the old book he is reading contains instructions for an apocalypse, not predictions of one. Reading the passages aloud has been performing the ritual. The team takes it before he reaches the final invocation, and the eclipse passes without further incident. He thanks the investigators for stopping him. His followers thank him for stopping the apocalypse."
+        },
+        {
+          "id": "R2A-C10-P05",
+          "title": "A Better View",
+          "adjustment": "None",
+          "text": "A solar eclipse appears over town, but the moon has a faint grid across it. Investigators follow the grid's alignment to an astronomer's attic, where a captured fragment of moon expands its shadow enormously in sunlight. He put it by the window to darken the sky for daytime stargazing. Closing its box restores daylight. He had reported the eclipse himself, delighted at the prospect of seeing a second astronomical phenomenon while conducting his experiment."
+        }
+      ],
+      "round": 3
+    },
+    {
+      "number": 11,
+      "title": "Strange fog",
+      "description": "An unnatural fog clings to the city streets",
+      "pitches": [
+        {
+          "id": "R2A-C11-P01",
+          "title": "Indoor Weather",
+          "adjustment": "None",
+          "text": "Fog fills the streets around a secondhand appliance shop, although the weather station reports clear skies. Investigators track the moisture to a humidifier with rain clouds visible inside its reservoir. The shopkeeper has connected it to the mains because it kept running dry. Turning it off ends the fog; disconnecting the water supply prevents a recurrence. He objects to calling it defective when it has comfortably exceeded the manufacturer's stated room coverage."
+        },
+        {
+          "id": "R2A-C11-P02",
+          "title": "A Familiar Face",
+          "adjustment": "None",
+          "text": "People hear loved ones calling from a fog bank, then emerge without their wallets. Investigators find a concealed, shape-shifting predator splitting the proceeds with a mugger. It lures victims into ambushes, then buys meat with its share instead of attempting the difficult business of eating people. The team catches the human accomplice and breaks up the partnership; the creature retreats with the fog. Its parting threat is in the mugger's mother's voice, which frightens him more than its actual appearance."
+        },
+        {
+          "id": "R2A-C11-P03",
+          "title": "The Visibility Package",
+          "adjustment": "None",
+          "text": "A driving school's pupils keep encountering dense fog on otherwise clear days. Investigators follow an instructor and catch him opening a jar containing a captive weather spirit whenever a pupil is ready for their test. He sells the extra lessons needed to overcome their understandable lack of confidence. The team frees the spirit and the fog disperses. Several former pupils ask to retake their tests; the instructor asks whether the investigators can at least confirm that the hazardous conditions were real."
+        },
+        {
+          "id": "R2A-C11-P04",
+          "title": "Returning to Port",
+          "adjustment": "None",
+          "text": "Fog advances along a residential street accompanied by a ship's horn and the sound of scraping wood. Investigators find a ghost ship trying to navigate an old canal that was filled in decades ago. Its captain insists his charts are perfectly good. The team supplies a current map and guides it back to the surviving waterway, taking the fog with it. He files a complaint about the houses, which he considers dangerously unmarked obstructions."
+        },
+        {
+          "id": "R2A-C11-P05",
+          "title": "All Fogged Up",
+          "adjustment": "None",
+          "text": "A fog bank follows the same commuter, filling buses and forcing office evacuations. His coat contains an occult tobacconist's pipe, confiscated from his teenager, whose smoke keeps expanding instead of dispersing. Investigators find the still-smoldering pipe in the lining and extinguish it, ending the fog. The parent demands to know why his child bought it. The teenager explains that ordinary cigarettes had been much easier to hide, until someone insisted they stop smoking those."
+        }
+      ],
+      "round": 3
+    },
+    {
+      "number": 12,
+      "title": "Rooftop cryptid",
+      "description": "A strange form is spotted on rooftops",
+      "pitches": [
+        {
+          "id": "R2A-C12-P01",
+          "title": "Guaranteed Protection",
+          "adjustment": "None",
+          "text": "A horned shape patrols roofs fitted with a new brand of burglar alarm. Investigators discover that the installer summons a demon instead of wiring the sensors. It has been chasing residents who climb through their own windows, exactly as contracted. The team makes the installer release it and refund the customers. The demon offers to collect the refunds, and the installer suddenly discovers that he does have enough cash on hand."
+        },
+        {
+          "id": "R2A-C12-P02",
+          "title": "The Neighborhood Watcher",
+          "adjustment": "None",
+          "text": "A winged figure appears on houses shortly before minor accidents, and residents fear it is causing them. Investigators stake out its next rooftop and find a mothlike creature pointing desperately at a loose gutter. It can foresee danger but cannot speak, so its warnings have mostly made people look upward while walking into things. The team lends it a marker and board, allowing clear warnings before it slips away. Its first message to the investigators is to stop standing on that ladder."
+        },
+        {
+          "id": "R2A-C12-P03",
+          "title": "Solar Powered",
+          "adjustment": "None",
+          "text": "A pale creature is seen stretched across rooftops, and affected households report mysteriously poor solar output. Investigators find a vampire hiding under the panels: they keep him shaded through the day, but his weight has damaged the mounts. He was locked out after coming home late and has been working his way toward a house with an open loft. The team opens his own attic from inside and gets him home. His housemate maintains that losing your keys is not a paranormal emergency."
+        },
+        {
+          "id": "R2A-C12-P04",
+          "title": "The Short Way Home",
+          "adjustment": "None",
+          "text": "An indistinct, many-legged shape races across rooftops just after closing time at a local pub. Investigators follow it to a regular's house and find him climbing out of an enormous spider's saddle. He bought the creature as a discreet alternative to driving after drinking, without considering how the neighbors might feel. The team arranges a taxi and gets the spider housed away from town. The passenger objects that the taxi driver cannot take anything like as direct a route."
+        },
+        {
+          "id": "R2A-C12-P05",
+          "title": "Let Me In",
+          "adjustment": "None",
+          "text": "A grotesque figure scratches at upstairs windows while a missing-person search expands below. Investigators match its voice to a man reported missing after trying a mail-order transformation spell. He can change back, but the instructions are on his bedroom desk and his family keeps chasing him away. The team retrieves the leaflet and helps him become human again. Asked why he wanted this particular transformation, he admits the illustration showed considerably better muscle definition."
+        }
+      ],
+      "round": 3
+    },
+    {
+      "number": 13,
+      "title": "Strange markings",
+      "description": "Mysterious graffiti is appearing around town",
+      "pitches": [
+        {
+          "id": "R2A-C13-P01",
+          "title": "The Removal Service",
+          "adjustment": "None",
+          "text": "Sinister symbols appear overnight, and a cleaning company arrives each morning offering to remove them. Investigators discover that the symbols really are protective wards: the cleaner paints them to keep a pursuing demon out while he works. Scrubbing them off for payment then lets it follow him to the next job. The team arranges the repayment that ends his infernal debt. His customers demand their cleaning fees back, which puts his finances approximately where they started."
+        },
+        {
+          "id": "R2A-C13-P02",
+          "title": "Wet Paint",
+          "adjustment": "None",
+          "text": "Painted doors appear on blank walls, and people caught using them are accused of breaking into buildings with no damage. Investigators find a tagger whose stolen paint makes any doorway he draws functional. He has been selling shortcuts through locked premises to delivery riders. The team recovers the paint and paints over the doors, closing the entrances. Several businesses immediately complain that their deliveries have started going to reception again."
+        },
+        {
+          "id": "R2A-C13-P03",
+          "title": "A Moving Violation",
+          "adjustment": "None",
+          "text": "The same obscene tag keeps turning up on freshly cleaned walls despite constant surveillance. Investigators discover that it crawls between surfaces whenever nobody is looking; a street artist animated his signature so he would never have to repaint it. They lure it onto a blank canvas and keep it covered. The artist is furious when the confiscated work sells for more than he has ever earned, until he learns it is being sold as evidence of a haunting, not as art."
+        },
+        {
+          "id": "R2A-C13-P04",
+          "title": "Marked for Collection",
+          "adjustment": "None",
+          "text": "Chalk symbols appear on front doors, and marked households report strangers arriving to take their furniture. Investigators catch a woman using a fortune-telling charm to identify which marriages will end, then selling the addresses as leads to a removals company. She did not tell the company how early the predictions were. The team stops the visits and takes the charm. Several couples who were previously getting along now want to know which spouse apparently plans to keep the sofa."
+        },
+        {
+          "id": "R2A-C13-P05",
+          "title": "Instructions Not Included",
+          "adjustment": "None",
+          "text": "A wall covered in unfamiliar writing produces a new line each night, followed by a brick dropping out. Investigators translate the message and find increasingly blunt instructions for freeing a mason accidentally sealed behind his own magical wall. His apprentice has been copying the earlier lines onto other buildings because he thought they were the spell. The team opens the original wall and releases the mason. He recognizes the copies as the apprentice's first accurate work and is furious about the timing."
+        }
+      ],
+      "round": 3
+    },
+    {
+      "number": 14,
+      "title": "Odd animal behavior",
+      "description": "The dogs are acting strange",
+      "pitches": [
+        {
+          "id": "R2A-C14-P01",
+          "title": "Something to Throw",
+          "adjustment": "None",
+          "text": "Dogs keep dropping invisible objects at people's feet and whining when nobody responds. Investigators borrow a medium and discover the ghost of a much-loved ball, still circulating through the dog park after being destroyed by a mower. A deceased dog keeps bringing it back for another throw. Arranging a game with a ghostly volunteer frees the living owners from the demands. The volunteer asks how long the assignment lasts. Nobody feels qualified to estimate."
+        },
+        {
+          "id": "R2A-C14-P02",
+          "title": "A Working Dog",
+          "adjustment": "None",
+          "text": "Dogs begin sitting beside their owners' beds all night, growling at the same empty corner. Investigators find that they are driving off a creature that feeds on nightmares. The creature complains that a dog-food company's experimental supplement has made ordinary pets able to see it. The team removes its hiding place beneath a bed, forcing it to leave the neighborhood. The owners keep buying the food, while the company cautiously adds 'supports restful sleep' to the bag."
+        },
+        {
+          "id": "R2A-C14-P03",
+          "title": "Off Duty",
+          "adjustment": "None",
+          "text": "Dogs throughout a neighborhood stop fetching, guarding, and performing tricks, but remain perfectly capable of opening treat cupboards. Investigators find a retired circus dog teaching them through telepathy that food arrives whether they work for it or not. Its owner begs the team to break up the lessons before the next training session. Moving the lessons does nothing to erase what the dogs learned. The investigators close the case with a recommendation that owners offer better treats."
+        },
+        {
+          "id": "R2A-C14-P04",
+          "title": "Some Assembly Required",
+          "adjustment": "None",
+          "text": "Dogs are digging up the same patch of wasteland and carrying bones home, but the bones keep escaping their gardens. Investigators catch the pieces assembling into a skeleton: the dogs have unearthed a buried necromancer who is trying to collect himself and leave. The team offers to recover the remaining pieces if he promises to move on. He agrees, although the thighbone requires a prolonged negotiation with a terrier that does not recognize the investigators' authority."
+        },
+        {
+          "id": "R2A-C14-P05",
+          "title": "A Second Opinion",
+          "adjustment": "None",
+          "text": "Dogs crowd outside a recently opened veterinary clinic, refusing to leave even when their owners pull them away. Investigators discover the vet can speak to animals and has been answering questions no human thought they were asking. Most want to know whether they have been good and why their owners leave every morning. The team arranges shorter appointments to clear the crowd. Several dogs return anyway because they dislike the first answers and want another professional opinion."
+        }
+      ],
+      "round": 3
+    },
+    {
+      "number": 15,
+      "title": "Erratic electronics",
+      "description": "Technological devices aren’t behaving like they should",
+      "pitches": [
+        {
+          "id": "R2A-C15-P01",
+          "title": "The Extra Copy",
+          "adjustment": "None",
+          "text": "An office printer produces photographs of confidential meetings held in empty rooms. Investigators examine the toner and find it contains the ashes of the company's former cleaner, whose ghost is finally being noticed after years of overhearing everything. She is trying to expose a manager who stole from her pay. The team gets the missing wages paid to her estate, stopping the printouts. The manager orders everyone to shred the evidence, then asks whether the shredder has been checked."
+        },
+        {
+          "id": "R2A-C15-P02",
+          "title": "Your Estimated Arrival",
+          "adjustment": "None",
+          "text": "Several navigation apps direct drivers to a cemetery and announce that they have reached home. Investigators find that every affected phone was repaired with parts salvaged from a hearse's haunted navigation system. Its dead driver is faithfully completing the final journey for anyone who switches it on. Replacing the parts restores ordinary routes, and the team gives the driver one last trip in his old vehicle. He still insists they take the shorter route through the locked gate."
+        },
+        {
+          "id": "R2A-C15-P03",
+          "title": "A More Accurate Reading",
+          "adjustment": "None",
+          "text": "Fitness watches warn apparently healthy residents that their hearts have stopped. Investigators trace the readings to a gym where a necromancer's new supplement temporarily turns customers into zombies. They can exercise without fatigue and have been taking extra doses to prolong the effect. The team withdraws the supplement and supervises the customers until it wears off. The gym owner maintains that the watches caused the problem, since nobody felt unwell until they looked at them."
+        },
+        {
+          "id": "R2A-C15-P04",
+          "title": "Unexpected Item",
+          "adjustment": "None",
+          "text": "Self-checkout machines demand extra payment for objects shoppers insist they are not carrying. Investigators discover that a witch installed a theft-detection charm, and the machines can now see stolen items tucked away anywhere on a customer's person. Most disputes involve goods taken from entirely different shops. Removing the charm ends the queues. The store manager objects until a machine asks him to pay for the office chair currently in his car."
+        },
+        {
+          "id": "R2A-C15-P05",
+          "title": "Someone Is at the Door",
+          "adjustment": "None",
+          "text": "Doorbell cameras show the same gaunt visitor arriving at houses while the doorsteps remain visibly empty. Investigators learn that a vampire can now enter through a live video feed when a resident tells him to come in. He has been calling at every smart doorbell on the street, claiming to be a delivery driver. The team feeds him an invitation through a camera inside a locked shed and disconnects it once he arrives. The household that reported him first wants to know whether he had their actual parcel."
+        }
+      ],
+      "round": 3
     }
   ]
 }

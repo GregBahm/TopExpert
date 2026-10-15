@@ -296,6 +296,121 @@
       "id": "R2-C08-P03",
       "status": "rejected",
       "notes": "The time slowing clock seems like it could work, but this payoff is weird. Cleaning a stairwell doesn't seem like a task that would normally have a lot of time pressure on it. "
+    },
+    {
+      "id": "R2A-C06-P01",
+      "status": "accepted",
+      "notes": "Good one. It does establish a specific mayor for future cases but that's probably not hard to manage. It could just be a mayoral candidate if it ever becomes a problem."
+    },
+    {
+      "id": "R2A-C06-P02",
+      "status": "accepted",
+      "notes": "This is a good story though I don't know how this case gets started. Each stranger only knows they're dreaming about robbing a jewelry store. Although that dream would come true. So there's probably path where the case gets started through that. Might be difficult during the implementation phase, though I like the concept otherwise."
+    },
+    {
+      "id": "R2A-C06-P03",
+      "status": "rejected",
+      "notes": "The lobster has to understand it's going to be boiled, which implies human level intelligence. So the lobster is both sentient and psychic? And the joke at the end is just that they have to buy and free this magic lobster? Not feeling it."
+    },
+    {
+      "id": "R2A-C06-P04",
+      "status": "rejected",
+      "notes": "The \"visualize winning\" angle is kind of interesting, but the payoff seems too weak."
+    },
+    {
+      "id": "R2A-C06-P05",
+      "status": "rejected",
+      "notes": "Doesn't seem like a joke at the end as much as just an earnest resolution to the problem of a psychic baby. Too boring."
+    },
+    {
+      "id": "R2A-C07-P01",
+      "status": "accepted",
+      "notes": "This is fine though I wonder if it is a little thin. I like a simple case, and simply unplugging the cord might be good enough. Although I feel like there might be something more fun like where the other side of the portal is stealing something too. "
+    },
+    {
+      "id": "R2A-C07-P02",
+      "status": "accepted",
+      "notes": "Yeah this is good. We could play up that nobody likes the sculpture, and the sculptor being happy to have found such a fan is good."
+    },
+    {
+      "id": "R2A-C07-P03",
+      "status": "rejected",
+      "notes": "A snoring vampire needing a c-pap machine is sort of funny, but it's also sort of dumb. This is a hard call, but I think I'm going to decide it's too corny."
+    },
+    {
+      "id": "R2A-C07-P04",
+      "status": "rejected",
+      "notes": "I like this but I see too many problems. One is that continuously humming for 3 days just seems way too long. Their bodies would give out from exhaustion and dehydration. It could be shorter but then it's weird that the investigators got involved that quickly.\nThe other problem is the idea that they'd float very high off the ground. Usually the meditative floating thing is only a few feet.\nAnd then there's the problem that they only drop like a stone as opposed to easing back down. This is too many problems. Rejecting."
+    },
+    {
+      "id": "R2A-C07-P05",
+      "status": "accepted",
+      "notes": "This is good. I like that nothing supernatural has actually happened here. I also like that the (completely untrained, amateur) investigators are going to be treated like \"the man\" by these ghost hunters. That's super fun."
+    },
+    {
+      "id": "R2A-C08-P01",
+      "status": "rejected",
+      "notes": "The \"stairwell that ages you\" concept could work, but this payoff doesn't. Why aren't the investigators also getting old as they descend the staircase? \nThere might be a case here where the stairwell makes people younger as they descend, and one person has slipped and aged down to a baby. And the investigators have to solve the case while being presented problems from the perspective of a small child. It would take some skilled writing to make work though."
+    },
+    {
+      "id": "R2A-C08-P02",
+      "status": "rejected",
+      "notes": "This is kind of funny but it's hard for me to imagine people would continue down a step that they have no ability to get back up. They'd have to shrink so much between one step and another. It's close to a good idea, but the specifics are too difficult to make work."
+    },
+    {
+      "id": "R2A-C08-P03",
+      "status": "accepted",
+      "notes": "Good stuff. I like the concept of a mimic or an angler fish as a stairwell. I like the idea of needing throw stuff down the \"throat\" to get it to vomit up eaten people. I like the smell thing for a closing joke."
+    },
+    {
+      "id": "R2A-C08-P04",
+      "status": "rejected",
+      "notes": "I don't get why people would be stuck on the ceiling and not just be able to say \"Yo I'm right here stuck on the ceiling\" to the inventor specifically working on this. It just doesn't make sense for this to rise to the level of a case that would require investigators. "
+    },
+    {
+      "id": "R2A-C08-P05",
+      "status": "rejected",
+      "notes": "Eh it's just not that funny."
+    },
+    {
+      "id": "R2A-C09-P01",
+      "status": "rejected",
+      "notes": "The concept has too much overlap with the real-life problem of people drugging other people with roofies. I want to keep the game fun, and this is potentially a vibe-killer."
+    },
+    {
+      "id": "R2A-C09-P02",
+      "status": "accepted",
+      "notes": "I like the fake cannibalism angle. I like an actual cannibal showing up and being mad that it's not actually people. I don't like that the actual cannibal is implied to be slenderman or something. I don't think the owner needs to agree to stop attracting his target audience. The investigators can just find out the truth and leave the owners to deal with the situation with the real cannibal themselves."
+    },
+    {
+      "id": "R2A-C09-P03",
+      "status": "accepted",
+      "notes": "Yeah this is good. Normally I don't like gross-out humor but it strikes the right balance of being just a little gross without going off the deep end."
+    },
+    {
+      "id": "R2A-C09-P04",
+      "status": "rejected",
+      "notes": "Naw it's just kind of corny. \"Stealing food with a teleporter\" is a weird thing to do with a teleporter and the payoff is weak."
+    },
+    {
+      "id": "R2A-C09-P05",
+      "status": "accepted",
+      "notes": "I will accept this but with some changes. The soup making people tell people the truth is pretty good, and should be easy to set up some jokes in the case implementation phase. But I want the chef to be missing the entire case, and once they finally find him, the chef spills out all the truth immediately (incriminating himself), because the chef has also eaten the food. "
+    },
+    {
+      "id": "R2A-C10-P01",
+      "status": "accepted",
+      "notes": "Yeah that's funny. I like the image of the investigators dealing with this giant bird, and it's also a humorously low-stakes explanation for something that sounds higher-stakes (an unscheduled eclipse.)"
+    },
+    {
+      "id": "R2A-C10-P02",
+      "status": "rejected",
+      "notes": "This one is too hard to follow."
+    },
+    {
+      "id": "R2A-C10-P03",
+      "status": "accepted",
+      "notes": "Yeah that's fun. I think the \"suitable for children\" bit is okay, but the \"presentation almost reaches the death of the sun\" bit is the best part of the pitch. So maybe the case should end on that somehow. Either way it's a good case."
     }
   ]
 }

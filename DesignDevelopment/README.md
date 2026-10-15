@@ -14,7 +14,7 @@ Open **http://127.0.0.1:8765**. Keep the server running. No package installation
 
 Each pitch has **Unreviewed**, **Reviewed and rejected**, or **Reviewed and accepted**, plus notes. Statuses and notes save to `outputs/payoff_exploration/reviews.json`. Wait for **Saved to reviews.json** before closing. Save failures show a retry action; unsaved edits remain only in the open page, so do not close it until saved.
 
-`reviews.json` is the only review store. There is no cloud sync or browser-local review database. To share reviews between computers, commit/push that file normally, then pull it on the other computer. It is intentionally tracked; do not put private information there if repository readers should not see it. Round 1 retains reviewed original pitches. Round 2 contains 50 fresh pitches, five each for premises 6–15. Status checkbox counts apply to the selected round; notes appear on reviewed pitches.
+`reviews.json` is the only review store. There is no cloud sync or browser-local review database. To share reviews between computers, commit/push that file normally, then pull it on the other computer. It is intentionally tracked; do not put private information there if repository readers should not see it. Round 1 retains reviewed original pitches. Round 2 - Opus and Round 2 - Astra each contain 50 pitches, five each for premises 6–15, with separate review IDs. The Astra tab opens by default. Status checkbox counts apply to the selected round; notes appear on reviewed pitches.
 
 ## Edit the tool
 

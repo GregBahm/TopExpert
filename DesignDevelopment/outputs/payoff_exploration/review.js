@@ -10,7 +10,7 @@ const rows=[...document.querySelectorAll('.pitch')],nodes=new Map();rows.forEach
 
 const status=document.querySelector('#save-status'),retry=document.querySelector('#retry'),filters=[...document.querySelectorAll('[data-filter]')];
 
-let activeRound=2;
+let activeRound=3;
 let reviews={},dirty={},loaded=false,saving=false,saveTimer,lastError='';
 const emptyReview=()=>({status:'unreviewed',notes:''});
 const current=id=>reviews[id]||emptyReview();
