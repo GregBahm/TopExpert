@@ -6,9 +6,13 @@ const {validateRecord, validateDocument} = require('./review-schema.cjs');
 
 function createReviewServer(root = __dirname) {
   const reviewPath = path.join(root, 'reviews.json');
-  const ids = new Set(require(path.join(root, 'pitches.json')).concepts.flatMap(c => c.pitches.map(p => p.id)));
   let writes = Promise.resolve();
-  const validRecord = r => {try {return ids.has(validateRecord(r).id)} catch {return false}};
+  async function validRecord(record) {
+    let id;
+    try { id = validateRecord(record).id; } catch { return false; }
+    const pitches = JSON.parse(await fs.readFile(path.join(root, 'pitches.json'), 'utf8'));
+    return pitches.concepts.some(c => c.pitches.some(p => p.id === id));
+  }
 
   async function readReviews() {
     return validateDocument(JSON.parse(await fs.readFile(reviewPath, 'utf8')));
@@ -89,7 +93,7 @@ function createReviewServer(root = __dirname) {
             reply(400, {error: 'Invalid JSON.'});
             return;
           }
-          if (!validRecord(record)) {
+          if (!await validRecord(record)) {
             reply(400, {error: 'Invalid pitch ID, status, or notes (maximum 10000 characters).'});
             return;
           }

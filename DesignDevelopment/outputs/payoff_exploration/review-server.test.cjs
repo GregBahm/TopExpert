@@ -11,6 +11,13 @@ test('current statuses and notes save and reload without touching real reviews',
  assert.match(html,/data-round-tab="2" aria-selected="false">Round 2 - Opus</);
  assert.match(html,/data-round-tab="3" aria-selected="true">Round 2 - Astra</);
  const pitches=JSON.parse(await fs.readFile(path.join(root,'pitches.json'),'utf8'));
+ // A running server must accept pitches added after it started.
+ const added={id:'FIXTURE-ADDED-AFTER-START',status:'accepted',notes:'New pitch saved without restarting'};
+ pitches.concepts[0].pitches.push({id:added.id});
+ await fs.writeFile(path.join(root,'pitches.json'),JSON.stringify(pitches));
+ assert.equal((await fetch(url+'/api/reviews',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(added)})).status,200);
+ assert.deepEqual((await (await fetch(url+'/api/reviews')).json()).records.find(r=>r.id===added.id),added);
+ pitches.concepts[0].pitches.pop();
  const round2=pitches.concepts.filter(c=>c.round===2);assert.equal(round2.length,10);assert.ok(round2.every(c=>c.pitches.length===5));
  const astra=pitches.concepts.filter(c=>c.round===3);assert.deepEqual(astra.map(c=>c.number),Array.from({length:10},(_,i)=>i+6));
  for(const c of astra){

@@ -300,7 +300,7 @@
     {
       "id": "R2A-C06-P01",
       "status": "accepted",
-      "notes": "Good one. It does establish a specific mayor for future cases but that's probably not hard to manage. It could just be a mayoral candidate if it ever becomes a problem."
+      "notes": "Good one. It does establish a specific mayor for future cases but that's probably not hard to manage. It could just be a mayoral candidate if it ever becomes a problem.\nHow do we discover that the mayor is a psychic though? Might be a problem for implementation"
     },
     {
       "id": "R2A-C06-P02",
@@ -319,8 +319,8 @@
     },
     {
       "id": "R2A-C06-P05",
-      "status": "rejected",
-      "notes": "Doesn't seem like a joke at the end as much as just an earnest resolution to the problem of a psychic baby. Too boring."
+      "status": "accepted",
+      "notes": "This one is interesting because the setup is amusing but the resolution is very dry. Maybe it's good to have some cases where the humor is in the setup instead of the payoff though. "
     },
     {
       "id": "R2A-C07-P01",
@@ -330,7 +330,7 @@
     {
       "id": "R2A-C07-P02",
       "status": "accepted",
-      "notes": "Yeah this is good. We could play up that nobody likes the sculpture, and the sculptor being happy to have found such a fan is good."
+      "notes": "Yeah this is good. We could play up that nobody likes the sculpture, and the sculptor being happy to have found such a fan is good. Note for case implementation: It would be great if this sculpture shows up in the background of other cases prior."
     },
     {
       "id": "R2A-C07-P03",
@@ -411,6 +411,66 @@
       "id": "R2A-C10-P03",
       "status": "accepted",
       "notes": "Yeah that's fun. I think the \"suitable for children\" bit is okay, but the \"presentation almost reaches the death of the sun\" bit is the best part of the pitch. So maybe the case should end on that somehow. Either way it's a good case."
+    },
+    {
+      "id": "R2A-C10-P04",
+      "status": "rejected",
+      "notes": "Why is he trying to reject his followers? Further, this would be better if the followers were upset that the apocalypse did not occur. "
+    },
+    {
+      "id": "R2A-C10-P05",
+      "status": "rejected",
+      "notes": "Too difficult to follow in this form."
+    },
+    {
+      "id": "R2A-C11-P01",
+      "status": "rejected",
+      "notes": "There isn't enough of a conflict here. Needs some kind of climax."
+    },
+    {
+      "id": "R2A-C11-P02",
+      "status": "accepted",
+      "notes": ""
+    },
+    {
+      "id": "R2A-C11-P03",
+      "status": "accepted",
+      "notes": "Kafka-esque. Good."
+    },
+    {
+      "id": "R2A-C11-P04",
+      "status": "accepted",
+      "notes": ""
+    },
+    {
+      "id": "R2A-C11-P05",
+      "status": "rejected",
+      "notes": "Boring."
+    },
+    {
+      "id": "R2A-C12-P01",
+      "status": "rejected",
+      "notes": "-Does the demon also chase intruders who enter these same windows?\n-Why does the demon offer to collect the refunds?"
+    },
+    {
+      "id": "R2A-C12-P02",
+      "status": "accepted",
+      "notes": ""
+    },
+    {
+      "id": "R2A-C12-P03",
+      "status": "rejected",
+      "notes": "The last bit seems tacked on."
+    },
+    {
+      "id": "R2A-C12-P04",
+      "status": "rejected",
+      "notes": ""
+    },
+    {
+      "id": "R2A-C12-P05",
+      "status": "accepted",
+      "notes": "Is it possible to come up with a better explanation on the part of the missing man? Perhaps he misunderstood the pamphlet. Maybe it was written by people for whom English is a second language, and some wording they used implies better muscle definition (but doesn't mean that at all in the writer's native language)?"
     }
   ]
 }
