@@ -5,7 +5,7 @@ export function validate(d){
  need(object(d)&&d.version===1,'Expected case version 1');
  need(/^[a-z0-9-]+$/.test(d.id),'Case ID: lowercase letters, numbers, hyphens');
  if(d.testSetup!==undefined){need(object(d.testSetup)&&Array.isArray(d.testSetup.investigatorIds)&&d.testSetup.investigatorIds.every(id=>typeof id==='string'&&/^[a-z0-9-]+$/.test(id)),'Test setup needs investigatorIds');need(new Set(d.testSetup.investigatorIds).size===d.testSetup.investigatorIds.length,'Test setup investigator IDs must be unique')}
- if(d.testSetup?.skillOverrides!==undefined){need(object(d.testSetup.skillOverrides),'Skill overrides must be an object');for(const [id,skills] of Object.entries(d.testSetup.skillOverrides)){need(/^[a-z0-9-]+$/.test(id)&&object(skills),'Invalid investigator skill override');for(const [skill,value] of Object.entries(skills))need(STATS.includes(skill)&&Number.isInteger(value)&&value>=0&&value<=5,'Skill overrides must be integers from 0 to 5')}}
+ if(d.testSetup?.skillOverrides!==undefined){need(object(d.testSetup.skillOverrides),'Skill overrides must be an object');for(const [id,skills] of Object.entries(d.testSetup.skillOverrides)){need(/^[a-z0-9-]+$/.test(id)&&object(skills),'Invalid investigator skill override');for(const [skill,value] of Object.entries(skills))need(STATS.includes(skill)&&Number.isInteger(value)&&value>=0&&value<=6,'Skill overrides must be integers from 0 to 6')}}
  for(const k of ['title','opening','notes'])need(typeof d[k]==='string',k+' must be text');
  need(object(d.rule)&&Number.isInteger(d.rule.sides)&&d.rule.sides>=1&&d.rule.sides<=100,'Check die sides must be 1–100');
  need(Number.isFinite(d.rule.multiplier)&&d.rule.multiplier>=0,'Skill multiplier must be nonnegative');
@@ -41,12 +41,25 @@ function apply(s,e,actor){
  s.flags=[...new Set([...s.flags.filter(f=>!e.flagsRemove.includes(f)),...e.flagsAdd])];
  s.active=[...new Set([...s.active.filter(id=>!e.remove.includes(id)),...e.unlock.filter(id=>!s.completed.includes(id))])];if(e.ending)s.ending=e.ending;
 }
+// Shared check modifiers for resolution and the displayed roll range.
+export function checkTerms(definition,state,opportunity,actor,{costsPaid=false}={}){
+ const components=opportunity.check.skills.map(name=>({name,value:actor.skills[name]||0}));
+ const skill=components.reduce((sum,c)=>sum+c.value,0)*definition.rule.multiplier;
+ const itemTerms=Object.entries(opportunity.check.itemBonuses).filter(([name])=>(state.inventory[name]||0)-(costsPaid?0:(opportunity.cost.inventory[name]||0))>0).map(([name,value])=>({name,value}));
+ return {skill,bonus:itemTerms.reduce((sum,c)=>sum+c.value,0),components,itemTerms};
+}
+export function checkProbability(definition,state,opportunity,actor){
+ const terms=checkTerms(definition,state,opportunity,actor);let successes=0;
+ for(let die=1;die<=definition.rule.sides;die++)if(die+terms.skill+terms.bonus>=opportunity.check.target)successes++;
+ return {...terms,successes,sides:definition.rule.sides,percent:Math.round(100*successes/definition.rule.sides)};
+}
 export function advance(d,state,assignments,roll=()=>1+Math.floor(Math.random()*d.rule.sides)){
- const s=structuredClone(state);if(s.ending)throw Error('Restart to play again');
+ const s=structuredClone(state);if(s.ending)throw Error('Restart to play again');s.turnResults=[];
  const seenActors=new Set(),seenOps=new Set();const planned=assignments.map(a=>{const o=d.opportunities.find(o=>o.id===a.opportunity);if(!o)throw Error('Unknown opportunity');const actor=s.investigators.find(i=>i.id===a.investigator);const why=available(d,s,o,actor);if(why)throw Error(why);if(seenOps.has(o.id))throw Error('Assign an opportunity once per turn');seenOps.add(o.id);if(o.kind==='investigator'){if(seenActors.has(actor.id))throw Error('One action per investigator each turn');seenActors.add(actor.id)}return {o,actor:o.kind==='item'?null:actor}});
  let elapsed=1;
  for(const {o,actor} of planned){if(s.ending)break;const why=available(d,s,o,actor);if(why){s.log.push(o.title+' skipped: '+why);continue}elapsed=Math.max(elapsed,o.duration);for(const group of ['inventory','resources'])for(const [k,v] of Object.entries(o.cost[group]))s[group][k]-=v;
- let passed=true;if(o.check){const die=roll();if(!Number.isInteger(die)||die<1||die>d.rule.sides)throw Error('Invalid die roll');const skill=o.check.skills.reduce((n,k)=>n+(actor.skills[k]||0),0)*d.rule.multiplier;const bonus=Object.entries(o.check.itemBonuses).reduce((n,[k,v])=>n+((s.inventory[k]||0)>0?v:0),0);passed=die+skill+bonus>=o.check.target;s.log.push(`${actor.name}: ${o.title} — ${die} + skills ${skill} + items ${bonus} vs ${o.check.target}: ${passed?'success':'failure'}`)}else s.log.push((actor?.name||'Item action')+': '+o.title);
+ let passed=true,total=null;if(o.check){const die=roll();if(!Number.isInteger(die)||die<1||die>d.rule.sides)throw Error('Invalid die roll');const {skill,bonus}=checkTerms(d,s,o,actor,{costsPaid:true});total=die+skill+bonus;passed=total>=o.check.target;s.log.push(`${actor.name}: ${o.title} — ${die} + skills ${skill} + items ${bonus} vs ${o.check.target}: ${passed?'success':'failure'}`)}else s.log.push((actor?.name||'Item action')+': '+o.title);
+ s.turnResults.push({opportunity:o.id,investigator:actor?.id,passed,total,text:(passed?o.success:o.failure).text});
  if(!o.repeatable){s.active=s.active.filter(id=>id!==o.id);s.completed.push(o.id)}apply(s,passed?o.success:o.failure,actor);
  }
  s.turn+=elapsed;
