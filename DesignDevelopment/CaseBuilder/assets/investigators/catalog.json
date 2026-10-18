@@ -1,0 +1,232 @@
+[
+  {
+    "name": "Audrey",
+    "file": "Audrey.png",
+    "id": "audrey",
+    "skills": {
+      "Violence": 2,
+      "Otherness": 1
+    },
+    "statsSpecified": true
+  },
+  {
+    "name": "Avery",
+    "file": "Avery.png",
+    "id": "avery",
+    "skills": {
+      "Interpersonal": 2,
+      "Sly": 1
+    },
+    "statsSpecified": true
+  },
+  {
+    "name": "C. K.",
+    "file": "C. K..png",
+    "id": "ck",
+    "skills": {
+      "Interpersonal": 1,
+      "Sly": 1,
+      "Knowledge": 1
+    },
+    "statsSpecified": true
+  },
+  {
+    "name": "Delilah",
+    "file": "Delilah.png",
+    "id": "delilah",
+    "skills": {
+      "Resilience": 3
+    },
+    "statsSpecified": true
+  },
+  {
+    "name": "Dr. Vanderhorten",
+    "file": "Dr. Vanderhorten.png",
+    "id": "vanderhorten",
+    "skills": {
+      "Knowledge": 3
+    },
+    "statsSpecified": true
+  },
+  {
+    "name": "Gabriel",
+    "file": "Gabriel.png",
+    "id": "gabriel",
+    "skills": {},
+    "statsSpecified": false
+  },
+  {
+    "name": "Guy Personman",
+    "file": "Guy Personman.png",
+    "id": "guy-personman",
+    "skills": {
+      "Exploitability": 1,
+      "Focus": 1,
+      "Resilience": 1
+    },
+    "statsSpecified": true
+  },
+  {
+    "name": "Joan",
+    "file": "Joan.png",
+    "id": "joan",
+    "skills": {
+      "Interpersonal": 3
+    },
+    "statsSpecified": true
+  },
+  {
+    "name": "Johnny",
+    "file": "Johnny.png",
+    "id": "johnny",
+    "skills": {
+      "Violence": 3
+    },
+    "statsSpecified": true
+  },
+  {
+    "name": "Langerak",
+    "file": "Langerak.png",
+    "id": "langerak",
+    "skills": {
+      "Focus": 2,
+      "Violence": 1
+    },
+    "statsSpecified": true
+  },
+  {
+    "name": "Lester",
+    "file": "Lester.png",
+    "id": "lester",
+    "skills": {
+      "Otherness": 3
+    },
+    "statsSpecified": true
+  },
+  {
+    "name": "Mal",
+    "file": "Mal.png",
+    "id": "mal",
+    "skills": {
+      "Sly": 1,
+      "Knowledge": 2
+    },
+    "statsSpecified": true
+  },
+  {
+    "name": "Maria",
+    "file": "Maria.png",
+    "id": "maria",
+    "skills": {
+      "Interpersonal": 1,
+      "Violence": 1,
+      "Sly": 1
+    },
+    "statsSpecified": true
+  },
+  {
+    "name": "Milton",
+    "file": "Milton.png",
+    "id": "milton",
+    "skills": {
+      "Exploitability": 1,
+      "Focus": 1,
+      "Sly": 1
+    },
+    "statsSpecified": true
+  },
+  {
+    "name": "Ms. Robinson",
+    "file": "Ms. Robinson.png",
+    "id": "ms-robinson",
+    "skills": {
+      "Interpersonal": 1,
+      "Sly": 2
+    },
+    "statsSpecified": true
+  },
+  {
+    "name": "Sato",
+    "file": "Sato.png",
+    "id": "sato",
+    "skills": {
+      "Exploitability": 3
+    },
+    "statsSpecified": true
+  },
+  {
+    "name": "Scooter",
+    "file": "Scooter.png",
+    "id": "scooter",
+    "skills": {},
+    "statsSpecified": false
+  },
+  {
+    "name": "Shannon",
+    "file": "Shannon.png",
+    "id": "shannon",
+    "skills": {
+      "Sly": 1,
+      "Otherness": 2
+    },
+    "statsSpecified": true
+  },
+  {
+    "name": "Thelonious",
+    "file": "Thelonious.png",
+    "id": "thelonious",
+    "skills": {
+      "Knowledge": 1,
+      "Resilience": 1,
+      "Otherness": 1
+    },
+    "statsSpecified": true
+  },
+  {
+    "name": "Unique (black)",
+    "file": "Unique (black).png",
+    "id": "unique-black",
+    "skills": {
+      "Focus": 2,
+      "Knowledge": 1
+    },
+    "statsSpecified": true
+  },
+  {
+    "name": "Unique (white)",
+    "file": "Unique (white).png",
+    "id": "unique-white",
+    "skills": {
+      "Exploitability": 2,
+      "Resilience": 1
+    },
+    "statsSpecified": true
+  },
+  {
+    "name": "Volkova",
+    "file": "Volkova.png",
+    "id": "volkova",
+    "skills": {
+      "Violence": 1,
+      "Resilience": 2
+    },
+    "statsSpecified": true
+  },
+  {
+    "name": "X",
+    "file": "X.png",
+    "id": "x",
+    "skills": {
+      "Exploitability": 1,
+      "Otherness": 2
+    },
+    "statsSpecified": true
+  },
+  {
+    "name": "Xavier",
+    "file": "Xavier.png",
+    "id": "xavier",
+    "skills": {},
+    "statsSpecified": false
+  }
+]

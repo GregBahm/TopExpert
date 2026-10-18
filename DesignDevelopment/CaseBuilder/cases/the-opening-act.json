@@ -1,0 +1,696 @@
+{
+  "version": 1,
+  "id": "the-opening-act",
+  "title": "The Opening Act",
+  "opening": "Strange lights interrupt marching-band practice every evening. The band director would like them investigated before Friday. He would also like the trumpet section investigated, but that is outside the contract.",
+  "notes": "Small mechanics prototype. Preserve low stakes: aliens are annoying music critics. No lethal notes, lung damage, abduction or extra supernatural system. Investigators learn why the lights appear, arrange sound, then choose to perform properly or deliberately badly. Deadline and money are provisional balancing knobs.",
+  "source": {
+    "pitchId": "C01-P01",
+    "pitchTitle": "The Opening Act",
+    "reviewStatus": "accepted",
+    "reviewNotes": "The aliens wanting to engage in the marching band practice, but being mad at a bad trumpeter is great. Finding ancient records of it is fine. \"Intentionally playing poorly so they'll go away\" (even though the aliens leave Earth bad reviews) is great. The lung-rupturing notes thing is weird. That can be cut. This can be a low-stakes case where the only problem is the aliens are being annoying and interrupting marching bandf practice.",
+    "notes": "Adapted using accepted review notes; source pitch/reviews remain untouched."
+  },
+  "rule": {
+    "sides": 6,
+    "multiplier": 1,
+    "notes": "PROVISIONAL, not settled in the base doc: one d6 + sum of named investigator skills × multiplier + bonuses from held items >= target. No critical rolls. Costs paid on either result. Item bonuses use held quantity after costs."
+  },
+  "investigators": [
+    {
+      "id": "avery",
+      "name": "Avery",
+      "health": 3,
+      "skills": {
+        "Interpersonal": 2,
+        "Sly": 1
+      },
+      "traits": [],
+      "notes": "Base doc stats; provisional health."
+    },
+    {
+      "id": "vanderhorten",
+      "name": "Dr. Vanderhorten",
+      "health": 3,
+      "skills": {
+        "Knowledge": 3
+      },
+      "traits": [],
+      "notes": "Base doc stats."
+    },
+    {
+      "id": "red",
+      "name": "Red",
+      "health": 3,
+      "skills": {
+        "Focus": 3
+      },
+      "traits": [],
+      "notes": "Base doc stats."
+    }
+  ],
+  "initial": {
+    "inventory": {},
+    "resources": {
+      "money": 3
+    },
+    "flags": []
+  },
+  "endings": [
+    {
+      "id": "bad-review",
+      "title": "One star. Would not invade again.",
+      "body": "The band gives an aggressively dreadful performance. The lights pack up and leave. Their review calls Earth “rhythmically uninhabitable.” The band director asks whether he can count that as outside adjudication.",
+      "notes": "Preferred sardonic payoff from accepted review."
+    },
+    {
+      "id": "encore",
+      "title": "A new residency",
+      "body": "The aliens love the performance and book themselves for every rehearsal. You solved what the lights are. The band director points out that this was not the same as solving his problem.",
+      "notes": "Failure ending: a competent performance makes the nuisance worse, without catastrophe."
+    },
+    {
+      "id": "abandoned",
+      "title": "Practice canceled",
+      "body": "Friday arrives. The director cancels practice. The visitors leave to find another band, and the agency receives an invoice for a rehearsal it did not attend.",
+      "notes": "Contained timeout ending. No town-wide consequences."
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "interview",
+      "title": "Interview the band",
+      "body": "The witnesses are annoyed, available, and already holding their instruments.",
+      "notes": "Ordinary witness clue. Interview branch can replace archive research.",
+      "kind": "investigator",
+      "initial": true,
+      "repeatable": true,
+      "duration": 1,
+      "deadline": null,
+      "requires": {
+        "flags": [],
+        "notFlags": [],
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "traits": []
+      },
+      "cost": {
+        "inventory": {},
+        "resources": {}
+      },
+      "check": {
+        "skills": [
+          "Interpersonal"
+        ],
+        "target": 5,
+        "itemBonuses": {},
+        "notes": "Easy first clue; failed interview can be retried."
+      },
+      "success": {
+        "text": "The lights appear whenever the band plays. They keep interrupting the same trumpet part.",
+        "notes": "",
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [
+          "music-clue"
+        ],
+        "flagsRemove": [],
+        "unlock": [
+          "rent",
+          "borrow",
+          "wait-for-friday"
+        ],
+        "remove": [
+          "interview"
+        ],
+        "ending": null
+      },
+      "failure": {
+        "text": "The director spends the interview complaining about the trumpet section. Time passes.",
+        "notes": "",
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [],
+        "flagsRemove": [],
+        "unlock": [],
+        "remove": [],
+        "ending": null
+      },
+      "expired": {
+        "text": "",
+        "notes": "",
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [],
+        "flagsRemove": [],
+        "unlock": [],
+        "remove": [],
+        "ending": null
+      }
+    },
+    {
+      "id": "archives",
+      "title": "Research earlier sightings",
+      "body": "Search the local archive for earlier reports of musical lights.",
+      "notes": "",
+      "kind": "investigator",
+      "initial": true,
+      "repeatable": true,
+      "duration": 1,
+      "deadline": null,
+      "requires": {
+        "flags": [],
+        "notFlags": [],
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "traits": []
+      },
+      "cost": {
+        "inventory": {},
+        "resources": {}
+      },
+      "check": {
+        "skills": [
+          "Knowledge"
+        ],
+        "target": 6,
+        "itemBonuses": {},
+        "notes": "Alternative clue path; does not add required lore."
+      },
+      "success": {
+        "text": "Old accounts describe sky visitors attending concerts and leaving very critical reviews.",
+        "notes": "",
+        "inventory": {
+          "old-review": 1
+        },
+        "resources": {},
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [
+          "music-clue"
+        ],
+        "flagsRemove": [],
+        "unlock": [
+          "rent",
+          "borrow",
+          "wait-for-friday"
+        ],
+        "remove": [
+          "archives"
+        ],
+        "ending": null
+      },
+      "failure": {
+        "text": "Several accounts are simply complaints about church bells. Nothing useful yet.",
+        "notes": "",
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [],
+        "flagsRemove": [],
+        "unlock": [],
+        "remove": [],
+        "ending": null
+      },
+      "expired": {
+        "text": "",
+        "notes": "",
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [],
+        "flagsRemove": [],
+        "unlock": [],
+        "remove": [],
+        "ending": null
+      }
+    },
+    {
+      "id": "rent",
+      "title": "Pay for an amplifier",
+      "body": "The rental shop will supply an amplifier for three money. No investigator needs to stand in line for this prototype.",
+      "notes": "Item/resource slot, automatic result. Costs are consumed even when a checked action fails; this action has no check.",
+      "kind": "item",
+      "initial": false,
+      "repeatable": false,
+      "duration": 1,
+      "deadline": null,
+      "requires": {
+        "flags": [
+          "music-clue"
+        ],
+        "notFlags": [],
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "traits": []
+      },
+      "cost": {
+        "inventory": {},
+        "resources": {
+          "money": 3
+        }
+      },
+      "check": null,
+      "success": {
+        "text": "The amplifier arrives. Its rental deposit is apparently the agency’s largest capital investment.",
+        "notes": "",
+        "inventory": {
+          "amplifier": 1
+        },
+        "resources": {},
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [
+          "sound-ready"
+        ],
+        "flagsRemove": [],
+        "unlock": [
+          "observe"
+        ],
+        "remove": [
+          "borrow"
+        ],
+        "ending": null
+      },
+      "failure": {
+        "text": "No progress this turn.",
+        "notes": "",
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [],
+        "flagsRemove": [],
+        "unlock": [],
+        "remove": [],
+        "ending": null
+      },
+      "expired": {
+        "text": "",
+        "notes": "",
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [],
+        "flagsRemove": [],
+        "unlock": [],
+        "remove": [],
+        "ending": null
+      }
+    },
+    {
+      "id": "borrow",
+      "title": "Borrow the festival amplifier",
+      "body": "The festival organizer has left a perfectly good amplifier unattended. Explain that it is inter-agency cooperation.",
+      "notes": "Failure costs one health; choose a different investigator or use the paid route.",
+      "kind": "investigator",
+      "initial": false,
+      "repeatable": true,
+      "duration": 1,
+      "deadline": null,
+      "requires": {
+        "flags": [
+          "music-clue"
+        ],
+        "notFlags": [],
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "traits": []
+      },
+      "cost": {
+        "inventory": {},
+        "resources": {}
+      },
+      "check": {
+        "skills": [
+          "Sly"
+        ],
+        "target": 5,
+        "itemBonuses": {},
+        "notes": "Alternate resource-free equipment path."
+      },
+      "success": {
+        "text": "You borrow an amplifier and acquire a written request to return it.",
+        "notes": "",
+        "inventory": {
+          "amplifier": 1
+        },
+        "resources": {},
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [
+          "sound-ready"
+        ],
+        "flagsRemove": [],
+        "unlock": [
+          "observe"
+        ],
+        "remove": [
+          "rent",
+          "borrow"
+        ],
+        "ending": null
+      },
+      "failure": {
+        "text": "The organizer does not recognize the agency. Your credentials are a coffee receipt.",
+        "notes": "",
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "health": -1,
+        "flagsAdd": [],
+        "flagsRemove": [],
+        "unlock": [],
+        "remove": [],
+        "ending": null
+      },
+      "expired": {
+        "text": "",
+        "notes": "",
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [],
+        "flagsRemove": [],
+        "unlock": [],
+        "remove": [],
+        "ending": null
+      }
+    },
+    {
+      "id": "observe",
+      "title": "Stage a short rehearsal",
+      "body": "With amplification, observe how the lights respond to familiar music.",
+      "notes": "Automatic discovery after equipment. No second supernatural cause.",
+      "kind": "investigator",
+      "initial": false,
+      "repeatable": false,
+      "duration": 1,
+      "deadline": null,
+      "requires": {
+        "flags": [
+          "sound-ready"
+        ],
+        "notFlags": [],
+        "inventory": {
+          "amplifier": 1
+        },
+        "resources": {},
+        "skills": {},
+        "traits": []
+      },
+      "cost": {
+        "inventory": {},
+        "resources": {}
+      },
+      "check": null,
+      "success": {
+        "text": "The lights answer each phrase and stop to correct the trumpet. A small craft descends. The visitors are touring musicians, and they think they have found collaborators.",
+        "notes": "",
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [
+          "alien-critics"
+        ],
+        "flagsRemove": [],
+        "unlock": [
+          "badly",
+          "properly"
+        ],
+        "remove": [],
+        "ending": null
+      },
+      "failure": {
+        "text": "No progress this turn.",
+        "notes": "",
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [],
+        "flagsRemove": [],
+        "unlock": [],
+        "remove": [],
+        "ending": null
+      },
+      "expired": {
+        "text": "",
+        "notes": "",
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [],
+        "flagsRemove": [],
+        "unlock": [],
+        "remove": [],
+        "ending": null
+      }
+    },
+    {
+      "id": "badly",
+      "title": "Arrange a deliberately terrible audition",
+      "body": "Convince the band to play badly on purpose. The director says this will require very little rehearsal.",
+      "notes": "",
+      "kind": "investigator",
+      "initial": false,
+      "repeatable": true,
+      "duration": 1,
+      "deadline": null,
+      "requires": {
+        "flags": [
+          "alien-critics"
+        ],
+        "notFlags": [],
+        "inventory": {
+          "amplifier": 1
+        },
+        "resources": {},
+        "skills": {},
+        "traits": []
+      },
+      "cost": {
+        "inventory": {},
+        "resources": {}
+      },
+      "check": {
+        "skills": [
+          "Interpersonal",
+          "Sly"
+        ],
+        "target": 7,
+        "itemBonuses": {},
+        "notes": "Success persuades the band to sabotage the audition. Failure leaves this action retryable."
+      },
+      "success": {
+        "text": "The band reaches a new level of musical disappointment. The visitors request immediate departure.",
+        "notes": "",
+        "inventory": {
+          "alien-review": 1
+        },
+        "resources": {
+          "money": 2
+        },
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [],
+        "flagsRemove": [],
+        "unlock": [],
+        "remove": [],
+        "ending": "bad-review"
+      },
+      "failure": {
+        "text": "The trumpet section interprets your instructions as encouragement. The visitors demand a proper audition.",
+        "notes": "",
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [],
+        "flagsRemove": [],
+        "unlock": [
+          "properly"
+        ],
+        "remove": [],
+        "ending": null
+      },
+      "expired": {
+        "text": "",
+        "notes": "",
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [],
+        "flagsRemove": [],
+        "unlock": [],
+        "remove": [],
+        "ending": null
+      }
+    },
+    {
+      "id": "properly",
+      "title": "Play a respectable audition",
+      "body": "Show the visitors what this town’s musicians can do. This may not be what the client hired you for.",
+      "notes": "",
+      "kind": "investigator",
+      "initial": false,
+      "repeatable": true,
+      "duration": 1,
+      "deadline": null,
+      "requires": {
+        "flags": [
+          "alien-critics"
+        ],
+        "notFlags": [],
+        "inventory": {
+          "amplifier": 1
+        },
+        "resources": {},
+        "skills": {},
+        "traits": []
+      },
+      "cost": {
+        "inventory": {},
+        "resources": {}
+      },
+      "check": {
+        "skills": [
+          "Focus"
+        ],
+        "target": 6,
+        "itemBonuses": {},
+        "notes": "Competent playing produces the nuisance ending. Failure is accidentally the preferred solution."
+      },
+      "success": {
+        "text": "The visitors applaud. They have found their opening act.",
+        "notes": "",
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [],
+        "flagsRemove": [],
+        "unlock": [],
+        "remove": [],
+        "ending": "encore"
+      },
+      "failure": {
+        "text": "Nobody can follow the conductor. The visitors decide Earth is not ready for music.",
+        "notes": "",
+        "inventory": {
+          "alien-review": 1
+        },
+        "resources": {},
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [],
+        "flagsRemove": [],
+        "unlock": [],
+        "remove": [],
+        "ending": "bad-review"
+      },
+      "expired": {
+        "text": "",
+        "notes": "",
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [],
+        "flagsRemove": [],
+        "unlock": [],
+        "remove": [],
+        "ending": null
+      }
+    },
+    {
+      "id": "wait-for-friday",
+      "title": "Keep the band’s booking",
+      "body": "Resolve the nuisance by the end of turn 8. This is a deadline marker; assigning it simply checks in with the director.",
+      "notes": "Unlocks with the first clue, but deadline uses absolute case turn 8. Waiting advances time.",
+      "kind": "investigator",
+      "initial": false,
+      "repeatable": true,
+      "duration": 1,
+      "deadline": 8,
+      "requires": {
+        "flags": [],
+        "notFlags": [],
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "traits": []
+      },
+      "cost": {
+        "inventory": {},
+        "resources": {}
+      },
+      "check": null,
+      "success": {
+        "text": "The director reminds you that Friday is still approaching.",
+        "notes": "",
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [],
+        "flagsRemove": [],
+        "unlock": [],
+        "remove": [],
+        "ending": null
+      },
+      "failure": {
+        "text": "No progress this turn.",
+        "notes": "",
+        "inventory": {},
+        "resources": {},
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [],
+        "flagsRemove": [],
+        "unlock": [],
+        "remove": [],
+        "ending": null
+      },
+      "expired": {
+        "text": "The final rehearsal passes without a workable arrangement.",
+        "notes": "",
+        "inventory": {},
+        "resources": {
+          "money": -1
+        },
+        "skills": {},
+        "health": 0,
+        "flagsAdd": [],
+        "flagsRemove": [],
+        "unlock": [],
+        "remove": [],
+        "ending": "abandoned"
+      }
+    }
+  ],
+  "testSetup": {
+    "investigatorIds": [
+      "avery",
+      "vanderhorten"
+    ],
+    "skillOverrides": {}
+  }
+}
