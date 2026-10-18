@@ -3,8 +3,9 @@ import {selectedInvestigatorIds,baseInvestigatorForCase,investigatorForCase,test
 import {requiredSlots,reservations,placeCard,clearSlot,canPlaceCard,preparationReason,completePreparedTurn} from './turn-board.mjs';
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let doc,revision=null,dirty=false,saving=false,timer,raw={},problem='',storageProblem='',conflict=false,runtime=null,prepared={},generation=0,mode='dev';
-let pickedCard=null,draggedCard=null,boardMessage='',turnHistory=[];
+let pickedCard=null,draggedCard=null,boardMessage='';
 let hoveredTrayCard=null,hoveredBoardSlot=null;
+let expandedFlowNodes=new Set(),flowResults=new Map(),unlockedFlowNodes=new Set(),flowObserver=null;
 // Presentation-only order, retained across turns and test restarts for each case.
 const trayOrders=new Map();
 const trayCardKey=card=>card.type+':'+(card.id??card.name);
@@ -157,21 +158,64 @@ function opportunityMarkup(o,result){
  const d=runDefinition,s=runtime,interactive=result===undefined,entry=prepared[o.id],reason=interactive?preparationReason(d,s,o,entry):'',slots=requiredSlots(o);
  return `<article class="card opportunity-card ${interactive?(!reason?'is-ready':''):result?(result.passed?'is-passed':'is-failed'):'is-unused'}" data-opportunity="${o.id}" aria-label="${esc(o.title)}: ${esc(interactive?(reason||'Ready'):result?(result.passed?'Passed':'Failed'):'Not chosen')}"><div class="opportunity-heading"><h3>${esc(o.title)}</h3><span class="opportunity-duration">${o.duration} ${o.duration===1?'turn':'turns'}</span></div><p>${esc(o.body)}</p>${o.deadline!==null?'<p class="muted opportunity-rules">Through turn '+o.deadline+'</p>':''}${o.requires.flags.length||o.requires.notFlags.length?'<p class="muted">Clues: '+esc([...o.requires.flags,...o.requires.notFlags.map(f=>'not '+f)].join(', '))+'</p>':''}${Object.keys(o.requires.skills).length||o.requires.traits.length?'<p class="muted">Investigator needs: '+esc([...Object.entries(o.requires.skills).map(([k,v])=>k+' '+v),...o.requires.traits].join(', '))+'</p>':''}<div class="opportunity-footer">${o.check?'<p class="muted opportunity-rules">'+checkDisplay(o,interactive?s.investigators.find(i=>i.id===entry?.investigator):null,d.rule,result?.total??null)+'</p>':''}${interactive?'<div class="opportunity-slots">'+slots.map((slot,index)=>slotMarkup(o,slot,index)).join('')+'</div>':result?'<p class="opportunity-outcome">'+esc(result.text)+'</p>':''}</div></article>`;
 }
+function flowGraph(){
+ const nodes=runDefinition.opportunities.map(o=>({id:o.id,title:o.title,opportunity:o})),edges=[];
+ for(const o of runDefinition.opportunities)for(const outcome of ['success','failure','expired']){
+  for(const id of o[outcome].unlock)edges.push({from:o.id,to:id,outcome});
+  if(o[outcome].ending)edges.push({from:o.id,to:'ending:'+o[outcome].ending,outcome});
+ }
+ for(const ending of runDefinition.endings)if(edges.some(edge=>edge.to==='ending:'+ending.id))nodes.push({id:'ending:'+ending.id,title:ending.title,ending});
+ const depths=new Map(nodes.filter(node=>node.opportunity?.initial).map(node=>[node.id,0])),queue=[...depths.keys()];
+ for(let i=0;i<queue.length;i++)for(const edge of edges.filter(edge=>edge.from===queue[i]))if(!depths.has(edge.to)){depths.set(edge.to,depths.get(edge.from)+1);queue.push(edge.to)}
+ const disconnected=Math.max(0,...depths.values())+1;for(const node of nodes)node.depth=depths.get(node.id)??disconnected;
+ const visibleNodes=nodes.filter(node=>node.ending?runtime.ending===node.ending.id:unlockedFlowNodes.has(node.id)),visibleIds=new Set(visibleNodes.map(node=>node.id));
+ return {nodes:visibleNodes,edges:edges.filter(edge=>visibleIds.has(edge.from)&&visibleIds.has(edge.to))};
+}
+function flowNodeMarkup(node){
+ const result=flowResults.get(node.id),active=!runtime.ending&&runtime.active.includes(node.id),expanded=expandedFlowNodes.has(node.id);
+ const state=node.ending?(runtime.ending===node.ending.id?'is-passed':'is-locked'):active?(preparationReason(runDefinition,runtime,node.opportunity,prepared[node.id])?'is-active':'is-ready'):result?(result.passed?'is-passed':'is-failed'):'is-locked';
+ let panel='';if(expanded){
+  if(node.ending)panel='<div class="flow-ending-body"><p>'+esc(node.ending.body)+'</p></div>';
+  else{panel=opportunityMarkup(node.opportunity,active?undefined:result??null);if(!active&&!result)panel=panel.replace('Not chosen','Not yet available');if(active&&result)panel+='<p class="flow-previous-result">'+esc('Last attempt: '+(result.passed?'passed. ':'failed. ')+result.text)+'</p>';}
+ }
+ return '<div class="flow-node '+state+'" data-flow-id="'+esc(node.id)+'"><button type="button" class="flow-toggle" data-flow-toggle="'+esc(node.id)+'" aria-expanded="'+expanded+'" aria-controls="flow-panel-'+esc(node.id)+'">'+esc(node.title)+'</button><div id="flow-panel-'+esc(node.id)+'" class="flow-panel" '+(expanded?'':'hidden')+'>'+panel+'</div></div>';
+}
+function drawFlowLines(){
+ const canvas=$('#case-flow'),svg=$('#flow-lines');if(!canvas||!svg)return;
+ const bounds=canvas.getBoundingClientRect(),{edges}=flowGraph(),elements=new Map([...canvas.querySelectorAll('[data-flow-id]')].map(el=>[el.dataset.flowId,el]));
+ svg.setAttribute('width',canvas.scrollWidth);svg.setAttribute('height',canvas.scrollHeight);svg.setAttribute('viewBox','0 0 '+canvas.scrollWidth+' '+canvas.scrollHeight);
+ svg.innerHTML=edges.map(edge=>{
+  const from=elements.get(edge.from),to=elements.get(edge.to);if(!from||!to)return '';
+  const a=from.getBoundingClientRect(),b=to.getBoundingClientRect(),x1=a.right-bounds.left,y1=a.top-bounds.top+Math.min(a.height/2,25),x2=b.left-bounds.left,y2=b.top-bounds.top+Math.min(b.height/2,25);
+  const bend=Math.max(45,Math.abs(x2-x1)/2),back=x2<=x1;
+  const path=back?'M '+x1+' '+y1+' C '+(x1+bend)+' '+(y1-55)+', '+(x2-bend)+' '+(y2-55)+', '+x2+' '+y2:'M '+x1+' '+y1+' C '+(x1+bend)+' '+y1+', '+(x2-bend)+' '+y2+', '+x2+' '+y2;
+  const result=flowResults.get(edge.from),taken=result&&(result.passed?'success':'failure')===edge.outcome;
+  return '<path class="flow-link '+edge.outcome+(taken?' is-taken':'')+'" d="'+path+'"><title>'+esc(edge.outcome[0].toUpperCase()+edge.outcome.slice(1)+': '+from.querySelector('.flow-toggle').textContent+' → '+to.querySelector('.flow-toggle').textContent)+'</title></path>';
+ }).join('');
+}
+function flowMarkup(){
+ const {nodes}=flowGraph(),depths=[...new Set(nodes.map(node=>node.depth))].sort((a,b)=>a-b);
+ return '<div class="case-flow-scroll"><div id="case-flow" class="case-flow"><svg id="flow-lines" class="flow-lines" aria-label="Outcome connections: green success, red dashed failure, amber dotted expiry"></svg>'+depths.map(depth=>'<div class="flow-column">'+nodes.filter(node=>node.depth===depth).map(flowNodeMarkup).join('')+'</div>').join('')+'</div></div>';
+}
+function bindFlow(){
+ $('#preview').querySelectorAll('[data-flow-toggle]').forEach(button=>button.onclick=()=>{const id=button.dataset.flowToggle;if(expandedFlowNodes.has(id))expandedFlowNodes.delete(id);else expandedFlowNodes.add(id);renderPreview();$('#preview').querySelector('[data-flow-toggle="'+id+'"]')?.focus({preventScroll:true})});
+ flowObserver?.disconnect();flowObserver=new ResizeObserver(drawFlowLines);$('#case-flow').querySelectorAll('.flow-node').forEach(node=>flowObserver.observe(node));requestAnimationFrame(drawFlowLines);
+}
 function renderPreview(){
+ const previousScroll=$('.case-flow-scroll'),scrollLeft=previousScroll?.scrollLeft||0,scrollTop=previousScroll?.scrollTop||0;
  draggedCard=null;resetTrayDragVisual();
- if(!runtime){try{validate(doc)}catch(e){$('#preview').innerHTML='<p>Fix the definition before testing: '+esc(e.message)+'</p>';return}runDefinition=structuredClone(doc);runtime=start({...runDefinition,investigators:testRoster(doc,investigatorCatalog)});prepared={};pickedCard=null;boardMessage='';turnHistory=[];runSignature=JSON.stringify(doc)}
+ if(!runtime){try{validate(doc)}catch(e){$('#preview').innerHTML='<p>Fix the definition before testing: '+esc(e.message)+'</p>';return}runDefinition=structuredClone(doc);runtime=start({...runDefinition,investigators:testRoster(doc,investigatorCatalog)});prepared={};pickedCard=null;boardMessage='';expandedFlowNodes=new Set();flowResults=new Map();unlockedFlowNodes=new Set(runtime.active);runSignature=JSON.stringify(doc)}
+ for(const id of [...runtime.active,...runtime.completed])unlockedFlowNodes.add(id);
  const d=runDefinition,s=runtime,pending=runSignature!==JSON.stringify(doc),ending=d.endings.find(e=>e.id===s.ending);
- const history=turnHistory.map(turn=>'<section class="turn-section completed-turn" aria-label="Turn '+turn.number+'"><h3 class="turn-heading">Turn '+turn.number+'</h3><div class="opportunity-board">'+turn.cards+'</div></section>').join('');
- const current=ending?'<article class="card ending-card"><h3>'+esc(ending.title)+'</h3><p>'+esc(ending.body)+'</p></article>':'<section class="turn-section current-turn" aria-label="Turn '+s.turn+'"><h3 class="turn-heading">Turn '+s.turn+'</h3><div class="opportunity-board">'+(d.opportunities.filter(o=>s.active.includes(o.id)).map(o=>opportunityMarkup(o)).join('')||'<p class="muted">No opportunities remain. Complete an empty turn to wait, or restart.</p>')+'</div></section>';
- $('#preview').innerHTML='<section class="test-board" aria-label="Opportunity board"><div class="board-heading"><h2>Opportunity board</h2><span class="badge">Turn '+s.turn+(ending?' · Case closed':'')+'</span><button id="restart">Restart test</button></div>'+(pending?'<p class="setup-pending">Setup or definition changed. Restart test to apply; the current run is unchanged.</p>':'')+'<section class="case-briefing"><h3>'+esc(d.title)+'</h3><p>'+esc(d.opening)+'</p></section><p id="board-message" role="status">'+esc(boardMessage)+'</p>'+history+current+'</section>';
+
+ $('#preview').innerHTML='<section class="test-board" aria-label="Opportunity board"><div class="board-heading"><h2>Opportunity board</h2><span class="badge">Turn '+s.turn+(ending?' · Case closed':'')+'</span><button id="restart">Restart test</button></div>'+(pending?'<p class="setup-pending">Setup or definition changed. Restart test to apply; the current run is unchanged.</p>':'')+'<section class="case-briefing"><h3>'+esc(d.title)+'</h3><p>'+esc(d.opening)+'</p></section><p id="board-message" role="status">'+esc(boardMessage)+'</p>'+flowMarkup()+(ending?'<article class="card ending-card"><h3>'+esc(ending.title)+'</h3><p>'+esc(ending.body)+'</p></article>':'')+'</section>';
  $('#restart').onclick=()=>{runtime=null;renderPreview()};
  $('#complete-turn').onclick=()=>{try{
-  const turn=runtime.turn,visible=d.opportunities.filter(o=>runtime.active.includes(o.id)),result=completePreparedTurn(d,runtime,prepared);
-  const outcomes=new Map(result.state.turnResults.map(outcome=>[outcome.opportunity,outcome]));
-  turnHistory.push({number:turn,cards:visible.map(o=>opportunityMarkup(o,outcomes.get(o.id)??null)).join('')});
+  const result=completePreparedTurn(d,runtime,prepared);
+  const outcomes=new Map(result.state.turnResults.map(outcome=>[outcome.opportunity,outcome]));for(const [id,outcome] of outcomes)flowResults.set(id,outcome);
   runtime=result.state;prepared={};pickedCard=null;boardMessage=result.skipped.length?'Not resolved: '+result.skipped.join('; '):'';renderPreview();
  }catch(e){boardMessage=e.message;$('#board-message').textContent=boardMessage}};
- renderTray();bindSlots();
+ renderTray();bindSlots();bindFlow();const scroll=$('.case-flow-scroll');scroll.scrollLeft=scrollLeft;scroll.scrollTop=scrollTop;
 }
 
 async function list(){const r=await fetch('/api/cases');if(!r.ok)throw Error('Cannot list cases');const cases=await r.json();$('#case-select').innerHTML=cases.map(c=>`<option value="${esc(c.id)}">${esc(c.title)}</option>`).join('');return cases}
