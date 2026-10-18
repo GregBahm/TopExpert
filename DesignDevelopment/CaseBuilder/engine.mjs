@@ -53,16 +53,19 @@ export function checkProbability(definition,state,opportunity,actor){
  for(let die=1;die<=definition.rule.sides;die++)if(die+terms.skill+terms.bonus>=opportunity.check.target)successes++;
  return {...terms,successes,sides:definition.rule.sides,percent:Math.round(100*successes/definition.rule.sides)};
 }
+function inventorySnapshot(state){return {inventory:{...state.inventory},resources:{...state.resources}}}
+function inventoryChanges(before,state){const changes=[];for(const type of ['inventory','resources'])for(const name of new Set([...Object.keys(before[type]),...Object.keys(state[type])])){const previous=before[type][name]||0,next=state[type][name]||0;if(previous!==next)changes.push({type,name,before:previous,after:next,delta:next-previous})}return changes}
 export function advance(d,state,assignments,roll=()=>1+Math.floor(Math.random()*d.rule.sides)){
  const s=structuredClone(state);if(s.ending)throw Error('Restart to play again');s.turnResults=[];
  const seenActors=new Set(),seenOps=new Set();const planned=assignments.map(a=>{const o=d.opportunities.find(o=>o.id===a.opportunity);if(!o)throw Error('Unknown opportunity');const actor=s.investigators.find(i=>i.id===a.investigator);const why=available(d,s,o,actor);if(why)throw Error(why);if(seenOps.has(o.id))throw Error('Assign an opportunity once per turn');seenOps.add(o.id);if(o.kind==='investigator'){if(seenActors.has(actor.id))throw Error('One action per investigator each turn');seenActors.add(actor.id)}return {o,actor:o.kind==='item'?null:actor}});
  let elapsed=1;
- for(const {o,actor} of planned){if(s.ending)break;const why=available(d,s,o,actor);if(why){s.log.push(o.title+' skipped: '+why);continue}elapsed=Math.max(elapsed,o.duration);for(const group of ['inventory','resources'])for(const [k,v] of Object.entries(o.cost[group]))s[group][k]-=v;
+ for(const {o,actor} of planned){if(s.ending)break;const why=available(d,s,o,actor);if(why){s.log.push(o.title+' skipped: '+why);continue}elapsed=Math.max(elapsed,o.duration);const beforeInventory=inventorySnapshot(s);for(const group of ['inventory','resources'])for(const [k,v] of Object.entries(o.cost[group]))s[group][k]-=v;
  let passed=true,total=null;if(o.check){const die=roll();if(!Number.isInteger(die)||die<1||die>d.rule.sides)throw Error('Invalid die roll');const {skill,bonus}=checkTerms(d,s,o,actor,{costsPaid:true});total=die+skill+bonus;passed=total>=o.check.target;s.log.push(`${actor.name}: ${o.title} — ${die} + skills ${skill} + items ${bonus} vs ${o.check.target}: ${passed?'success':'failure'}`)}else s.log.push((actor?.name||'Item action')+': '+o.title);
- s.turnResults.push({opportunity:o.id,investigator:actor?.id,passed,total,text:(passed?o.success:o.failure).text});
- if(!o.repeatable){s.active=s.active.filter(id=>id!==o.id);s.completed.push(o.id)}apply(s,passed?o.success:o.failure,actor);
+ if(!o.repeatable){s.active=s.active.filter(id=>id!==o.id);s.completed.push(o.id)}
+ const outcome=passed?'success':'failure',effect=o[outcome],unlocks=effect.unlock.filter(id=>!s.completed.includes(id));apply(s,effect,actor);
+ s.turnResults.push({opportunity:o.id,investigator:actor?.id,passed,total,outcome,text:effect.text,unlocks,changes:inventoryChanges(beforeInventory,s)});
  }
  s.turn+=elapsed;
- if(!s.ending)for(const o of d.opportunities){if(s.ending)break;if(s.active.includes(o.id)&&o.deadline!==null&&s.turn>o.deadline){s.active=s.active.filter(id=>id!==o.id);s.completed.push(o.id);s.log.push(o.title+' expired after turn '+o.deadline);apply(s,o.expired,null)}}
+ if(!s.ending)for(const o of d.opportunities){if(s.ending)break;if(s.active.includes(o.id)&&o.deadline!==null&&s.turn>o.deadline){const beforeInventory=inventorySnapshot(s);s.active=s.active.filter(id=>id!==o.id);s.completed.push(o.id);s.log.push(o.title+' expired after turn '+o.deadline);const unlocks=o.expired.unlock.filter(id=>!s.completed.includes(id));apply(s,o.expired,null);s.turnResults.push({opportunity:o.id,passed:false,total:null,outcome:'expired',text:o.expired.text,unlocks,changes:inventoryChanges(beforeInventory,s)})}}
  if(!assignments.length)s.log.push('Waited a turn.');return s;
 }

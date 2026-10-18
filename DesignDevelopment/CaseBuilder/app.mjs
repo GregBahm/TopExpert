@@ -1,3 +1,4 @@
+import {recordTurn,turnFlow} from './turn-history.mjs';
 import {STATS,validate,start,available,advance,checkProbability} from './engine.mjs';
 import {selectedInvestigatorIds,baseInvestigatorForCase,investigatorForCase,testRoster} from './test-setup.mjs';
 import {requiredSlots,reservations,placeCard,clearSlot,canPlaceCard,preparationReason,completePreparedTurn} from './turn-board.mjs';
@@ -5,7 +6,7 @@ const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>
 let doc,revision=null,dirty=false,saving=false,timer,raw={},problem='',storageProblem='',conflict=false,runtime=null,prepared={},generation=0,mode='dev';
 let pickedCard=null,draggedCard=null,boardMessage='';
 let hoveredTrayCard=null,hoveredBoardSlot=null;
-let expandedFlowNodes=new Set(),flowResults=new Map(),unlockedFlowNodes=new Set(),flowObserver=null;
+let expandedFlowNodes=new Set(),turnHistory=[],flowObserver=null;
 // Presentation-only order, retained across turns and test restarts for each case.
 const trayOrders=new Map();
 const trayCardKey=card=>card.type+':'+(card.id??card.name);
@@ -154,66 +155,100 @@ function renderRuntimeOverrides(){
  $('#test-setup').insertAdjacentHTML('beforeend',`<details class="runtime-overrides"><summary>Current test overrides</summary><p class="muted">Applies only to the running test. Does not save the case or Test Setup.</p>${jsonBox('Runtime investigators',runtime.investigators,'override-team')}${jsonBox('Runtime inventory',runtime.inventory,'override-inventory')}${jsonBox('Runtime resources',runtime.resources,'override-resources')}<button id="apply-overrides">Apply to current test</button></details>`);
  $('#apply-overrides').onclick=()=>{try{const team=JSON.parse($('[data-json="override-team"]').value),inventory=JSON.parse($('[data-json="override-inventory"]').value),resources=JSON.parse($('[data-json="override-resources"]').value);if(!Array.isArray(team)||team.some(i=>!Number.isFinite(i.health)||i.health<0))throw Error('Health must be nonnegative');validate({...runDefinition,investigators:team.length?team.map(i=>({...i,health:Math.max(.01,i.health)})):runDefinition.investigators,initial:{...runDefinition.initial,inventory,resources}});runtime={...runtime,investigators:team,inventory,resources,log:[...runtime.log,'Test-only overrides applied.']};prepared={};pickedCard=null;problem='';renderSetup()}catch(e){problem='Overrides not applied: '+e.message}showStatus()};
 }
-function opportunityMarkup(o,result){
- const d=runDefinition,s=runtime,interactive=result===undefined,entry=prepared[o.id],reason=interactive?preparationReason(d,s,o,entry):'',slots=requiredSlots(o);
- return `<article class="card opportunity-card ${interactive?(!reason?'is-ready':''):result?(result.passed?'is-passed':'is-failed'):'is-unused'}" data-opportunity="${o.id}" aria-label="${esc(o.title)}: ${esc(interactive?(reason||'Ready'):result?(result.passed?'Passed':'Failed'):'Not chosen')}"><div class="opportunity-heading"><h3>${esc(o.title)}</h3><span class="opportunity-duration">${o.duration} ${o.duration===1?'turn':'turns'}</span></div><p>${esc(o.body)}</p>${o.deadline!==null?'<p class="muted opportunity-rules">Through turn '+o.deadline+'</p>':''}${o.requires.flags.length||o.requires.notFlags.length?'<p class="muted">Clues: '+esc([...o.requires.flags,...o.requires.notFlags.map(f=>'not '+f)].join(', '))+'</p>':''}${Object.keys(o.requires.skills).length||o.requires.traits.length?'<p class="muted">Investigator needs: '+esc([...Object.entries(o.requires.skills).map(([k,v])=>k+' '+v),...o.requires.traits].join(', '))+'</p>':''}<div class="opportunity-footer">${o.check?'<p class="muted opportunity-rules">'+checkDisplay(o,interactive?s.investigators.find(i=>i.id===entry?.investigator):null,d.rule,result?.total??null)+'</p>':''}${interactive?'<div class="opportunity-slots">'+slots.map((slot,index)=>slotMarkup(o,slot,index)).join('')+'</div>':result?'<p class="opportunity-outcome">'+esc(result.text)+'</p>':''}</div></article>`;
+function opportunityMarkup(o,result,historyEntry=null){
+ const d=runDefinition,s=runtime,interactive=result===undefined,entry=prepared[o.id],reason=interactive?preparationReason(d,s,o,entry):'',slots=requiredSlots(o),historicalSlots=historyEntry?slots.map(slot=>historicalSlotMarkup(slot,historyEntry)).join(''):'';
+ return `<article class="card opportunity-card ${interactive?(!reason?'is-ready':''):result?(result.passed?'is-passed':'is-failed'):'is-unused'}" data-opportunity="${o.id}" aria-label="${esc(o.title)}: ${esc(interactive?(reason||'Ready'):result?(result.passed?'Passed':'Failed'):'Not chosen')}"><div class="opportunity-heading"><h3>${esc(o.title)}</h3></div><p>${esc(o.body)}</p>${o.deadline!==null?'<p class="muted opportunity-rules">Through turn '+o.deadline+'</p>':''}${o.requires.flags.length||o.requires.notFlags.length?'<p class="muted">Clues: '+esc([...o.requires.flags,...o.requires.notFlags.map(f=>'not '+f)].join(', '))+'</p>':''}${Object.keys(o.requires.skills).length||o.requires.traits.length?'<p class="muted">Investigator needs: '+esc([...Object.entries(o.requires.skills).map(([k,v])=>k+' '+v),...o.requires.traits].join(', '))+'</p>':''}<div class="opportunity-footer">${o.check&&(interactive||Number.isFinite(result?.total))?'<p class="muted opportunity-rules">'+checkDisplay(o,interactive?s.investigators.find(i=>i.id===entry?.investigator):null,d.rule,result?.total??null)+'</p>':''}${interactive?'<div class="opportunity-slots">'+slots.map((slot,index)=>slotMarkup(o,slot,index)).join('')+'</div>':(historicalSlots?'<div class="opportunity-slots history-slots">'+historicalSlots+'</div>':'')+(result?'<p class="opportunity-outcome">'+esc(result.text)+'</p>':'')}${historyEntry?inventoryChangeMarkup(historyEntry.events):''}</div></article>`;
 }
-function flowGraph(){
- const nodes=runDefinition.opportunities.map(o=>({id:o.id,title:o.title,opportunity:o})),edges=[];
- for(const o of runDefinition.opportunities)for(const outcome of ['success','failure','expired']){
-  for(const id of o[outcome].unlock)edges.push({from:o.id,to:id,outcome});
-  if(o[outcome].ending)edges.push({from:o.id,to:'ending:'+o[outcome].ending,outcome});
+function historicalSlotMarkup(slot,entry){
+ if(slot.type==='investigator'){
+  if(!entry.actor)return '';
+  const portrait=portraitFor(entry.actor.id);return '<div class="portrait-card history-card" aria-label="Assigned '+esc(entry.actor.name)+'">'+(portrait?'<img src="/assets/investigators/'+encodeURIComponent(portrait.file)+'" alt="'+esc(entry.actor.name)+'" draggable="false">':esc(entry.actor.name))+'</div>';
  }
- for(const ending of runDefinition.endings)if(edges.some(edge=>edge.to==='ending:'+ending.id))nodes.push({id:'ending:'+ending.id,title:ending.title,ending});
- const depths=new Map(nodes.filter(node=>node.opportunity?.initial).map(node=>[node.id,0])),queue=[...depths.keys()];
- for(let i=0;i<queue.length;i++)for(const edge of edges.filter(edge=>edge.from===queue[i]))if(!depths.has(edge.to)){depths.set(edge.to,depths.get(edge.from)+1);queue.push(edge.to)}
- const disconnected=Math.max(0,...depths.values())+1;for(const node of nodes)node.depth=depths.get(node.id)??disconnected;
- const visibleNodes=nodes.filter(node=>node.ending?runtime.ending===node.ending.id:unlockedFlowNodes.has(node.id)),visibleIds=new Set(visibleNodes.map(node=>node.id));
- return {nodes:visibleNodes,edges:edges.filter(edge=>visibleIds.has(edge.from)&&visibleIds.has(edge.to))};
+ const filled=entry.assignment.slots?.[slot.key];
+ if(!filled)return '';
+ if(slot.type==='ready')return '<div class="item-slot history-card">Prepared</div>';
+ return '<div class="item-card history-card"><span class="item-name">'+esc(slot.name)+'</span><span class="item-quantity">x'+slot.quantity+'</span></div>';
 }
+function inventoryChangeMarkup(events){
+ const changes=(events||[]).flatMap(event=>event.changes||[]);if(!changes.length)return '';
+ return '<div class="inventory-changes" aria-label="Inventory changes">'+changes.map(change=>'<div class="item-card inventory-change '+(change.delta>0?'item-gained':'item-spent')+'" aria-label="'+esc(change.name+': '+change.before+' to '+change.after)+'"><span class="item-name">'+esc(change.name)+'</span><strong>'+(change.delta>0?'+':'')+change.delta+'</strong><span class="item-quantity">x'+change.before+' → x'+change.after+'</span></div>').join('')+'</div>';
+}
+function flowGraph(){return turnFlow(runDefinition,turnHistory,runtime)}
 function flowNodeMarkup(node){
- const result=flowResults.get(node.id),active=!runtime.ending&&runtime.active.includes(node.id),expanded=expandedFlowNodes.has(node.id);
- const state=node.ending?(runtime.ending===node.ending.id?'is-passed':'is-locked'):active?(preparationReason(runDefinition,runtime,node.opportunity,prepared[node.id])?'is-active':'is-ready'):result?(result.passed?'is-passed':'is-failed'):'is-locked';
- let panel='';if(expanded){
-  if(node.ending)panel='<div class="flow-ending-body"><p>'+esc(node.ending.body)+'</p></div>';
-  else{panel=opportunityMarkup(node.opportunity,active?undefined:result??null);if(!active&&!result)panel=panel.replace('Not chosen','Not yet available');if(active&&result)panel+='<p class="flow-previous-result">'+esc('Last attempt: '+(result.passed?'passed. ':'failed. ')+result.text)+'</p>';}
- }
- return '<div class="flow-node '+state+'" data-flow-id="'+esc(node.id)+'"><button type="button" class="flow-toggle" data-flow-toggle="'+esc(node.id)+'" aria-expanded="'+expanded+'" aria-controls="flow-panel-'+esc(node.id)+'">'+esc(node.title)+'</button><div id="flow-panel-'+esc(node.id)+'" class="flow-panel" '+(expanded?'':'hidden')+'>'+panel+'</div></div>';
+ const {opportunity:o,entry,current}=node,events=entry.events||[],outcome=events.find(event=>event.outcome!=='expired')||events[0];
+ const result=outcome?{...outcome,text:events.map(event=>event.text).filter(Boolean).join('\n')}:null;
+ const expanded=expandedFlowNodes.has(node.id),state=current?(preparationReason(runDefinition,runtime,o,prepared[o.id])?'is-active':'is-ready'):result?(result.passed?'is-passed':'is-failed'):'is-unused';
+ const panel=expanded?opportunityMarkup(o,current?undefined:result,current?null:entry):'';
+ return '<div class="flow-node '+state+'" data-flow-id="'+esc(node.id)+'"><button type="button" class="flow-toggle" data-flow-toggle="'+esc(node.id)+'" aria-expanded="'+expanded+'" aria-controls="flow-panel-'+esc(node.id)+'">'+esc(o.title)+'</button><div id="flow-panel-'+esc(node.id)+'" class="flow-panel" '+(expanded?'':'hidden')+'>'+panel+'</div></div>';
+}
+function updateStageBackground(){
+ const stage=$('.case-flow-scroll'),current=stage?.querySelector('[data-current-turn]'),past=current?.previousElementSibling;
+ if(!stage||!current)return;
+ const boundary=past?.classList.contains('past-turn')?(past.getBoundingClientRect().right+current.getBoundingClientRect().left)/2-stage.getBoundingClientRect().left:0;
+ stage.style.setProperty('--past-boundary',Math.max(0,Math.min(stage.clientWidth,boundary))+'px');
 }
 function drawFlowLines(){
+ updateStageBackground();
  const canvas=$('#case-flow'),svg=$('#flow-lines');if(!canvas||!svg)return;
  const bounds=canvas.getBoundingClientRect(),{edges}=flowGraph(),elements=new Map([...canvas.querySelectorAll('[data-flow-id]')].map(el=>[el.dataset.flowId,el]));
- svg.setAttribute('width',canvas.scrollWidth);svg.setAttribute('height',canvas.scrollHeight);svg.setAttribute('viewBox','0 0 '+canvas.scrollWidth+' '+canvas.scrollHeight);
+ svg.setAttribute('viewBox','0 0 '+canvas.clientWidth+' '+canvas.clientHeight);
  svg.innerHTML=edges.map(edge=>{
   const from=elements.get(edge.from),to=elements.get(edge.to);if(!from||!to)return '';
   const a=from.getBoundingClientRect(),b=to.getBoundingClientRect(),x1=a.right-bounds.left,y1=a.top-bounds.top+Math.min(a.height/2,25),x2=b.left-bounds.left,y2=b.top-bounds.top+Math.min(b.height/2,25);
   const bend=Math.max(45,Math.abs(x2-x1)/2),back=x2<=x1;
   const path=back?'M '+x1+' '+y1+' C '+(x1+bend)+' '+(y1-55)+', '+(x2-bend)+' '+(y2-55)+', '+x2+' '+y2:'M '+x1+' '+y1+' C '+(x1+bend)+' '+y1+', '+(x2-bend)+' '+y2+', '+x2+' '+y2;
-  const result=flowResults.get(edge.from),taken=result&&(result.passed?'success':'failure')===edge.outcome;
-  return '<path class="flow-link '+edge.outcome+(taken?' is-taken':'')+'" d="'+path+'"><title>'+esc(edge.outcome[0].toUpperCase()+edge.outcome.slice(1)+': '+from.querySelector('.flow-toggle').textContent+' → '+to.querySelector('.flow-toggle').textContent)+'</title></path>';
+  const taken=edge.outcome!=='continuation';
+  return '<path class="flow-link '+edge.outcome+(taken?' is-taken':'')+'" d="'+path+'"><title>'+esc((edge.outcome==='continuation'?'Same opportunity':edge.outcome[0].toUpperCase()+edge.outcome.slice(1))+': '+from.querySelector('.flow-toggle').textContent+' → '+to.querySelector('.flow-toggle').textContent)+'</title></path>';
  }).join('');
 }
+function openingCardMarkup(){
+ const expanded=expandedFlowNodes.has('case-opening');
+ return '<section class="flow-node opening-card"><button type="button" class="flow-toggle" data-flow-toggle="case-opening" aria-expanded="'+expanded+'" aria-controls="flow-panel-case-opening">'+esc(runDefinition.title)+'</button><div id="flow-panel-case-opening" class="flow-panel opening-copy" '+(expanded?'':'hidden')+'><p>'+esc(runDefinition.opening)+'</p></div></section>';
+}
 function flowMarkup(){
- const {nodes}=flowGraph(),depths=[...new Set(nodes.map(node=>node.depth))].sort((a,b)=>a-b);
- return '<div class="case-flow-scroll"><div id="case-flow" class="case-flow"><svg id="flow-lines" class="flow-lines" aria-label="Outcome connections: green success, red dashed failure, amber dotted expiry"></svg>'+depths.map(depth=>'<div class="flow-column">'+nodes.filter(node=>node.depth===depth).map(flowNodeMarkup).join('')+'</div>').join('')+'</div></div>';
+ const {columns}=flowGraph(),ending=runDefinition.endings.find(ending=>ending.id===runtime.ending);
+ return '<div class="case-flow-scroll" tabindex="0" aria-label="Case stage. Drag to pan."><div id="case-flow" class="case-flow"><svg id="flow-lines" class="flow-lines" aria-label="Opportunity unlock history"></svg>'+columns.map((column,index)=>'<section class="flow-column '+(column.current?'current-turn':'past-turn')+'" aria-label="Turn '+column.number+'" '+(column.current?'data-current-turn':'')+'>'+(index===0?openingCardMarkup():'')+column.entries.map(entry=>flowNodeMarkup({id:index+':'+entry.opportunity,opportunity:runDefinition.opportunities.find(o=>o.id===entry.opportunity),entry,current:!!column.current})).join('')+(column.current?(ending?'<article class="card ending-card"><h3>'+esc(ending.title)+'</h3><p>'+esc(ending.body)+'</p></article>':!column.entries.length?'<p class="muted">No opportunities. Complete a turn to wait.</p>':''):'')+(column.current?'<button id="complete-turn" type="button">Complete turn</button>':'')+'</section>').join('')+'</div></div>';
+}
+function bindStagePan(stage){
+ let gesture=null,suppressClick=false;
+ stage.onpointerdown=event=>{
+  if(!event.isPrimary||event.button!==0||event.target.closest('[data-card],[data-drop-op],input,textarea,select,a'))return;
+  suppressClick=false;gesture={id:event.pointerId,x:event.clientX,y:event.clientY,left:stage.scrollLeft,top:stage.scrollTop,panning:false};
+ };
+ stage.onpointermove=event=>{
+  if(!gesture||event.pointerId!==gesture.id)return;
+  const dx=event.clientX-gesture.x,dy=event.clientY-gesture.y;
+  if(!gesture.panning&&Math.hypot(dx,dy)<6)return;
+  if(!gesture.panning){gesture.panning=true;stage.setPointerCapture(event.pointerId);stage.classList.add('is-panning')}
+  event.preventDefault();stage.scrollLeft=gesture.left-dx;stage.scrollTop=gesture.top-dy;
+ };
+ const finish=event=>{
+  if(!gesture||event.pointerId!==gesture.id)return;
+  suppressClick=gesture.panning;gesture=null;stage.classList.remove('is-panning');
+  if(stage.hasPointerCapture(event.pointerId))stage.releasePointerCapture(event.pointerId);
+ };
+ stage.onpointerup=stage.onpointercancel=finish;
+ stage.onlostpointercapture=()=>{if(gesture?.panning){suppressClick=true;gesture=null;stage.classList.remove('is-panning')}};
+ stage.addEventListener('click',event=>{if(suppressClick){suppressClick=false;event.preventDefault();event.stopImmediatePropagation()}},true);
+ stage.ondragstart=event=>{if(!event.target.closest('[data-card]'))event.preventDefault()};
 }
 function bindFlow(){
+ bindStagePan($('.case-flow-scroll'));$('.case-flow-scroll').onscroll=updateStageBackground;
  $('#preview').querySelectorAll('[data-flow-toggle]').forEach(button=>button.onclick=()=>{const id=button.dataset.flowToggle;if(expandedFlowNodes.has(id))expandedFlowNodes.delete(id);else expandedFlowNodes.add(id);renderPreview();$('#preview').querySelector('[data-flow-toggle="'+id+'"]')?.focus({preventScroll:true})});
- flowObserver?.disconnect();flowObserver=new ResizeObserver(drawFlowLines);$('#case-flow').querySelectorAll('.flow-node').forEach(node=>flowObserver.observe(node));requestAnimationFrame(drawFlowLines);
+ flowObserver?.disconnect();flowObserver=new ResizeObserver(drawFlowLines);flowObserver.observe($('#case-flow'));$('#case-flow').querySelectorAll('.flow-node').forEach(node=>flowObserver.observe(node));requestAnimationFrame(drawFlowLines);
 }
 function renderPreview(){
  const previousScroll=$('.case-flow-scroll'),scrollLeft=previousScroll?.scrollLeft||0,scrollTop=previousScroll?.scrollTop||0;
  draggedCard=null;resetTrayDragVisual();
- if(!runtime){try{validate(doc)}catch(e){$('#preview').innerHTML='<p>Fix the definition before testing: '+esc(e.message)+'</p>';return}runDefinition=structuredClone(doc);runtime=start({...runDefinition,investigators:testRoster(doc,investigatorCatalog)});prepared={};pickedCard=null;boardMessage='';expandedFlowNodes=new Set();flowResults=new Map();unlockedFlowNodes=new Set(runtime.active);runSignature=JSON.stringify(doc)}
- for(const id of [...runtime.active,...runtime.completed])unlockedFlowNodes.add(id);
- const d=runDefinition,s=runtime,pending=runSignature!==JSON.stringify(doc),ending=d.endings.find(e=>e.id===s.ending);
+ if(!runtime){try{validate(doc)}catch(e){$('#preview').innerHTML='<p>Fix the definition before testing: '+esc(e.message)+'</p>';return}runDefinition=structuredClone(doc);runtime=start({...runDefinition,investigators:testRoster(doc,investigatorCatalog)});prepared={};pickedCard=null;boardMessage='';expandedFlowNodes=new Set(['case-opening']);turnHistory=[];runSignature=JSON.stringify(doc)}
+ const d=runDefinition,s=runtime,pending=runSignature!==JSON.stringify(doc);
 
- $('#preview').innerHTML='<section class="test-board" aria-label="Opportunity board"><div class="board-heading"><h2>Opportunity board</h2><span class="badge">Turn '+s.turn+(ending?' · Case closed':'')+'</span><button id="restart">Restart test</button></div>'+(pending?'<p class="setup-pending">Setup or definition changed. Restart test to apply; the current run is unchanged.</p>':'')+'<section class="case-briefing"><h3>'+esc(d.title)+'</h3><p>'+esc(d.opening)+'</p></section><p id="board-message" role="status">'+esc(boardMessage)+'</p>'+flowMarkup()+(ending?'<article class="card ending-card"><h3>'+esc(ending.title)+'</h3><p>'+esc(ending.body)+'</p></article>':'')+'</section>';
+ $('#preview').innerHTML='<section class="test-board" aria-label="Opportunity board">'+(pending?'<p class="setup-pending">Setup or definition changed. Restart test to apply; the current run is unchanged.</p>':'')+'<p id="board-message" role="status">'+esc(boardMessage)+'</p>'+flowMarkup()+'</section>';
  $('#restart').onclick=()=>{runtime=null;renderPreview()};
  $('#complete-turn').onclick=()=>{try{
   const result=completePreparedTurn(d,runtime,prepared);
-  const outcomes=new Map(result.state.turnResults.map(outcome=>[outcome.opportunity,outcome]));for(const [id,outcome] of outcomes)flowResults.set(id,outcome);
-  runtime=result.state;prepared={};pickedCard=null;boardMessage=result.skipped.length?'Not resolved: '+result.skipped.join('; '):'';renderPreview();
+  turnHistory.push(recordTurn(d,runtime,prepared,result.state));
+  runtime=result.state;prepared={};pickedCard=null;boardMessage=result.skipped.length?'Not resolved: '+result.skipped.join('; '):'';renderPreview();const scroll=$('.case-flow-scroll');scroll.scrollLeft=scroll.scrollWidth;
  }catch(e){boardMessage=e.message;$('#board-message').textContent=boardMessage}};
  renderTray();bindSlots();bindFlow();const scroll=$('.case-flow-scroll');scroll.scrollLeft=scrollLeft;scroll.scrollTop=scrollTop;
 }
@@ -221,10 +256,8 @@ function renderPreview(){
 async function list(){const r=await fetch('/api/cases');if(!r.ok)throw Error('Cannot list cases');const cases=await r.json();$('#case-select').innerHTML=cases.map(c=>`<option value="${esc(c.id)}">${esc(c.title)}</option>`).join('');return cases}
 async function load(id){const r=await fetch('/api/cases/'+id);if(!r.ok)throw Error('Cannot load case');const body=await r.json();doc=body.case;revision=body.revision;raw={};dirty=false;conflict=false;problem='';try{const text=localStorage.getItem(key(id));if(text){const draft=JSON.parse(text);if(draft.doc.id!==id)throw Error('Draft ID mismatch');doc=draft.doc;raw=draft.raw||{};dirty=true;conflict=draft.revision!==revision;revision=conflict?draft.revision:revision;problem=conflict?'Recovered browser draft conflicts with the disk file. Compare in Dev before replacing.':'Recovered unsaved browser draft.'}}catch(e){problem='Draft recovery: '+e.message}runtime=null;prepared={};pickedCard=null;generation++;$('#case-select').value=id;renderDev();if(mode==='preview')renderPreview();if(mode==='setup')renderSetup();showStatus();if(dirty&&!conflict&&!Object.keys(raw).length)save()}
 $('#case-select').onchange=async()=>{const next=$('#case-select').value;await save();if(dirty||saving){$('#case-select').value=doc.id;problem='Save or resolve this draft before switching cases';showStatus();return}try{await load(next)}catch(e){problem=e.message;showStatus()}};
-for(const m of ['dev','preview','setup'])$('#'+m+'-mode').onclick=()=>{resetTrayDragVisual();mode=m;document.body.classList.toggle('preview-active',m==='preview');$('#investigator-tray').hidden=m!=='preview';$('#dev').hidden=m!=='dev';$('#preview').hidden=m!=='preview';$('#test-setup').hidden=m!=='setup';for(const n of ['dev','preview','setup'])$('#'+n+'-mode').setAttribute('aria-pressed',String(n===m));if(m==='preview')renderPreview();else if(m==='setup')renderSetup();else renderDev()};
+for(const m of ['dev','preview','setup'])$('#'+m+'-mode').onclick=()=>{resetTrayDragVisual();mode=m;document.body.classList.toggle('preview-active',m==='preview');$('#investigator-tray').hidden=m!=='preview';$('#restart').hidden=m!=='preview';$('#dev').hidden=m!=='dev';$('#preview').hidden=m!=='preview';$('#test-setup').hidden=m!=='setup';for(const n of ['dev','preview','setup'])$('#'+n+'-mode').setAttribute('aria-pressed',String(n===m));if(m==='preview')renderPreview();else if(m==='setup')renderSetup();else renderDev()};
 $('#retry').onclick=()=>{problem='';if(dirty)save();else checkServer()};$('#download').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify({doc,revision,raw},null,2)],{type:'application/json'}));a.download=(doc?.id||'case')+'-draft.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
 window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue=''}});window.addEventListener('online',()=>{if(dirty&&!conflict)save()});
 setInterval(checkServer,10000);
 try{await loadCatalog();const cases=await list();if(cases.length)await load(cases[0].id);else{problem='No cases found. Add a case JSON file in cases/.';showStatus()}}catch(e){serverProblem='Server unavailable — changes are not saving.';problem='Cannot open Case Builder: '+e.message;showStatus()}
-
-new ResizeObserver(()=>{document.documentElement.style.setProperty('--test-tray-height',$('#investigator-tray').getBoundingClientRect().height+'px')}).observe($('#investigator-tray'));
