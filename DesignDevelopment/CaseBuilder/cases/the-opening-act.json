@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "id": "the-opening-act",
   "title": "The Opening Act",
   "opening": "Strange lights interrupt marching-band practice every evening. The band director would like them investigated before Friday. He would also like the trumpet section investigated, but that is outside the contract.",
@@ -10,51 +10,6 @@
     "reviewStatus": "accepted",
     "reviewNotes": "The aliens wanting to engage in the marching band practice, but being mad at a bad trumpeter is great. Finding ancient records of it is fine. \"Intentionally playing poorly so they'll go away\" (even though the aliens leave Earth bad reviews) is great. The lung-rupturing notes thing is weird. That can be cut. This can be a low-stakes case where the only problem is the aliens are being annoying and interrupting marching bandf practice.",
     "notes": "Adapted using accepted review notes; source pitch/reviews remain untouched."
-  },
-  "rule": {
-    "sides": 6,
-    "multiplier": 1,
-    "notes": "PROVISIONAL, not settled in the base doc: one d6 + sum of named investigator skills × multiplier + bonuses from held items >= target. No critical rolls. Costs paid on either result. Item bonuses use held quantity after costs."
-  },
-  "investigators": [
-    {
-      "id": "avery",
-      "name": "Avery",
-      "health": 3,
-      "skills": {
-        "Interpersonal": 2,
-        "Sly": 1
-      },
-      "traits": [],
-      "notes": "Base doc stats; provisional health."
-    },
-    {
-      "id": "vanderhorten",
-      "name": "Dr. Vanderhorten",
-      "health": 3,
-      "skills": {
-        "Knowledge": 3
-      },
-      "traits": [],
-      "notes": "Base doc stats."
-    },
-    {
-      "id": "red",
-      "name": "Red",
-      "health": 3,
-      "skills": {
-        "Focus": 3
-      },
-      "traits": [],
-      "notes": "Base doc stats."
-    }
-  ],
-  "initial": {
-    "inventory": {},
-    "resources": {
-      "money": 3
-    },
-    "flags": []
   },
   "endings": [
     {
@@ -689,8 +644,22 @@
   "testSetup": {
     "investigatorIds": [
       "avery",
-      "vanderhorten"
+      "vanderhorten",
+      "audrey"
     ],
-    "skillOverrides": {}
-  }
+    "skillOverrides": {},
+    "inventory": {},
+    "resources": {
+      "money": 3
+    },
+    "investigatorOverrides": {
+      "avery": {
+        "notes": "Base doc stats; provisional health."
+      },
+      "vanderhorten": {
+        "notes": "Base doc stats."
+      }
+    }
+  },
+  "initialFlags": []
 }

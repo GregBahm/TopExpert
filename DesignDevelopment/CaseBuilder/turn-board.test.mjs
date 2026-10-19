@@ -1,11 +1,11 @@
 import {test} from 'node:test';import assert from 'node:assert/strict';
-import {start,validate} from './engine.mjs';import {testRoster} from './test-setup.mjs';
+import {validate} from './engine.mjs';import {testRoster} from './test-setup.mjs';
 import {requiredSlots,placeCard,clearSlot,canPlaceCard,preparationReason,completePreparedTurn,reservations} from './turn-board.mjs';
-import {makeFixture,fixtureCatalog,opportunity,effect} from './test-fixture.mjs';
+import {startFixture as start,makeFixture,fixtureCatalog,opportunity,effect} from './test-fixture.mjs';
 
 test('investigators occupy one place and use effective skills without mutating definitions',()=>{
- const d=makeFixture();d.testSetup={investigatorIds:['analyst','helper'],skillOverrides:{analyst:{Focus:5}}};
- const state=start({...d,investigators:testRoster(d,fixtureCatalog)}),before=JSON.stringify({d,state});let prepared={};
+ const d=makeFixture();d.testSetup={...d.testSetup,investigatorIds:['analyst','helper'],skillOverrides:{analyst:{Focus:5}}};
+ const state=start(d),before=JSON.stringify({d,state});let prepared={};
  prepared=placeCard(d,state,prepared,'inspect','investigator',{type:'investigator',id:'analyst'});assert.equal(preparationReason(d,state,d.opportunities[0],prepared.inspect),'');
  prepared=placeCard(d,state,prepared,'assist','investigator',{type:'investigator',id:'analyst'});assert.equal(prepared.inspect.investigator,undefined);assert.equal(prepared.assist.investigator,'analyst');
  prepared=placeCard(d,state,prepared,'assist','investigator',{type:'investigator',id:'helper'});assert.equal(prepared.assist.investigator,'helper');prepared=clearSlot(prepared,'assist','investigator');assert.equal(prepared.assist.investigator,undefined);
@@ -15,7 +15,7 @@ test('investigators occupy one place and use effective skills without mutating d
 });
 
 test('items reject mismatches, reserve quantities and consume costs once',()=>{
- const d=makeFixture();d.initial.inventory={kit:2,wrong:1};const action=opportunity('use-kit',{kind:'item',requires:{flags:[],notFlags:[],inventory:{kit:2},resources:{},skills:{},traits:[]},cost:{inventory:{kit:1},resources:{money:2}},success:effect({inventory:{reward:1}})});
+ const d=makeFixture();d.testSetup.inventory={kit:2,wrong:1};const action=opportunity('use-kit',{kind:'item',requires:{flags:[],notFlags:[],inventory:{kit:2},resources:{},skills:{},traits:[]},cost:{inventory:{kit:1},resources:{money:2}},success:effect({inventory:{reward:1}})});
  d.opportunities=[action,{...structuredClone(action),id:'other-kit'}];validate(d);const state=start(d);
  assert.deepEqual(requiredSlots(action).map(s=>[s.type,s.name,s.quantity]),[['inventory','kit',2],['resources','money',2]]);
  let prepared={};assert.equal(canPlaceCard(d,state,prepared,'use-kit','inventory:kit',{type:'inventory',name:'wrong'}),false);assert.equal(canPlaceCard(d,state,prepared,'use-kit','inventory:kit',{type:'inventory',name:'kit'}),true);assert.equal(canPlaceCard(d,state,prepared,'use-kit','resources:money',{type:'investigator',id:'analyst'}),false);

@@ -1,7 +1,7 @@
 import {test} from 'node:test';import assert from 'node:assert/strict';
-import {start,advance} from './engine.mjs';
+import {advance} from './engine.mjs';
 import {recordTurn,turnFlow} from './turn-history.mjs';
-import {makeFixture,opportunity,effect} from './test-fixture.mjs';
+import {startFixture as start,makeFixture,opportunity,effect} from './test-fixture.mjs';
 
 test('history freezes assignments and item changes, with topmost unlock origin despite reverse resolution order',()=>{
  const d=makeFixture();for(const o of d.opportunities){o.cost.resources={money:1};o.success=effect({inventory:{kit:1},unlock:['follow']})}

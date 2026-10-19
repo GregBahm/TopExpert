@@ -1,12 +1,13 @@
 import {recordTurn,turnFlow} from './turn-history.mjs';
-import {STATS,validate,start,available,advance,checkProbability} from './engine.mjs';
-import {selectedInvestigatorIds,baseInvestigatorForCase,investigatorForCase,testRoster} from './test-setup.mjs';
+import {STATS,GAME_RULES,validate,validateRuntime,start,available,advance,checkProbability} from './engine.mjs';
+import {defaultTestSetup,selectedInvestigatorIds,baseInvestigator,testInvestigator,testRoster} from './test-setup.mjs';
 import {requiredSlots,reservations,placeCard,clearSlot,canPlaceCard,preparationReason,completePreparedTurn} from './turn-board.mjs';
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let doc,revision=null,dirty=false,saving=false,timer,raw={},problem='',storageProblem='',conflict=false,runtime=null,prepared={},generation=0,mode='dev';
 let pickedCard=null,draggedCard=null,boardMessage='';
 let hoveredTrayCard=null,hoveredBoardSlot=null;
 let expandedFlowNodes=new Set(),turnHistory=[],flowObserver=null;
+let selectedDevOpportunity=null,devObserver=null,devSection='implementation';
 // Presentation-only order, retained across turns and test restarts for each case.
 const trayOrders=new Map();
 const trayCardKey=card=>card.type+':'+(card.id??card.name);
@@ -26,12 +27,27 @@ let investigatorCatalog=[],runDefinition=null,runSignature='';
 async function loadCatalog(){const response=await fetch('/assets/investigators/catalog.json');if(!response.ok)throw Error('Investigator catalog unavailable');investigatorCatalog=await response.json()}
 function skillStars(id,skill,value,baseline,disabled){const rating=Math.max(0,Math.min(6,Math.round(value))),overridden=value!==baseline;return '<div class="skill-rating" data-skill="'+skill+'" data-skill-control><span class="skill-name">'+esc(skill)+'</span><span class="skill-stars '+(overridden?'is-overridden':'')+'" role="group" aria-label="'+esc(skill)+' rating">'+[1,2,3,4,5,6].map(n=>'<button type="button" data-level="'+n+'" aria-label="'+esc(skill)+' '+n+' out of 6" aria-pressed="'+(rating===n)+'" '+(disabled?'disabled':'')+'><span aria-hidden="true" class="'+(n<=rating?'filled-star':'empty-star')+'">'+(n<=rating?'★':'☆')+'</span></button>').join('')+'</span></div>'}
 function renderSetup(){
- const ids=new Set(selectedInvestigatorIds(doc,investigatorCatalog)),ordered=[...investigatorCatalog.filter(p=>p.statsSpecified!==false),...investigatorCatalog.filter(p=>p.statsSpecified===false)];
- $('#test-setup').innerHTML='<h2>Investigators</h2><p class="muted">Select the team for this case. Selections and skill overrides autosave. Restart Test to apply changes to an existing run.</p><div class="investigator-grid">'+ordered.map(p=>{const i=investigatorForCase(doc,p),base=baseInvestigatorForCase(doc,p),disabled=p.statsSpecified===false;return '<article class="investigator-card" data-investigator="'+p.id+'" data-selected="'+ids.has(p.id)+'" aria-disabled="'+disabled+'"><button type="button" class="investigator-select" aria-pressed="'+ids.has(p.id)+'" '+(disabled?'disabled':'')+'><img src="/assets/investigators/'+encodeURIComponent(p.file)+'" alt="'+esc(p.name)+'" width="95" height="95"><strong>'+esc(p.name)+'</strong></button><div class="investigator-stats">'+STATS.map(skill=>skillStars(p.id,skill,disabled?0:(i.skills[skill]||0),base.skills[skill]||0,disabled)).join('')+'</div>'+(disabled?'<em class="muted">Stats not specified; unavailable for tests.</em>':'')+'</article>'}).join('')+'</div>';
- $('#test-setup').querySelectorAll('[data-investigator]').forEach(card=>{const p=investigatorCatalog.find(p=>p.id===card.dataset.investigator);if(p.statsSpecified===false)return;card.onclick=event=>{if(event.target.closest('[data-skill-control]'))return;const selected=new Set(doc.testSetup?.investigatorIds??selectedInvestigatorIds(doc,investigatorCatalog));if(selected.has(p.id))selected.delete(p.id);else selected.add(p.id);doc.testSetup={...doc.testSetup,investigatorIds:[...selected]};changed();renderSetup();renderTray()};card.querySelectorAll('[data-level]').forEach(button=>button.onclick=event=>{event.stopPropagation();const skill=button.closest('[data-skill]').dataset.skill,baseline=baseInvestigatorForCase(doc,p).skills[skill]||0,current=investigatorForCase(doc,p).skills[skill]||0,clicked=Number(button.dataset.level),value=clicked===1&&current===1?0:clicked;const overrides=structuredClone(doc.testSetup?.skillOverrides||{}),skills={...overrides[p.id]};if(value===baseline)delete skills[skill];else skills[skill]=value;if(Object.keys(skills).length)overrides[p.id]=skills;else delete overrides[p.id];doc.testSetup={...doc.testSetup,investigatorIds:doc.testSetup?.investigatorIds??selectedInvestigatorIds(doc,investigatorCatalog),skillOverrides:overrides};changed();renderSetup();const selector='[data-level="'+clicked+'"]';$('#test-setup').querySelector('[data-investigator="'+p.id+'"] [data-skill="'+skill+'"] '+selector)?.focus()})});
- renderRuntimeOverrides();
+ const ids=new Set(selectedInvestigatorIds(doc.testSetup,investigatorCatalog)),ordered=[...investigatorCatalog.filter(p=>p.statsSpecified!==false),...investigatorCatalog.filter(p=>p.statsSpecified===false)];
+ $('#test-setup').innerHTML='<h2>Investigators</h2><p class="muted">Select the team for this case. Selections and skill overrides autosave. Restart Test to apply changes to an existing run.</p><div class="investigator-grid">'+ordered.map(p=>{const i=testInvestigator(doc.testSetup,p),base=baseInvestigator(p),disabled=p.statsSpecified===false;return '<article class="investigator-card" data-investigator="'+p.id+'" data-selected="'+ids.has(p.id)+'" aria-disabled="'+disabled+'"><button type="button" class="investigator-select" aria-pressed="'+ids.has(p.id)+'" '+(disabled?'disabled':'')+'><img src="/assets/investigators/'+encodeURIComponent(p.file)+'" alt="'+esc(p.name)+'" width="95" height="95"><strong>'+esc(p.name)+'</strong></button><div class="investigator-stats">'+STATS.map(skill=>skillStars(p.id,skill,disabled?0:(i.skills[skill]||0),base.skills[skill]||0,disabled)).join('')+'</div>'+(disabled?'<em class="muted">Stats not specified; unavailable for tests.</em>':'')+'</article>'}).join('')+'</div>';
+ $('#test-setup').querySelectorAll('[data-investigator]').forEach(card=>{const p=investigatorCatalog.find(p=>p.id===card.dataset.investigator);if(p.statsSpecified===false)return;card.onclick=event=>{if(event.target.closest('[data-skill-control]'))return;const selected=new Set(doc.testSetup?.investigatorIds??selectedInvestigatorIds(doc.testSetup,investigatorCatalog));if(selected.has(p.id))selected.delete(p.id);else selected.add(p.id);doc.testSetup={...doc.testSetup,investigatorIds:[...selected]};changed();renderSetup();renderTray()};card.querySelectorAll('[data-level]').forEach(button=>button.onclick=event=>{event.stopPropagation();const skill=button.closest('[data-skill]').dataset.skill,baseline=baseInvestigator(p).skills[skill]||0,current=testInvestigator(doc.testSetup,p).skills[skill]||0,clicked=Number(button.dataset.level),value=clicked===1&&current===1?0:clicked;const overrides=structuredClone(doc.testSetup?.skillOverrides||{}),skills={...overrides[p.id]};if(value===baseline)delete skills[skill];else skills[skill]=value;if(Object.keys(skills).length)overrides[p.id]=skills;else delete overrides[p.id];doc.testSetup={...doc.testSetup,investigatorIds:doc.testSetup?.investigatorIds??selectedInvestigatorIds(doc.testSetup,investigatorCatalog),skillOverrides:overrides};changed();renderSetup();const selector='[data-level="'+clicked+'"]';$('#test-setup').querySelector('[data-investigator="'+p.id+'"] [data-skill="'+skill+'"] '+selector)?.focus()})});
+ renderTestSupplies();renderRuntimeOverrides();
 }
-async function refreshSource(){const request=++sourceRequest,id=doc?.sourcePitchId||doc?.source?.pitchId,box=$('#source-context');if(!box)return;box.hidden=true;box.textContent='';if(!id)return;try{const r=await fetch('/api/source-pitches/'+encodeURIComponent(id),{cache:'no-store'});if(!r.ok)throw Error('Source unavailable');const source=await r.json();if(request!==sourceRequest||box!==$('#source-context'))return;const premiseTitle=source.premise.title.replace(/\b\p{L}/gu,c=>c.toLocaleUpperCase());box.innerHTML=`<div class="pitch-section-heading"><h2><button type="button" class="pitch-toggle" aria-expanded="true" aria-controls="pitch-source-body">Pitch <span aria-hidden="true">▾</span></button></h2><a class="pitch-review-button" href="http://127.0.0.1:8765/?pitch=${encodeURIComponent(source.id)}" target="_blank" rel="noopener">Open In Pitch Review</a></div><div id="pitch-source-body"><h3>${esc(premiseTitle)}</h3><p class="muted">${esc(source.premise.description)}</p><h3>${esc(source.pitch.title)}</h3><p class="source-copy">${esc(source.pitch.text)}</p><h4>Notes</h4><p class="source-copy"><em>${esc(source.notes)||'—'}</em></p></div>`;const toggle=box.querySelector('.pitch-toggle'),body=box.querySelector('#pitch-source-body');toggle.onclick=()=>{const expanded=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(expanded));body.hidden=!expanded;toggle.querySelector('span').textContent=expanded?'▾':'▸'};box.hidden=false}catch{if(request===sourceRequest&&box===$('#source-context')){box.textContent='Source pitch context unavailable.';box.hidden=false}}}
+function renderTestSupplies(){
+ const root=$('#test-setup');
+ root.insertAdjacentHTML('beforeend','<section class="test-supply-section"><h2>Inventory & resources</h2><p class="muted">Starting supplies for this case’s test. Changes apply on Restart test.</p><div class="test-supply-groups">'+['inventory','resources'].map(type=>'<section class="test-supply-group"><h3>'+ (type==='inventory'?'Inventory':'Resources')+'</h3>'+Object.entries(doc.testSetup[type]).map(([name,quantity])=>'<div class="supply-row"><label>'+esc(name)+'<input type="number" min="0" step="1" data-supply-type="'+type+'" data-supply-name="'+esc(name)+'" value="'+quantity+'"></label><button type="button" data-remove-supply="'+type+'" data-supply-name="'+esc(name)+'" aria-label="Remove '+esc(name)+'">Remove</button></div>').join('')+'<div class="supply-add"><input placeholder="'+(type==='inventory'?'Item name':'Resource name')+'" aria-label="New '+type+' name" data-new-supply="'+type+'"><button type="button" data-add-supply="'+type+'">Add</button></div></section>').join('')+'</div></section>');
+ root.querySelectorAll('[data-supply-type]').forEach(input=>input.oninput=()=>{const value=input.valueAsNumber;if(!Number.isFinite(value)||value<0){input.setCustomValidity('Enter a nonnegative quantity');input.reportValidity();return}input.setCustomValidity('');doc.testSetup[input.dataset.supplyType][input.dataset.supplyName]=value;changed()});
+ root.querySelectorAll('[data-remove-supply]').forEach(button=>button.onclick=()=>{delete doc.testSetup[button.dataset.removeSupply][button.dataset.supplyName];changed();renderSetup()});
+ root.querySelectorAll('[data-add-supply]').forEach(button=>button.onclick=()=>{const type=button.dataset.addSupply,input=root.querySelector('[data-new-supply="'+type+'"]'),name=input.value.trim();if(!name)return;if(!Object.hasOwn(doc.testSetup[type],name))doc.testSetup[type][name]=1;changed();renderSetup()});
+}
+async function refreshSource(){
+ const request=++sourceRequest,id=doc?.sourcePitchId||doc?.source?.pitchId,box=$('#source-context');if(!box)return;
+ box.hidden=false;box.textContent=id?'Loading pitch…':'This case is not linked to a pitch.';if(!id)return;
+ try{const r=await fetch('/api/source-pitches/'+encodeURIComponent(id),{cache:'no-store'});if(!r.ok)throw Error('Source unavailable');const source=await r.json();if(request!==sourceRequest||box!==$('#source-context'))return;
+ const premiseTitle=source.premise.title.replace(/\b\p{L}/gu,c=>c.toLocaleUpperCase());
+ box.innerHTML=`<div class="pitch-section-heading"><h2>Pitch</h2><a class="pitch-review-button" href="http://127.0.0.1:8765/?pitch=${encodeURIComponent(source.id)}" target="_blank" rel="noopener">Open In Pitch Review</a></div><h3>${esc(premiseTitle)}</h3><p class="muted">${esc(source.premise.description)}</p><h3>${esc(source.pitch.title)}</h3><p class="source-copy">${esc(source.pitch.text)}</p><h4>Notes</h4><p class="source-copy"><em>${esc(source.notes)||'—'}</em></p>`;
+ }catch{if(request===sourceRequest&&box===$('#source-context'))box.textContent='Source pitch context unavailable.'}
+}
+
 const key=id=>'top-expert-case-builder-draft:'+id;
 function backup(){if(!doc)return;try{localStorage.setItem(key(doc.id),JSON.stringify({doc,revision,raw,updated:new Date().toISOString()}));storageProblem=''}catch{storageProblem='Browser draft backup unavailable. Keep this tab open until file save succeeds.'}showStatus()}
 function showStatus(){const invalid=Object.keys(raw).length;const warning=serverProblem||(conflict?'File changed elsewhere — edits are not saving. Draft preserved.':invalid?'Invalid edits — changes are not saving. Draft preserved.':saveProblem)||(dirty?storageProblem:'');$('#save-status').textContent=warning;$('#save-status').hidden=!warning;$('#retry').hidden=!warning;$('#download').hidden=!warning;$('#retry').disabled=saving||invalid>0||conflict;if($('#conflict-actions'))$('#conflict-actions').hidden=!conflict;$('#error').hidden=!(problem||storageProblem);$('#error').textContent=[problem,storageProblem].filter(Boolean).join('\n')}
@@ -42,28 +58,110 @@ function field(label,value,attrs='',large=false){return `<label>${esc(label)}${l
 function jsonBox(label,value,id){return field(label,raw[id]??JSON.stringify(value,null,2),`class="code" data-json="${id}"`,true)}
 const effect=()=>({text:'',notes:'',inventory:{},resources:{},skills:{},health:0,flagsAdd:[],flagsRemove:[],unlock:[],remove:[],ending:null});
 const newOp=id=>({id,title:'New opportunity',body:'What can the investigator do?',notes:'',kind:'investigator',initial:false,repeatable:false,duration:1,deadline:null,requires:{flags:[],notFlags:[],inventory:{},resources:{},skills:{},traits:[]},cost:{inventory:{},resources:{}},check:null,success:effect(),failure:effect(),expired:effect()});
+function wireTabKeys(root){
+ root.onkeydown=event=>{
+  const tabs=[...root.querySelectorAll('[role="tab"]')],current=tabs.indexOf(event.target);if(current<0)return;
+  let next;if(event.key==='ArrowRight')next=(current+1)%tabs.length;else if(event.key==='ArrowLeft')next=(current+tabs.length-1)%tabs.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=tabs.length-1;else return;
+  event.preventDefault();tabs[next].click();tabs[next].focus();
+ };
+}
+function organizeDevPanels(){
+ const root=$('#dev'),pitch=$('#source-context'),settings=$('#dev-case-settings'),toolbar=root.querySelector('.dev-graph-toolbar'),graph=root.querySelector('.dev-graph-scroll');
+ const tabs=document.createElement('div');tabs.className='secondary-tabs';tabs.setAttribute('role','tablist');tabs.setAttribute('aria-label','Dev sections');
+ const items=[['pitch','Pitch',[pitch]],['settings','Case Settings',[settings]],['implementation','Implementation',[toolbar,graph]]];
+ for(const [id,title,content] of items){
+  const button=document.createElement('button');button.type='button';button.id='dev-'+id+'-tab';button.setAttribute('role','tab');button.setAttribute('aria-controls','dev-'+id+'-panel');button.dataset.devSection=id;button.textContent=title;tabs.append(button);
+  const panel=document.createElement('section');panel.id='dev-'+id+'-panel';panel.className='dev-section-panel';panel.setAttribute('role','tabpanel');panel.setAttribute('aria-labelledby',button.id);content.forEach(el=>panel.append(el));root.append(panel);
+  button.onclick=()=>{selectedDevOpportunity=null;devSection=id;applyDevSection();renderDevGraph()};
+ }
+ root.prepend(tabs);wireTabKeys(tabs);applyDevSection();
+}
+function applyDevSection(){
+ $('#dev').querySelectorAll('[data-dev-section]').forEach(button=>{const active=button.dataset.devSection===devSection;button.setAttribute('aria-selected',String(active));button.tabIndex=active?0:-1;$('#dev-'+button.dataset.devSection+'-panel').hidden=!active});
+ requestAnimationFrame(drawDevLines);
+}
 function renderDev(){
- $('#dev').innerHTML=`<section id="source-context" class="source-context" aria-label="Source pitch" hidden></section><h2>Case Implementation</h2><div id="conflict-actions" ${conflict?'':'hidden'} class="card"><p>Your browser draft and disk file differ. Download the draft before choosing which version to continue.</p><button id="use-draft">Use this draft over current disk file</button><button id="use-disk">Load disk version (keep draft archive)</button></div>${field('Title',doc.title,'data-case-field="title"')}${field('Opening',doc.opening,'data-case-field="opening"',true)}${field('Case implementation notes',doc.notes,'data-case-field="notes"',true)}<details><summary>Starting team, inventory, resources & provisional check rule</summary><p>Check: d${doc.rule.sides} + sum of listed skills × ${doc.rule.multiplier} + bonuses from held items ≥ target. This formula is provisional and editable. Missing skills are 0.</p>${jsonBox('Check rule (sides, multiplier, notes)',doc.rule,'rule')}${jsonBox('Starting investigators (skills, health, traits, notes)',doc.investigators,'investigators')}${jsonBox('Starting inventory, resources and flags',doc.initial,'initial')}${jsonBox('Source pitch and review notes',doc.source,'source')}</details><h2>Opportunities <button id="add-op">Add opportunity</button></h2><p class="muted">Unlock controls board visibility. Requirements gate assignment. Costs apply on either result. Nonrepeatable actions leave the board on either result. Deadlines expire after the listed absolute turn.</p>${doc.opportunities.map((o,i)=>`<article class="card"><div class="row"><strong>${esc(o.id)}</strong><button data-remove="${i}">Remove opportunity</button></div>${field('Action title',o.title,`data-op="${i}" data-field="title"`)}${field('Player-facing body',o.body,`data-op="${i}" data-field="body"`,true)}${field('Implementation notes',o.notes,`data-op="${i}" data-field="notes"`,true)}<div class="row"><label>Slot type<select data-op="${i}" data-field="kind"><option value="investigator" ${o.kind==='investigator'?'selected':''}>Investigator</option><option value="item" ${o.kind==='item'?'selected':''}>Item only</option></select></label><label><input type="checkbox" data-op="${i}" data-field="initial" ${o.initial?'checked':''}> Starts on board</label><label><input type="checkbox" data-op="${i}" data-field="repeatable" ${o.repeatable?'checked':''}> Repeatable</label></div>${field('Check notes',o.check?.notes??'',`data-check-notes="${i}" ${o.check?'':'disabled'}`,true)}${['success','failure','expired'].map(k=>`<details><summary>${k==='expired'?'Deadline expiry':k} text & notes</summary>${field('Result text',o[k].text,`data-outcome="${i}" data-result="${k}" data-field="text"`,true)}${field('Notes',o[k].notes,`data-outcome="${i}" data-result="${k}" data-field="notes"`,true)}</details>`).join('')}<details><summary>All mechanics JSON — conditions, costs, check, transitions & effects</summary>${jsonBox('Complete opportunity (valid JSON saves immediately)',o,'op-'+i)}</details></article>`).join('')}<h2>Endings <button id="add-ending">Add ending</button></h2>${doc.endings.map((e,i)=>`<div class="card"><div class="row"><strong>${esc(e.id)}</strong><button data-remove-ending="${i}">Remove ending</button></div>${['title','body','notes'].map(k=>field(k,e[k],`data-ending="${i}" data-field="${k}"`,k!=='title')).join('')}</div>`).join('')}<details><summary>Entire case JSON</summary>${jsonBox('Advanced definition editor',doc,'entire')}<button id="refresh-editor">Rebuild structured controls from current valid definition</button></details>`;
- refreshSource();
- $('#dev').querySelectorAll('[data-json]').forEach(el=>el.addEventListener('focus',()=>{const id=el.dataset.json;if(Object.hasOwn(raw,id))return;const value=id==='entire'?doc:id.startsWith('op-')?doc.opportunities[Number(id.slice(3))]:doc[id];el.value=JSON.stringify(value,null,2)}));
- $('#dev').querySelectorAll('input,textarea,select').forEach(el=>el.addEventListener('input',()=>{
- if(el.dataset.json){const id=el.dataset.json;raw[id]=el.value;try{const value=JSON.parse(el.value),candidate=structuredClone(doc);if(id==='entire'){if(value.id!==doc.id)throw Error('Case ID must match the current filename');validate(value);doc=value}else{if(id.startsWith('op-'))candidate.opportunities[Number(id.slice(3))]=value;else candidate[id]=value;validate(candidate);doc=candidate}delete raw[id];problem=''}catch(e){problem='Editor '+id+': '+e.message}dirty=true;generation++;backup();clearTimeout(timer);timer=setTimeout(save,300);return}
+ $('#dev').innerHTML=`<section id="source-context" class="source-context" aria-label="Source pitch" hidden></section><section id="dev-case-settings" aria-label="Case settings"><h2>Case Settings</h2><div id="conflict-actions" ${conflict?'':'hidden'} class="card"><p>Your browser draft and disk file differ. Download the draft before choosing which version to continue.</p><button id="use-draft">Use this draft over current disk file</button><button id="use-disk">Load disk version (keep draft archive)</button></div>${field('Title',doc.title,'data-case-field="title"')}${field('Opening',doc.opening,'data-case-field="opening"',true)}${field('Case implementation notes',doc.notes,'data-case-field="notes"',true)}${field('Initial scene flags',doc.initialFlags.join(', '),'data-case-flags="true"')}<h2>Endings <button id="add-ending">Add ending</button></h2>${doc.endings.map((e,i)=>`<div class="card"><div class="row"><strong>${esc(e.id)}</strong><button data-remove-ending="${i}">Remove ending</button></div>${['title','body','notes'].map(k=>field(k,e[k],`data-ending="${i}" data-field="${k}"`,k!=='title')).join('')}</div>`).join('')}</section><div class="dev-graph-toolbar"><h2>Case Implementation</h2><button id="add-op">Add opportunity</button></div><div class="dev-graph-scroll" tabindex="0" aria-label="Case dependency graph. Drag to pan."><div id="dev-graph" class="case-flow"><svg id="dev-lines" class="flow-lines" aria-label="Case outcome dependencies"></svg></div></div>`;
+ organizeDevPanels();renderDevGraph();refreshSource();
+ bindDevInputs($('#dev-case-settings'));
+ $('#add-op').onclick=()=>{const id=crypto.randomUUID();doc.opportunities.push(newOp(id));selectedDevOpportunity=id;changed();renderDev()};
+ $('#add-ending').onclick=()=>{let n=1;while(doc.endings.some(e=>e.id==='ending-'+n))n++;doc.endings.push({id:'ending-'+n,title:'New ending',body:'Case closed.',notes:''});changed();renderDev()};
+ $('#dev').querySelectorAll('[data-remove-ending]').forEach(el=>el.onclick=()=>{const id=doc.endings[el.dataset.removeEnding].id;if(doc.opportunities.some(o=>['success','failure','expired'].some(k=>o[k].ending===id))){problem='Remove outcome references to '+id+' first';showStatus();return}doc.endings.splice(el.dataset.removeEnding,1);changed();renderDev()});
+ $('#use-draft').onclick=async()=>{try{const r=await fetch('/api/cases/'+doc.id);if(!r.ok)throw Error('Cannot read current disk file');const current=await r.json();localStorage.setItem(key(doc.id)+':disk-before-replace:'+Date.now(),JSON.stringify(current));revision=current.revision;conflict=false;backup();await save();renderDev()}catch(e){problem=e.message;showStatus()}};
+ $('#use-disk').onclick=async()=>{try{localStorage.setItem(key(doc.id)+':archive:'+Date.now(),JSON.stringify({doc,raw,revision}));localStorage.removeItem(key(doc.id));dirty=false;raw={};await load(doc.id)}catch(e){problem=e.message;showStatus()}};
+}
+function bindDevInputs(root){
+ root.querySelectorAll('input,textarea,select').forEach(el=>el.addEventListener('input',()=>{
+ if(el.dataset.deadlineToggle!==undefined){const index=el.dataset.deadlineToggle,fields=root.querySelector('[data-deadline-fields="'+index+'"]'),input=fields.querySelector('[data-deadline-turns]');doc.opportunities[index].deadline=el.checked?Number(input.value):null;fields.hidden=!el.checked;changed();return}
+ if(el.dataset.deadlineTurns!==undefined){const value=el.valueAsNumber;if(!Number.isInteger(value)||value<1){el.setCustomValidity('Enter a whole number of turns, at least 1');el.reportValidity();return}el.setCustomValidity('');doc.opportunities[el.dataset.deadlineTurns].deadline=value}
  if(el.dataset.caseField)doc[el.dataset.caseField]=el.value;
+ if(el.dataset.caseFlags)doc.initialFlags=[...new Set(el.value.split(',').map(value=>value.trim()).filter(Boolean))];
  if(el.dataset.op!==undefined){const o=doc.opportunities[el.dataset.op];o[el.dataset.field]=el.type==='checkbox'?el.checked:el.value}
- if(el.dataset.checkNotes!==undefined)doc.opportunities[el.dataset.checkNotes].check.notes=el.value;
  if(el.dataset.outcome!==undefined)doc.opportunities[el.dataset.outcome][el.dataset.result][el.dataset.field]=el.value;
  if(el.dataset.ending!==undefined)doc.endings[el.dataset.ending][el.dataset.field]=el.value;
  // Keep invalid JSON drafts intact; structured changes cannot silently discard them.
  changed();
  }));
- $('#add-op').onclick=()=>{let n=1;while(doc.opportunities.some(o=>o.id==='action-'+n))n++;doc.opportunities.push(newOp('action-'+n));changed();renderDev()};
- $('#add-ending').onclick=()=>{let n=1;while(doc.endings.some(e=>e.id==='ending-'+n))n++;doc.endings.push({id:'ending-'+n,title:'New ending',body:'Case closed.',notes:''});changed();renderDev()};
- $('#dev').querySelectorAll('[data-remove]').forEach(el=>el.onclick=()=>{const id=doc.opportunities[el.dataset.remove].id;const refs=doc.opportunities.filter(o=>['success','failure','expired'].some(k=>o[k].unlock.includes(id)||o[k].remove.includes(id)));if(refs.length){problem='Remove references to '+id+' in outcomes first: '+refs.map(o=>o.id).join(', ');showStatus();return}if(Object.keys(raw).length){problem='Resolve JSON drafts before deleting';showStatus();return}doc.opportunities.splice(el.dataset.remove,1);changed();renderDev()});
- $('#dev').querySelectorAll('[data-remove-ending]').forEach(el=>el.onclick=()=>{const id=doc.endings[el.dataset.removeEnding].id;if(doc.opportunities.some(o=>['success','failure','expired'].some(k=>o[k].ending===id))){problem='Remove outcome references to '+id+' first';showStatus();return}doc.endings.splice(el.dataset.removeEnding,1);changed();renderDev()});
- $('#refresh-editor').onclick=renderDev;
- $('#use-draft').onclick=async()=>{try{const r=await fetch('/api/cases/'+doc.id);if(!r.ok)throw Error('Cannot read current disk file');const current=await r.json();localStorage.setItem(key(doc.id)+':disk-before-replace:'+Date.now(),JSON.stringify(current));revision=current.revision;conflict=false;backup();await save();renderDev()}catch(e){problem=e.message;showStatus()}};
- $('#use-disk').onclick=async()=>{try{localStorage.setItem(key(doc.id)+':archive:'+Date.now(),JSON.stringify({doc,raw,revision}));localStorage.removeItem(key(doc.id));dirty=false;raw={};await load(doc.id)}catch(e){problem=e.message;showStatus()}};
 }
+function devOpportunityEditor(o,i){return `<article class="card"><div class="row"><button data-remove="${i}">Remove opportunity</button></div>${field('Title',o.title,`data-op="${i}" data-field="title"`)}${field('Body',o.body,`data-op="${i}" data-field="body"`,true)}<div class="row"><label>Slot type<select data-op="${i}" data-field="kind"><option value="investigator" ${o.kind==='investigator'?'selected':''}>Investigator</option><option value="item" ${o.kind==='item'?'selected':''}>Item only</option></select></label><label><input type="checkbox" data-op="${i}" data-field="initial" ${o.initial?'checked':''}> Starts on board</label><label><input type="checkbox" data-op="${i}" data-field="repeatable" ${o.repeatable?'checked':''}> Repeatable</label></div>${['success','failure'].map(k=>field(k==='success'?'Success text':'Failure text',o[k].text,`data-outcome="${i}" data-result="${k}" data-field="text"`,true)).join('')}<label><input type="checkbox" data-deadline-toggle="${i}" ${o.deadline!==null?'checked':''}> Deadline</label><div data-deadline-fields="${i}" ${o.deadline===null?'hidden':''}><label>Number of turns<input type="number" min="1" step="1" value="${o.deadline??1}" data-deadline-turns="${i}"></label>${field('Deadline expiry text',o.expired.text,`data-outcome="${i}" data-result="expired" data-field="text"`,true)}</div></article>`;}
+// Collapse cycles before ranking so retries never push a graph endlessly right.
+function dependencyGraph(definition){
+ const nodes=definition.opportunities.map((opportunity,index)=>({id:opportunity.id,title:opportunity.title,opportunity,index}));
+ for(const ending of definition.endings)nodes.push({id:'ending:'+ending.id,title:ending.title,ending});
+ const ids=new Set(nodes.map(node=>node.id)),edges=[];
+ for(const node of nodes)if(node.opportunity)for(const outcome of ['success','failure','expired']){
+  const effect=node.opportunity[outcome];for(const to of effect.unlock)if(ids.has(to))edges.push({from:node.id,to,outcome});
+  if(effect.ending&&ids.has('ending:'+effect.ending))edges.push({from:node.id,to:'ending:'+effect.ending,outcome});
+ }
+ const outgoing=new Map(nodes.map(node=>[node.id,edges.filter(edge=>edge.from===node.id).map(edge=>edge.to)]));
+ const index=new Map(),low=new Map(),stack=[],onStack=new Set(),component=new Map();let cursor=0,groups=0;
+ function visit(id){index.set(id,cursor);low.set(id,cursor++);stack.push(id);onStack.add(id);
+  for(const next of outgoing.get(id)){if(!index.has(next)){visit(next);low.set(id,Math.min(low.get(id),low.get(next)))}else if(onStack.has(next))low.set(id,Math.min(low.get(id),index.get(next)))}
+  if(low.get(id)===index.get(id)){let next;do{next=stack.pop();onStack.delete(next);component.set(next,groups)}while(next!==id);groups++}
+ }
+ for(const node of nodes)if(!index.has(node.id))visit(node.id);
+ const parents=Array.from({length:groups},()=>new Set());for(const edge of edges){const a=component.get(edge.from),b=component.get(edge.to);if(a!==b)parents[b].add(a)}
+ const depths=new Map();function depth(group){if(!depths.has(group))depths.set(group,parents[group].size?1+Math.max(...[...parents[group]].map(depth)):0);return depths.get(group)}
+ return {nodes:nodes.map(node=>({...node,depth:depth(component.get(node.id))})),edges};
+}
+
+function devPreviewSlot(slot){
+ if(slot.type==='investigator')return '<div class="portrait-card empty-investigator-slot">Investigator</div>';
+ return '<div class="item-slot empty-item-slot">'+(slot.type==='ready'?'Prepare action':esc(slot.name)+' x'+slot.quantity)+'</div>';
+}
+function renderDevGraph(){
+ const stage=$('.dev-graph-scroll'),canvas=$('#dev-graph');if(!stage||!canvas)return;
+ const left=stage.scrollLeft,top=stage.scrollTop,{nodes}=dependencyGraph(doc),depths=[...new Set(nodes.map(node=>node.depth))].sort((a,b)=>a-b);
+ canvas.innerHTML='<svg id="dev-lines" class="flow-lines" aria-label="Case outcome dependencies"></svg>'+depths.map(depth=>'<div class="flow-column">'+nodes.filter(node=>node.depth===depth).map(node=>{
+  if(node.ending)return '<section class="flow-node dev-ending" data-flow-id="'+esc(node.id)+'"><div class="flow-toggle"><span class="action-title">'+esc(node.title)+'</span></div><div class="opening-copy"><span class="mechanic-label">Ending</span><p class="scene-copy">'+esc(node.ending.body)+'</p></div></section>';
+  const selected=node.id===selectedDevOpportunity;
+  return '<section class="flow-node dev-opportunity '+(selected?'is-editing':'')+'" data-flow-id="'+esc(node.id)+'" '+(selected?'data-dev-editor="'+esc(node.id)+'"':'data-dev-select="'+esc(node.id)+'"')+'>'+(selected?devOpportunityEditor(node.opportunity,node.index):'<button type="button" class="flow-toggle" aria-label="Edit '+esc(node.title)+'"><span class="action-title">'+esc(node.title)+'</span></button>'+opportunityMarkup(node.opportunity,undefined,null,{definition:doc}))+'</section>';
+ }).join('')+'</div>').join('');
+ stage.scrollLeft=left;stage.scrollTop=top;bindStagePan(stage);bindDevInputs(canvas);
+ canvas.querySelectorAll('[data-dev-select]').forEach(card=>card.onclick=event=>{event.stopPropagation();selectedDevOpportunity=card.dataset.devSelect;renderDevGraph()});
+ canvas.querySelectorAll('[data-remove]').forEach(button=>button.onclick=event=>{
+  event.stopPropagation();const index=Number(button.dataset.remove),id=doc.opportunities[index].id;
+  if(doc.opportunities.some(o=>['success','failure','expired'].some(k=>o[k].unlock.includes(id)||o[k].remove.includes(id)))){problem='Remove references to '+id+' in outcomes first';showStatus();return}
+  if(Object.keys(raw).length){problem='Resolve JSON drafts before deleting';showStatus();return}
+  doc.opportunities.splice(index,1);selectedDevOpportunity=null;changed();renderDevGraph();
+ });
+ devObserver?.disconnect();devObserver=new ResizeObserver(drawDevLines);devObserver.observe(canvas);canvas.querySelectorAll('.flow-node').forEach(node=>devObserver.observe(node));requestAnimationFrame(drawDevLines);
+}
+function drawDevLines(){
+ const canvas=$('#dev-graph'),svg=$('#dev-lines');if(!canvas||!svg)return;
+ const bounds=canvas.getBoundingClientRect(),elements=new Map([...canvas.querySelectorAll('[data-flow-id]')].map(el=>[el.dataset.flowId,el]));
+ svg.setAttribute('viewBox','0 0 '+canvas.clientWidth+' '+canvas.clientHeight);
+ svg.innerHTML=dependencyGraph(doc).edges.map(edge=>{
+  const from=elements.get(edge.from),to=elements.get(edge.to);if(!from||!to)return '';
+  const a=from.getBoundingClientRect(),b=to.getBoundingClientRect(),x1=a.right-bounds.left,y1=a.top-bounds.top+26,x2=b.left-bounds.left,y2=b.top-bounds.top+26,bend=Math.max(45,Math.abs(x2-x1)/2);
+  const path=x2<=x1?'M '+x1+' '+y1+' C '+(x1+bend)+' '+(y1-60)+', '+(x2-bend)+' '+(y2-60)+', '+x2+' '+y2:'M '+x1+' '+y1+' C '+(x1+bend)+' '+y1+', '+(x2-bend)+' '+y2+', '+x2+' '+y2;
+  return '<path class="flow-link '+edge.outcome+'" d="'+path+'"><title>'+esc(edge.outcome+': '+edge.from+' → '+edge.to)+'</title></path>';
+ }).join('');
+}
+document.addEventListener('click',event=>{
+ if(mode!=='dev'||!selectedDevOpportunity||event.target.closest('[data-dev-editor],[data-dev-select],#add-op'))return;
+ selectedDevOpportunity=null;renderDevGraph();
+});
 function portraitFor(id){return investigatorCatalog.find(p=>p.id===id)}
 function checkDisplay(opportunity,actor,rule,resultTotal=null){
  const check=opportunity.check;if(!check)return '';
@@ -103,7 +201,7 @@ function itemMarkup(payload,quantity,attrs=''){return cardMarkup(payload,'<span 
 
 function renderTray(){
  if(!runtime||!runDefinition)return;
- const selected=new Set(selectedInvestigatorIds(doc,investigatorCatalog));
+ const selected=new Set(selectedInvestigatorIds(doc.testSetup,investigatorCatalog));
  const actors=runtime.investigators.filter(i=>selected.has(i.id)&&i.health>0&&!Object.values(prepared).some(a=>a.investigator===i.id)).map(i=>({key:trayCardKey({type:'investigator',id:i.id}),html:actorMarkup(i,{type:'investigator',id:i.id})}));
  $('#investigator-portraits').innerHTML=orderedTrayCards(actors,'investigator');
  const items=[];for(const type of ['inventory','resources'])for(const [name,quantity] of Object.entries(runtime[type])){const remaining=quantity-reservations(runDefinition,prepared,type,name);if(remaining>0)items.push({key:trayCardKey({type,name}),html:itemMarkup({type,name},remaining)})}
@@ -153,11 +251,22 @@ function bindSlots(){
 function renderRuntimeOverrides(){
  if(!runtime||!$('#test-setup'))return;
  $('#test-setup').insertAdjacentHTML('beforeend',`<details class="runtime-overrides"><summary>Current test overrides</summary><p class="muted">Applies only to the running test. Does not save the case or Test Setup.</p>${jsonBox('Runtime investigators',runtime.investigators,'override-team')}${jsonBox('Runtime inventory',runtime.inventory,'override-inventory')}${jsonBox('Runtime resources',runtime.resources,'override-resources')}<button id="apply-overrides">Apply to current test</button></details>`);
- $('#apply-overrides').onclick=()=>{try{const team=JSON.parse($('[data-json="override-team"]').value),inventory=JSON.parse($('[data-json="override-inventory"]').value),resources=JSON.parse($('[data-json="override-resources"]').value);if(!Array.isArray(team)||team.some(i=>!Number.isFinite(i.health)||i.health<0))throw Error('Health must be nonnegative');validate({...runDefinition,investigators:team.length?team.map(i=>({...i,health:Math.max(.01,i.health)})):runDefinition.investigators,initial:{...runDefinition.initial,inventory,resources}});runtime={...runtime,investigators:team,inventory,resources,log:[...runtime.log,'Test-only overrides applied.']};prepared={};pickedCard=null;problem='';renderSetup()}catch(e){problem='Overrides not applied: '+e.message}showStatus()};
+ $('#apply-overrides').onclick=()=>{try{const team=JSON.parse($('[data-json="override-team"]').value),inventory=JSON.parse($('[data-json="override-inventory"]').value),resources=JSON.parse($('[data-json="override-resources"]').value);if(!Array.isArray(team)||team.some(i=>!Number.isFinite(i.health)||i.health<0))throw Error('Health must be nonnegative');validateRuntime({investigators:team,inventory,resources});runtime={...runtime,investigators:team,inventory,resources,log:[...runtime.log,'Test-only overrides applied.']};prepared={};pickedCard=null;problem='';renderSetup()}catch(e){problem='Overrides not applied: '+e.message}showStatus()};
 }
-function opportunityMarkup(o,result,historyEntry=null){
- const d=runDefinition,s=runtime,interactive=result===undefined,entry=prepared[o.id],reason=interactive?preparationReason(d,s,o,entry):'',slots=requiredSlots(o),historicalSlots=historyEntry?slots.map(slot=>historicalSlotMarkup(slot,historyEntry)).join(''):'';
- return `<article class="card opportunity-card ${interactive?(!reason?'is-ready':''):result?(result.passed?'is-passed':'is-failed'):'is-unused'}" data-opportunity="${o.id}" aria-label="${esc(o.title)}: ${esc(interactive?(reason||'Ready'):result?(result.passed?'Passed':'Failed'):'Not chosen')}"><div class="opportunity-heading"><h3>${esc(o.title)}</h3></div><p>${esc(o.body)}</p>${o.deadline!==null?'<p class="muted opportunity-rules">Through turn '+o.deadline+'</p>':''}${o.requires.flags.length||o.requires.notFlags.length?'<p class="muted">Clues: '+esc([...o.requires.flags,...o.requires.notFlags.map(f=>'not '+f)].join(', '))+'</p>':''}${Object.keys(o.requires.skills).length||o.requires.traits.length?'<p class="muted">Investigator needs: '+esc([...Object.entries(o.requires.skills).map(([k,v])=>k+' '+v),...o.requires.traits].join(', '))+'</p>':''}<div class="opportunity-footer">${o.check&&(interactive||Number.isFinite(result?.total))?'<p class="muted opportunity-rules">'+checkDisplay(o,interactive?s.investigators.find(i=>i.id===entry?.investigator):null,d.rule,result?.total??null)+'</p>':''}${interactive?'<div class="opportunity-slots">'+slots.map((slot,index)=>slotMarkup(o,slot,index)).join('')+'</div>':(historicalSlots?'<div class="opportunity-slots history-slots">'+historicalSlots+'</div>':'')+(result?'<p class="opportunity-outcome">'+esc(result.text)+'</p>':'')}${historyEntry?inventoryChangeMarkup(historyEntry.events):''}</div></article>`;
+function opportunityMarkup(o,result,historyEntry=null,context=null){
+ const d=context?.definition||runDefinition,s=context?{investigators:[]}:runtime,interactive=result===undefined,entry=context?null:prepared[o.id],reason=interactive?(context?'Not prepared':preparationReason(d,s,o,entry)):'',slots=requiredSlots(o);
+ const slotted=interactive?slots.map((slot,index)=>context?devPreviewSlot(slot):slotMarkup(o,slot,index)).join(''):historyEntry?slots.map(slot=>historicalSlotMarkup(slot,historyEntry)).join(''):'';
+ const showCheck=o.check&&(interactive||Number.isFinite(result?.total));
+ const requirements=[...Object.entries(o.requires.skills).map(([name,value])=>name+' '+value+'+'),...o.requires.traits];
+ const mechanics=(showCheck?'<div class="mechanic-check"><span class="mechanic-label">'+(interactive?'Skill check':'Check result')+'</span>'+checkDisplay(o,interactive?s.investigators.find(i=>i.id===entry?.investigator):null,GAME_RULES,result?.total??null)+'</div>':'')
+  +(requirements.length?'<div class="mechanic-detail"><span class="mechanic-label">Requires</span><span>'+esc(requirements.join(' · '))+'</span></div>':'')
+  +(o.deadline!==null?'<div class="mechanic-detail"><span class="mechanic-label">Deadline</span><span>Through turn '+o.deadline+'</span></div>':'')
+  +(slotted?'<div class="assignment-group"><span class="mechanic-label">'+(interactive?'Assign':'Assigned')+'</span><div class="opportunity-slots '+(interactive?'':'history-slots')+'">'+slotted+'</div></div>':'');
+ return '<article class="card opportunity-card '+(interactive?(!reason?'is-ready':''):result?(result.passed?'is-passed':'is-failed'):'is-unused')+'" data-opportunity="'+o.id+'" aria-label="'+esc(o.title)+': '+esc(interactive?(reason||'Ready'):result?(result.passed?'Passed':'Failed'):'Not chosen')+'">'
+  +'<div class="opportunity-scene"><p class="scene-copy">'+esc(o.body)+'</p></div>'
+  +(mechanics?'<div class="opportunity-footer">'+mechanics+'</div>':'')
+  +(result?'<section class="outcome-section" aria-label="Outcome"><span class="mechanic-label">Outcome</span><p class="scene-copy opportunity-outcome">'+esc(result.text)+'</p></section>':'')
+  +(historyEntry?inventoryChangeMarkup(historyEntry.events):'')+'</article>';
 }
 function historicalSlotMarkup(slot,entry){
  if(slot.type==='investigator'){
@@ -171,15 +280,16 @@ function historicalSlotMarkup(slot,entry){
 }
 function inventoryChangeMarkup(events){
  const changes=(events||[]).flatMap(event=>event.changes||[]);if(!changes.length)return '';
- return '<div class="inventory-changes" aria-label="Inventory changes">'+changes.map(change=>'<div class="item-card inventory-change '+(change.delta>0?'item-gained':'item-spent')+'" aria-label="'+esc(change.name+': '+change.before+' to '+change.after)+'"><span class="item-name">'+esc(change.name)+'</span><strong>'+(change.delta>0?'+':'')+change.delta+'</strong><span class="item-quantity">x'+change.before+' → x'+change.after+'</span></div>').join('')+'</div>';
+ return '<section class="inventory-change-section" aria-label="Inventory changes"><span class="mechanic-label">Inventory changes</span><div class="inventory-changes">'+changes.map(change=>'<div class="item-card inventory-change '+(change.delta>0?'item-gained':'item-spent')+'" aria-label="'+esc(change.name+': '+change.before+' to '+change.after)+'"><span class="item-name">'+esc(change.name)+'</span><strong>'+(change.delta>0?'+':'')+change.delta+'</strong><span class="item-quantity">x'+change.before+' → x'+change.after+'</span></div>').join('')+'</div></section>';
 }
 function flowGraph(){return turnFlow(runDefinition,turnHistory,runtime)}
+function actionHeadingMarkup(title){return '<span class="action-title">'+esc(title)+'</span><svg class="disclosure-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="m5 3 5 5-5 5"/></svg>'}
 function flowNodeMarkup(node){
  const {opportunity:o,entry,current}=node,events=entry.events||[],outcome=events.find(event=>event.outcome!=='expired')||events[0];
  const result=outcome?{...outcome,text:events.map(event=>event.text).filter(Boolean).join('\n')}:null;
  const expanded=expandedFlowNodes.has(node.id),state=current?(preparationReason(runDefinition,runtime,o,prepared[o.id])?'is-active':'is-ready'):result?(result.passed?'is-passed':'is-failed'):'is-unused';
  const panel=expanded?opportunityMarkup(o,current?undefined:result,current?null:entry):'';
- return '<div class="flow-node '+state+'" data-flow-id="'+esc(node.id)+'"><button type="button" class="flow-toggle" data-flow-toggle="'+esc(node.id)+'" aria-expanded="'+expanded+'" aria-controls="flow-panel-'+esc(node.id)+'">'+esc(o.title)+'</button><div id="flow-panel-'+esc(node.id)+'" class="flow-panel" '+(expanded?'':'hidden')+'>'+panel+'</div></div>';
+ return '<div class="flow-node '+state+'" data-flow-id="'+esc(node.id)+'"><button type="button" class="flow-toggle" data-flow-toggle="'+esc(node.id)+'" aria-expanded="'+expanded+'" aria-controls="flow-panel-'+esc(node.id)+'">'+actionHeadingMarkup(o.title)+'</button><div id="flow-panel-'+esc(node.id)+'" class="flow-panel" '+(expanded?'':'hidden')+'>'+panel+'</div></div>';
 }
 function updateStageBackground(){
  const stage=$('.case-flow-scroll'),current=stage?.querySelector('[data-current-turn]'),past=current?.previousElementSibling;
@@ -203,7 +313,7 @@ function drawFlowLines(){
 }
 function openingCardMarkup(){
  const expanded=expandedFlowNodes.has('case-opening');
- return '<section class="flow-node opening-card"><button type="button" class="flow-toggle" data-flow-toggle="case-opening" aria-expanded="'+expanded+'" aria-controls="flow-panel-case-opening">'+esc(runDefinition.title)+'</button><div id="flow-panel-case-opening" class="flow-panel opening-copy" '+(expanded?'':'hidden')+'><p>'+esc(runDefinition.opening)+'</p></div></section>';
+ return '<section class="flow-node opening-card"><button type="button" class="flow-toggle" data-flow-toggle="case-opening" aria-expanded="'+expanded+'" aria-controls="flow-panel-case-opening" aria-label="'+esc(runDefinition.title)+'"><span class="briefing-heading"><span class="mechanic-label" aria-hidden="true">Case briefing</span><span class="briefing-title">'+esc(runDefinition.title)+'</span></span><svg class="disclosure-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="m5 3 5 5-5 5"/></svg></button><div id="flow-panel-case-opening" class="flow-panel opening-copy" '+(expanded?'':'hidden')+'><p class="scene-copy">'+esc(runDefinition.opening)+'</p></div></section>';
 }
 function flowMarkup(){
  const {columns}=flowGraph(),ending=runDefinition.endings.find(ending=>ending.id===runtime.ending);
@@ -212,7 +322,7 @@ function flowMarkup(){
 function bindStagePan(stage){
  let gesture=null,suppressClick=false;
  stage.onpointerdown=event=>{
-  if(!event.isPrimary||event.button!==0||event.target.closest('[data-card],[data-drop-op],input,textarea,select,a'))return;
+  if(!event.isPrimary||event.button!==0||event.target.closest('[data-card],[data-drop-op],[data-dev-editor],input,textarea,select,a'))return;
   suppressClick=false;gesture={id:event.pointerId,x:event.clientX,y:event.clientY,left:stage.scrollLeft,top:stage.scrollTop,panning:false};
  };
  stage.onpointermove=event=>{
@@ -240,7 +350,7 @@ function bindFlow(){
 function renderPreview(){
  const previousScroll=$('.case-flow-scroll'),scrollLeft=previousScroll?.scrollLeft||0,scrollTop=previousScroll?.scrollTop||0;
  draggedCard=null;resetTrayDragVisual();
- if(!runtime){try{validate(doc)}catch(e){$('#preview').innerHTML='<p>Fix the definition before testing: '+esc(e.message)+'</p>';return}runDefinition=structuredClone(doc);runtime=start({...runDefinition,investigators:testRoster(doc,investigatorCatalog)});prepared={};pickedCard=null;boardMessage='';expandedFlowNodes=new Set(['case-opening']);turnHistory=[];runSignature=JSON.stringify(doc)}
+ if(!runtime){try{validate(doc)}catch(e){$('#preview').innerHTML='<p>Fix the definition before testing: '+esc(e.message)+'</p>';return}runDefinition=structuredClone(doc);runtime=start(runDefinition,{...doc.testSetup,investigators:testRoster(doc.testSetup,investigatorCatalog)});prepared={};pickedCard=null;boardMessage='';expandedFlowNodes=new Set(['case-opening']);turnHistory=[];runSignature=JSON.stringify(doc)}
  const d=runDefinition,s=runtime,pending=runSignature!==JSON.stringify(doc);
 
  $('#preview').innerHTML='<section class="test-board" aria-label="Opportunity board">'+(pending?'<p class="setup-pending">Setup or definition changed. Restart test to apply; the current run is unchanged.</p>':'')+'<p id="board-message" role="status">'+esc(boardMessage)+'</p>'+flowMarkup()+'</section>';
@@ -254,10 +364,16 @@ function renderPreview(){
 }
 
 async function list(){const r=await fetch('/api/cases');if(!r.ok)throw Error('Cannot list cases');const cases=await r.json();$('#case-select').innerHTML=cases.map(c=>`<option value="${esc(c.id)}">${esc(c.title)}</option>`).join('');return cases}
-async function load(id){const r=await fetch('/api/cases/'+id);if(!r.ok)throw Error('Cannot load case');const body=await r.json();doc=body.case;revision=body.revision;raw={};dirty=false;conflict=false;problem='';try{const text=localStorage.getItem(key(id));if(text){const draft=JSON.parse(text);if(draft.doc.id!==id)throw Error('Draft ID mismatch');doc=draft.doc;raw=draft.raw||{};dirty=true;conflict=draft.revision!==revision;revision=conflict?draft.revision:revision;problem=conflict?'Recovered browser draft conflicts with the disk file. Compare in Dev before replacing.':'Recovered unsaved browser draft.'}}catch(e){problem='Draft recovery: '+e.message}runtime=null;prepared={};pickedCard=null;generation++;$('#case-select').value=id;renderDev();if(mode==='preview')renderPreview();if(mode==='setup')renderSetup();showStatus();if(dirty&&!conflict&&!Object.keys(raw).length)save()}
+async function load(id){
+ selectedDevOpportunity=null;const r=await fetch('/api/cases/'+id);if(!r.ok)throw Error('Cannot load case');const body=await r.json();doc=body.case;doc.testSetup??=defaultTestSetup();revision=body.revision;raw={};dirty=false;conflict=false;problem='';try{const text=localStorage.getItem(key(id));if(text){const draft=JSON.parse(text);if(draft.doc.id!==id)throw Error('Draft ID mismatch');doc=draft.doc;raw=draft.raw||{};dirty=true;conflict=draft.revision!==revision;revision=conflict?draft.revision:revision;problem=conflict?'Recovered browser draft conflicts with the disk file. Compare in Dev before replacing.':'Recovered unsaved browser draft.'}}catch(e){problem='Draft recovery: '+e.message}runtime=null;prepared={};pickedCard=null;generation++;$('#case-select').value=id;renderDev();if(mode==='preview')renderPreview();if(mode==='setup')renderSetup();showStatus();if(dirty&&!conflict&&!Object.keys(raw).length)save()}
 $('#case-select').onchange=async()=>{const next=$('#case-select').value;await save();if(dirty||saving){$('#case-select').value=doc.id;problem='Save or resolve this draft before switching cases';showStatus();return}try{await load(next)}catch(e){problem=e.message;showStatus()}};
-for(const m of ['dev','preview','setup'])$('#'+m+'-mode').onclick=()=>{resetTrayDragVisual();mode=m;document.body.classList.toggle('preview-active',m==='preview');$('#investigator-tray').hidden=m!=='preview';$('#restart').hidden=m!=='preview';$('#dev').hidden=m!=='dev';$('#preview').hidden=m!=='preview';$('#test-setup').hidden=m!=='setup';for(const n of ['dev','preview','setup'])$('#'+n+'-mode').setAttribute('aria-pressed',String(n===m));if(m==='preview')renderPreview();else if(m==='setup')renderSetup();else renderDev()};
+for(const m of ['dev','preview','setup'])$('#'+m+'-mode').onclick=()=>{resetTrayDragVisual();mode=m;if(m!=='dev')selectedDevOpportunity=null;document.body.classList.toggle('preview-active',m==='preview');document.body.classList.toggle('dev-active',m==='dev');$('#investigator-tray').hidden=m!=='preview';$('#restart').hidden=m!=='preview';$('#dev').hidden=m!=='dev';$('#preview').hidden=m!=='preview';$('#test-setup').hidden=m!=='setup';for(const n of ['dev','preview','setup']){const tab=$('#'+n+'-mode');tab.setAttribute('aria-selected',String(n===m));tab.tabIndex=n===m?0:-1;}if(m==='preview')renderPreview();else if(m==='setup')renderSetup();else renderDev()};
 $('#retry').onclick=()=>{problem='';if(dirty)save();else checkServer()};$('#download').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify({doc,revision,raw},null,2)],{type:'application/json'}));a.download=(doc?.id||'case')+'-draft.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
 window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue=''}});window.addEventListener('online',()=>{if(dirty&&!conflict)save()});
 setInterval(checkServer,10000);
+wireTabKeys($('.primary-tabs'));
+document.body.classList.add('dev-active');
 try{await loadCatalog();const cases=await list();if(cases.length)await load(cases[0].id);else{problem='No cases found. Add a case JSON file in cases/.';showStatus()}}catch(e){serverProblem='Server unavailable — changes are not saving.';problem='Cannot open Case Builder: '+e.message;showStatus()}
+
+const trayLayoutObserver=new ResizeObserver(()=>{document.documentElement.style.setProperty('--inventory-tray-height',$('#investigator-tray').getBoundingClientRect().height+'px')});
+trayLayoutObserver.observe($('#investigator-tray'));

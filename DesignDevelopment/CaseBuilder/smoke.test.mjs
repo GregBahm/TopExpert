@@ -1,7 +1,7 @@
 import {test} from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs/promises';import os from 'node:os';import path from 'node:path';
-import {validate,start,available,advance} from './engine.mjs';import serverModule from './server.cjs';
+import {validate,available,advance} from './engine.mjs';import serverModule from './server.cjs';
 import {selectedInvestigatorIds,testRoster} from './test-setup.mjs';
-import {makeFixture,fixtureCatalog,opportunity,effect} from './test-fixture.mjs';
+import {startFixture as start,makeFixture,fixtureCatalog,opportunity,effect} from './test-fixture.mjs';
 
 test('gates, outcomes, deadlines and runtime state stay separate from definitions',()=>{
  const d=makeFixture(),inspect=d.opportunities[0];inspect.repeatable=true;inspect.success=effect({flagsAdd:['found'],unlock:['resolve'],remove:['inspect']});inspect.failure=effect({health:-1});
@@ -21,13 +21,13 @@ test('file saves reload, reject stale revisions and isolate per-case setup',asyn
  const url='http://127.0.0.1:'+server.address().port+'/api/cases/',read=async id=>(await fetch(url+id)).json(),put=async(id,d,revision)=>fetch(url+id,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({case:d,revision})});
  const body=await read(fixture.id),edited=structuredClone(body.case);edited.notes='Updated fixture note';assert.equal((await put(fixture.id,edited,body.revision)).status,200);assert.deepEqual(JSON.parse(await fs.readFile(path.join(root,'cases',fixture.id+'.json'),'utf8')),edited);
  assert.equal((await put(fixture.id,fixture,body.revision)).status,409);const invalid=structuredClone(edited);invalid.opportunities[0].success.unlock=['missing'];assert.equal((await put(fixture.id,invalid,(await read(fixture.id)).revision)).status,400);
- edited.testSetup={investigatorIds:['analyst'],skillOverrides:{analyst:{Focus:6}}};assert.equal((await put(fixture.id,edited,(await read(fixture.id)).revision)).status,200);assert.deepEqual((await read(fixture.id)).case.testSetup,edited.testSetup);assert.equal((await read(fixture.id)).case.opening,fixture.opening);
- const other={...makeFixture(),id:'other-case'};assert.equal((await put(other.id,other,null)).status,200);assert.equal((await read(other.id)).case.testSetup,undefined);assert.equal((await fs.readdir(path.join(root,'cases'))).filter(n=>n.endsWith('.tmp')).length,0);
+ edited.testSetup={...edited.testSetup,investigatorIds:['analyst'],skillOverrides:{analyst:{Focus:6}}};assert.equal((await put(fixture.id,edited,(await read(fixture.id)).revision)).status,200);assert.deepEqual((await read(fixture.id)).case.testSetup,edited.testSetup);assert.equal((await read(fixture.id)).case.opening,fixture.opening);
+ const other={...makeFixture(),id:'other-case'};assert.equal((await put(other.id,other,null)).status,200);assert.deepEqual((await read(other.id)).case.testSetup,makeFixture().testSetup);assert.equal((await fs.readdir(path.join(root,'cases'))).filter(n=>n.endsWith('.tmp')).length,0);
 });
 
 test('effective skills and selections are per case without changing baselines',()=>{
- const d=makeFixture();assert.deepEqual(selectedInvestigatorIds(d,fixtureCatalog),['analyst','helper']);
- d.testSetup={investigatorIds:['analyst','unspecified'],skillOverrides:{analyst:{Focus:5}}};validate(d);const team=testRoster(d,fixtureCatalog);assert.deepEqual(team.map(i=>i.id),['analyst']);assert.equal(team[0].skills.Focus,5);
- team[0].skills.Focus=99;assert.equal(testRoster(d,fixtureCatalog)[0].skills.Focus,5);assert.equal(fixtureCatalog[0].skills.Focus,1);assert.equal(testRoster(makeFixture(),fixtureCatalog)[0].skills.Focus,1);
- delete d.testSetup.skillOverrides.analyst.Focus;assert.equal(testRoster(d,fixtureCatalog)[0].skills.Focus,1);d.testSetup.investigatorIds=[];assert.deepEqual(testRoster(d,fixtureCatalog),[]);d.testSetup.skillOverrides.analyst.Focus=7;assert.throws(()=>validate(d),/0 to 6/);
+ const d=makeFixture();assert.deepEqual(selectedInvestigatorIds(d.testSetup,fixtureCatalog),['analyst','helper']);
+ d.testSetup={...d.testSetup,investigatorIds:['analyst','unspecified'],skillOverrides:{analyst:{Focus:5}}};validate(d);const team=testRoster(d.testSetup,fixtureCatalog);assert.deepEqual(team.map(i=>i.id),['analyst']);assert.equal(team[0].skills.Focus,5);
+ team[0].skills.Focus=99;assert.equal(testRoster(d.testSetup,fixtureCatalog)[0].skills.Focus,5);assert.equal(fixtureCatalog[0].skills.Focus,1);assert.equal(testRoster(makeFixture().testSetup,fixtureCatalog)[0].skills.Focus,1);
+ delete d.testSetup.skillOverrides.analyst.Focus;assert.equal(testRoster(d.testSetup,fixtureCatalog)[0].skills.Focus,1);d.testSetup.investigatorIds=[];assert.deepEqual(testRoster(d.testSetup,fixtureCatalog),[]);d.testSetup.skillOverrides.analyst.Focus=7;assert.throws(()=>validate(d),/0 to 6/);
 });

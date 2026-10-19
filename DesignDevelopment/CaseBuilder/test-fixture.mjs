@@ -1,3 +1,5 @@
+import {start as startRuntime} from './engine.mjs';
+import {testRoster} from './test-setup.mjs';
 // Synthetic bookkeeping data, independent of authored cases and portrait assets.
 export const fixtureCatalog=[
  {id:'analyst',name:'Analyst',skills:{Focus:1},statsSpecified:true},
@@ -11,9 +13,9 @@ export function opportunity(id,patch={}){return {
  check:null,success:effect(),failure:effect(),expired:effect(),...patch,
 }}
 export function makeFixture(){return {
- version:1,id:'fixture-case',title:'Bookkeeping fixture',opening:'Fixture opening',notes:'Fixture notes',
- rule:{sides:6,multiplier:1,notes:'Test inputs, not balance specifications.'},
- investigators:fixtureCatalog.filter(i=>i.statsSpecified).map(i=>({id:i.id,name:i.name,skills:{...i.skills},health:3,traits:[],notes:''})),
- initial:{inventory:{},resources:{money:4},flags:[]},
+ version:2,id:'fixture-case',title:'Bookkeeping fixture',opening:'Fixture opening',notes:'Fixture notes',
+ initialFlags:[],testSetup:{investigatorIds:['analyst','helper'],skillOverrides:{},inventory:{},resources:{money:4}},
  opportunities:[opportunity('inspect',{check:{skills:['Focus'],target:3,itemBonuses:{},notes:''},success:effect({flagsAdd:['found']})}),opportunity('assist')],endings:[],
 }}
+
+export function startFixture(d){return startRuntime(d,{...d.testSetup,investigators:testRoster(d.testSetup,fixtureCatalog)})}
