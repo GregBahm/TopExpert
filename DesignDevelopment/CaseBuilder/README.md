@@ -40,3 +40,7 @@ Outcome inventory/resources are numeric deltas; skill and health changes affect 
 ## Focused checks
 
 Run `node --test DesignDevelopment/CaseBuilder/smoke.test.mjs DesignDevelopment/CaseBuilder/turn-board.test.mjs DesignDevelopment/CaseBuilder/turn-history.test.mjs`. These use disposable fixtures and deterministic rolls to check persistence/conflicts, checks, branching, costs, runtime isolation and turn snapshots. They do not write authored cases or pitch reviews. Routine presentation changes use a focused browser check.
+
+## Interaction editor mockup
+
+Deadline and Skill check are independent toggles. Deadline reveals its turn count and deadline failed text and retains its existing runtime behavior. Skill check reveals attribute/difficulty rows, Any/All when several rows exist, required/optional investigator counts (defaults 1/0), and success/failure text. Settings persist in each opportunity’s `interactionDesign` field. Disabling a section hides it without erasing its configuration. This is the authoring UX phase: individual checks, Any/All, and multi-investigator requirements do not yet change Test mechanics. The existing runtime check remains in place until the planned mechanics overhaul. Item and outcome editing are the next UI steps.
